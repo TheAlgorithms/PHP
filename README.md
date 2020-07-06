@@ -1,4 +1,4 @@
-# The Algorithms - Php
+# The Algorithms - PHP
 
 ### All algorithms implemented in Php (for education)
 

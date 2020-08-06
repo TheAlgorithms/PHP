@@ -1,5 +1,5 @@
+/vendor/
 .idea
 .vscode
 .phan
-vendor
 composer.lock

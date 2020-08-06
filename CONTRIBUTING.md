@@ -78,4 +78,4 @@ We want your work to be readable by others; therefore, we encourage you to note 
   - **Join** [Gitter](https://gitter.im/TheAlgorithms) **now!**
   - Happy coding!
 
-Writer [@darwinz](https://github.com/darwinz), Aug 2020 (based on [TheAlgorithms/Python](https://github.com/TheAlgorithms/Python/blob/master/CONTRIBUTING.md) by [@poyea](https://github.com/poyea)
+Writer [@darwinz](https://github.com/darwinz), Aug 2020 (based on [TheAlgorithms/Python](https://github.com/TheAlgorithms/Python/blob/master/CONTRIBUTING.md) by [@poyea](https://github.com/poyea))

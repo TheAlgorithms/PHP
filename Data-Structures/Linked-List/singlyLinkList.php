@@ -83,6 +83,7 @@ class SinglyLinkedList{
             $this->head=$newNode;
         }
 
+
         ++$this->length;
         return $this;
     }

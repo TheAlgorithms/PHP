@@ -1,5 +1,13 @@
 <?php
-
+/**
+ * This function calculates
+ * Absolute min values from
+ * the different numbers
+ * provided.
+ *
+ * @param decimal $numbers A variable sized number input
+ * @return decimal $absoluteMin Absolute min value
+ */
 function absolute_min(...$numbers)
 {
     if (empty($numbers)) {

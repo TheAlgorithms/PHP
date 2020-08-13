@@ -1,5 +1,13 @@
 <?php
-
+/**
+ * This function calculates
+ * and returns the factorial
+ * of provided positive integer
+ * number.
+ *
+ * @param Integer $number Integer input
+ * @return Integer Factorial of the input
+ */
 function factorial(int $number)
 {
     if ($number < 0) {

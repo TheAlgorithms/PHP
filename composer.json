@@ -1,8 +1,14 @@
 {
+	"name" : "thealgorithms/php",
+	"description": "All Algorithms implemented in PHP",
+	"license": "MIT",
 	"require": {
 		"phan/phan": "^2.7"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "^9"
+	},
+	"scripts": {
+		"test": "vendor/bin/phpunit tests"
 	}
 }

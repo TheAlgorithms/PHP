@@ -1,3 +1,6 @@
+## Ciphers
+  * [Caesar Cipher](https://github.com/TheAlgorithms/PHP/blob/master/ciphers/caesarCipher.php)
+
 ## String
   * [Check Palindrome](https://github.com/TheAlgorithms/PHP/blob/master/String/CheckPalindrome.php)
   * [Reverse String](https://github.com/TheAlgorithms/PHP/blob/master/String/ReverseString.php)

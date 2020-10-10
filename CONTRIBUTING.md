@@ -12,7 +12,7 @@ We are very happy that you would consider contributing! As a contributor, you ag
 
 - You did your work - no plagiarism allowed
   - Any plagiarized work will not be merged
-- Your work will be distributed under [MIT License](License) once your pull request is merged
+- Your work will be distributed under [MIT License](LICENSE) once your pull request is merged
 - Your submitted work follows (or mostly follows) the styles and standards already found in this repo
 
 **New implementations** are welcome! For example, new solutions for an existing problem, different representations for a graph data structure or an algorithm design with different complexity.

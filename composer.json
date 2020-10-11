@@ -3,7 +3,8 @@
 	"description": "All Algorithms implemented in PHP",
 	"license": "MIT",
 	"require": {
-		"phan/phan": "^2.7"
+		"phan/phan": "^2.7",
+		"nlp-tools/nlp-tools": "^0.1.3"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "^9"

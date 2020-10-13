@@ -4,6 +4,7 @@
   
 ## Searching
   * [Binary Search](https://github.com/TheAlgorithms/PHP/blob/master/searches/binary_search.php)
+  * [Linear Search](https://github.com/TheAlgorithms/PHP/blob/master/searches/linear_search.php)
   
 ## Sorting
   * [Bubble Sort](https://github.com/TheAlgorithms/PHP/blob/master/sorting/bubbleSort.php)

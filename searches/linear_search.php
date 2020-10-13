@@ -11,7 +11,7 @@
  * 
  * Examples:
  * 
- *  data =  5, 7, 8, 11, 12, 15. 17, 18, 20
+ *  data =  5, 7, 8, 11, 12, 15, 17, 18, 20
  *  
  *  x = 15
  *  Element found at position 6

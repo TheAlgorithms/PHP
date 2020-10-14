@@ -10,6 +10,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../String/CheckPalindrome.php';
 require_once __DIR__ . '/../String/ReverseString.php';
 require_once __DIR__ . '/../String/ReverseWords.php';
+require_once __DIR__ . '/../String/CheckAnagram.php';
 
 class StringTest extends TestCase
 {
@@ -34,5 +35,14 @@ class StringTest extends TestCase
         assertEquals('Fun is Coding PHP', reverse_words('PHP Coding is Fun'));
         assertEquals('OneWord', reverse_words('OneWord'));
         assertEquals('Text different some is This', reverse_words('This is some different Text'));
+    }
+
+    public function testIsAnagram()
+    {
+        assertTrue(isAnagram("php", "PHP")); // By default it's case-insensitive
+        assertFalse(isAnagram("php", "PHP", false)); // Make case-sensitive check
+        assertTrue(isAnagram("php is fun", "pin hpf us"));
+        assertFalse(isAnagram("Hello", " Hello")); //Extra space character
+        assertTrue(isAnagram("ScRamble", "SRlmcaeb", false)); // Check with a mixture of upper and lower case
     }
 }

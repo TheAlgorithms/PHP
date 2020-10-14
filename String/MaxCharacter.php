@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This function returns
  * the character which is

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This function returns
  * the Total no. of vowels

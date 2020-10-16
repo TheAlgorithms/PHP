@@ -68,6 +68,7 @@ We want your work to be readable by others; therefore, we encourage you to note 
 #### Other Standard While Submitting Your Work
 
 - File extension for code should be `.php` 
+- After adding a new File/Directory, please make sure to update the [DIRECTORY.md](DIRECTORY.md) file with the details.
 - If possible, follow the standard *within* the folder you are submitting to
 - If you have modified/added code work, make sure the code compiles before submitting
 - If you have modified/added documentation work, ensure your language is concise and contains no grammar errors

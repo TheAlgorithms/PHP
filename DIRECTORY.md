@@ -34,3 +34,9 @@
 - [Reverse Words](https://github.com/TheAlgorithms/PHP/blob/master/String/ReverseWords.php)
 - [Max Characters](https://github.com/TheAlgorithms/PHP/blob/master/String/MaxCharacter.php)
 - [Count Vowels](https://github.com/TheAlgorithms/PHP/blob/master/String/CountVowels.php)
+
+## Number System Conversions
+
+- [BinaryToDecimal](https://github.com/TheAlgorithms/PHP/blob/master/Conversions/BinaryToDecimal.php)
+- [OctalToDecimal](https://github.com/TheAlgorithms/PHP/blob/master/Conversions/OctalToDecimal.php)
+- [HexadecimalToDecimal](https://github.com/TheAlgorithms/PHP/blob/master/Conversions/HexadecimalToDecimal.php)

@@ -33,7 +33,7 @@ function linear_search($list, $target) #Linear Search
    }
    
 # DRIVER CODE
-$data = array(5, 7, 8, 11, 12, 15. 17, 18, 20);  
+$data = array(5, 7, 8, 11, 12, 15, 17, 18, 20);  
 $x = 15; 
 
 

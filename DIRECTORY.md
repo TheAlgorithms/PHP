@@ -17,6 +17,8 @@
 
 - [Binary Search](https://github.com/TheAlgorithms/PHP/blob/master/searches/binary_search.php)
 - [Linear Search](https://github.com/TheAlgorithms/PHP/blob/master/searches/linear_search.php)
+- [Lower Bound](https://github.com/TheAlgorithms/PHP/blob/master/searches/lower_bound.php)
+- [Upper Bound](https://github.com/TheAlgorithms/PHP/blob/master/searches/upper_bound.php)
 
 ## Sorting
 

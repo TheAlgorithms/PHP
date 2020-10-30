@@ -34,6 +34,7 @@
 - [Reverse Words](https://github.com/TheAlgorithms/PHP/blob/master/String/ReverseWords.php)
 - [Max Characters](https://github.com/TheAlgorithms/PHP/blob/master/String/MaxCharacter.php)
 - [Count Vowels](https://github.com/TheAlgorithms/PHP/blob/master/String/CountVowels.php)
+- [Edit Distance](https://github.com/TheAlgorithms/PHP/blob/master/String/EditDistance.php)
 
 ## Number System Conversions
 

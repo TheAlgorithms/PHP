@@ -21,6 +21,7 @@
 ## Sorting
 
 - [Bubble Sort](https://github.com/TheAlgorithms/PHP/blob/master/sorting/bubbleSort.php)
+- [Count Sort](https://github.com/TheAlgorithms/PHP/blob/master/sorting/countSort.php)
 - [Insertion Sort](https://github.com/TheAlgorithms/PHP/blob/master/sorting/insertionSort.php)
 - [Merge Sort](https://github.com/TheAlgorithms/PHP/blob/master/sorting/mergeSort.php)
 - [Radix Sort](https://github.com/TheAlgorithms/PHP/blob/master/sorting/radixSort.php)

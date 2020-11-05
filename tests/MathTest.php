@@ -11,6 +11,7 @@ require_once __DIR__ . '/../Maths/CheckPrime.php';
 require_once __DIR__ . '/../Maths/AbsoluteMax.php';
 require_once __DIR__ . '/../Maths/AbsoluteMin.php';
 require_once __DIR__ . '/../Maths/PerfectSquare.php';
+require_once __DIR__ . '/../Maths/FastExponentiation.php';
 
 class MathTest extends TestCase
 {
@@ -55,5 +56,14 @@ class MathTest extends TestCase
         assertFalse(is_perfect_square(43));
         assertFalse(is_perfect_square(2));
         assertTrue(is_perfect_square(225));
+    }
+
+    public function testFastExponentiation()
+    {
+        assertEquals(fastExponentiation(10, 0), 1);
+        assertEquals(fastExponentiation(10, 1), 10);
+        assertEquals(fastExponentiation(10, 2), 100);
+        assertEquals(fastExponentiation(10, 3), 1000);
+        assertEquals(fastExponentiation(20, 5), 3200000);
     }
 }

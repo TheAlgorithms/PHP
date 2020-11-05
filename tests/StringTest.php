@@ -14,6 +14,7 @@ require_once __DIR__ . '/../String/ReverseWords.php';
 require_once __DIR__ . '/../String/CheckAnagram.php';
 require_once __DIR__ . '/../String/MaxCharacter.php';
 require_once __DIR__ . '/../String/CountVowels.php';
+require_once __DIR__ . '/../String/EditDistance.php';
 
 class StringTest extends TestCase
 {
@@ -65,5 +66,13 @@ class StringTest extends TestCase
         assertEquals(countVowelsRegex("This is a string with 7 vowels"), 7);
         assertEquals(countVowelsRegex("hello world"), 3);
         assertEquals(countVowelsRegex("Just A list of somE aaaaaaaaaa"), 16);
+    }
+
+    public function testEditDistance()
+    {
+        assertEquals(editDistance("hello", "hallo"), 1);
+        assertEquals(editDistance("hallo", "hello"), 1);
+        assertEquals(editDistance("sunday", "sunday"), 0);
+        assertEquals(editDistance("saturday", "sunday"), 3);
     }
 }

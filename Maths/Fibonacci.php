@@ -31,23 +31,24 @@ function fibonacciRecursive(int $num)
      * Fibonacci series using recursive approach
      */
 
-    $fib_series = [0, 1];
+    $fibonacciRecursive = [];
+    for ($i = 0; $i < $num; $i++) {
+        array_push($fibonacciRecursive, recursive($i));
+    }
+    return $fibonacciRecursive;
+}
 
+function recursive(int $num)
+{
     if ($num < 0) {
         throw new \Exception("Number must be greater than 0.");
     } else {
-        $a = $fib_series[0];
-        $b = $fib_series[1];
-
-        foreach (range(0, $num - count($fib_series) - 1) as $range) {
-            $t = $a;
-            $a = $b;
-            $b = $t + $b;
-            array_push($fib_series, $b);
+        if ($num == 0 || $num == 1) {
+            return $num;
+        } else {
+            return recursive($num - 1) + recursive($num - 2);
         }
     }
-
-    return $fib_series;
 }
 
 function fibonacciWithBinetFormula(int $num)
@@ -69,7 +70,7 @@ function fibonacciWithBinetFormula(int $num)
 
         foreach (range(0, $num - 1) as $n) {
             $seriesNumber = (pow($phi_1, $n) - pow($phi_2, $n)) / $sqrt;
-            array_push($fib_series, $seriesNumber);
+            array_push($fib_series, (int)$seriesNumber);
         }
 
     }

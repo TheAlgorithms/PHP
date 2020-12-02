@@ -12,6 +12,7 @@ require_once __DIR__ . '/../Maths/AbsoluteMax.php';
 require_once __DIR__ . '/../Maths/AbsoluteMin.php';
 require_once __DIR__ . '/../Maths/PerfectSquare.php';
 require_once __DIR__ . '/../Maths/FastExponentiation.php';
+require_once __DIR__ . '/../Maths/Fibonacci.php';
 
 class MathTest extends TestCase
 {
@@ -65,5 +66,14 @@ class MathTest extends TestCase
         assertEquals(fastExponentiation(10, 2), 100);
         assertEquals(fastExponentiation(10, 3), 1000);
         assertEquals(fastExponentiation(20, 5), 3200000);
+    }
+
+    public function testFibonacciSeries()
+    {
+        assertEquals([0, 1, 1, 2, 3], fibonacciRecursive(5));
+        assertEquals([0, 1, 1, 2, 3, 5, 8, 13, 21, 34], fibonacciRecursive(10));
+
+        assertEquals([0, 1, 1, 2, 3], fibonacciWithBinetFormula(5));
+        assertEquals([0, 1, 1, 2, 3, 5, 8, 13, 21, 34], fibonacciWithBinetFormula(10));
     }
 }

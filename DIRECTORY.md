@@ -13,6 +13,7 @@
 - [Factorial](https://github.com/TheAlgorithms/PHP/blob/master/Maths/Factorial.php)
 - [Perfect Square](https://github.com/TheAlgorithms/PHP/blob/master/Maths/PerfectSquare.php)
 - [Fast Exponentiation](https://github.com/TheAlgorithms/PHP/blob/master/Maths/FastExponentiation.php)
+- [Fibonacci Series](https://github.com/TheAlgorithms/PHP/blob/master/Maths/fibonacci.php)
 
 ## Searching
 

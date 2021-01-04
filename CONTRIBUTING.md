@@ -12,7 +12,7 @@ We are very happy that you would consider contributing! As a contributor, you ag
 
 - You did your work - no plagiarism allowed
   - Any plagiarized work will not be merged
-- Your work will be distributed under [MIT License](License) once your pull request is merged
+- Your work will be distributed under [MIT License](LICENSE) once your pull request is merged
 - Your submitted work follows (or mostly follows) the styles and standards already found in this repo
 
 **New implementations** are welcome! For example, new solutions for an existing problem, different representations for a graph data structure or an algorithm design with different complexity.
@@ -68,6 +68,7 @@ We want your work to be readable by others; therefore, we encourage you to note 
 #### Other Standard While Submitting Your Work
 
 - File extension for code should be `.php` 
+- After adding a new File/Directory, please make sure to update the [DIRECTORY.md](DIRECTORY.md) file with the details.
 - If possible, follow the standard *within* the folder you are submitting to
 - If you have modified/added code work, make sure the code compiles before submitting
 - If you have modified/added documentation work, ensure your language is concise and contains no grammar errors

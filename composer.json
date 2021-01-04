@@ -1,14 +1,20 @@
 {
-	"name" : "thealgorithms/php",
-	"description": "All Algorithms implemented in PHP",
-	"license": "MIT",
-	"require": {
-		"phan/phan": "^2.7"
-	},
-	"require-dev": {
-		"phpunit/phpunit": "^9"
-	},
-	"scripts": {
-		"test": "vendor/bin/phpunit tests"
-	}
+  "name" : "thealgorithms/php",
+  "description": "All Algorithms implemented in PHP",
+  "config": {
+    "platform": {
+      "php": "7.3.0"
+    }
+  },
+  "license": "MIT",
+  "require": {
+    "php": "7.3.0",
+    "phan/phan": "^2.7"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9"
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit tests"
+  }
 }

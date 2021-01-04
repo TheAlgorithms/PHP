@@ -18,7 +18,7 @@ function isPrime(int $number)
     }
 
     $i = 3;
-    while ($i < sqrt($number)) {
+    while ($i <= sqrt($number)) {
         if ($number % $i === 0) {
             return false;
         }

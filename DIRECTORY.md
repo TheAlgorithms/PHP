@@ -18,6 +18,9 @@
   * [Fibonacci](https://github.com/TheAlgorithms/PHP/blob/master/Maths/Fibonacci.php)
   * [Perfectsquare](https://github.com/TheAlgorithms/PHP/blob/master/Maths/PerfectSquare.php)
 
+## Projecteuler
+  * [Problem7](https://github.com/TheAlgorithms/PHP/blob/master/ProjectEuler/Problem7.php)
+
 ## Searches
   * [Binary Search](https://github.com/TheAlgorithms/PHP/blob/master/searches/binary_search.php)
   * [Linear Search](https://github.com/TheAlgorithms/PHP/blob/master/searches/linear_search.php)
@@ -46,6 +49,7 @@
   * [Ciphertest](https://github.com/TheAlgorithms/PHP/blob/master/tests/CipherTest.php)
   * [Conversionstest](https://github.com/TheAlgorithms/PHP/blob/master/tests/ConversionsTest.php)
   * [Mathtest](https://github.com/TheAlgorithms/PHP/blob/master/tests/MathTest.php)
+  * [Projecteulertest](https://github.com/TheAlgorithms/PHP/blob/master/tests/ProjectEulerTest.php)
   * Sorting
     * [Countsorttest](https://github.com/TheAlgorithms/PHP/blob/master/tests/sorting/countSortTest.php)
   * [Stringtest](https://github.com/TheAlgorithms/PHP/blob/master/tests/StringTest.php)

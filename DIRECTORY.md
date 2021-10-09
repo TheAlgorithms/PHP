@@ -19,7 +19,9 @@
   * [Perfectsquare](https://github.com/TheAlgorithms/PHP/blob/master/Maths/PerfectSquare.php)
 
 ## Projecteuler
+  * [Problem5](https://github.com/TheAlgorithms/PHP/blob/master/ProjectEuler/Problem5.php)
   * [Problem7](https://github.com/TheAlgorithms/PHP/blob/master/ProjectEuler/Problem7.php)
+  * [Problem9](https://github.com/TheAlgorithms/PHP/blob/master/ProjectEuler/Problem9.php)
 
 ## Searches
   * [Binary Search](https://github.com/TheAlgorithms/PHP/blob/master/searches/binary_search.php)

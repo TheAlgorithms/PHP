@@ -19,6 +19,8 @@
   * [Perfectsquare](https://github.com/TheAlgorithms/PHP/blob/master/Maths/PerfectSquare.php)
 
 ## Projecteuler
+  * [Problem1](https://github.com/TheAlgorithms/PHP/blob/master/ProjectEuler/Problem1.php)
+  * [Problem2](https://github.com/TheAlgorithms/PHP/blob/master/ProjectEuler/Problem2.php)
   * [Problem5](https://github.com/TheAlgorithms/PHP/blob/master/ProjectEuler/Problem5.php)
   * [Problem7](https://github.com/TheAlgorithms/PHP/blob/master/ProjectEuler/Problem7.php)
   * [Problem9](https://github.com/TheAlgorithms/PHP/blob/master/ProjectEuler/Problem9.php)

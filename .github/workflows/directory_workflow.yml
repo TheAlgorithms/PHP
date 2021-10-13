@@ -18,7 +18,8 @@ jobs:
         run: |
             import os
             from typing import Iterator
-            URL_BASE = "https://github.com/TheAlgorithms/PHP/blob/master"
+            #URL_BASE = "https://github.com/TheAlgorithms/PHP/blob/master"
+            URL_BASE = "."
             g_output = []
             def good_filepaths(top_dir: str = ".") -> Iterator[str]:
                 fs_exts = tuple(".php".split())

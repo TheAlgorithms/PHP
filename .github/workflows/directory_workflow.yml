@@ -18,7 +18,6 @@ jobs:
         run: |
             import os
             from typing import Iterator
-            URL_BASE = "https://github.com/TheAlgorithms/PHP/blob/master"
             g_output = []
             def good_filepaths(top_dir: str = ".") -> Iterator[str]:
                 fs_exts = tuple(".php".split())
@@ -45,7 +44,7 @@ jobs:
                     if filepath != old_path:
                         old_path = print_path(old_path, filepath)
                     indent = (filepath.count(os.sep) + 1) if filepath else 0
-                    url = "/".join((URL_BASE, filepath, filename)).replace(" ", "%20")
+                    url = "/".join((".", filepath, filename)).replace(" ", "%20")
                     filename = os.path.splitext(filename.replace("_", " ").title())[0]
                     g_output.append(f"{md_prefix(indent)} [{filename}]({url})")
                 return "# List of all files\n" + "\n".join(g_output)

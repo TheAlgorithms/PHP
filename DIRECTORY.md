@@ -34,6 +34,7 @@
 
 ## Sorting
   * [Bubblesort](./sorting/bubbleSort.php)
+  * [Bubblesort2](./sorting/bubbleSort2.php)
   * [Countsort](./sorting/countSort.php)
   * [Insertionsort](./sorting/insertionSort.php)
   * [Mergesort](./sorting/mergeSort.php)

@@ -16,6 +16,7 @@
   * [Factorial](./Maths/Factorial.php)
   * [Fastexponentiation](./Maths/FastExponentiation.php)
   * [Fibonacci](./Maths/Fibonacci.php)
+  * [Fibonacci with Generator](./Maths/Fibonacci2.php)
   * [Perfectsquare](./Maths/PerfectSquare.php)
 
 ## Projecteuler

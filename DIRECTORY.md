@@ -16,6 +16,7 @@
   * [Factorial](./Maths/Factorial.php)
   * [Fastexponentiation](./Maths/FastExponentiation.php)
   * [Fibonacci](./Maths/Fibonacci.php)
+  * [Fibonacci with Generator](./Maths/Fibonacci2.php)
   * [Perfectsquare](./Maths/PerfectSquare.php)
 
 ## Projecteuler
@@ -33,6 +34,7 @@
 
 ## Sorting
   * [Bubblesort](./sorting/bubbleSort.php)
+  * [Bubblesort2](./sorting/bubbleSort2.php)
   * [Countsort](./sorting/countSort.php)
   * [Insertionsort](./sorting/insertionSort.php)
   * [Mergesort](./sorting/mergeSort.php)

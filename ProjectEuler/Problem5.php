@@ -9,10 +9,10 @@
  */
 function problem5(): int
 {
-    $number = 21;
+    $number = 20;
     while (true) {
         $isSolution = true;
-        for ($i = 1; $i <= 21; $i++) {
+        for ($i = 11; $i <= 20; $i++) {
             if ($number % $i !== 0) {
                 $isSolution = false;
                 break;
@@ -21,6 +21,6 @@ function problem5(): int
         if ($isSolution) {
             return $number;
         }
-        $number++;
+        $number += 20;
     }
 }

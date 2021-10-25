@@ -22,6 +22,7 @@
 ## Projecteuler
   * [Problem1](./ProjectEuler/Problem1.php)
   * [Problem2](./ProjectEuler/Problem2.php)
+  * [Problem3](./ProjectEuler/Problem3.php)
   * [Problem5](./ProjectEuler/Problem5.php)
   * [Problem7](./ProjectEuler/Problem7.php)
   * [Problem9](./ProjectEuler/Problem9.php)

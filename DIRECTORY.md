@@ -39,6 +39,7 @@
   * [Countsort](./sorting/countSort.php)
   * [Insertionsort](./sorting/insertionSort.php)
   * [Mergesort](./sorting/mergeSort.php)
+  * [Quicksort](./sorting/quickSort.php)
   * [Radixsort](./sorting/radixSort.php)
   * [Selectionsort](./sorting/selectionSort.php)
 

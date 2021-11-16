@@ -18,8 +18,8 @@ class fibonacciSearchTest extends TestCase
         $test2 = fibonacciPosition(9); // 34
         $test3 = fibonacciPosition(60); // 956722026041
 
-        $this->assertsEquals(8, $test1);
-        $this->assertsEquals(34, $test2);
-        $this->assertsEquals(956722026041, $test3);
+        $this->assertEquals(8, $test1);
+        $this->assertEquals(34, $test2);
+        $this->assertEquals(956722026041, $test3);
     }
 }

@@ -14,9 +14,9 @@ class fibonacciSearchTest extends TestCase
      */
     public function testFibonacciSearch()
     {
-        $test1 = fibonacciSearch(6); // 8
-        $test2 = fibonacciSearch(9); // 34
-        $test3 = fibonacciSearch(60); // 956722026041
+        $test1 = fibonacciPosition(6); // 8
+        $test2 = fibonacciPosition(9); // 34
+        $test3 = fibonacciPosition(60); // 956722026041
 
         $this->assertsEquals(8, $test1);
         $this->assertsEquals(34, $test2);

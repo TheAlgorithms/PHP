@@ -30,6 +30,7 @@
 
 ## Searches
   * [Binary Search](./searches/binary_search.php)
+  * [Fibonacci_Search](./searched/fibonacciSearch.php)
   * [Linear Search](./searches/linear_search.php)
   * [Lower Bound](./searches/lower_bound.php)
   * [Upper Bound](./searches/upper_bound.php)

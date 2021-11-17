@@ -9,7 +9,7 @@
  * @param int $n position to check
  * @param array $m array to store solved trees
  */
-function fibonacciPosition($n, array &$m = [])
+function fibonacciPosition(int $n, array &$m = [])
 {
     if(isset($m[$n])) return $m[$n];
     if($n < 2) return $n;

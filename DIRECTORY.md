@@ -6,6 +6,7 @@
 
 ## Conversions
   * [Binarytodecimal](./Conversions/BinaryToDecimal.php)
+  * [Decimaltobinary](./Conversions/DecimalToBinary.php)
   * [Hexadecimaltodecimal](./Conversions/HexadecimalToDecimal.php)
   * [Octaltodecimal](./Conversions/OctalToDecimal.php)
 

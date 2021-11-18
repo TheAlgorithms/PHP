@@ -10,7 +10,7 @@ class DecimalToBinaryTest extends TestCase
 {
     public function testDecimalToBinary()
     {
-        assertEquals(decimalToBinary(7), '111');
-        assertEquals(decimalToBinary(5), '101');
+        assertEquals(decToBin(7), '111');
+        assertEquals(decToBin(5), '101');
     }
 }

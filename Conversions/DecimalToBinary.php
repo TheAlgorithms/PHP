@@ -6,12 +6,12 @@
  * @param int $dec number to convert
  * @return string
  */
-function decimalToBinary(int $dec, string $result = "")
+function decToBin(int $dec, string $result = "")
 {
     if($dec == 0) return $result;
 
     $result = (string)($dec % 2) . $result;
-    return decimalToBinary($dec / 2, $result);
+    return decToBin($dec / 2, $result);
 }
 
-print decimalToBinary(200);
+print decToBin(200);

@@ -31,7 +31,7 @@
 
 ## Searches
   * [Binary Search](./searches/binary_search.php)
-  * [Fibonacci_Search](./searched/fibonacciSearch.php)
+  * [Fibonaccisearch](./searches/fibonacciSearch.php)
   * [Linear Search](./searches/linear_search.php)
   * [Lower Bound](./searches/lower_bound.php)
   * [Upper Bound](./searches/upper_bound.php)
@@ -59,8 +59,10 @@
   * [Cipherstest](./tests/CiphersTest.php)
   * [Ciphertest](./tests/CipherTest.php)
   * [Conversionstest](./tests/ConversionsTest.php)
+  * [Fibonaccisearchtest](./tests/fibonacciSearchTest.php)
   * [Mathtest](./tests/MathTest.php)
   * [Projecteulertest](./tests/ProjectEulerTest.php)
   * Sorting
     * [Countsorttest](./tests/sorting/countSortTest.php)
+    * [Quicksorttest](./tests/sorting/quickSortTest.php)
   * [Stringtest](./tests/StringTest.php)

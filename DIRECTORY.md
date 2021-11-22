@@ -24,11 +24,13 @@
   * [Problem2](./ProjectEuler/Problem2.php)
   * [Problem3](./ProjectEuler/Problem3.php)
   * [Problem5](./ProjectEuler/Problem5.php)
+  * [Problem6](./ProjectEuler/Problem6.php)
   * [Problem7](./ProjectEuler/Problem7.php)
   * [Problem9](./ProjectEuler/Problem9.php)
 
 ## Searches
   * [Binary Search](./searches/binary_search.php)
+  * [Fibonaccisearch](./searches/fibonacciSearch.php)
   * [Linear Search](./searches/linear_search.php)
   * [Lower Bound](./searches/lower_bound.php)
   * [Upper Bound](./searches/upper_bound.php)
@@ -39,6 +41,7 @@
   * [Countsort](./sorting/countSort.php)
   * [Insertionsort](./sorting/insertionSort.php)
   * [Mergesort](./sorting/mergeSort.php)
+  * [Quicksort](./sorting/quickSort.php)
   * [Radixsort](./sorting/radixSort.php)
   * [Selectionsort](./sorting/selectionSort.php)
 
@@ -55,8 +58,10 @@
   * [Cipherstest](./tests/CiphersTest.php)
   * [Ciphertest](./tests/CipherTest.php)
   * [Conversionstest](./tests/ConversionsTest.php)
+  * [Fibonaccisearchtest](./tests/fibonacciSearchTest.php)
   * [Mathtest](./tests/MathTest.php)
   * [Projecteulertest](./tests/ProjectEulerTest.php)
   * Sorting
     * [Countsorttest](./tests/sorting/countSortTest.php)
+    * [Quicksorttest](./tests/sorting/quickSortTest.php)
   * [Stringtest](./tests/StringTest.php)

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Recursive function to convert a binary number to decimal
+ * Recursive function to convert a decimal number to binary
  * 
  * @param int $dec number to convert
  * @return string

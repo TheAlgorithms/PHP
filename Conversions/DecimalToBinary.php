@@ -11,7 +11,7 @@ function decToBin(int $dec, string $result = "")
     if($dec == 0) return $result;
 
     $result = (string)($dec % 2) . $result;
-    return decToBin($dec / 2, $result);
+    return (int)decToBin($dec / 2, $result);
 }
 
 print decToBin(200);

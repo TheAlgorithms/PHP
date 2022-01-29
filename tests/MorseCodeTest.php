@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../ciphers/morseCode.php';
 
-class CiphersTest extends TestCase
+class MorseCodeTest extends TestCase
 {
     public function testCaesarCipher()
     {

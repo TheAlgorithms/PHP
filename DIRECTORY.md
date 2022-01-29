@@ -59,6 +59,7 @@
   * [Cipherstest](./tests/CiphersTest.php)
   * [Ciphertest](./tests/CipherTest.php)
   * [Conversionstest](./tests/ConversionsTest.php)
+  * [Decimaltobinarytest](./tests/DecimalToBinaryTest.php)
   * [Fibonaccisearchtest](./tests/fibonacciSearchTest.php)
   * [Mathtest](./tests/MathTest.php)
   * [Projecteulertest](./tests/ProjectEulerTest.php)

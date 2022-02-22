@@ -3,6 +3,7 @@
 ## Ciphers
   * [Caesarcipher](./ciphers/caesarCipher.php)
   * [Xorcipher](./ciphers/XORCipher.php)
+  * [Morse Code](./ciphers/morseCode.php)
 
 ## Conversions
   * [Binarytodecimal](./Conversions/BinaryToDecimal.php)

@@ -10,6 +10,6 @@ class MorseCodeTest extends TestCase
 {
     public function testCaesarCipher()
     {
-        assertEquals('Test 123', decode(encode('Test 123')));
+        assertEquals('TEST 123', decode(encode('TEST 123')));
     }
 }

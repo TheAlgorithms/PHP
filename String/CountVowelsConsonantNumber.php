@@ -1,14 +1,13 @@
 <?php
 
 /**
- * This function returns
+ * This a simple function returns
  * the Total number of vowels total 
  * number of consonant and total 
  * numeric number present in the
  * given string using a simple
  * method of looping through all
- * the characters present in
- * the string.
+ * characters present in the string
  *
  * @param string $string
  * 

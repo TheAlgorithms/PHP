@@ -50,10 +50,10 @@
 ## String
   * [Checkanagram](./String/CheckAnagram.php)
   * [Checkpalindrome](./String/CheckPalindrome.php)
-  * [CheckPalindromeString](./String/CheckPalindromeString.php)
+  * [Checkpalindromestring](./String/CheckPalindromeString.php)
+  * [Countsentences](./String/CountSentences.php)
   * [Countvowels](./String/CountVowels.php)
-  * [CountVowelsConsonantNumericNumber](./String/CountVowelsConsonantNumber.php)
-  * [CountSentences](./String/CountSentences.php)
+  * [Countvowelsconsonantnumber](./String/CountVowelsConsonantNumber.php)
   * [Editdistance](./String/EditDistance.php)
   * [Maxcharacter](./String/MaxCharacter.php)
   * [Reversestring](./String/ReverseString.php)

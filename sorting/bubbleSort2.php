@@ -2,6 +2,9 @@
 /*
  * Bubble Sort
  * Compare numbers in an array 2 at a time and switch them if the second number is smaller 
+ *
+ * Author: Andrew S Erwin
+ * Github: https://github.com/andrewerwinxyz
  */
 
 /**

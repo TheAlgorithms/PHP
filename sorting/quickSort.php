@@ -2,6 +2,9 @@
 /*
  * Quick Sort
  * Compare number in an array to the next number and sets to new array (greater than or less than)
+ *
+ * Author: Andrew S Erwin
+ * Github: https://github.com/andrewerwinxyz
  */
 
 /**

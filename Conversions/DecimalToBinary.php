@@ -3,6 +3,11 @@
 /**
  * Recursive function to convert a decimal number to binary
  * 
+ * Author: Andrew S Erwin
+ * Github: https://github.com/andrewerwinxyz
+ */
+
+/**
  * @param int $dec number to convert
  * @return string
  */

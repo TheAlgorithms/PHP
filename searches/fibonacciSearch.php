@@ -3,7 +3,11 @@
 /*
  * Function to find nth number in Fibonaccu sequence.
  * Uses a version of memoization and runs very fast!
+ *
+ * Author: Andrew S Erwin
+ * Github: https://github.com/andrewerwinxyz
  */
+
 
 /**
  * @param int $n position to check

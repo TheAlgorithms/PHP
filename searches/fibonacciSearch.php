@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Function to find nth number in Fibonaccu sequence.
+ * Function to find nth number in Fibonacci sequence.
  * Uses a version of memoization and runs very fast!
  */
 

@@ -64,6 +64,7 @@
 ## Tests
   * [Cipherstest](./tests/CiphersTest.php)
   * [Ciphertest](./tests/CipherTest.php)
+  * [MonoAlphabeticCipherTest](./tests/MonoAlphabeticCipherTest.php)
   * [Conversionstest](./tests/ConversionsTest.php)
   * [Decimaltobinarytest](./tests/DecimalToBinaryTest.php)
   * [Fibonaccisearchtest](./tests/fibonacciSearchTest.php)

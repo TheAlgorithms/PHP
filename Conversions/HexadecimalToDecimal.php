@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This function converts the
  * submitted Octal Number to
@@ -10,6 +11,7 @@
  * (10 * (16 ^ 1) + 11 * (16 ^ 0)) base 10
  * (160 + 11) base 10
  * 171 base 10
+ *
  * @param string $octalNumber
  * @return int
  */

@@ -3,11 +3,11 @@
 use function PHPUnit\Framework\assertEquals;
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
-require_once __DIR__ . '/../Conversions/BinaryToDecimal.php';
-require_once __DIR__ . '/../Conversions/OctalToDecimal.php';
-require_once __DIR__ . '/../Conversions/HexadecimalToDecimal.php';
+require_once __DIR__ . '/../../Conversions/BinaryToDecimal.php';
+require_once __DIR__ . '/../../Conversions/OctalToDecimal.php';
+require_once __DIR__ . '/../../Conversions/HexadecimalToDecimal.php';
 
 class ConversionsTest extends TestCase
 {

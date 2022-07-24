@@ -3,9 +3,7 @@
 ## Ciphers
   * [Caesarcipher](./Ciphers/CaesarCipher.php)
   * [Morsecode](./Ciphers/MorseCode.php)
-
-## Ciphers
-  * [Xorcipher](./ciphers/XORCipher.php)
+  * [Xorcipher](./Ciphers/XORCipher.php)
 
 ## Conversions
   * [Binarytodecimal](./Conversions/BinaryToDecimal.php)

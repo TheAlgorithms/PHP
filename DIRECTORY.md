@@ -1,8 +1,10 @@
 # List of all files
 
 ## Ciphers
-  * [Caesarcipher](./ciphers/caesarCipher.php)
-  * [Morsecode](./ciphers/morseCode.php)
+  * [Caesarcipher](./Ciphers/CaesarCipher.php)
+  * [Morsecode](./Ciphers/MorseCode.php)
+
+## Ciphers
   * [Xorcipher](./ciphers/XORCipher.php)
 
 ## Conversions
@@ -20,22 +22,21 @@
   * [Fibonacci](./Maths/Fibonacci.php)
   * [Fibonacci2](./Maths/Fibonacci2.php)
   * [Perfectsquare](./Maths/PerfectSquare.php)
-
-## Projecteuler
-  * [Problem1](./ProjectEuler/Problem1.php)
-  * [Problem2](./ProjectEuler/Problem2.php)
-  * [Problem3](./ProjectEuler/Problem3.php)
-  * [Problem5](./ProjectEuler/Problem5.php)
-  * [Problem6](./ProjectEuler/Problem6.php)
-  * [Problem7](./ProjectEuler/Problem7.php)
-  * [Problem9](./ProjectEuler/Problem9.php)
+  * Projecteuler
+    * [Problem1](./Maths/ProjectEuler/Problem1.php)
+    * [Problem2](./Maths/ProjectEuler/Problem2.php)
+    * [Problem3](./Maths/ProjectEuler/Problem3.php)
+    * [Problem5](./Maths/ProjectEuler/Problem5.php)
+    * [Problem6](./Maths/ProjectEuler/Problem6.php)
+    * [Problem7](./Maths/ProjectEuler/Problem7.php)
+    * [Problem9](./Maths/ProjectEuler/Problem9.php)
 
 ## Searches
-  * [Binary Search](./searches/binary_search.php)
+  * [Binarysearch](./searches/BinarySearch.php)
   * [Fibonaccisearch](./searches/fibonacciSearch.php)
-  * [Linear Search](./searches/linear_search.php)
-  * [Lower Bound](./searches/lower_bound.php)
-  * [Upper Bound](./searches/upper_bound.php)
+  * [Linearsearch](./searches/LinearSearch.php)
+  * [Lowerbound](./searches/LowerBound.php)
+  * [Upperbound](./searches/UpperBound.php)
 
 ## Sorting
   * [Bubblesort](./sorting/bubbleSort.php)
@@ -47,28 +48,33 @@
   * [Radixsort](./sorting/radixSort.php)
   * [Selectionsort](./sorting/selectionSort.php)
 
-## String
-  * [Checkanagram](./String/CheckAnagram.php)
-  * [Checkpalindrome](./String/CheckPalindrome.php)
-  * [Checkpalindromestring](./String/CheckPalindromeString.php)
-  * [Countsentences](./String/CountSentences.php)
-  * [Countvowels](./String/CountVowels.php)
-  * [Countvowelsconsonantnumber](./String/CountVowelsConsonantNumber.php)
-  * [Editdistance](./String/EditDistance.php)
-  * [Maxcharacter](./String/MaxCharacter.php)
-  * [Reversestring](./String/ReverseString.php)
-  * [Reversewords](./String/ReverseWords.php)
+## Strings
+  * [Checkanagram](./Strings/CheckAnagram.php)
+  * [Checkpalindrome](./Strings/CheckPalindrome.php)
+  * [Checkpalindromestring](./Strings/CheckPalindromeString.php)
+  * [Countsentences](./Strings/CountSentences.php)
+  * [Countvowels](./Strings/CountVowels.php)
+  * [Countvowelsconsonantnumber](./Strings/CountVowelsConsonantNumber.php)
+  * [Editdistance](./Strings/EditDistance.php)
+  * [Maxcharacter](./Strings/MaxCharacter.php)
+  * [Reversestring](./Strings/ReverseString.php)
+  * [Reversewords](./Strings/ReverseWords.php)
 
 ## Tests
-  * [Cipherstest](./tests/CiphersTest.php)
-  * [Ciphertest](./tests/CipherTest.php)
-  * [Conversionstest](./tests/ConversionsTest.php)
-  * [Decimaltobinarytest](./tests/DecimalToBinaryTest.php)
-  * [Fibonaccisearchtest](./tests/fibonacciSearchTest.php)
-  * [Mathtest](./tests/MathTest.php)
-  * [Morsecodetest](./tests/MorseCodeTest.php)
-  * [Projecteulertest](./tests/ProjectEulerTest.php)
+  * Ciphers
+    * [Cipherstest](./tests/Ciphers/CiphersTest.php)
+    * [Ciphertest](./tests/Ciphers/CipherTest.php)
+    * [Morsecodetest](./tests/Ciphers/MorseCodeTest.php)
+  * Conversions
+    * [Conversionstest](./tests/Conversions/ConversionsTest.php)
+  * Maths
+    * [Mathtest](./tests/Maths/MathTest.php)
+    * [Projecteulertest](./tests/Maths/ProjectEulerTest.php)
+  * Searches
+    * [Fibonaccisearchtest](./tests/Searches/FibonacciSearchTest.php)
   * Sorting
-    * [Countsorttest](./tests/sorting/countSortTest.php)
+    * [Countsorttest](./tests/Sorting/CountSortTest.php)
+  * Sorting
     * [Quicksorttest](./tests/sorting/quickSortTest.php)
-  * [Stringtest](./tests/StringTest.php)
+  * Strings
+    * [Stringtest](./tests/Strings/StringTest.php)

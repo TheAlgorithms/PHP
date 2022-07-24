@@ -39,6 +39,7 @@
   * [Upperbound](./searches/UpperBound.php)
 
 ## Sorting
+  * [Arraykeyssort](./sorting/arrayKeysSort.php)
   * [Bubblesort](./sorting/bubbleSort.php)
   * [Bubblesort2](./sorting/bubbleSort2.php)
   * [Countsort](./sorting/countSort.php)
@@ -71,6 +72,8 @@
     * [Projecteulertest](./tests/Maths/ProjectEulerTest.php)
   * Searches
     * [Fibonaccisearchtest](./tests/Searches/FibonacciSearchTest.php)
+  * Sorting
+    * [Arraykeyssorttest](./tests/sorting/arrayKeysSortTest.php)
   * Sorting
     * [Countsorttest](./tests/Sorting/CountSortTest.php)
   * Sorting

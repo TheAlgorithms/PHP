@@ -104,7 +104,7 @@ function decode(string $text): string
         "-----" => "0",
         "/" => " "
     );
-    
+
     $decodedText = ""; // Stores the decoded text
     foreach (explode(" ", $text) as $c) { // Going through each group
         if (array_key_exists($c, $MORSE_CODE)) { // Checks if it is a valid character

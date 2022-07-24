@@ -40,7 +40,11 @@
   * [Arraykeyssort](./sorting/arrayKeysSort.php)
   * [Bubblesort](./sorting/bubbleSort.php)
   * [Bubblesort2](./sorting/bubbleSort2.php)
-  * [Countsort](./sorting/countSort.php)
+
+## Sorting
+  * [Countsort](./Sorting/CountSort.php)
+
+## Sorting
   * [Insertionsort](./sorting/insertionSort.php)
   * [Mergesort](./sorting/mergeSort.php)
   * [Quicksort](./sorting/quickSort.php)

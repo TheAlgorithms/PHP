@@ -63,7 +63,6 @@
 ## Tests
   * Ciphers
     * [Cipherstest](./tests/Ciphers/CiphersTest.php)
-    * [Ciphertest](./tests/Ciphers/CipherTest.php)
     * [Morsecodetest](./tests/Ciphers/MorseCodeTest.php)
   * Conversions
     * [Conversionstest](./tests/Conversions/ConversionsTest.php)

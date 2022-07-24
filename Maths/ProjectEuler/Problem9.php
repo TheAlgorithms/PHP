@@ -14,6 +14,10 @@
  *
  * There exists exactly one Pythagorean triplet for which a + b + c = 1000. Find the product abc.
  */
+
+/**
+ * @return int
+ */
 function problem9(): int
 {
     for ($i = 0; $i <= 300; $i++) {

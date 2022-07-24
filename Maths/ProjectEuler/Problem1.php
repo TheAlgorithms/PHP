@@ -17,6 +17,9 @@
  * @link https://projecteuler.net/problem=1
  */
 
+/**
+ * @return int
+ */
 function problem1a(): int
 {
     $maxNumber = 999; // below 1000
@@ -29,6 +32,9 @@ function problem1a(): int
     });
 }
 
+/**
+ * @return int
+ */
 function problem1b(): int
 {
     $maxNumber = 999; // below 1000

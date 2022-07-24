@@ -26,6 +26,13 @@
  *
  * @link https://projecteuler.net/problem=6
  */
+
+/**
+ * @param int $maxNumber Range from 1 to <maxNumber>
+ *
+ * @return int Difference between the sum of the squares and
+ * the square of the sum
+ */
 function problem6(int $maxNumber = 100): int
 {
     $sumOfSquares = 0;

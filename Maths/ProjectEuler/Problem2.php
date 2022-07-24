@@ -20,6 +20,9 @@
  * @link https://projecteuler.net/problem=2
  */
 
+/**
+ * @return int
+ */
 function problem2(): int
 {
     $maxNumber = 4000000;

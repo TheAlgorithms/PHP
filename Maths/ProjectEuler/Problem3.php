@@ -15,6 +15,10 @@
  *
  * @link https://projecteuler.net/problem=3
  */
+
+/**
+ * @return int
+ */
 function problem3(): int
 {
     $n = 600851475143;

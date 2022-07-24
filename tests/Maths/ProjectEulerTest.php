@@ -2,14 +2,14 @@
 
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__.'/../vendor/autoload.php';
-require_once __DIR__.'/../ProjectEuler/Problem1.php';
-require_once __DIR__.'/../ProjectEuler/Problem2.php';
-require_once __DIR__.'/../ProjectEuler/Problem3.php';
-require_once __DIR__.'/../ProjectEuler/Problem5.php';
-require_once __DIR__.'/../ProjectEuler/Problem6.php';
-require_once __DIR__.'/../ProjectEuler/Problem7.php';
-require_once __DIR__.'/../ProjectEuler/Problem9.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../ProjectEuler/Problem1.php';
+require_once __DIR__ . '/../../ProjectEuler/Problem2.php';
+require_once __DIR__ . '/../../ProjectEuler/Problem3.php';
+require_once __DIR__ . '/../../ProjectEuler/Problem5.php';
+require_once __DIR__ . '/../../ProjectEuler/Problem6.php';
+require_once __DIR__ . '/../../ProjectEuler/Problem7.php';
+require_once __DIR__ . '/../../ProjectEuler/Problem9.php';
 
 class ProjectEulerTest extends TestCase
 {

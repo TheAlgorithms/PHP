@@ -5,14 +5,15 @@ use function PHPUnit\Framework\assertFalse;
 use function PHPUnit\Framework\assertTrue;
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../Maths/Factorial.php';
-require_once __DIR__ . '/../Maths/CheckPrime.php';
-require_once __DIR__ . '/../Maths/AbsoluteMax.php';
-require_once __DIR__ . '/../Maths/AbsoluteMin.php';
-require_once __DIR__ . '/../Maths/PerfectSquare.php';
-require_once __DIR__ . '/../Maths/FastExponentiation.php';
-require_once __DIR__ . '/../Maths/Fibonacci.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../Maths/AbsoluteMax.php';
+require_once __DIR__ . '/../../Maths/AbsoluteMin.php';
+require_once __DIR__ . '/../../Maths/CheckPrime.php';
+require_once __DIR__ . '/../../Maths/Factorial.php';
+require_once __DIR__ . '/../../Maths/FastExponentiation.php';
+require_once __DIR__ . '/../../Maths/Fibonacci.php';
+require_once __DIR__ . '/../../Maths/Fibonacci2.php';
+require_once __DIR__ . '/../../Maths/PerfectSquare.php';
 
 class MathTest extends TestCase
 {
@@ -75,5 +76,14 @@ class MathTest extends TestCase
 
         assertEquals([0, 1, 1, 2, 3], fibonacciWithBinetFormula(5));
         assertEquals([0, 1, 1, 2, 3, 5, 8, 13, 21, 34], fibonacciWithBinetFormula(10));
+    }
+
+    public function testFibonacciGenerator()
+    {
+        assertEquals([0, 1, 1, 2, 3], loop(5, fib()));
+        assertEquals([0, 1, 1, 2, 3, 5, 8, 13, 21, 34], loop(10, fib()));
+
+        assertEquals([0, 1, 1, 2, 3], loop(5, loop()));
+        assertEquals([0, 1, 1, 2, 3, 5, 8, 13, 21, 34], loop(10, fib()));
     }
 }

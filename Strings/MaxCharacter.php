@@ -1,8 +1,6 @@
 <?php
 /**
- * This function returns
- * the character which is
- * repeated maximum no. of
+ * This function returns the character which is repeated maximum number of
  * times in the given string.
  *
  * @param string $string
@@ -20,9 +18,11 @@ function maxCharacter(string $string)
 
     foreach ($characters as $character) {
         $currentCharacterCount = 1;
+
         if (isset($characterCountTable[$character])) {
             $currentCharacterCount = $characterCountTable[$character] + 1;
         }
+
         $characterCountTable[$character] = $currentCharacterCount;
     }
 

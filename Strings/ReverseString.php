@@ -1,6 +1,12 @@
 <?php
 
-function reverse_string(string $string)
+/**
+ * This function returns a given string in reverse order
+ *
+ * @param string $string
+ * @return string
+ */
+function reverseString(string $string)
 {
     $string = trim($string); // Removing leading and trailing spaces
 

@@ -74,7 +74,9 @@
     * [Fibonaccisearchtest](./tests/Searches/FibonacciSearchTest.php)
   * Sorting
     * [Arraykeyssorttest](./tests/sorting/arrayKeysSortTest.php)
+  * Sorting
     * [Countsorttest](./tests/Sorting/CountSortTest.php)
+  * Sorting
     * [Quicksorttest](./tests/sorting/quickSortTest.php)
   * Strings
     * [Stringtest](./tests/Strings/StringTest.php)

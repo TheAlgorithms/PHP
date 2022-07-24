@@ -38,6 +38,7 @@
   * [Upperbound](./Searches/UpperBound.php)
 
 ## Sorting
+  * [Arraykeyssort](./Sorting/ArrayKeysSort.php)
   * [Bubblesort](./Sorting/BubbleSort.php)
   * [Bubblesort2](./Sorting/BubbleSort2.php)
   * [Countsort](./Sorting/CountSort.php)
@@ -72,8 +73,7 @@
   * Searches
     * [Searchestest](./tests/Searches/SearchesTest.php)
   * Sorting
-    * [Arraykeyssorttest](./tests/sorting/arrayKeysSortTest.php)
-  * Sorting
+    * [Arraykeyssorttest](./tests/Sorting/ArrayKeysSortTest.php)
     * [Sortingtests](./tests/Sorting/SortingTests.php)
   * Strings
     * [Stringstest](./tests/Strings/StringsTest.php)

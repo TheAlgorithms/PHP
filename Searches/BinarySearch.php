@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Binary search algorithm iterative approach
  *

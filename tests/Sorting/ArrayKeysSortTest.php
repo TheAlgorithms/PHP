@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../../vendor/autoload.php';
-require_once __DIR__ . '/../../sorting/arrayKeysSort.php';
+require_once __DIR__ . '/../../Sorting/ArrayKeysSort.php';
 
 use PHPUnit\Framework\TestCase;
 

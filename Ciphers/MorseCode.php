@@ -2,7 +2,9 @@
 
 /**
  * Encode text to Morse Code.
+ *
  * @param string text to encode
+ * @return string encoded text
  */
 function encode(string $text): string
 {

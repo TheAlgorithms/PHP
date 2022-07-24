@@ -2,6 +2,7 @@
 
 /**
  * Encrypt given text using caesar cipher.
+ *
  * @param string text text to be encrypted
  * @param int shift number of shifts to be applied
  * @return string new encrypted text

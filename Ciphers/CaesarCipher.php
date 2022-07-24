@@ -37,7 +37,7 @@ function decrypt(string $text, int $shift): string
         if (ctype_alpha($c)) {
             $placeValue = ord($c) - ord(ctype_upper($c) ? 'A' : 'a'); // Getting value of character (i.e. 0-25)
             $placeValue = ($placeValue - $shift) % 26; // Applying decryption formula
-            if ($placeValue < 0) { // Handling case where remainder is negative 
+            if ($placeValue < 0) { // Handling case where remainder is negative
                 $placeValue += 26;
             }
             $placeValue += ord(ctype_upper($c) ? 'A' : 'a');

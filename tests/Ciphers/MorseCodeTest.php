@@ -4,7 +4,7 @@ use function PHPUnit\Framework\assertEquals;
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../ciphers/morseCode.php';
+require_once __DIR__ . '/../../Ciphers/MorseCode.php';
 
 class MorseCodeTest extends TestCase
 {

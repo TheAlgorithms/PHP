@@ -31,11 +31,7 @@
 
 ## Searches
   * [Binarysearch](./Searches/BinarySearch.php)
-
-## Searches
-  * [Fibonaccisearch](./searches/fibonacciSearch.php)
-
-## Searches
+  * [Fibonaccisearch](./Searches/FibonacciSearch.php)
   * [Linearsearch](./Searches/LinearSearch.php)
   * [Lowerbound](./Searches/LowerBound.php)
   * [Upperbound](./Searches/UpperBound.php)

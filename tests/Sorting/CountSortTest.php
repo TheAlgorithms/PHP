@@ -7,8 +7,6 @@ require_once __DIR__ . '/../../sorting/countSort.php';
 
 class countSortTest extends TestCase
 {
-
-
     /**
      * @group countSort
      */
@@ -25,5 +23,4 @@ class countSortTest extends TestCase
         $this->assertEquals($expectedResultOne, $resultOne);
         $this->assertEquals($expectedResultTwo, $resultTwo);
     }
-
 }

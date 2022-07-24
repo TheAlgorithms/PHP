@@ -1,6 +1,7 @@
 <?php
 
-require_once __DIR__ . '/../../Utils/ArrayHelpers.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../Utils/ArrayHelpers.php';
 
 /**
  * Lower Bound of an element is minimum index that an element would be placed

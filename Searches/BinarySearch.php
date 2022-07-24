@@ -61,6 +61,14 @@ function binarySearchIterative($list, $target)
  */
 function binarySearchByRecursion($list, $target, $start, $end)
 {
+    if (count($list) == 0) {
+        return null;
+    }
+
+    if (count($list) < 2) {
+        return $list[0] == $target ? 0 : null;
+    }
+
     if ($start > $end)
         return null;
 

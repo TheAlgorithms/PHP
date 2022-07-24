@@ -32,17 +32,12 @@
 
 ## Searches
   * [Binarysearch](./Searches/BinarySearch.php)
-
-## Searches
-  * [Fibonaccisearch](./searches/fibonacciSearch.php)
-
-## Searches
+  * [Fibonaccisearch](./Searches/FibonacciSearch.php)
   * [Linearsearch](./Searches/LinearSearch.php)
   * [Lowerbound](./Searches/LowerBound.php)
   * [Upperbound](./Searches/UpperBound.php)
 
 ## Sorting
-  * [Arraykeyssort](./sorting/arrayKeysSort.php)
   * [Bubblesort](./Sorting/BubbleSort.php)
   * [Bubblesort2](./Sorting/BubbleSort2.php)
   * [Countsort](./Sorting/CountSort.php)
@@ -75,10 +70,10 @@
     * [Mathstest](./tests/Maths/MathsTest.php)
     * [Projecteulertest](./tests/Maths/ProjectEulerTest.php)
   * Searches
-    * [Binarysearchtest](./tests/Searches/BinarySearchTest.php)
     * [Searchestest](./tests/Searches/SearchesTest.php)
   * Sorting
     * [Arraykeyssorttest](./tests/sorting/arrayKeysSortTest.php)
+  * Sorting
     * [Sortingtests](./tests/Sorting/SortingTests.php)
   * Strings
     * [Stringstest](./tests/Strings/StringsTest.php)

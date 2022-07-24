@@ -34,9 +34,3 @@ function checkPalindromeString(string $string, bool $caseInsensitive = true): St
 
     return $string . " - a palindrome string." . PHP_EOL;
 }
-
-// example
-echo checkPalindromeString('131');
-echo checkPalindromeString('roman');
-echo checkPalindromeString('Level');
-echo checkPalindromeString('palindrome');

@@ -6,16 +6,18 @@ use function PHPUnit\Framework\assertNotEquals;
 use function PHPUnit\Framework\assertTrue;
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
-require_once __DIR__ . '/../String/CheckPalindrome.php';
-require_once __DIR__ . '/../String/ReverseString.php';
-require_once __DIR__ . '/../String/ReverseWords.php';
-require_once __DIR__ . '/../String/CheckAnagram.php';
-require_once __DIR__ . '/../String/MaxCharacter.php';
-require_once __DIR__ . '/../String/CountVowels.php';
-require_once __DIR__ . '/../String/CountConsonants.php';
-require_once __DIR__ . '/../String/Distance.php';
+require_once __DIR__ . '/../../Strings/CheckAnagram.php';
+require_once __DIR__ . '/../../Strings/CheckPalindrome.php';
+require_once __DIR__ . '/../../Strings/CheckPalindrome2.php';
+require_once __DIR__ . '/../../Strings/CountConsonants.php';
+require_once __DIR__ . '/../../Strings/CountSentences.php';
+require_once __DIR__ . '/../../Strings/CountVowels.php';
+require_once __DIR__ . '/../../Strings/Distance.php';
+require_once __DIR__ . '/../../Strings/MaxCharacter.php';
+require_once __DIR__ . '/../../Strings/ReverseString.php';
+require_once __DIR__ . '/../../Strings/ReverseWords.php';
 
 class StringTest extends TestCase
 {
@@ -26,15 +28,6 @@ class StringTest extends TestCase
         assertFalse(isPalindrome('')); // false
         assertTrue(isPalindrome('Sator Arepo Tenet Opera Rotas')); // true
         assertFalse(isPalindrome('Sator Arepo Tenet Opera Rotas', false)); // false since we are doing case-sensitive check
-    }
-
-    public function testIsPalindrome2()
-    {
-        assertTrue(checkPalindromeString('131')); // true
-        assertFalse(checkPalindromeString('roman')); // false
-        assertTrue(checkPalindromeString('Level', true)); // true
-        assertFalse(checkPalindromeString('Level', false)); // false
-        assertFalse(checkPalindromeString('palindrome')); // false
     }
 
     public function testCountSentences()

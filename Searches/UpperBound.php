@@ -1,6 +1,7 @@
 <?php
 
-require_once __DIR__ . '/../../Utils/ArrayHelpers.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../Utils/ArrayHelpers.php';
 
 /**
  * Upper Bound of an element is maximum index that an element would be placed

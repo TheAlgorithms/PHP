@@ -54,10 +54,10 @@ class MathTest extends TestCase
 
     public function testPerfectSquare()
     {
-        assertTrue(is_perfect_square(25));
-        assertFalse(is_perfect_square(43));
-        assertFalse(is_perfect_square(2));
-        assertTrue(is_perfect_square(225));
+        assertTrue(isPerfectSquare(25));
+        assertFalse(isPerfectSquare(43));
+        assertFalse(isPerfectSquare(2));
+        assertTrue(isPerfectSquare(225));
     }
 
     public function testFastExponentiation()
@@ -80,10 +80,10 @@ class MathTest extends TestCase
 
     public function testFibonacciGenerator()
     {
-        assertEquals([0, 1, 1, 2, 3], loop(5, fib()));
-        assertEquals([0, 1, 1, 2, 3, 5, 8, 13, 21, 34], loop(10, fib()));
+        assertEquals([0, 1, 1, 2, 3], iterator_to_array(loop(5, fib())));
+        assertEquals([0, 1, 1, 2, 3, 5, 8, 13, 21, 34], iterator_to_array(loop(10, fib())));
 
-        assertEquals([0, 1, 1, 2, 3], loop(5, loop()));
-        assertEquals([0, 1, 1, 2, 3, 5, 8, 13, 21, 34], loop(10, fib()));
+        assertEquals([0, 1, 1, 2, 3], iterator_to_array(loop(5, fib())));
+        assertEquals([0, 1, 1, 2, 3, 5, 8, 13, 21, 34], iterator_to_array(loop(10, fib())));
     }
 }

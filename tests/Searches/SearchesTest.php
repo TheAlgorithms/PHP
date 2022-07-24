@@ -9,6 +9,8 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../Searches/BinarySearch.php';
 require_once __DIR__ . '/../../Searches/FibonacciSearch.php';
 require_once __DIR__ . '/../../Searches/LinearSearch.php';
+require_once __DIR__ . '/../../Searches/LowerBound.php';
+require_once __DIR__ . '/../../Searches/UpperBound.php';
 
 class SearchesTest extends TestCase
 {
@@ -58,10 +60,10 @@ class SearchesTest extends TestCase
     {
         $list = [0];
         $target = 0;
-        $result = binarySearchByRecursion($list, $target, 0, 1);
+        $result = binarySearchByRecursion($list, $target, 0, 0);
         assertEquals(0, $result);
         $target = 1;
-        $result = binarySearchByRecursion($list, $target, 0, 1);
+        $result = binarySearchByRecursion($list, $target, 0, 0);
         assertEquals(null, $result);
     }
 
@@ -69,13 +71,13 @@ class SearchesTest extends TestCase
     {
         $list = [0, 1];
         $target = 0;
-        $result = binarySearchByRecursion($list, $target, 0, 2);
+        $result = binarySearchByRecursion($list, $target, 0, 1);
         assertEquals(0, $result);
         $target = 1;
-        $result = binarySearchByRecursion($list, $target, 0, 2);
+        $result = binarySearchByRecursion($list, $target, 0, 1);
         assertEquals(1, $result);
         $target = 2;
-        $result = binarySearchByRecursion($list, $target, 0, 2);
+        $result = binarySearchByRecursion($list, $target, 0, 1);
         assertEquals(null, $result);
     }
 
@@ -83,16 +85,16 @@ class SearchesTest extends TestCase
     {
         $list = [0, 1, 2];
         $target = 0;
-        $result = binarySearchByRecursion($list, $target, 0, 3);
+        $result = binarySearchByRecursion($list, $target, 0, 2);
         assertEquals(0, $result);
         $target = 1;
-        $result = binarySearchByRecursion($list, $target, 0, 3);
+        $result = binarySearchByRecursion($list, $target, 0, 2);
         assertEquals(1, $result);
         $target = 2;
-        $result = binarySearchByRecursion($list, $target, 0, 3);
+        $result = binarySearchByRecursion($list, $target, 0, 2);
         assertEquals(2, $result);
         $target = 3;
-        $result = binarySearchByRecursion($list, $target, 0, 3);
+        $result = binarySearchByRecursion($list, $target, 0, 2);
         assertEquals(null, $result);
     }
 

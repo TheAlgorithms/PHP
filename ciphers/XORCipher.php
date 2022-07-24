@@ -1,9 +1,12 @@
 <?php
-// The XOR cipher is a type of additive cipher.
-// Each character is bitwise XORed with the key.
-// We loop through the input string, XORing each
-// character with the key.
-function xor_cipher(string $inp_string, string $key)
+
+/*
+ * The XOR cipher is a type of additive cipher.
+ * Each character is bitwise XORed with the key.
+ * We loop through the input string, XORing each
+ * character with the key.
+ */
+function xorCipher(string $inp_string, string $key)
 {
 
     $key_len = strlen($key);

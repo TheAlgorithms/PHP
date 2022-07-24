@@ -31,11 +31,15 @@
     * [Problem9](./Maths/ProjectEuler/Problem9.php)
 
 ## Searches
-  * [Binarysearch](./searches/BinarySearch.php)
+  * [Binarysearch](./Searches/BinarySearch.php)
+
+## Searches
   * [Fibonaccisearch](./searches/fibonacciSearch.php)
-  * [Linearsearch](./searches/LinearSearch.php)
-  * [Lowerbound](./searches/LowerBound.php)
-  * [Upperbound](./searches/UpperBound.php)
+
+## Searches
+  * [Linearsearch](./Searches/LinearSearch.php)
+  * [Lowerbound](./Searches/LowerBound.php)
+  * [Upperbound](./Searches/UpperBound.php)
 
 ## Sorting
   * [Arraykeyssort](./sorting/arrayKeysSort.php)

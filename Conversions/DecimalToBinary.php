@@ -1,17 +1,25 @@
 <?php
 
 /**
- * Recursive function to convert a decimal number to binary
- * 
- * @param int $dec number to convert
+ * This function converts the
+ * submitted Decimal Number to
+ * Binary Number.
+ *
+ * @param string $decimalNumber
  * @return string
  */
-function decToBin(int $dec, string $result = "")
+function decimalToBinary($decimalNumber)
 {
-    if($dec == 0) return $result;
+    if (!is_numeric($decimalNumber)) {
+        throw new \Exception('Please pass a valid Decimal Number for Converting it to a Binary Number.');
+    }
 
-    $result = (string)($dec % 2) . $result;
-    return (int)decToBin($dec / 2, $result);
+    $binaryNumber = '';
+
+    while ($decimalNumber > 0) {
+        $binaryNumber = ($decimalNumber % 2) . $binaryNumber;
+        $decimalNumber /= 2;
+    }
+
+    return $binaryNumber;
 }
-
-print decToBin(200);

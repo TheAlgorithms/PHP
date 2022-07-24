@@ -78,7 +78,6 @@
     * [Arraykeyssorttest](./tests/sorting/arrayKeysSortTest.php)
   * Sorting
     * [Countsorttest](./tests/Sorting/CountSortTest.php)
-  * Sorting
-    * [Quicksorttest](./tests/sorting/quickSortTest.php)
+    * [Quicksorttest](./tests/Sorting/QuickSortTest.php)
   * Strings
     * [Stringtest](./tests/Strings/StringTest.php)

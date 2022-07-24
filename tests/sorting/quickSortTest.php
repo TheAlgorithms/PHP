@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../../vendor/autoload.php';
-require_once __DIR__ . '/../../sorting/quickSort.php';
+require_once __DIR__ . '/../../Sorting/QuickSort.php';
 
 use PHPUnit\Framework\TestCase;
 

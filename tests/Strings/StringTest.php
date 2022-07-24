@@ -6,15 +6,15 @@ use function PHPUnit\Framework\assertNotEquals;
 use function PHPUnit\Framework\assertTrue;
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
-require_once __DIR__ . '/../String/CheckPalindrome.php';
-require_once __DIR__ . '/../String/ReverseString.php';
-require_once __DIR__ . '/../String/ReverseWords.php';
-require_once __DIR__ . '/../String/CheckAnagram.php';
-require_once __DIR__ . '/../String/MaxCharacter.php';
-require_once __DIR__ . '/../String/CountVowels.php';
-require_once __DIR__ . '/../String/EditDistance.php';
+require_once __DIR__ . '/../../Strings/CheckPalindrome.php';
+require_once __DIR__ . '/../../Strings/ReverseString.php';
+require_once __DIR__ . '/../../Strings/ReverseWords.php';
+require_once __DIR__ . '/../../Strings/CheckAnagram.php';
+require_once __DIR__ . '/../../Strings/MaxCharacter.php';
+require_once __DIR__ . '/../../Strings/CountVowels.php';
+require_once __DIR__ . '/../../Strings/EditDistance.php';
 
 class StringTest extends TestCase
 {

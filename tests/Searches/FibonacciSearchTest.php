@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../searches/fibonacciSearch.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../Searches/FibonacciSearch.php';
 
 use PHPUnit\Framework\TestCase;
 

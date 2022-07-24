@@ -5,14 +5,14 @@ use function PHPUnit\Framework\assertFalse;
 use function PHPUnit\Framework\assertTrue;
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../Maths/Factorial.php';
-require_once __DIR__ . '/../Maths/CheckPrime.php';
-require_once __DIR__ . '/../Maths/AbsoluteMax.php';
-require_once __DIR__ . '/../Maths/AbsoluteMin.php';
-require_once __DIR__ . '/../Maths/PerfectSquare.php';
-require_once __DIR__ . '/../Maths/FastExponentiation.php';
-require_once __DIR__ . '/../Maths/Fibonacci.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../Maths/Factorial.php';
+require_once __DIR__ . '/../../Maths/CheckPrime.php';
+require_once __DIR__ . '/../../Maths/AbsoluteMax.php';
+require_once __DIR__ . '/../../Maths/AbsoluteMin.php';
+require_once __DIR__ . '/../../Maths/PerfectSquare.php';
+require_once __DIR__ . '/../../Maths/FastExponentiation.php';
+require_once __DIR__ . '/../../Maths/Fibonacci.php';
 
 class MathTest extends TestCase
 {

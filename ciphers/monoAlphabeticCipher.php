@@ -2,7 +2,8 @@
 // A mono-alphabetic cipher is a simple substitution cipher
 // https://www.101computing.net/mono-alphabetic-substitution-cipher/
 
-function cipher($key, $alphabet, $text){
+function monoAlphabeticCipher($key, $alphabet, $text){
+
     $cipherText = ''; // the cipher text (can be decrypted and encrypted)
 
     if ( strlen($key) != strlen($alphabet) ) { return false; } // check if the text length matches

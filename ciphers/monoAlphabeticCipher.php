@@ -17,7 +17,8 @@ function monoAlphabeticCipher($key, $alphabet, $text){
     return $cipherText;
 }
 
-function encrypt($key, $alphabet, $text){
+function maEncrypt($key, $alphabet, $text){
+
     return cipher($key, $alphabet, $text);
 }
 

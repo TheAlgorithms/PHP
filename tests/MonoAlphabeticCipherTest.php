@@ -12,7 +12,8 @@ class MonoAlphabeticCipherTest extends TestCase
         $text = "I love1234 GitHub";
         $encryptedText = "O ambg XojFdh";
 
-        assertEquals(encrypt($key, $alphabet, $text), $encryptedText);
+        assertEquals(maEncrypt($key, $alphabet, $text), $encryptedText);
+
         assertEquals(decrypt($key, $alphabet, $encryptedText), "I love GitHub");
     }
 }

@@ -67,5 +67,5 @@ echo "The value n where f() becomes ".
                  "positive first is ".
                  findFirstPositive() ;
  
-// This code is contributed by Sam007
+// This code is contributed by cheeshan
 ?>

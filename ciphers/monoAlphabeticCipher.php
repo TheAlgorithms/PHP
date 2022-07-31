@@ -24,7 +24,8 @@ function maEncrypt($key, $alphabet, $text){
 
 function maDecrypt($key, $alphabet, $text){
 
-    return cipher($alphabet, $key, $text);
+    return monoAlphabeticCipher($alphabet, $key, $text);
+
 }
 
 ?> 

@@ -2,9 +2,9 @@
 
 ## Ciphers
   * [Caesarcipher](./ciphers/caesarCipher.php)
+  * [Monoalphabeticcipher](./ciphers/monoAlphabeticCipher.php)
   * [Morsecode](./ciphers/morseCode.php)
   * [Xorcipher](./ciphers/XORCipher.php)
-  * [MonoAlphabeticCipher](./ciphers/monoAlphabeticCipher.php)
 
 ## Conversions
   * [Binarytodecimal](./Conversions/BinaryToDecimal.php)
@@ -64,11 +64,11 @@
 ## Tests
   * [Cipherstest](./tests/CiphersTest.php)
   * [Ciphertest](./tests/CipherTest.php)
-  * [MonoAlphabeticCipherTest](./tests/MonoAlphabeticCipherTest.php)
   * [Conversionstest](./tests/ConversionsTest.php)
   * [Decimaltobinarytest](./tests/DecimalToBinaryTest.php)
   * [Fibonaccisearchtest](./tests/fibonacciSearchTest.php)
   * [Mathtest](./tests/MathTest.php)
+  * [Monoalphabeticciphertest](./tests/MonoAlphabeticCipherTest.php)
   * [Morsecodetest](./tests/MorseCodeTest.php)
   * [Projecteulertest](./tests/ProjectEulerTest.php)
   * Sorting

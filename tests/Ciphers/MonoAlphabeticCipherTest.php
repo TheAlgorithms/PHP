@@ -2,7 +2,8 @@
 use PHPUnit\Framework\TestCase;
 use function PHPUnit\Framework\assertEquals;
 
-require_once __DIR__ . '/../ciphers/monoAlphabeticCipher.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../Ciphers/MonoAlphabeticCipher.php';
 
 class MonoAlphabeticCipherTest extends TestCase
 {

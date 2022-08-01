@@ -2,7 +2,7 @@
 
 ## Ciphers
   * [Caesarcipher](./Ciphers/CaesarCipher.php)
-  * [Monoalphabeticcipher](./Ciphers/monoAlphabeticCipher.php)
+  * [Monoalphabeticcipher](./Ciphers/MonoAlphabeticCipher.php)
   * [Morsecode](./Ciphers/MorseCode.php)
   * [Xorcipher](./Ciphers/XORCipher.php)
 

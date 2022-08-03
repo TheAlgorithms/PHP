@@ -54,7 +54,7 @@ We want your work to be readable by others; therefore, we encourage you to note 
 - Please write in PHP 7.1+
 - Please put thought into naming of functions, classes, and variables.  Help your reader by using __descriptive names__ that can help you to remove redundant comments
   - Single letter variable names are _old school_ so please avoid them unless their life only spans a few lines
-  - Please follow the [PHP Basic Coding Standard](https://www.php-fig.org/psr/psr-1/) so functionNames should be camelCase, CONSTANTS in UPPER_CASE, Name\Spaces and ClassNames should follow an "autoloading" PSR, etc.
+  - Please follow the [PHP Basic Coding Standard](https://www.php-fig.org/psr/psr-12/) style guide.  So functionNames should be camelCase, CONSTANTS in UPPER_CASE, Name\Spaces and ClassNames should follow an "autoloading" PSR, etc.
 
 - Original code submission require docstrings or comments to describe your work
 

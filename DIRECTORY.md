@@ -42,6 +42,7 @@
   * [Bubblesort](./Sorting/BubbleSort.php)
   * [Bubblesort2](./Sorting/BubbleSort2.php)
   * [Countsort](./Sorting/CountSort.php)
+  * [Combsort](./Sorting/CombSort.php)
   * [Insertionsort](./Sorting/InsertionSort.php)
   * [Mergesort](./Sorting/MergeSort.php)
   * [Quicksort](./Sorting/QuickSort.php)
@@ -74,6 +75,7 @@
     * [Searchestest](./tests/Searches/SearchesTest.php)
   * Sorting
     * [Arraykeyssorttest](./tests/Sorting/ArrayKeysSortTest.php)
+    * [CombSorttest](./tests/Sorting/CombSortTest.php)
     * [Sortingtests](./tests/Sorting/SortingTests.php)
   * Strings
     * [Stringstest](./tests/Strings/StringsTest.php)

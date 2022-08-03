@@ -11,6 +11,8 @@ require_once __DIR__ . '/../../Searches/FibonacciSearch.php';
 require_once __DIR__ . '/../../Searches/LinearSearch.php';
 require_once __DIR__ . '/../../Searches/LowerBound.php';
 require_once __DIR__ . '/../../Searches/UpperBound.php';
+require_once __DIR__ . '/../../Searches/JumpSearch.php';
+
 
 class SearchesTest extends TestCase
 {
@@ -133,4 +135,13 @@ class SearchesTest extends TestCase
         $result = upperBound($list, $target);
         assertEquals(5, $result);
     }
+    
+    public function testJumpSearch()
+    {
+        $list = array( 3,5,6,7,9,10,12,20,22,24);
+        $target = 12;
+        $result = jumpSearch($list, $target);
+        assertEquals(6, $result);
+    }
+    
 }

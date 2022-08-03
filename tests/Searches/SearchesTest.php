@@ -136,14 +136,6 @@ class SearchesTest extends TestCase
         assertEquals(5, $result);
     }
     
-    public function testUpperBound()
-    {
-        $list = [1, 2, 3, 3, 3, 4, 5, 9];
-        $target = 3;
-        $result = upperBound($list, $target);
-        assertEquals(5, $result);
-    }
-    
     public function testJumpSearch()
     {
         $list = array( 3,5,6,7,9,10,12,20,22,24);

@@ -36,6 +36,7 @@
   * [Linearsearch](./Searches/LinearSearch.php)
   * [Lowerbound](./Searches/LowerBound.php)
   * [Upperbound](./Searches/UpperBound.php)
+  * [JumpSearch](./Searches/jumpSearch.php)
 
 ## Sorting
   * [Arraykeyssort](./Sorting/ArrayKeysSort.php)

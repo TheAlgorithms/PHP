@@ -33,10 +33,10 @@
 ## Searches
   * [Binarysearch](./Searches/BinarySearch.php)
   * [Fibonaccisearch](./Searches/FibonacciSearch.php)
+  * [Jumpsearch](./Searches/JumpSearch.php)
   * [Linearsearch](./Searches/LinearSearch.php)
   * [Lowerbound](./Searches/LowerBound.php)
   * [Upperbound](./Searches/UpperBound.php)
-  * [JumpSearch](./Searches/JumpSearch.php)
 
 ## Sorting
   * [Arraykeyssort](./Sorting/ArrayKeysSort.php)

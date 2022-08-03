@@ -38,4 +38,3 @@ function jumpSearch($list,$key)
 
 
 
-?>

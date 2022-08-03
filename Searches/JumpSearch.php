@@ -37,14 +37,5 @@ function jumpSearch($list,$key)
 }
 
 
-/* 
- *Test jumpSearch
- */
-$list = array( 3,5,6,7,9,10,12,20,22,24 );
-$key=12;
-
-/*Print out index of $key in the sorted list*/
-echo "The index of ".$key." is ".jumpSearch($list,$key);
-return 0;
 
 ?>

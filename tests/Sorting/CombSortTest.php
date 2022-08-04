@@ -16,9 +16,9 @@ class combSortTest extends TestCase
 
     public function testCombSort2() 
     {
-        $array = array(-4, -1, 8, 0, 5, 3, 1);
+        $array = array(-4, -1, 7, 0, 5, 3, 1);
         $sorted = gnomeSort($array);
-        $this->assertEquals([-4, -1, 0, 1, 3, 5, 8], $sorted);
+        $this->assertEquals([-4, -1, 0, 1, 3, 5, 7], $sorted);
     }
 
 }

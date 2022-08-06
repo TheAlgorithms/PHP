@@ -48,6 +48,7 @@
   * [Quicksort](./Sorting/QuickSort.php)
   * [Radixsort](./Sorting/RadixSort.php)
   * [Selectionsort](./Sorting/SelectionSort.php)
+  * [Shellsort](./Sorting/ShellSort.php)
 
 ## Strings
   * [Checkanagram](./Strings/CheckAnagram.php)
@@ -77,6 +78,7 @@
     * [Arraykeyssorttest](./tests/Sorting/ArrayKeysSortTest.php)
     * [CombSorttest](./tests/Sorting/CombSortTest.php)
     * [Sortingtests](./tests/Sorting/SortingTests.php)
+    * [CombSorttest](./tests/Sorting/ShellSortTest.php)
   * Strings
     * [Stringstest](./tests/Strings/StringsTest.php)
 

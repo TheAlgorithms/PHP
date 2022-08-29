@@ -3,6 +3,5 @@ parameters:
 	paths:
 		- Maths
         - tests
-    excludes_analyse:
     ignoreErrors: true
-    reportUnmatchedIgnoredErrors: false
+    

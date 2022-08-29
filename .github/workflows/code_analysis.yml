@@ -1,0 +1,54 @@
+name: Code Analysis
+
+on: [push, pull_request]
+
+jobs:
+  # codacy-analysis-cli:
+  #   name: Codacy Analysis CLI
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: checkout code
+  #       uses: actions/checkout@master
+
+  #     - name: Run Codacy Analysic CLI
+  #       uses: codacy/codacy-analysis-cli-action@master
+
+  phpstan:
+    name: Code Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@master
+
+      - name: "Install PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          coverage: "none"
+          php-version: 7.3
+          extensions: xdebug, mbstring
+
+      - name: "Install dependencies"
+        run: "composer install --no-interaction --no-progress"
+
+      - name: "Cache Result cache"
+        uses: actions/cache@v3
+        with:
+          path: ./tmp
+          key: "result-cache-v4"
+
+      - name: "PHPStan with result cache"
+        run: |
+          make phpstan-result-cache
+          bin/phpstan clear-result-cache -c build/phpstan.neon
+          make phpstan-result-cache
+          echo -e "\n\n" >> src/TrinaryLogic.php
+          make phpstan-result-cache
+          make phpstan-result-cache
+      - name: "Upload result cache artifact"
+        uses: actions/upload-artifact@v3
+        with:
+          name: resultCache-ubuntu-latest.php
+          path: tmp/resultCache.php
+
+      # - name: PHPStan Static Analysis
+      #   uses: php-actions/phpstan@

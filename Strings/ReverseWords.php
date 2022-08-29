@@ -9,7 +9,7 @@
  */
 function reverseWords(string $text)
 {
-    $text          = trim($text);
+    $text          =   trim($text);
     $words         = explode(' ', $text);
     $reversedWords = [];
 

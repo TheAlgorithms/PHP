@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  test:
+  build-test:
     name: CI Build
     runs-on: ubuntu-latest
     # strategy:
@@ -42,24 +42,34 @@ jobs:
         tools: cs2pr
 
     - name: Install dependencies with composer
-      run: composer update --no-ansi --no-interaction --no-progress
+      # run: composer update --no-ansi --no-interaction --no-progress
+      uses: php-actions/composer@v6
 
     - name: Run tests with phpunit/phpunit
-      run: vendor/bin/phpunit 
+      # run: vendor/bin/phpunit 
       # --coverage-clover <coverage.xml>
 
-    - name: Check coding standards
-        # continue-on-error: true
-        run: ./vendor/bin/phpcs -s --report-full --report-checkstyle=./phpcs-report.xml
+      uses: php-actions/phpunit@v3
+       env:
+         XDEBUG_MODE: coverage
+       with:
+         bootstrap: vendor/autoload.php
+         configuration: phpunit.xml
+         php_extensions: xdebug
+         args: tests --coverage-clover ./coverage.xml
 
-    - name: Show PHPCS results in PR
-        run: cs2pr ./phpcs-report.xml
+    # - name: Check coding standards
+    #     # continue-on-error: true
+    #     run: ./vendor/bin/phpcs -s --report-full --report-checkstyle=./phpcs-report.xml
 
-    -name: Send coverage report to Codecov
+    # - name: Show PHPCS results in PR
+    #     run: cs2pr ./phpcs-report.xml
+
+    - name: Send coverage report to Codecov
         # if: ${{ success() && matrix.coverage == true }}
         uses: codecov/codecov-action@v3
         with:
-          files: ./build/logs/clover.xml
+          files: ./coverage.xml
           fail_ci_if_error: true
           verbose: true
     # - name: Fix code coverage paths

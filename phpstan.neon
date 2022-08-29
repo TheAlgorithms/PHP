@@ -7,3 +7,4 @@ parameters:
         - Conversions
         - Maths
         - Searches
+        - Utils

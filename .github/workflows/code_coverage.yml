@@ -84,7 +84,7 @@ jobs:
           configuration: phpunit.xml
           php_extensions: xdebug
           args: tests --coverage-clover ./coverage.xml
-          # log-junit: ./coverage.xml
+          log-junit: ./coverage.xml
 
       # - name: Check coding standards
       #   # continue-on-error: true

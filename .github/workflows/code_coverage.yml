@@ -125,16 +125,17 @@ jobs:
         # working-directory: sample
         run: phpdbg -qrr vendor/bin/phpunit --coverage-clover coverage.xml --check-version
 
+
       - name: Coverage Test
-        uses: ./
+        uses: sourcetoad/phpunit-coverage-action@v1
         with:
-          clover_report_path: ./output.xml
+          clover_report_path: coverage.xml
           min_coverage_percent: 50
           fail_build_on_under: true
 
-      - name: Coverage Test (Fail)
-        uses: ./
-        with:
-          clover_report_path: ./output.xml
-          min_coverage_percent: 100
-          fail_build_on_under: false
+      # - name: Coverage Test (Fail)
+      #   uses: ./
+      #   with:
+      #     clover_report_path: ./output.xml
+      #     min_coverage_percent: 100
+      #     fail_build_on_under: false

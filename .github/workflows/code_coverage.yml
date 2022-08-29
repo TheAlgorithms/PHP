@@ -100,7 +100,8 @@ jobs:
 
       - name: Install dependencies
         # working-directory: sample
-        run: composer install --no-suggest --no-interaction --optimize-autoloader --dev rregeer/phpunit-coverage-check
+        run: composer install --no-suggest --no-interaction --optimize-autoloader 
+        run: composer require --dev rregeer/phpunit-coverage-check
 
       - name: PHPUnit Tests
         uses: php-actions/phpunit@v3

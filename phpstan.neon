@@ -1,7 +1,7 @@
 includes:
 parameters:
 	level: 6
-	paths:
+	scanDirectories:
         - Ciphers
         - Conversions
         - DataStructures

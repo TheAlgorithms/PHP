@@ -7,7 +7,6 @@
   <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">tests</directory>
-            <directory suffix=".php">tests</directory>
             <directory suffix=".php">Ciphers</directory>
             <directory suffix=".php">Conversions</directory>
             <directory suffix=".php">Searches</directory>

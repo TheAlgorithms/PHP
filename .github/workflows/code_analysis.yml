@@ -28,7 +28,8 @@ jobs:
           extensions: xdebug, mbstring
 
       - name: "Install dependencies"
-        run: "composer install --no-interaction --no-progress"
+        # run: "composer install --no-interaction --no-progress"
+        run: composer install --no-suggest --no-interaction --optimize-autoloader 
 
       # - name: "Cache Result cache"
       #   uses: actions/cache@v3

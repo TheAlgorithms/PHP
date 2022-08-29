@@ -4,3 +4,4 @@ parameters:
         - DataStructures
     paths:
         - Ciphers
+        - Conversions

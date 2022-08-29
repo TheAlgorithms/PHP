@@ -123,7 +123,7 @@ jobs:
 
       - name: Run tests
         # working-directory: sample
-        run: phpdbg -qrr vendor/bin/phpunit --coverage-clover coverage.xml
+        run: phpdbg -qrr vendor/bin/phpunit --coverage-clover coverage.xml --check-version
 
       - name: Coverage Test
         uses: ./

@@ -1,14 +1,4 @@
-includes:
 parameters:
 	level: 6
-	scanDirectories:
-        - Ciphers
-        - Conversions
-        - DataStructures
-        - Maths
-        - Searches
-        - Sorting
-        - Strings
-        - tests
-        - Utils
-    
+	paths:
+		- tests

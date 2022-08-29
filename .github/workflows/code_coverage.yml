@@ -2,7 +2,6 @@ name: code_coverage
 
 on:
    [push, pull_request]
-    
 
 jobs:
  test:

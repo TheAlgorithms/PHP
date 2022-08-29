@@ -29,4 +29,4 @@ function maDecrypt($key, $alphabet, $text){
 
 }
 
-?> 
+?>

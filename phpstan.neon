@@ -6,3 +6,4 @@ parameters:
         - Ciphers
         - Conversions
         - Maths
+        - Searches

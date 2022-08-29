@@ -1,10 +1,2 @@
 parameters:
-	level: 1
-	paths:
-        - Ciphers
-        - Conversions
-        - Maths
-        - Searches
-        - Sorting
-        - Strings
-        - Utils
+	level: 1      

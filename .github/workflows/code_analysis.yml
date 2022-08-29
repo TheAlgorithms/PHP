@@ -54,3 +54,4 @@ jobs:
         uses: php-actions/phpstan@master
         with:
           path: tests/
+          memory_limit: 256M

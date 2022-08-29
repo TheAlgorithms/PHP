@@ -7,4 +7,6 @@ parameters:
         - Conversions
         - Maths
         - Searches
+        - Sorting
+        - Strings
         - Utils

@@ -7,32 +7,6 @@ on:
     branches: [ master ]
 
 jobs:
-  # build-test:
-  #   name: CI Build
-  #   runs-on: ubuntu-latest
-  #   #2 strategy:
-  #   #2   matrix:
-  #   # 2    php: ['5.6', '7.0', '7.1', '7.2', '7.3', '7.4', '8.0']
-  #   # 2    coverage: [false]
-  #   # 2    experimental: [false]
-  #   # 2    include:
-  #   #  2     # Run code coverage on high/low PHP.
-  #   #  2     - php: '5.5'
-  #   #   2      coverage: true
-  #   #  2       experimental: false
-  #   #  2     - php: '8.1'
-  #   #  2       coverage: true
-  #   #  2       experimental: false
-
-  #   # 2      # Experimental builds. These are allowed to fail.
-  #   # 2      - php: '8.2'
-  #   # 2        coverage: false
-  #   #  2       experimental: true
-    
-  #   steps:
-  #   - name: Checkout
-  #     uses: actions/checkout@v2
-
   #   - name: Setup PHP with Xdebug
   #     uses: shivammathur/setup-php@v2
   #     with:
@@ -58,9 +32,7 @@ jobs:
   #     # 2   php_extensions: xdebug
   #     # 2   args: tests --coverage-clover ./coverage.xml
 
-  #   #2 - name: Check coding standards
-  #   #2     # continue-on-error: true
-  #   #2     run: ./vendor/bin/phpcs -s --report-full --report-checkstyle=./phpcs-report.xml
+  
 
   #   #2 - name: Show PHPCS results in PR
   #   #2     run: cs2pr ./phpcs-report.xml
@@ -101,7 +73,7 @@ jobs:
       - name: Install dependencies
         # working-directory: sample
         run: composer install --no-suggest --no-interaction --optimize-autoloader 
-             composer require --dev rregeer/phpunit-coverage-check
+            #  composer require --dev rregeer/phpunit-coverage-check
 
       - name: PHPUnit Tests
         uses: php-actions/phpunit@v3
@@ -113,7 +85,9 @@ jobs:
           php_extensions: xdebug
           args: tests --coverage-clover coverage.xml
 
-
+      - name: Check coding standards
+        # continue-on-error: true
+        run: ./vendor/bin/phpcs -s --report-full --report-checkstyle=./phpcs-report.xml
 
       # - name: Run tests
       #   # working-directory: sample

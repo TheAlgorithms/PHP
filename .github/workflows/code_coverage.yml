@@ -100,8 +100,8 @@ jobs:
 
       - name: Install dependencies
         # working-directory: sample
-        run: composer install --no-suggest --no-interaction --optimize-autoloader
-     
+        run: composer install --no-suggest --no-interaction --optimize-autoloader --dev rregeer/phpunit-coverage-check
+
       - name: PHPUnit Tests
         uses: php-actions/phpunit@v3
         env:
@@ -110,7 +110,7 @@ jobs:
           bootstrap: vendor/autoload.php
           configuration: phpunit.xml
           php_extensions: xdebug
-          args: tests --coverage-clover ./coverage.xml
+          args: tests --coverage-clover coverage.xml
 
 
 
@@ -126,7 +126,7 @@ jobs:
         uses: codecov/codecov-action@v3.1.0
         with:
         #   version: "v0.1.15"
-          files: ./coverage.xml
+          files: coverage.xml
           verbose: true
 
       - name: Code Coverage Report

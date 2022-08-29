@@ -123,18 +123,18 @@ jobs:
 
       - name: Run tests
         # working-directory: sample
-        run: vendor/bin/phpunit --coverage-clover=output.xml
+        run: vendor/bin/phpunit --coverage-clover
 
       - name: Coverage Test
         uses: ./
         with:
-          clover_report_path: sample/output.xml
+          clover_report_path: ./output.xml
           min_coverage_percent: 50
           fail_build_on_under: true
 
       - name: Coverage Test (Fail)
         uses: ./
         with:
-          clover_report_path: sample/output.xml
+          clover_report_path: ./output.xml
           min_coverage_percent: 100
           fail_build_on_under: false

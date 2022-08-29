@@ -42,6 +42,13 @@ class MathTest extends TestCase
         $this->expectException(\Exception::class);
         absolute_max();
     }
+    
+    public function testAbsoluteMax()
+    {
+        assertEquals(1, test(1));
+        $this->expectException(\Exception::class);
+        test();
+    }
 
     public function testAbsoluteMin()
     {

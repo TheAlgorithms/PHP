@@ -1,5 +1,4 @@
 parameters:
-	level: 6
+	level: 2
 	paths:
-		- Conversions
-    ignoreErrors:
+		- Ciphers

@@ -126,8 +126,8 @@ jobs:
         # run: phpdbg -qrr vendor/bin/phpunit --coverage-clover coverage.xml --check-version
         run:  vendor/bin/phpunit --coverage-clover=coverage.xml --check-version
 
-      - name: Fix code coverage paths
-        run: sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace/@g' coverage.xml
+      # - name: Fix code coverage paths
+      #   run: sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace/@g' coverage.xml
 
       - name: Codecov
         uses: codecov/codecov-action@v3.1.0

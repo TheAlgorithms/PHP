@@ -75,15 +75,15 @@ jobs:
         run: composer install --no-suggest --no-interaction --optimize-autoloader 
             #  composer require --dev rregeer/phpunit-coverage-check
 
-      - name: PHPUnit Tests
-        uses: php-actions/phpunit@v3
-        env:
-          XDEBUG_MODE: coverage
-        with:
-          bootstrap: vendor/autoload.php
-          configuration: phpunit.xml
-          php_extensions: xdebug
-          args: tests --coverage-clover coverage.xml
+      # - name: PHPUnit Tests
+      #   uses: php-actions/phpunit@v3
+      #   env:
+      #     XDEBUG_MODE: coverage
+      #   with:
+      #     bootstrap: vendor/autoload.php
+      #     configuration: phpunit.xml
+      #     php_extensions: xdebug
+      #     args: tests --coverage-clover coverage.xml
           
       # - name: Check coding standards
       #   # continue-on-error: true

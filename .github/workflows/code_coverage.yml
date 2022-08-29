@@ -125,7 +125,8 @@ jobs:
         # working-directory: sample
         run: phpdbg -qrr vendor/bin/phpunit --coverage-clover coverage.xml --check-version
 
-
+      - name: Free Code Coverage
+        uses: SamuelCabralCruz/free-code-coverage@v0.0.13
       # - name: Coverage Test
       #   uses: sourcetoad/phpunit-coverage-action@v1
       #   with:

@@ -46,3 +46,4 @@ jobs:
         with:
           configuration: phpstan.neon
           memory_limit: 256M
+          path: */**.php

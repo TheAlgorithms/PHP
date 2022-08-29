@@ -3,16 +3,6 @@ name: Code Analysis
 on: [push, pull_request]
 
 jobs:
-  # codacy-analysis-cli:
-  #   name: Codacy Analysis CLI
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: checkout code
-  #       uses: actions/checkout@master
-
-  #     - name: Run Codacy Analysic CLI
-  #       uses: codacy/codacy-analysis-cli-action@master
-
   phpstan:
     name: Code Analysis
     runs-on: ubuntu-latest

@@ -1,4 +1,12 @@
 parameters:
-	level: 1
-	paths:
-		- Ciphers
+    level: 1
+    excludePaths:
+        - DataStructures
+    paths:
+        - Ciphers
+        - Conversions
+        - Maths
+        - Searches
+        - Sorting
+        - Strings
+        - Utils

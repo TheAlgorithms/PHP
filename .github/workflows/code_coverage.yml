@@ -83,8 +83,8 @@ jobs:
           bootstrap: vendor/autoload.php
           configuration: phpunit.xml
           php_extensions: xdebug
-          args: tests --coverage-clover coverage.xml
-          log-junit: coverage.xml
+          args: tests --coverage-clover ./coverage.xml
+          # log-junit: ./coverage.xml
 
       # - name: Check coding standards
       #   # continue-on-error: true
@@ -103,7 +103,7 @@ jobs:
         with:
         #   version: "v0.1.15"
           token: ${{ secrets.CODE_COV_TOKEN }}
-          files: coverage.xml
+          files: ./coverage.xml
           verbose: true
 
       # - name: Code Coverage Report

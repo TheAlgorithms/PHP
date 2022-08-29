@@ -1,6 +1,13 @@
 parameters:
-	level: 5
+	level: 6
 	paths:
-		- Maths
+        - Ciphers
+        - Conversions
+        - DataStructures
+        - Maths
+        - Searches
+        - Sorting
+        - Strings
         - tests
+        - Utils
     

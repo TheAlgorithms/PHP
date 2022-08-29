@@ -1,4 +1,8 @@
 parameters:
-	level: 6
+	level: 5
 	paths:
 		- Maths
+        - tests
+    excludes_analyse:
+    ignoreErrors: true
+    reportUnmatchedIgnoredErrors: false

@@ -1,7 +1,7 @@
 parameters:
 	level: 1
 	paths:
-		- Ciphers
+        - Ciphers
         - Conversions
         - Maths
         - Searches

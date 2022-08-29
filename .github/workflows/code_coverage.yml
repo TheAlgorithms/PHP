@@ -85,9 +85,9 @@ jobs:
           php_extensions: xdebug
           args: tests --coverage-clover coverage.xml
 
-      - name: Check coding standards
-        # continue-on-error: true
-        run: ./vendor/bin/phpcs -s --report-full --report-checkstyle=./phpcs-report.xml
+      # - name: Check coding standards
+      #   # continue-on-error: true
+      #   run: ./vendor/bin/phpcs -s --report-full --report-checkstyle=./phpcs-report.xml
 
       # - name: Run tests
       #   # working-directory: sample

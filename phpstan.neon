@@ -2,5 +2,5 @@ parameters:
     level: 1
     excludePaths:
         - DataStructures
-    Paths:
+    paths:
         - Ciphers

@@ -7,6 +7,13 @@
   <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">tests</directory>
+            <directory suffix=".php">tests</directory>
+            <directory suffix=".php">Ciphers</directory>
+            <directory suffix=".php">Conversions</directory>
+            <directory suffix=".php">Searches</directory>
+            <directory suffix=".php">Sorting</directory>
+            <directory suffix=".php">Strings</directory>
+            <directory suffix=".php">Utils</directory>
         </whitelist>
   </filter>
   <coverage cacheDirectory=".phpunit.cache/code-coverage" processUncoveredFiles="true">

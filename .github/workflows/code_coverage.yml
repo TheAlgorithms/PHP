@@ -14,18 +14,20 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Install composer and dependencies
-       uses: php-actions/composer@v6
+    - name: Setup PHP with Xdebug
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
+        coverage: xdebug
 
-     - name: PHPUnit Tests
-       uses: php-actions/phpunit@v3
-       env:
-         XDEBUG_MODE: coverage
-       with:
-         bootstrap: vendor/autoload.php
-         configuration: phpunit.xml
-         php_extensions: xdebug
-         args: tests --coverage-clover ./coverage.xml
+    - name: Install dependencies with composer
+      run: composer update --no-ansi --no-interaction --no-progress
+
+    - name: Run tests with phpunit/phpunit
+      run: vendor/bin/phpunit --coverage-clover=coverage.xml
+
+    - name: Fix code coverage paths
+      run: sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace/@g' coverage.xml
 
     - name: Code Coverage Report
       uses: irongut/CodeCoverageSummary@v1.3.0
@@ -40,9 +42,9 @@ jobs:
         output: both
         thresholds: '60 80'
 
-    # - name: Add Coverage PR Comment
-    #   uses: marocchino/sticky-pull-request-comment@v2
-    #   if: github.event_name == 'pull_request'
-    #   with:
-    #     recreate: true
-    #     path: code-coverage-results.md
+    - name: Add Coverage PR Comment
+      uses: marocchino/sticky-pull-request-comment@v2
+      if: github.event_name == 'pull_request'
+      with:
+        recreate: true
+        path: code-coverage-results.md

@@ -14,19 +14,20 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
+    - name: Setup PHP with Xdebug
+      uses: shivammathur/setup-php@v2
       with:
-        dotnet-version: 6.0.x
+        php-version: '8.1'
+        coverage: xdebug
 
-    - name: Restore Dependencies
-      run: dotnet restore src/Example.sln
+    - name: Install dependencies with composer
+      run: composer update --no-ansi --no-interaction --no-progress
 
-    - name: Build
-      run: dotnet build src/Example.sln --configuration Release --no-restore
+    - name: Run tests with phpunit/phpunit
+      run: vendor/bin/phpunit --coverage-clover=coverage.xml
 
-    - name: Test
-      run: dotnet test src/Example.sln --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage
+    - name: Fix code coverage paths
+      run: sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace/@g' coverage.xml
 
     - name: Code Coverage Report
       uses: irongut/CodeCoverageSummary@v1.3.0

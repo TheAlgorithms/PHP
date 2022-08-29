@@ -36,19 +36,21 @@ jobs:
           path: ./tmp
           key: "result-cache-v4"
 
-      - name: "PHPStan with result cache"
-        run: |
-          make phpstan-result-cache
-          bin/phpstan clear-result-cache -c build/phpstan.neon
-          make phpstan-result-cache
-          echo -e "\n\n" >> src/TrinaryLogic.php
-          make phpstan-result-cache
-          make phpstan-result-cache
-      - name: "Upload result cache artifact"
-        uses: actions/upload-artifact@v3
-        with:
-          name: resultCache-ubuntu-latest.php
-          path: tmp/resultCache.php
+      # - name: "PHPStan with result cache"
+      #   run: |
+      #     make phpstan-result-cache
+      #     bin/phpstan clear-result-cache -c build/phpstan.neon
+      #     make phpstan-result-cache
+      #     echo -e "\n\n" >> src/TrinaryLogic.php
+      #     make phpstan-result-cache
+      #     make phpstan-result-cache
+      # - name: "Upload result cache artifact"
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: resultCache-ubuntu-latest.php
+      #     path: tmp/resultCache.php
 
-      # - name: PHPStan Static Analysis
-      #   uses: php-actions/phpstan@
+      - name: PHPStan Static Analysis
+        uses: php-actions/phpstan@master
+        with:
+          path: tests/

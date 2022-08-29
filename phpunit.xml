@@ -9,12 +9,12 @@
             <directory suffix=".php">tests</directory>
         </whitelist>
   </filter>
-  <coverage cacheDirectory=".phpunit.cache/code-coverage" processUncoveredFiles="true">
+  <!-- <coverage cacheDirectory=".phpunit.cache/code-coverage" processUncoveredFiles="true">
     <include>
         <directory suffix=".php">tests</directory>
     </include>
     <report>
         <clover outputFile="coverage.xml" />
     </report>
-  </coverage>
+  </coverage> -->
 </phpunit>

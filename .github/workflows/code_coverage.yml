@@ -1,7 +1,7 @@
 name: Code Coverage Summary
 uses: irongut/CodeCoverageSummary@v1.3.0
-with:
-  filename: code_coverage.yml
+# with:
+#   filename: code_coverage.yml
 
 name: .Net 6 CI Build
 
@@ -52,4 +52,3 @@ jobs:
       with:
         recreate: true
         path: code-coverage-results.md
-        

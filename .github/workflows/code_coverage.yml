@@ -45,7 +45,8 @@ jobs:
       run: composer update --no-ansi --no-interaction --no-progress
 
     - name: Run tests with phpunit/phpunit
-      run: vendor/bin/phpunit --coverage-clover=coverage.xml
+      run: vendor/bin/phpunit 
+      # --coverage-clover <coverage.xml>
 
     - name: Check coding standards
         # continue-on-error: true

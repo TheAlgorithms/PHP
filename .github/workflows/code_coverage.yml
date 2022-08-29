@@ -117,7 +117,7 @@ jobs:
       - name: Run tests
         # working-directory: sample
         # run: phpdbg -qrr vendor/bin/phpunit --coverage-clover coverage.xml --check-version
-        run:  vendor/bin/phpunit --coverage-xml coverageNew.xml --version 
+        run:  vendor/bin/phpunit --coverage-clover coverageNew.xml 
 
       # - name: Fix code coverage paths
       #   run: sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace/@g' coverage.xml

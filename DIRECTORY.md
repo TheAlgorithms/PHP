@@ -30,6 +30,8 @@
     * [Problem7](./Maths/ProjectEuler/Problem7.php)
     * [Problem9](./Maths/ProjectEuler/Problem9.php)
 
+## [Reversewords](.//ReverseWords.php)
+
 ## Searches
   * [Binarysearch](./Searches/BinarySearch.php)
   * [Fibonaccisearch](./Searches/FibonacciSearch.php)
@@ -80,6 +82,7 @@
     * [Sortingtests](./tests/Sorting/SortingTests.php)
   * Strings
     * [Stringstest](./tests/Strings/StringsTest.php)
+  * [Stringstest](./tests/StringsTest.php)
 
 ## Utils
   * [Arrayhelpers](./Utils/ArrayHelpers.php)

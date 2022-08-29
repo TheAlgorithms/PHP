@@ -118,7 +118,7 @@ jobs:
           coverage: xdebug
 
       - name: Install dependencies
-        working-directory: sample
+        # working-directory: sample
         run: composer install --no-suggest --no-interaction --optimize-autoloader
 
       - name: Run tests
@@ -138,4 +138,3 @@ jobs:
           clover_report_path: sample/output.xml
           min_coverage_percent: 100
           fail_build_on_under: false
-          

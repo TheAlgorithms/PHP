@@ -129,8 +129,8 @@ jobs:
       - name: Coverage Test
         uses: sourcetoad/phpunit-coverage-action@v1
         with:
-          clover_report_path: coverage.xml
-          min_coverage_percent: 50
+          clover_report_path: output.xml
+          min_coverage_percent: 80
           fail_build_on_under: true
 
       # - name: Coverage Test (Fail)

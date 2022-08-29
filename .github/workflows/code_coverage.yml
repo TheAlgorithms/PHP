@@ -3,7 +3,7 @@ uses: irongut/CodeCoverageSummary@v1.3.0
 # with:
 #   filename: code_coverage.yml
 
-name: .Net 6 CI Build
+# name: .Net 6 CI Build
 
 on:
   push:

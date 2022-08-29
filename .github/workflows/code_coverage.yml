@@ -28,7 +28,7 @@ jobs:
       # --coverage-clover=coverage.xml
 
     -name: Send coverage report to Codecov
-        if: ${{ success() && matrix.coverage == true }}
+        # if: ${{ success() && matrix.coverage == true }}
         uses: codecov/codecov-action@v3
         with:
           files: ./build/logs/clover.xml

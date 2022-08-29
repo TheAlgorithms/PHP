@@ -48,7 +48,7 @@ jobs:
       run: vendor/bin/phpunit --coverage-clover=coverage.xml
 
     - name: Check coding standards
-        continue-on-error: true
+        # continue-on-error: true
         run: ./vendor/bin/phpcs -s --report-full --report-checkstyle=./phpcs-report.xml
 
     - name: Show PHPCS results in PR

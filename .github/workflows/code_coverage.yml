@@ -122,7 +122,7 @@ jobs:
         run: composer install --no-suggest --no-interaction --optimize-autoloader
 
       - name: Run tests
-        working-directory: sample
+        # working-directory: sample
         run: vendor/bin/phpunit --coverage-clover=output.xml
 
       - name: Coverage Test

@@ -5,3 +5,4 @@ parameters:
     paths:
         - Ciphers
         - Conversions
+        - Maths

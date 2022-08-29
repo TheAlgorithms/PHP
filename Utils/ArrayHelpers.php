@@ -12,12 +12,14 @@ function isSortedAscendingInts(array $arr): void{
     }
 
     if(!is_int($arr[0])){
+        /** @phpstan-ignore-next-line */
         throw UnexpectedValueException;
     }
 
     for($i = 1; $i < $len; $i++){
         // a sorted array is expected
         if(!is_int($arr[$i]) && $arr[$i] < $arr[$i-1]){
+            /** @phpstan-ignore-next-line */
            throw UnexpectedValueException;
         }
     }

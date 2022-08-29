@@ -1,6 +1,5 @@
 parameters:
 	level: 6
 	paths:
-		- Ciphers
+		- Conversions
     ignoreErrors:
-		- '#Call to an undefined method [a-zA-Z0-9\\_]'

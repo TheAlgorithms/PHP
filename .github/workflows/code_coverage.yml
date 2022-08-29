@@ -75,25 +75,6 @@ jobs:
   #   #2 - name: Fix code coverage paths
   #   #2   run: sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace/@g' coverage.xml
 
-  #   - name: Code Coverage Report
-  #     uses: irongut/CodeCoverageSummary@v1.3.0
-  #     with:
-  #       filename: coverage/**/coverage.cobertura.xml
-  #       badge: true
-  #       fail_below_min: true
-  #       format: markdown
-  #       hide_branch_rate: false
-  #       hide_complexity: true
-  #       indicators: true
-  #       output: both
-  #       thresholds: '60 80'
-
-  #   - name: Add Coverage PR Comment
-  #     uses: marocchino/sticky-pull-request-comment@v2
-  #     if: github.event_name == 'pull_request'
-  #     with:
-  #       recreate: true
-  #       path: code-coverage-results.md
  test:
     runs-on: ubuntu-latest
 
@@ -121,10 +102,13 @@ jobs:
         # working-directory: sample
         run: composer install --no-suggest --no-interaction --optimize-autoloader
 
-      - name: Run tests
-        # working-directory: sample
-        # run: phpdbg -qrr vendor/bin/phpunit --coverage-clover coverage.xml --check-version
-        run:  vendor/bin/phpunit --coverage-xml coverageNew.xml --version 
+
+      - name: Generate phpunit file
+        run: vendor/bin/phpunit --generate-configuration
+      # - name: Run tests
+      #   # working-directory: sample
+      #   # run: phpdbg -qrr vendor/bin/phpunit --coverage-clover coverage.xml --check-version
+      #   run:  vendor/bin/phpunit --coverage-xml coverageNew.xml --version 
 
       # - name: Fix code coverage paths
       #   run: sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace/@g' coverage.xml

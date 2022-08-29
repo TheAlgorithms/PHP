@@ -24,10 +24,18 @@ jobs:
       run: composer update --no-ansi --no-interaction --no-progress
 
     - name: Run tests with phpunit/phpunit
-      run: vendor/bin/phpunit --coverage-clover=coverage.xml
+      run: vendor/bin/phpunit 
+      # --coverage-clover=coverage.xml
 
-    - name: Fix code coverage paths
-      run: sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace/@g' coverage.xml
+    -name: Send coverage report to Codecov
+        if: ${{ success() && matrix.coverage == true }}
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./build/logs/clover.xml
+          fail_ci_if_error: true
+          verbose: true
+    # - name: Fix code coverage paths
+    #   run: sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace/@g' coverage.xml
 
     - name: Code Coverage Report
       uses: irongut/CodeCoverageSummary@v1.3.0
@@ -42,9 +50,9 @@ jobs:
         output: both
         thresholds: '60 80'
 
-    - name: Add Coverage PR Comment
-      uses: marocchino/sticky-pull-request-comment@v2
-      if: github.event_name == 'pull_request'
-      with:
-        recreate: true
-        path: code-coverage-results.md
+    # - name: Add Coverage PR Comment
+    #   uses: marocchino/sticky-pull-request-comment@v2
+    #   if: github.event_name == 'pull_request'
+    #   with:
+    #     recreate: true
+    #     path: code-coverage-results.md

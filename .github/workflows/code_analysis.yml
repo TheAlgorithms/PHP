@@ -30,11 +30,11 @@ jobs:
       - name: "Install dependencies"
         run: "composer install --no-interaction --no-progress"
 
-      - name: "Cache Result cache"
-        uses: actions/cache@v3
-        with:
-          path: ./tmp
-          key: "result-cache-v4"
+      # - name: "Cache Result cache"
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: ./tmp
+      #     key: "result-cache-v4"
 
       # - name: "PHPStan with result cache"
       #   run: |

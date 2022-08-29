@@ -4,4 +4,3 @@ parameters:
 		- Maths
         - tests
     ignoreErrors: true
-    

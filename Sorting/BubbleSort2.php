@@ -10,6 +10,7 @@
 function bubbleSort2(array $input)
 {
     // Return nothing if input is empty
+    /** @phpstan-ignore-next-line */
     if(!isset($input))
     {
         return [];

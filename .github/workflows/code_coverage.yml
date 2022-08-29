@@ -114,18 +114,20 @@ jobs:
 
 
 
-      - name: Run tests
-        # working-directory: sample
-        # run: phpdbg -qrr vendor/bin/phpunit --coverage-clover coverage.xml --check-version
-        run:  vendor/bin/phpunit --coverage-clover coverageNew.xml 
+      # - name: Run tests
+      #   # working-directory: sample
+      #   # run: phpdbg -qrr vendor/bin/phpunit --coverage-clover coverage.xml --check-version
+      #   run:  vendor/bin/phpunit --coverage-clover coverageNew.xml 
 
       # - name: Fix code coverage paths
       #   run: sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace/@g' coverage.xml
 
       - name: Codecov
         uses: codecov/codecov-action@v3.1.0
-        # with:
+        with:
         #   version: "v0.1.15"
+          files: ./coverage.xml
+          verbose: true
 
       - name: Code Coverage Report
         uses: irongut/CodeCoverageSummary@v1.3.0

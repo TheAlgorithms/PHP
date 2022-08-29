@@ -23,3 +23,8 @@ function absolute_max(...$numbers)
 
     return $absoluteMax;
 }
+
+function test(...$numbers)
+{
+    return $numbers;
+}

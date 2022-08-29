@@ -126,12 +126,20 @@ jobs:
         run: phpdbg -qrr vendor/bin/phpunit --coverage-clover coverage.xml --check-version
 
 
-      - name: Coverage Test
-        uses: sourcetoad/phpunit-coverage-action@v1
+      # - name: Coverage Test
+      #   uses: sourcetoad/phpunit-coverage-action@v1
+      #   with:
+      #     clover_report_path: output.xml
+      #     min_coverage_percent: 80
+      #     fail_build_on_under: true
+
+      name: Send coverage report to Codecov
+        # if: ${{ success() && matrix.coverage == true }}
+        uses: codecov/codecov-action@v3
         with:
-          clover_report_path: output.xml
-          min_coverage_percent: 80
-          fail_build_on_under: true
+          files: ./logs/clover.xml
+          fail_ci_if_error: true
+          verbose: true
 
       # - name: Coverage Test (Fail)
       #   uses: ./

@@ -75,24 +75,25 @@ jobs:
         run: composer install --no-suggest --no-interaction --optimize-autoloader 
             #  composer require --dev rregeer/phpunit-coverage-check
 
-      # - name: PHPUnit Tests
-      #   uses: php-actions/phpunit@v3
-      #   env:
-      #     XDEBUG_MODE: coverage
-      #   with:
-      #     bootstrap: vendor/autoload.php
-      #     configuration: phpunit.xml
-      #     php_extensions: xdebug
-      #     args: tests --coverage-clover coverage.xml
-          
+      - name: PHPUnit Tests
+        uses: php-actions/phpunit@v3
+        env:
+          XDEBUG_MODE: coverage
+        with:
+          bootstrap: vendor/autoload.php
+          configuration: phpunit.xml
+          php_extensions: xdebug
+          args: tests --coverage-clover coverage.xml
+          output: coverage.xml
+
       # - name: Check coding standards
       #   # continue-on-error: true
       #   run: ./vendor/bin/phpcs -s --report-full --report-checkstyle=./phpcs-report.xml
 
-      - name: Run tests
-        # working-directory: sample
-        # run: phpdbg -qrr vendor/bin/phpunit --coverage-clover coverage.xml --check-version
-        run:  vendor/bin/phpunit --log-junit ../coverageNew.xml 
+      # - name: Run tests
+      #   # working-directory: sample
+      #   # run: phpdbg -qrr vendor/bin/phpunit --coverage-clover coverage.xml --check-version
+      #   run:  vendor/bin/phpunit --log-junit ../coverageNew.xml 
 
       # - name: Fix code coverage paths
       #   run: sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace/@g' coverage.xml

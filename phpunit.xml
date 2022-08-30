@@ -2,12 +2,6 @@
   <testsuites>
     <testsuite name="FullTest">
       <directory>tests</directory>
-      <directory>Ciphers</directory>
-      <directory>Conversions</directory>
-      <directory>Searches</directory>
-      <directory>Sorting</directory>
-      <directory>Strings</directory>
-      <directory>Utils</directory>
     </testsuite>
   </testsuites>
   <filter>

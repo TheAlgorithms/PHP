@@ -2,6 +2,12 @@
   <testsuites>
     <testsuite name="FullTest">
       <directory>tests</directory>
+      <directory>Ciphers</directory>
+      <directory>Conversions</directory>
+      <directory>Searches</directory>
+      <directory>Sorting</directory>
+      <directory>Strings</directory>
+      <directory>Utils</directory>
     </testsuite>
   </testsuites>
   <filter>
@@ -17,13 +23,13 @@
   </filter>
   <coverage cacheDirectory=".phpunit.cache/code-coverage" processUncoveredFiles="true">
     <include>
-<!--         <directory suffix=".php">tests</directory>
+        <directory suffix=".php">tests</directory>
         <directory suffix=".php">Ciphers</directory>
         <directory suffix=".php">Conversions</directory>
         <directory suffix=".php">Searches</directory>
         <directory suffix=".php">Sorting</directory>
         <directory suffix=".php">Strings</directory>
-        <directory suffix=".php">Utils</directory> -->
+        <directory suffix=".php">Utils</directory>
     </include>
     <report>
         <clover outputFile="coverage.xml" />

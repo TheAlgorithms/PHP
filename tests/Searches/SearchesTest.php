@@ -12,7 +12,7 @@ require_once __DIR__ . '/../../Searches/LinearSearch.php';
 require_once __DIR__ . '/../../Searches/LowerBound.php';
 require_once __DIR__ . '/../../Searches/UpperBound.php';
 require_once __DIR__ . '/../../Searches/JumpSearch.php';
-
+require_once __DIR__ . '/../../Searches/TernarySearch.php';
 
 class SearchesTest extends TestCase
 {
@@ -144,4 +144,12 @@ class SearchesTest extends TestCase
         assertEquals(6, $result);
     }
     
+    public function testTernarySearch()
+    {
+        $list = array(1,2,3,4,5,6,7,8,9,10);
+        $len = 9;
+        $target = 8;
+        $result = TernarySearch($list, $target, 0, $len);
+        assertEquals(7, $result);
+    }
 }

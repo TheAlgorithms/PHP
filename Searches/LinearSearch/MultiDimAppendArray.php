@@ -26,13 +26,14 @@ $a=array(
   6 => array("A" => 4, "B"=> "G"),
   7 => array("A" => 5, "B"=> "H"),
 );
+// PREPARE UNIQUE KEY 'A'
 $b = unique_multidim_array($a, 'A');
 // PROCESSING SEARCH AND REDECRALRE VALUE
-while ($i < count($a)) {
-  if($a[$i]["A"] == $a[$j]["A"]){
-    $b[$i]['item'][$j]=$a[$j];
+while ($i < count($a)) { // LOOPING UNTIL END OF ARRAY
+  if($a[$i]["A"] == $a[$j]["A"]){ // IF KEY IS SAME ADD COUNTER
+    $b[$i]['item'][$j]=$a[$j]; // ADD VALUE TO UNIQUE KEY
     $j++;
-  }else{
+  }else{  // SELE ADD ANOTHER COUNTER
     $i++;
   }
 }

@@ -21,6 +21,9 @@
   * [Fibonacci](./Maths/Fibonacci.php)
   * [Fibonacci2](./Maths/Fibonacci2.php)
   * [Perfectsquare](./Maths/PerfectSquare.php)
+  * [Mean](./Maths/Mean.php)
+  * [Median](./Maths/Median.php)
+  * [Mode](./Maths/Mode.php)
   * Projecteuler
     * [Problem1](./Maths/ProjectEuler/Problem1.php)
     * [Problem2](./Maths/ProjectEuler/Problem2.php)

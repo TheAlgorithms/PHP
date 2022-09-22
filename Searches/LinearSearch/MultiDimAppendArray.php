@@ -1,4 +1,3 @@
-<pre>
 <?php
 // UNIQUE MULTIDIM ARRAY
 function unique_multidim_array($array, $key)
@@ -16,10 +15,6 @@ function unique_multidim_array($array, $key)
   return $temp_array;
 }
 
-// 
-$j = 0;
-$i = 0;
-
 // PREPARE DATA
 $a=array(
   0 => array("A" => 1, "B"=> "A"),
@@ -32,39 +27,18 @@ $a=array(
   7 => array("A" => 5, "B"=> "H"),
 );
 $b = unique_multidim_array($a, 'A');
-// FROM THIS
-print_r("====================================================<br>");
-foreach($a as $key => $value){
-	print("|".$value["A"]."|<br>");
-	print("|  ".$value["B"]."|<br>");
-print_r("====================================================<br>");
-}
-
 // PROCESSING SEARCH AND REDECRALRE VALUE
 while ($i < count($a)) {
   if($a[$i]["A"] == $a[$j]["A"]){
-    echo $i.' '.$j;
     $b[$i]['item'][$j]=$a[$j];
     $j++;
   }else{
     $i++;
   }
-  echo '<br>';
 }
 
-// TO RESULT
-echo 'start<br>';
-print_r("====================================================<br>");
-foreach ($b as $key => $value) {
-  print_r("|".$value['A']."|<br>");
-  foreach ($value['item'] as $key => $item) {
-    print_r("|  ".$item['B']."|<br>");
-    # code...
-  }
-print_r("====================================================<br>");
-}
-echo 'end<br>';
-?>
+
+
 /* FROM THIS
 ====================================================
 |1|
@@ -114,5 +88,4 @@ echo 'end<br>';
 |  H|
 ====================================================
 */
-
-</pre>
+?>

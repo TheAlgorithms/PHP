@@ -15,6 +15,7 @@
 ## Maths
   * [Absolutemax](./Maths/AbsoluteMax.php)
   * [Absolutemin](./Maths/AbsoluteMin.php)
+  * [Checkpalindrome](./Maths/CheckPalindrome.php)
   * [Checkprime](./Maths/CheckPrime.php)
   * [Factorial](./Maths/Factorial.php)
   * [Fastexponentiation](./Maths/FastExponentiation.php)

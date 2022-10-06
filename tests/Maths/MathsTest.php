@@ -8,6 +8,7 @@ use PHPUnit\Framework\TestCase;
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../Maths/AbsoluteMax.php';
 require_once __DIR__ . '/../../Maths/AbsoluteMin.php';
+require_once __DIR__ . '/../../Maths/CheckPalindrome.php';
 require_once __DIR__ . '/../../Maths/CheckPrime.php';
 require_once __DIR__ . '/../../Maths/Factorial.php';
 require_once __DIR__ . '/../../Maths/FastExponentiation.php';
@@ -24,6 +25,14 @@ class MathTest extends TestCase
         assertEquals(1, factorial(0));
         $this->expectException(\Exception::class);
         factorial(-25);
+    }
+
+    public function testIsPalindrome()
+    {
+        assertTrue(isPalindrome(121));
+        assertFalse(isPalindrome(123));
+        assertTrue(isPalindrome(123321));
+        assertFalse(isPalindrome(2468));
     }
 
     public function testIsPrime()

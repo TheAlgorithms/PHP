@@ -5,7 +5,7 @@
  * @param integer $input
  * @return boolean
  */
-function isPalindrome(int $input): bool
+function isNumberPalindromic(int $input): bool
 {
   $arr = array_map('intval', str_split($input));
   $arrRev = array_reverse($arr);

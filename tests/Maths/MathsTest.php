@@ -27,12 +27,13 @@ class MathTest extends TestCase
         factorial(-25);
     }
 
-    public function testIsPalindrome()
+public function testIsNumberPalindromic()
+
     {
-        assertTrue(isPalindrome(121));
-        assertFalse(isPalindrome(123));
-        assertTrue(isPalindrome(123321));
-        assertFalse(isPalindrome(2468));
+        assertTrue(isNumberPalindromic(121));
+        assertFalse(isNumberPalindromic(123));
+        assertTrue(isNumberPalindromic(123321));
+        assertFalse(isNumberPalindromic(2468));
     }
 
     public function testIsPrime()

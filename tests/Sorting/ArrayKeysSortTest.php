@@ -5,7 +5,7 @@ require_once __DIR__ . '/../../Sorting/ArrayKeysSort.php';
 
 use PHPUnit\Framework\TestCase;
 
-class arrayKeysSortTest extends TestCase
+class ArrayKeysSortTest extends TestCase
 {
     public function testArrayKeysSort() {
         //test array of arrays

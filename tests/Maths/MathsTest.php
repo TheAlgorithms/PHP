@@ -16,7 +16,7 @@ require_once __DIR__ . '/../../Maths/Fibonacci.php';
 require_once __DIR__ . '/../../Maths/Fibonacci2.php';
 require_once __DIR__ . '/../../Maths/PerfectSquare.php';
 
-class MathTest extends TestCase
+class MathsTest extends TestCase
 {
     public function testFactorial()
     {

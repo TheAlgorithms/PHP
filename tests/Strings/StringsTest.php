@@ -19,7 +19,7 @@ require_once __DIR__ . '/../../Strings/MaxCharacter.php';
 require_once __DIR__ . '/../../Strings/ReverseString.php';
 require_once __DIR__ . '/../../Strings/ReverseWords.php';
 
-class StringTest extends TestCase
+class StringsTest extends TestCase
 {
     public function testIsPalindrome()
     {

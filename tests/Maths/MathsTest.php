@@ -7,6 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../Maths/AbsoluteMax.php';
+require_once __DIR__ . '/../../Maths/ArmstrongNumber.php';
 require_once __DIR__ . '/../../Maths/AbsoluteMin.php';
 require_once __DIR__ . '/../../Maths/CheckPalindrome.php';
 require_once __DIR__ . '/../../Maths/CheckPrime.php';
@@ -25,6 +26,15 @@ class MathsTest extends TestCase
         assertEquals(1, factorial(0));
         $this->expectException(\Exception::class);
         factorial(-25);
+    }
+
+public function testIsNumberArmstrong()
+
+    {
+        assertTrue(isNumberArmstrong(153));
+        assertFalse(isNumberArmstrong(123));
+        assertTrue(isNumberArmstrong(370));
+        assertFalse(isNumberArmstrong(2468));
     }
 
 public function testIsNumberPalindromic()

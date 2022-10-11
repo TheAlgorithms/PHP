@@ -15,7 +15,7 @@
 ## Maths
   * [Absolutemax](./Maths/AbsoluteMax.php)
   * [Absolutemin](./Maths/AbsoluteMin.php)
-  * [ArmstrongNumber](./Maths/ArmstrongNumber.php)
+  * [Armstrongnumber](./Maths/ArmstrongNumber.php)
   * [Checkpalindrome](./Maths/CheckPalindrome.php)
   * [Checkprime](./Maths/CheckPrime.php)
   * [Factorial](./Maths/Factorial.php)

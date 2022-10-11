@@ -15,6 +15,7 @@ require_once __DIR__ . '/../../Maths/Factorial.php';
 require_once __DIR__ . '/../../Maths/FastExponentiation.php';
 require_once __DIR__ . '/../../Maths/Fibonacci.php';
 require_once __DIR__ . '/../../Maths/Fibonacci2.php';
+require_once __DIR__ . '/../../Maths/NeonNumber.php';
 require_once __DIR__ . '/../../Maths/PerfectSquare.php';
 
 class MathsTest extends TestCase
@@ -98,6 +99,13 @@ public function testIsNumberPalindromic()
         assertEquals([0, 1, 1, 2, 3, 5, 8, 13, 21, 34], fibonacciWithBinetFormula(10));
     }
 
+    public function testNeonNumber()
+    {
+        assertTrue(isNumberNeon(1));
+        assertFalse(isNumberNeon(43));
+        assertFalse(isNumberNeon(123));
+        assertTrue(isNumberNeon(9));
+    }
     public function testFibonacciGenerator()
     {
         assertEquals([0, 1, 1, 2, 3], iterator_to_array(loop(5, fib())));

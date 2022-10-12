@@ -22,7 +22,7 @@
   * [Fastexponentiation](./Maths/FastExponentiation.php)
   * [Fibonacci](./Maths/Fibonacci.php)
   * [Fibonacci2](./Maths/Fibonacci2.php)
-  * [Neon Number](./Maths/NeonNumber.php)
+  * [Neonnumber](./Maths/NeonNumber.php)
   * [Perfectsquare](./Maths/PerfectSquare.php)
   * Projecteuler
     * [Problem1](./Maths/ProjectEuler/Problem1.php)

@@ -32,7 +32,7 @@ class MathsTest extends TestCase
         factorial(-25);
     }
 
-public function testIsNumberArmstrong()
+    public function testIsNumberArmstrong()
 
     {
         assertTrue(isNumberArmstrong(153));
@@ -41,7 +41,7 @@ public function testIsNumberArmstrong()
         assertFalse(isNumberArmstrong(2468));
     }
 
-public function testIsNumberPalindromic()
+    public function testIsNumberPalindromic()
 
     {
         assertTrue(isNumberPalindromic(121));
@@ -109,6 +109,7 @@ public function testIsNumberPalindromic()
         assertFalse(isNumberNeon(123));
         assertTrue(isNumberNeon(9));
     }
+    
     public function testFibonacciGenerator()
     {
         assertEquals([0, 1, 1, 2, 3], iterator_to_array(loop(5, fib())));

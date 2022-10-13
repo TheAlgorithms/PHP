@@ -33,7 +33,6 @@ class MathsTest extends TestCase
     }
 
     public function testIsNumberArmstrong()
-
     {
         assertTrue(isNumberArmstrong(153));
         assertFalse(isNumberArmstrong(123));
@@ -42,7 +41,6 @@ class MathsTest extends TestCase
     }
 
     public function testIsNumberPalindromic()
-
     {
         assertTrue(isNumberPalindromic(121));
         assertFalse(isNumberPalindromic(123));

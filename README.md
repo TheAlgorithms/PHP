@@ -1,17 +1,21 @@
 # The Algorithms - PHP
 
-### All algorithms implemented in Php (for education)
+### All algorithms implemented in PHP - for education
 
-These implementations are for learning purposes. They may be less efficient than the implementations in the Php standard library.
+The Implementations in this repo are examples and may be less efficient than the implementations in the PHP standard Library.
 
-## Contribution Guidelines
 
-Read our [Contribution Guidelines](CONTRIBUTING.md) before you contribute.
+## Contribution Guidelines:
 
-## Community Channel
+To Contribute to this repo please take your time to read our
+[Contribution Guidelines](CONTRIBUTING.md) before you contribute.
 
-We're on [Gitter](https://gitter.im/TheAlgorithms)!  Please join us.
+## Community Channels
+
+We're on [Discord](https://discord.gg/c7MnfGFGa6) and [Gitter](https://gitter.im/TheAlgorithms)! Community channels are great for you to ask questions and get help. Please join us!
 
 ## List of Algorithms
 
-See our [directory](DIRECTORY.md).
+See the [directory](DIRECTORY.md) for easier navigation and to view the current list of algorithms.
+
+Thanks for contributing!!

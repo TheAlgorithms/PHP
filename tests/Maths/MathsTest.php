@@ -17,6 +17,9 @@ require_once __DIR__ . '/../../Maths/Fibonacci.php';
 require_once __DIR__ . '/../../Maths/Fibonacci2.php';
 require_once __DIR__ . '/../../Maths/NeonNumber.php';
 require_once __DIR__ . '/../../Maths/PerfectSquare.php';
+require_once __DIR__ . '/../../Maths/Mean.php';
+require_once __DIR__ . '/../../Maths/Median.php';
+require_once __DIR__ . '/../../Maths/Mode.php';
 
 class MathsTest extends TestCase
 {
@@ -29,8 +32,7 @@ class MathsTest extends TestCase
         factorial(-25);
     }
 
-public function testIsNumberArmstrong()
-
+    public function testIsNumberArmstrong()
     {
         assertTrue(isNumberArmstrong(153));
         assertFalse(isNumberArmstrong(123));
@@ -38,8 +40,7 @@ public function testIsNumberArmstrong()
         assertFalse(isNumberArmstrong(2468));
     }
 
-public function testIsNumberPalindromic()
-
+    public function testIsNumberPalindromic()
     {
         assertTrue(isNumberPalindromic(121));
         assertFalse(isNumberPalindromic(123));
@@ -106,6 +107,7 @@ public function testIsNumberPalindromic()
         assertFalse(isNumberNeon(123));
         assertTrue(isNumberNeon(9));
     }
+    
     public function testFibonacciGenerator()
     {
         assertEquals([0, 1, 1, 2, 3], iterator_to_array(loop(5, fib())));
@@ -113,5 +115,26 @@ public function testIsNumberPalindromic()
 
         assertEquals([0, 1, 1, 2, 3], iterator_to_array(loop(5, fib())));
         assertEquals([0, 1, 1, 2, 3, 5, 8, 13, 21, 34], iterator_to_array(loop(10, fib())));
+    }
+
+    public function testMean()
+    {
+        mean(2,3,9,6);
+        mean(7);
+        mean(42,77,89,35);
+    }
+
+    public function testMedian()
+    {
+        median(1,2,8,11);
+        median(40,90);
+        median(35,66,91,27);
+    }
+
+    public function testMode()
+    {
+        mode(4,2,7,9,2,9,0,4,2);
+        mode(21,72,40,21,0,99,21,99,0,40);
+        mode(3,3,3,3);
     }
 }

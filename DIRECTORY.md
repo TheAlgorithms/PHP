@@ -11,6 +11,7 @@
   * [Decimaltobinary](./Conversions/DecimalToBinary.php)
   * [Hexadecimaltodecimal](./Conversions/HexadecimalToDecimal.php)
   * [Octaltodecimal](./Conversions/OctalToDecimal.php)
+  * [SpeedConversion](./Conversions/SpeedConversion.php)
 
 ## Maths
   * [Absolutemax](./Maths/AbsoluteMax.php)

@@ -38,6 +38,7 @@
 
 ## Searches
   * [Binarysearch](./Searches/BinarySearch.php)
+  * [ExponentialSearch](./Searches/ExponentialSearch.php)
   * [Fibonaccisearch](./Searches/FibonacciSearch.php)
   * [Jumpsearch](./Searches/JumpSearch.php)
   * [Linearsearch](./Searches/LinearSearch.php)

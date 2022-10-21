@@ -5,6 +5,3 @@
 composer.lock
 
 .phpunit.result.cache
-
-GITING.md
-.gitignore

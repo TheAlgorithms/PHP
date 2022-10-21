@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Exponential Search Algorithm
  *
@@ -7,8 +6,6 @@
  * The first stage determines a range in which the search key would reside 
  **** if it were in the list.
  * In the second stage, a binary search is performed on this range.
- *
- *
  */
  
  
@@ -99,4 +96,4 @@ function Test(){
  
  var_dump($result);
 }
-Test();
+//Test();

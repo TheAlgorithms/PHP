@@ -13,6 +13,9 @@
   * [Octaltodecimal](./Conversions/OctalToDecimal.php)
   * [Speedconversion](./Conversions/SpeedConversion.php)
 
+## Graphs
+  * [DeothFirstSearch](./Graphs/DepthFirstSearch.php)
+
 ## Maths
   * [Absolutemax](./Maths/AbsoluteMax.php)
   * [Absolutemin](./Maths/AbsoluteMin.php)

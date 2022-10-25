@@ -11,15 +11,22 @@
   * [Decimaltobinary](./Conversions/DecimalToBinary.php)
   * [Hexadecimaltodecimal](./Conversions/HexadecimalToDecimal.php)
   * [Octaltodecimal](./Conversions/OctalToDecimal.php)
+  * [Speedconversion](./Conversions/SpeedConversion.php)
 
 ## Maths
   * [Absolutemax](./Maths/AbsoluteMax.php)
   * [Absolutemin](./Maths/AbsoluteMin.php)
+  * [Armstrongnumber](./Maths/ArmstrongNumber.php)
+  * [Checkpalindrome](./Maths/CheckPalindrome.php)
   * [Checkprime](./Maths/CheckPrime.php)
   * [Factorial](./Maths/Factorial.php)
   * [Fastexponentiation](./Maths/FastExponentiation.php)
   * [Fibonacci](./Maths/Fibonacci.php)
   * [Fibonacci2](./Maths/Fibonacci2.php)
+  * [Mean](./Maths/Mean.php)
+  * [Median](./Maths/Median.php)
+  * [Mode](./Maths/Mode.php)
+  * [Neonnumber](./Maths/NeonNumber.php)
   * [Perfectsquare](./Maths/PerfectSquare.php)
   * Projecteuler
     * [Problem1](./Maths/ProjectEuler/Problem1.php)

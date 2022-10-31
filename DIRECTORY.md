@@ -14,7 +14,7 @@
   * [Speedconversion](./Conversions/SpeedConversion.php)
 
 ## Graphs
-  * [DepthFirstSearch](./Graphs/DepthFirstSearch.php)
+  * [Depthfirstsearch](./Graphs/DepthFirstSearch.php)
 
 ## Maths
   * [Absolutemax](./Maths/AbsoluteMax.php)
@@ -79,6 +79,8 @@
     * [Morsecodetest](./tests/Ciphers/MorseCodeTest.php)
   * Conversions
     * [Conversionstest](./tests/Conversions/ConversionsTest.php)
+  * Graphs
+    * [Depthfirstsearchtest](./tests/Graphs/DepthFirstSearchTest.php)
   * Maths
     * [Mathstest](./tests/Maths/MathsTest.php)
     * [Projecteulertest](./tests/Maths/ProjectEulerTest.php)

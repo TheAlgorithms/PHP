@@ -14,7 +14,7 @@
   * [Speedconversion](./Conversions/SpeedConversion.php)
 
 ## Graphs
-  * [DeothFirstSearch](./Graphs/DepthFirstSearch.php)
+  * [DepthFirstSearch](./Graphs/DepthFirstSearch.php)
 
 ## Maths
   * [Absolutemax](./Maths/AbsoluteMax.php)

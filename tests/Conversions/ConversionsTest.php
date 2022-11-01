@@ -9,6 +9,7 @@ require_once __DIR__ . '/../../Conversions/BinaryToDecimal.php';
 require_once __DIR__ . '/../../Conversions/DecimalToBinary.php';
 require_once __DIR__ . '/../../Conversions/OctalToDecimal.php';
 require_once __DIR__ . '/../../Conversions/HexadecimalToDecimal.php';
+require_once __DIR__ . '/../../Conversions/SpeedConversion.php';
 
 class ConversionsTest extends TestCase
 {
@@ -68,5 +69,21 @@ class ConversionsTest extends TestCase
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage('Please pass a valid Hexadecimal Number for Converting it to a Decimal Number.');
         hexToDecimal("this is a string");
+    }
+
+    public function testSpeedConversion()
+    {
+        assertEquals(convertSpeed(5, 'm/s', 'mph'), 11.18);
+        assertEquals(convertSpeed(5, 'ft/s', 'km/h'), 5.49);
+        assertEquals(convertSpeed(3, 'km/h', 'km/h'), 3);
+        assertEquals(convertSpeed(7, 'kn', 'km/h'), 12.96);
+        assertEquals(convertSpeed(12, 'mph', 'km/h'), 19.31);
+        assertEquals(convertSpeed(0.514, 'm/s', 'kn'), 1);
+
+        $this->expectException(\Exception::class);
+        convertSpeed('1', 'km/h', 'mph');
+
+        $this->expectException(\Exception::class);
+        convertSpeed(1, 'km/h', 'miles');
     }
 }

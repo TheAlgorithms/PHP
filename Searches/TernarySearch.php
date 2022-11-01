@@ -12,7 +12,7 @@ function ternarySearchByRecursion ($arr, $key, $low, $high) {
   
     //Return -1 if high lesser than low, we can't find item in the whole array
     if ($high < $low) {
-      return -1;
+      return null;
     }
     
     
@@ -79,5 +79,5 @@ function ternarySearchIterative ($arr, $key) {
     }
   }
   // the $key was not found
-  return -1;
+  return null;
 }

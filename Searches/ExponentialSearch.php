@@ -7,14 +7,6 @@
  **** if it were in the list.
  * In the second stage, a binary search is performed on this range.
  */
- 
- 
- 
- 
- 
- 
- 
- 
  /**
   * @param Array $arr
   * @param int $value
@@ -25,18 +17,12 @@
 function binarySearch ($arr, $value, $floor, $ceiling) {
   // Get $middle index
   $mid = floor(($floor + $ceiling) / 2);
-
   // Return position if $value is at the $mid position
   if ($arr[$mid] === $value) {
     return (int) $mid;
   }
-  
   //Return -1 is range is wrong
   if ($floor > $ceiling) return -1;
-
-
-
-
   // search the left part of the $array
   // If the $middle element is great than the $value
   if ($arr[$mid] > $value) {
@@ -48,22 +34,13 @@ function binarySearch ($arr, $value, $floor, $ceiling) {
     return binarySearch($arr, $value, $mid + 1, $ceiling);
   }
 }
-
-
-
-
-
-
-
-
- 
  /**
   * @param Array $arr
   * @param int $length
   * @param int $value
   * @return int
   **/
-function exponentialSearch ($arr, $length, $value) {
+function exponentialSearch ($arr, $value) {
   // If $value is the first element of the $array return this position
   if ($arr[0] === $value) {
     return 0;
@@ -71,6 +48,7 @@ function exponentialSearch ($arr, $length, $value) {
 
   // Find range for binary search
   $i = 1;
+  $length = count($arr);
   while ($i < $length && $arr[$i] <= $value) {
     $i = $i * 2;
   }
@@ -80,20 +58,3 @@ function exponentialSearch ($arr, $length, $value) {
   // Call binary search for the range found above
   return binarySearch($arr, $value, $floor, $ceiling);
 }
-
-
-
-
-
-
-
-
-
-function Test(){
- $arr = [2, 3, 4, 7, 28, 35, 63, 98];
- $value = 35;
- $result = exponentialSearch($arr, count($arr), $value);
- 
- var_dump($result);
-}
-//Test();

@@ -11,6 +11,10 @@
   * [Decimaltobinary](./Conversions/DecimalToBinary.php)
   * [Hexadecimaltodecimal](./Conversions/HexadecimalToDecimal.php)
   * [Octaltodecimal](./Conversions/OctalToDecimal.php)
+  * [Speedconversion](./Conversions/SpeedConversion.php)
+
+## Graphs
+  * [Depthfirstsearch](./Graphs/DepthFirstSearch.php)
 
 ## Maths
   * [Absolutemax](./Maths/AbsoluteMax.php)
@@ -76,6 +80,8 @@
     * [Morsecodetest](./tests/Ciphers/MorseCodeTest.php)
   * Conversions
     * [Conversionstest](./tests/Conversions/ConversionsTest.php)
+  * Graphs
+    * [Depthfirstsearchtest](./tests/Graphs/DepthFirstSearchTest.php)
   * Maths
     * [Mathstest](./tests/Maths/MathsTest.php)
     * [Projecteulertest](./tests/Maths/ProjectEulerTest.php)

@@ -193,16 +193,16 @@ class SearchesTest extends TestCase
     {
         $list = [2, 6, 8, 10, 12, 14, 16, 18, 20, 22, 26, 34, 39];
         $target = 20;
-        $result = testInterpolationSearch($list, $target);
+        $result = interpolationSearch($list, $target);
         assertEquals(8, $result);
         $target = 12;
-        $result = testInterpolationSearch($list, $target);
+        $result = interpolationSearch($list, $target);
         assertEquals(4, $result);
         $target = 1000;
-        $result = testInterpolationSearch($list, $target);
+        $result = interpolationSearch($list, $target);
         assertEquals(null, $result);
         $target = 39;
-        $result = testInterpolationSearch($list, $target);
+        $result = interpolationSearch($list, $target);
         assertEquals(12, $result);
     }
 }

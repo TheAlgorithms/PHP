@@ -14,6 +14,7 @@ require_once __DIR__ . '/../../Searches/UpperBound.php';
 require_once __DIR__ . '/../../Searches/JumpSearch.php';
 require_once __DIR__ . '/../../Searches/ExponentialSearch.php';
 require_once __DIR__ . '/../../Searches/TernarySearch.php';
+require_once __DIR__ . '/../../Searches/InterpolationSearch.php';
 
 
 class SearchesTest extends TestCase

@@ -44,6 +44,7 @@
   * [Binarysearch](./Searches/BinarySearch.php)
   * [Exponentialsearch](./Searches/ExponentialSearch.php)
   * [Fibonaccisearch](./Searches/FibonacciSearch.php)
+  * [Interpolationsearch](./Searches/InterpolationSearch.php)
   * [Jumpsearch](./Searches/JumpSearch.php)
   * [Linearsearch](./Searches/LinearSearch.php)
   * [Lowerbound](./Searches/LowerBound.php)

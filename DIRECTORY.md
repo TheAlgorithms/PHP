@@ -15,6 +15,7 @@
 
 ## Graphs
   * [Depthfirstsearch](./Graphs/DepthFirstSearch.php)
+  * [Breadthfirstsearch](./Graphs/BreadthFirstSearch.php)
 
 ## Maths
   * [Absolutemax](./Maths/AbsoluteMax.php)

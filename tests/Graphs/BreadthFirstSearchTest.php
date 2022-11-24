@@ -1,13 +1,13 @@
 <?php
 
-// require_once __DIR__ . '/../../vendor/autoload.php';
-require_once __DIR__ . '/../../Graphs/DepthFirstSearch.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../Graphs/BreadthFirstSearch.php';
 
 use PHPUnit\Framework\TestCase;
 
 class DepthFirstSearchTest extends TestCase
 {
-    public function testDepthFirstSearch()
+    public function testBreadthFirstSearch()
     {
         $graph = array(
             "A" => ["B", "C", "D"],
@@ -18,10 +18,10 @@ class DepthFirstSearchTest extends TestCase
             "F" => ["C", "E", "G"],
             "G" => ["F"],
         );
-        $visited = dfs($graph, "A");
-        $this->assertEquals(["A", "B", "D", "E", "F", "C", "G"], $visited);
+        $ans = bfs($graph, "A", "F");
+        $this->assertEquals(True, $ans);
     }
-    public function testDepthFirstSearch2()
+    public function testBreadthFirstSearch2()
     {
         $graph = array(
             [1, 2],
@@ -30,10 +30,10 @@ class DepthFirstSearchTest extends TestCase
             [3],
         );
 
-        $visited = dfs($graph, 2);
-        $this->assertEquals([2, 0, 1, 3], $visited);
+        $ans2 = bfs($graph, 3, 0);
+        $this->assertEquals(False, $ans2);
     }
-    public function testDepthFirstSearch3()
+    public function testBreadthFirstSearch3()
     {
         $graph = array(
             [2, 3, 1],
@@ -42,7 +42,8 @@ class DepthFirstSearchTest extends TestCase
             [0],
             [2],
         );
-        $visited = dfs($graph, 0);
-        $this->assertEquals([0, 2, 4, 3, 1], $visited);
+        $ans = bfs($graph, 0, 3);
+        $this->assertEquals(True, $ans);
     }
 }
+

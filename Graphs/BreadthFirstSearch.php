@@ -17,7 +17,7 @@
  * @return bool if path between start and end vertex exists
  */
 
-function bfs($adjList, $start, $end) {
+function bfs($adjList, $start, $end, $yes = false){
     $visited = [];
     $queue = [$start];
     while (!empty($queue)) {
@@ -29,19 +29,9 @@ function bfs($adjList, $start, $end) {
             }
         }
     }
-    return array_key_exists($end, $visited);
+    // return array_key_exists($end, $visited);
+    if (array_key_exists($end, $visited)) {
+        $yes = true;
+    }
+    return $yes;
 }
-
-// An example:
-$adjList = [
-    'A' => [],
-    'B' => ['A', 'D', 'E'],
-    'C' => ['A', 'F'],
-    'D' => ['B'],
-    'E' => ['B', 'F'],
-    'F' => ['C', 'E']
-];
-echo bfs($adjList, 'A', 'B') ? 'true' : 'false';
-echo bfs($adjList, 'B', 'F') ? 'true' : 'false';
-
-

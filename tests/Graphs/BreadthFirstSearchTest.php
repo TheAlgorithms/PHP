@@ -19,7 +19,7 @@ class DepthFirstSearchTest extends TestCase
             "G" => ["F"],
         );
         $ans = bfs($graph, "A", "F");
-        $this->assertEquals(True, $ans);
+        $this->assertTrue($ans);
     }
     public function testBreadthFirstSearch2()
     {
@@ -31,7 +31,7 @@ class DepthFirstSearchTest extends TestCase
         );
 
         $ans2 = bfs($graph, 3, 0);
-        $this->assertEquals(False, $ans2);
+        $this->assertFalse($ans2);
     }
     public function testBreadthFirstSearch3()
     {
@@ -43,7 +43,7 @@ class DepthFirstSearchTest extends TestCase
             [2],
         );
         $ans = bfs($graph, 0, 3);
-        $this->assertEquals(True, $ans);
+        $this->assertTrue($ans);
     }
 }
 

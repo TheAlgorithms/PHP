@@ -5,7 +5,7 @@ require_once __DIR__ . '/../../Graphs/BreadthFirstSearch.php';
 
 use PHPUnit\Framework\TestCase;
 
-class DepthFirstSearchTest extends TestCase
+class BreadthFirstSearchTest extends TestCase
 {
     public function testBreadthFirstSearch()
     {

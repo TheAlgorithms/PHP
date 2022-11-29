@@ -14,8 +14,8 @@
   * [Speedconversion](./Conversions/SpeedConversion.php)
 
 ## Graphs
-  * [Depthfirstsearch](./Graphs/DepthFirstSearch.php)
   * [Breadthfirstsearch](./Graphs/BreadthFirstSearch.php)
+  * [Depthfirstsearch](./Graphs/DepthFirstSearch.php)
 
 ## Maths
   * [Absolutemax](./Maths/AbsoluteMax.php)
@@ -84,6 +84,7 @@
   * Conversions
     * [Conversionstest](./tests/Conversions/ConversionsTest.php)
   * Graphs
+    * [Breadthfirstsearchtest](./tests/Graphs/BreadthFirstSearchTest.php)
     * [Depthfirstsearchtest](./tests/Graphs/DepthFirstSearchTest.php)
   * Maths
     * [Mathstest](./tests/Maths/MathsTest.php)

@@ -8,49 +8,45 @@
  */
 function mergeSort(array $arr)
 {
-    if (count($arr) <= 1)
-    {
+    if (count($arr) <= 1) {
       return $arr;
     }
 
-    $mid = floor(count($arr) / 2);
-    $left = mergeSort(array_slice($arr, 0, $mid));
-    $right = mergeSort(array_slice($arr, $mid));
+    $mid = floor( count($arr) / 2 );
+    $leftArray = mergeSort( array_slice($arr, 0, $mid) );
+    $rightArray = mergeSort( array_slice($arr, $mid) );
 
-    return merge($left,$right);
+    return merge($leftArray, $rightArray);
 }
 
 /**
- * @param array $arr1
- * @param array $arr2
+ * @param array $leftArray
+ * @param array $rightArray
  * @return array
  */
-function merge(array $arr1, array $arr2)
+function merge(array $leftArray, array $rightArray)
 {
-    $result=[];
-    $i=0;
-    $j=0;
+    $result = [];
+    $i = 0;
+    $j = 0;
 
-    while ($i<count($arr1)&&$j<count($arr2))
-    {
-        if ($arr2[$j]>$arr1[$i]) {
-            $result[]=$arr1[$i];
+    while ($i < count($leftArray) && $j < count($rightArray)) {
+        if ($rightArray[$j] > $leftArray[$i]) {
+            $result[] = $leftArray[$i];
             $i++;
         } else {
-            $result[] = $arr2[$j];
+            $result[] = $rightArray[$j];
             $j++;
         }
     }
 
-    while ($i < count($arr1))
-    {
-        $result[]=$arr1[$i];
+    while ($i < count($leftArray)) {
+        $result[] = $leftArray[$i];
         $i++;
     }
 
-    while ($j<count($arr2))
-    {
-        $result[] = $arr2[$j];
+    while ($j < count($rightArray)) {
+        $result[] = $rightArray[$j];
         $j++;
     }
 

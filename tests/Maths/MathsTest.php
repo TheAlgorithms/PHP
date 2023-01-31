@@ -119,9 +119,17 @@ class MathsTest extends TestCase
 
     public function testMean()
     {
-        mean(2,3,9,6);
-        mean(7);
-        mean(42,77,89,35);
+        assertEquals(
+            (2 + 4 + 6 + 8 + 20 + 50 + 70) / 7, 
+            mean(2, 4, 6, 8, 20, 50, 70)
+        );
+
+        assertEquals(
+            (-5 - 7 + 10) / 3, 
+            mean(-5, -7, 10)
+        );
+        
+        assertEquals(-1, mean(-1));
     }
 
     public function testMedian()

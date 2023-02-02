@@ -16,7 +16,10 @@ function median(...$numbers)
     sort($numbers);
     $length = count($numbers);
     
-    $middle = $length >> 1;
-    $median = ($numbers[$middle] + $numbers[$middle - 1]) / 2;
-    return $median;
+    $middle = ceil($length / 2);
+    if($length % 2 == 0) {
+        return ($numbers[$middle] + $numbers[$middle - 1]) / 2;
+    }
+    
+    return $numbers[$middle - 1];
 }

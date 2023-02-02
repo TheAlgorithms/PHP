@@ -134,9 +134,9 @@ class MathsTest extends TestCase
 
     public function testMedian()
     {
-        median(1,2,8,11);
-        median(40,90);
-        median(35,66,91,27);
+        assertEquals(3, median(1, 2, 3, 4, 5));
+        assertEquals(4.5, median(1, 2, 3, 4, 5, 6, 7, 8));
+        assertEquals(3, median(5, 3, 1, 2, 4));
     }
 
     public function testMode()

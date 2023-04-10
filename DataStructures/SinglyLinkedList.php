@@ -6,9 +6,11 @@
 class SinglyLinkedList
 {
     public ?SinglyLinkedList $next = null;
+    public $data;
 
-    public function __construct(public $data)
+    public function __construct($data)
     {
+        $this->data = $data;
     }
 
     public function append($data): void
@@ -22,7 +24,7 @@ class SinglyLinkedList
         $current->next = new SinglyLinkedList($data);
     }
 
-    public function delete($data)
+    public function delete($data): SinglyLinkedList
     {
         $current = $this;
 

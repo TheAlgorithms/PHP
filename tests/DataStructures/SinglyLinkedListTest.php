@@ -11,48 +11,56 @@ require_once __DIR__ . '/../../DataStructures/SinglyLinkedList.php';
 class SinglyLinkedListTest extends TestCase
 {
     /**
-     * Provider of non-existing IPs
+     * Create a SinglyLinkedList node
+     */
+    private function createNode(string $string): SinglyLinkedList
+    {
+        $node = new SinglyLinkedList($string[0]);
+
+        for ($i = 1; $i < strlen($string); $i++) {
+            $node->append($string[$i]);
+        }
+
+        return $node;
+    }
+
+    /**
+     * Provider of SinglyLinkedList nodes
      */
     public function provideNodes()
     {
-        $string = 'hannah';
-        $nodeIs = new SinglyLinkedList($string[0]);
-
-        for ($i = 1; $i < strlen($string); $i++) {
-            $nodeIs->append($string[$i]);
-        }
-
-        $string = 'hanbah';
-        $nodeIsNot = new SinglyLinkedList($string[0]);
-
-        for ($i = 1; $i < strlen($string); $i++) {
-            $nodeIsNot->append($string[$i]);
-        }
-
         return [
             'IsPalindrome' => [
-                'node' => $nodeIs,
-                'expected' => true,
+                'node' => $this->createNode('hannah'),
+                'expected' => true
+            ],
+            'IsPalindrome2' => [
+                'node' => $this->createNode('hanah'),
+                'expected' => true
             ],
             'IsNotPalindrome' => [
-                'node' => $nodeIsNot,
-                'expected' => false,
+                'node' => $this->createNode('hanbah'),
+                'expected' => false
+            ],
+            'IsNotPalindrome2' => [
+                'node' => $this->createNode('han1h'),
+                'expected' => false
             ],
         ];
     }
 
     /**
-     * Test the if a singly linked list is a palindrome
+     * Test the if a SinglyLinkedList is a palindrome
      *
      * @dataProvider provideNodes
      */
     public function testIsPalindrome($node, $expected): void
     {
-        $this->assertSame($expected, $this->isPalindrome($node));
+        $this->assertEquals($expected, $this->isPalindrome($node));
     }
 
     /**
-     * Supporting methods for testing if a linked list is palindrome
+     * Supporting method for testing if a linked list is palindrome
      */
     private function isPalindrome(SinglyLinkedList $node): bool
     {
@@ -71,6 +79,9 @@ class SinglyLinkedListTest extends TestCase
         return $pairs == floor($length / 2);
     }
 
+    /**
+     * Supporting method for testing if a linked list is palindrome
+     */
     private function hasPair($node, string $data): bool
     {
         if (! $node instanceof SinglyLinkedList) {
@@ -90,6 +101,9 @@ class SinglyLinkedListTest extends TestCase
         return false;
     }
 
+    /**
+     * Supporting method for testing if a linked list is palindrome
+     */
     private function length(SinglyLinkedList $node): int
     {
         $curr = $node;
@@ -101,5 +115,21 @@ class SinglyLinkedListTest extends TestCase
         }
 
         return $counter;
+    }
+
+    /**
+     * Test SinglyLinkedList's delete functionality
+     */
+    public function testDelete(): void
+    {
+        $this->assertEquals(
+            $this->createNode('hanah'), // expected node
+            $this->createNode('hannah')->delete('n'), // actual node
+        );
+
+        $this->assertNotEquals(
+            $this->createNode('hanah'), // expected node
+            $this->createNode('hannah')->delete('h'), // actual node
+        );
     }
 }

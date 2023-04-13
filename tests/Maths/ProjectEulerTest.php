@@ -6,6 +6,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../Maths/ProjectEuler/Problem1.php';
 require_once __DIR__ . '/../../Maths/ProjectEuler/Problem2.php';
 require_once __DIR__ . '/../../Maths/ProjectEuler/Problem3.php';
+require_once __DIR__ . '/../../Maths/ProjectEuler/Problem4.php';
 require_once __DIR__ . '/../../Maths/ProjectEuler/Problem5.php';
 require_once __DIR__ . '/../../Maths/ProjectEuler/Problem6.php';
 require_once __DIR__ . '/../../Maths/ProjectEuler/Problem7.php';
@@ -27,6 +28,11 @@ class ProjectEulerTest extends TestCase
     public function testProblem3(): void
     {
         $this->assertSame(6857, problem3());
+    }
+
+    public function testProblem4(): void
+    {
+        $this->assertSame(906609, problem4());
     }
 
     public function testProblem5(): void

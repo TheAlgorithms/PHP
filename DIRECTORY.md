@@ -39,7 +39,6 @@
     * [Problem5](./Maths/ProjectEuler/Problem5.php)
     * [Problem6](./Maths/ProjectEuler/Problem6.php)
     * [Problem7](./Maths/ProjectEuler/Problem7.php)
-    * [Problem8](./Maths/ProjectEuler/Problem8.php)
     * [Problem9](./Maths/ProjectEuler/Problem9.php)
 
 ## Searches

@@ -13,6 +13,9 @@
   * [Octaltodecimal](./Conversions/OctalToDecimal.php)
   * [Speedconversion](./Conversions/SpeedConversion.php)
 
+## Datastructures
+  * [Singlylinkedlist](./DataStructures/SinglyLinkedList.php)
+
 ## Graphs
   * [Breadthfirstsearch](./Graphs/BreadthFirstSearch.php)
   * [Depthfirstsearch](./Graphs/DepthFirstSearch.php)
@@ -84,6 +87,8 @@
     * [Morsecodetest](./tests/Ciphers/MorseCodeTest.php)
   * Conversions
     * [Conversionstest](./tests/Conversions/ConversionsTest.php)
+  * Datastructures
+    * [Singlylinkedlisttest](./tests/DataStructures/SinglyLinkedListTest.php)
   * Graphs
     * [Breadthfirstsearchtest](./tests/Graphs/BreadthFirstSearchTest.php)
     * [Depthfirstsearchtest](./tests/Graphs/DepthFirstSearchTest.php)

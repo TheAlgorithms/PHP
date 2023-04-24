@@ -12,6 +12,7 @@ require_once __DIR__ . '/../../Maths/ProjectEuler/Problem6.php';
 require_once __DIR__ . '/../../Maths/ProjectEuler/Problem7.php';
 require_once __DIR__ . '/../../Maths/ProjectEuler/Problem8.php';
 require_once __DIR__ . '/../../Maths/ProjectEuler/Problem9.php';
+require_once __DIR__ . '/../../Maths/ProjectEuler/Problem10.php';
 
 class ProjectEulerTest extends TestCase
 {
@@ -59,6 +60,11 @@ class ProjectEulerTest extends TestCase
     public function testProblem9(): void
     {
         $this->assertSame(31875000, problem9());
+    }
+
+    public function testProblem10(): void
+    {
+        $this->assertSame(142913828922, problem10());
     }
 
 }

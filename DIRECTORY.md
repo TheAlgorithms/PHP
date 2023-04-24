@@ -13,6 +13,9 @@
   * [Octaltodecimal](./Conversions/OctalToDecimal.php)
   * [Speedconversion](./Conversions/SpeedConversion.php)
 
+## Datastructures
+  * [Singlylinkedlist](./DataStructures/SinglyLinkedList.php)
+
 ## Graphs
   * [Breadthfirstsearch](./Graphs/BreadthFirstSearch.php)
   * [Depthfirstsearch](./Graphs/DepthFirstSearch.php)
@@ -34,11 +37,14 @@
   * [Perfectsquare](./Maths/PerfectSquare.php)
   * Projecteuler
     * [Problem1](./Maths/ProjectEuler/Problem1.php)
+    * [Problem10](./Maths/ProjectEuler/Problem10.php)
     * [Problem2](./Maths/ProjectEuler/Problem2.php)
     * [Problem3](./Maths/ProjectEuler/Problem3.php)
+    * [Problem4](./Maths/ProjectEuler/Problem4.php)
     * [Problem5](./Maths/ProjectEuler/Problem5.php)
     * [Problem6](./Maths/ProjectEuler/Problem6.php)
     * [Problem7](./Maths/ProjectEuler/Problem7.php)
+    * [Problem8](./Maths/ProjectEuler/Problem8.php)
     * [Problem9](./Maths/ProjectEuler/Problem9.php)
     * [Problem11](./Maths/ProjectEuler/Problem11.php)
 
@@ -84,6 +90,8 @@
     * [Morsecodetest](./tests/Ciphers/MorseCodeTest.php)
   * Conversions
     * [Conversionstest](./tests/Conversions/ConversionsTest.php)
+  * Datastructures
+    * [Singlylinkedlisttest](./tests/DataStructures/SinglyLinkedListTest.php)
   * Graphs
     * [Breadthfirstsearchtest](./tests/Graphs/BreadthFirstSearchTest.php)
     * [Depthfirstsearchtest](./tests/Graphs/DepthFirstSearchTest.php)

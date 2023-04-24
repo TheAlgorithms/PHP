@@ -39,6 +39,7 @@
     * [Problem1](./Maths/ProjectEuler/Problem1.php)
     * [Problem2](./Maths/ProjectEuler/Problem2.php)
     * [Problem3](./Maths/ProjectEuler/Problem3.php)
+    * [Problem4](./Maths/ProjectEuler/Problem4.php)
     * [Problem5](./Maths/ProjectEuler/Problem5.php)
     * [Problem6](./Maths/ProjectEuler/Problem6.php)
     * [Problem7](./Maths/ProjectEuler/Problem7.php)

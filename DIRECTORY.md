@@ -46,6 +46,7 @@
     * [Problem7](./Maths/ProjectEuler/Problem7.php)
     * [Problem8](./Maths/ProjectEuler/Problem8.php)
     * [Problem9](./Maths/ProjectEuler/Problem9.php)
+    * [Problem11](./Maths/ProjectEuler/Problem11.php)
 
 ## Searches
   * [Binarysearch](./Searches/BinarySearch.php)

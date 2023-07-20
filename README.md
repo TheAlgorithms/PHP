@@ -1,6 +1,6 @@
 # The Algorithms - PHP
 
-The Algorithm PHP, is a library or framework written in the PHP programming language that provides a set of algorithms and data structures for various computational tasks. It aims to simplify the implementation of common algorithms and data structures in PHP, making it easier for developers to leverage these powerful tools in their projects.
+The Algorithms - PHP, is a library or framework written in the PHP programming language that provides a set of algorithms and data structures for various computational tasks. It aims to simplify the implementation of common algorithms and data structures in PHP, making it easier for developers to leverage these powerful tools in their projects.
 
 ### All algorithms implemented in PHP - for education
 

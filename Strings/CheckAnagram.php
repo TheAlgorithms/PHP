@@ -18,12 +18,5 @@ function isAnagram(string $originalString, string $testString, bool $caseInsensi
 
     // count_chars(string, mode = 1) returns key-value pairs with character as key, frequency as value
     // We can directly compare the arrays in this case
-    if (count_chars($originalString, 1) == count_chars($testString, 1))
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return count_chars($originalString, 1) === count_chars($testString, 1);
 }

@@ -6,6 +6,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../Sorting/BubbleSort.php';
 require_once __DIR__ . '/../../Sorting/BubbleSort2.php';
 require_once __DIR__ . '/../../Sorting/CountSort.php';
+require_once __DIR__ . '/../../Sorting/HeapSort.php';
 require_once __DIR__ . '/../../Sorting/InsertionSort.php';
 require_once __DIR__ . '/../../Sorting/MergeSort.php';
 require_once __DIR__ . '/../../Sorting/QuickSort.php';
@@ -171,5 +172,30 @@ class SortingTests extends TestCase
 
         $this->assertEquals($result1, $test1);
         $this->assertEquals($result2, $test2);
+    }
+
+    public function testHeapSortPerformance()
+    {
+        $array = range(1, 1000000);
+        shuffle($array);  // Randomize the order
+        $start = microtime(true);
+        heapSort($array);
+        $end = microtime(true);
+        $this->assertLessThan(1, $end - $start);
+    }
+
+    public function testHeapSortCipher()
+    {
+        $firstArray = [20, 16, -5, -8, 6, 12, 2, 4, -3, 9];
+        $expectedResultOne = [-8, -5, -3, 2, 4, 6, 9, 12, 16, 20];
+
+        $secondArray = [-6, 12, 14, 17, 5, 4, -9, 15, 0, -8];
+        $expectedResultTwo = [-9, -8, -6, 0, 4, 5, 12, 14, 15, 17];
+
+        $resultOne = heapSort($firstArray);
+        $resultTwo = heapSort($secondArray);
+
+        $this->assertEquals($expectedResultOne, $resultOne);
+        $this->assertEquals($expectedResultTwo, $resultTwo);
     }
 }

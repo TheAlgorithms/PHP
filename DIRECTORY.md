@@ -65,6 +65,7 @@
   * [Bubblesort2](./Sorting/BubbleSort2.php)
   * [Countsort](./Sorting/CountSort.php)
   * [Gnomesort](./Sorting/GnomeSort.php)
+  * [Heapsort](./Sorting/HeapSort.php)
   * [Insertionsort](./Sorting/InsertionSort.php)
   * [Mergesort](./Sorting/MergeSort.php)
   * [Quicksort](./Sorting/QuickSort.php)

@@ -141,8 +141,10 @@ class MathsTest extends TestCase
 
     public function testMode()
     {
-        mode(4,2,7,9,2,9,0,4,2);
-        mode(21,72,40,21,0,99,21,99,0,40);
-        mode(3,3,3,3);
+        $this->assertEquals([3], mode(1, 2, 3, 3, 4, 5));
+        $this->assertEquals([5, 6], mode(5, 5, 6, 6, 7));
+        $this->assertEquals([1, 2, 3, 4, 5], mode(1, 2, 3, 4, 5));
+        $this->assertEquals([2, 3, 4], mode(2, 2, 3, 3, 4, 4));
     }
+
 }

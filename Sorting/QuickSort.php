@@ -9,7 +9,7 @@
 function quickSort(array $input)
 {
     // Return nothing if input is empty
-    if(!isset($input))
+    if(!empty($input))
     {
         return [];
     }

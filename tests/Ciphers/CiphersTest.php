@@ -1,7 +1,5 @@
 <?php
 
-use function PHPUnit\Framework\assertEquals;
-
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../vendor/autoload.php';

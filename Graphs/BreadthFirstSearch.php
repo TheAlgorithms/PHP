@@ -1,7 +1,8 @@
 <?php
 
 /**
- * Breadth-first search (BFS) is an algorithm for searching a tree data structure for a node that satisfies a given property.
+ * Breadth-first search (BFS) is an algorithm for searching a tree data structure for a node that satisfies
+ * a given property.
  * (https://en.wikipedia.org/wiki/Breadth-first_search).
  *
  * This is a non-recursive implementation.

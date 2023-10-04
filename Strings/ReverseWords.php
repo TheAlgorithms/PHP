@@ -4,7 +4,7 @@
  * This function returns a given sentence with its words
  * in reverse order
  *
- * @param string $string
+ * @param  string  $text
  * @return string
  */
 function reverseWords(string $text)
@@ -13,8 +13,7 @@ function reverseWords(string $text)
     $words         = explode(' ', $text);
     $reversedWords = [];
 
-    for ($i = (count($words) - 1); $i >= 0; $i--)
-    {
+    for ($i = (count($words) - 1); $i >= 0; $i--) {
         $reversedWords[] = $words[$i];
     }
 

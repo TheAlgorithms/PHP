@@ -46,4 +46,3 @@ class BreadthFirstSearchTest extends TestCase
         $this->assertTrue($ans);
     }
 }
-

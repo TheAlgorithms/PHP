@@ -10,24 +10,25 @@ require_once __DIR__ . '/../Utils/ArrayHelpers.php';
  * [C++ Lower Bound](http://www.cplusplus.com/reference/algorithm/lower_bound/)
  *
  * It is assumed that an integer array is provided
- * and the second parameter is also a integer
+ * and the second parameter is also an integer
  *
- * @param array of sorted integers
- * @param integer whose lower bound is to be found
+ * @param array  $arr  of sorted integers
+ * @param integer  $elem  whose lower bound is to be found
  *
- * @return the index of lower bound of the given element
+ * @return int the index of lower bound of the given element
  */
-function lowerBound(array $arr, int $elem){
+function lowerBound(array $arr, int $elem)
+{
     isSortedAscendingInts($arr);
     $hi = count($arr);
     $lo = 0;
 
-    while($lo < $hi){
-        $mid = $lo + floor(($hi - $lo)/2);
+    while ($lo < $hi) {
+        $mid = $lo + floor(($hi - $lo) / 2);
 
-        if($arr[$mid] < $elem){
-            $lo = $mid+1;
-        }else{
+        if ($arr[$mid] < $elem) {
+            $lo = $mid + 1;
+        } else {
             $hi = $mid;
         }
     }

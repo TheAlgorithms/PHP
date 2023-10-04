@@ -1,6 +1,5 @@
 <?php
 
-
 /*
  * This function solves the problem 11 of the Project Euler.
  *
@@ -150,4 +149,3 @@ function problem11()
 
     return $maxProduct;
 }
-

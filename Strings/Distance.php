@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Find distance (Levenshtein distance)
  *
@@ -13,7 +14,6 @@ function findDistance($str1, $str2)
 {
     $lenStr1 = strlen($str1);
     $lenStr2 = strlen($str2);
-
     if ($lenStr1 == 0) {
         return $lenStr2;
     }
@@ -40,14 +40,13 @@ function findDistance($str1, $str2)
         // use formula to fill in the rest of the row
         for ($j = 0; $j < $lenStr1; $j++) {
             $substitutionCost = 0;
-
             if ($str1[$j] == $str2[$i]) {
                 $substitutionCost = $distanceVectorInit[$j];
             } else {
                 $substitutionCost = $distanceVectorInit[$j] + 1;
             }
 
-            $distanceVectorFinal[$j+1] = min($distanceVectorInit[$j+1] + 1, min($distanceVectorFinal[$j] + 1, $substitutionCost));
+            $distanceVectorFinal[$j + 1] = min($distanceVectorInit[$j + 1] + 1, min($distanceVectorFinal[$j] + 1, $substitutionCost));
         }
 
         $distanceVectorInit = $distanceVectorFinal;

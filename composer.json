@@ -3,12 +3,12 @@
   "description": "All Algorithms implemented in PHP",
   "config": {
     "platform": {
-      "php": "7.3.0"
+      "php": "7.4.0"
     }
   },
   "license": "MIT",
   "require": {
-    "php": "7.3.0",
+    "php": "7.4",
     "phan/phan": "^2.7"
   },
   "require-dev": {

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This function calculates
  * the mode value(s) of
@@ -16,6 +17,5 @@ function mode(...$numbers)
 
     $values = array_count_values($numbers);
     $maxCount = max($values);
-
     return array_keys($values, $maxCount, true);
 }

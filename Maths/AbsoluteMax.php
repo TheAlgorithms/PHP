@@ -1,12 +1,14 @@
 <?php
+
 /**
  * This function calculates
  * Absolute max values from
  * the different numbers
  * provided
  *
- * @param decimal $numbers A variable sized number input
+ * @param  decimal  $numbers  A variable sized number input
  * @return decimal $absoluteMax Absolute max value
+ * @throws \Exception
  */
 function absolute_max(...$numbers)
 {

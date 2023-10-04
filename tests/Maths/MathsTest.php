@@ -3,6 +3,7 @@
 use function PHPUnit\Framework\assertEquals;
 use function PHPUnit\Framework\assertFalse;
 use function PHPUnit\Framework\assertTrue;
+
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -107,7 +108,7 @@ class MathsTest extends TestCase
         assertFalse(isNumberNeon(123));
         assertTrue(isNumberNeon(9));
     }
-    
+
     public function testFibonacciGenerator()
     {
         assertEquals([0, 1, 1, 2, 3], iterator_to_array(loop(5, fib())));
@@ -120,15 +121,15 @@ class MathsTest extends TestCase
     public function testMean()
     {
         assertEquals(
-            (2 + 4 + 6 + 8 + 20 + 50 + 70) / 7, 
+            (2 + 4 + 6 + 8 + 20 + 50 + 70) / 7,
             mean(2, 4, 6, 8, 20, 50, 70)
         );
 
         assertEquals(
-            (-5 - 7 + 10) / 3, 
+            (-5 - 7 + 10) / 3,
             mean(-5, -7, 10)
         );
-        
+
         assertEquals(-1, mean(-1));
     }
 
@@ -146,5 +147,4 @@ class MathsTest extends TestCase
         $this->assertEquals([1, 2, 3, 4, 5], mode(1, 2, 3, 4, 5));
         $this->assertEquals([2, 3, 4], mode(2, 2, 3, 3, 4, 4));
     }
-
 }

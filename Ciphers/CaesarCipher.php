@@ -3,8 +3,8 @@
 /**
  * Encrypt given text using caesar cipher.
  *
- * @param string text text to be encrypted
- * @param int shift number of shifts to be applied
+ * @param string  $text  text text to be encrypted
+ * @param int  $shift  shift number of shifts to be applied
  * @return string new encrypted text
  */
 function encrypt(string $text, int $shift): string
@@ -27,8 +27,8 @@ function encrypt(string $text, int $shift): string
 
 /**
  * Decrypt given text using caesar cipher.
- * @param string text text to be decrypted
- * @param int shift number of shifts to be applied
+ * @param string  $text  text text to be decrypted
+ * @param int  $shift  shift number of shifts to be applied
  * @return string new decrypted text
  */
 function decrypt(string $text, int $shift): string

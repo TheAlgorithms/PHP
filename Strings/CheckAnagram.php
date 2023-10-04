@@ -10,8 +10,7 @@
  */
 function isAnagram(string $originalString, string $testString, bool $caseInsensitive = true)
 {
-    if ($caseInsensitive)
-    {
+    if ($caseInsensitive) {
         $originalString = strtolower($originalString); // Converting string to lowercase for case-insensitive check
         $testString = strtolower($testString);
     }

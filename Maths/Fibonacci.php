@@ -3,8 +3,9 @@
 /**
  * Fibonacci recursive
  *
- * @param int $num
- * @return int
+ * @param  int  $num
+ * @return array
+ * @throws \Exception
  */
 function fibonacciRecursive(int $num)
 {
@@ -20,8 +21,9 @@ function fibonacciRecursive(int $num)
 }
 
 /**
- * @param int $num
+ * @param  int  $num
  * @return int
+ * @throws \Exception
  */
 function recursive(int $num)
 {
@@ -36,6 +38,9 @@ function recursive(int $num)
     }
 }
 
+/**
+ * @throws \Exception
+ */
 function fibonacciWithBinetFormula(int $num)
 {
     /*
@@ -57,7 +62,6 @@ function fibonacciWithBinetFormula(int $num)
             $seriesNumber = (pow($phi_1, $n) - pow($phi_2, $n)) / $sqrt;
             array_push($fib_series, (int)$seriesNumber);
         }
-
     }
 
     return $fib_series;

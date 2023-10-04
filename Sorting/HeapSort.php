@@ -1,4 +1,5 @@
 <?php
+
 /**
  * HeapSort Algorithm
  *
@@ -24,10 +25,9 @@ function heapSort(array $arr): array
 
     // Extract elements from heap one by one
     for ($i = $n - 1; $i >= 0; $i--) {
-        // Swap
+// Swap
         [$arr[0], $arr[$i]] = [$arr[$i], $arr[0]];
-
-        // Heapify the reduced heap
+// Heapify the reduced heap
         heapify($arr, $i, 0);
     }
 
@@ -46,7 +46,6 @@ function heapify(array &$arr, int $n, int $i): void
     $largest = $i;
     $left = 2 * $i + 1;
     $right = 2 * $i + 2;
-
     if ($left < $n && $arr[$left] > $arr[$largest]) {
         $largest = $left;
     }

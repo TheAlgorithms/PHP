@@ -4,10 +4,11 @@
  * Function returns the total number of consonants present in the given
  * string using a linear search through the string
  *
- * @param string $string
+ * @param  string  $string
  * @return int
+ * @throws \Exception
  */
-function countConsonants(string $string): Int
+function countConsonants(string $string): int
 {
     if (empty($string)) {
         throw new \Exception('Please pass a non-empty string value');
@@ -18,11 +19,11 @@ function countConsonants(string $string): Int
 
     $consonantCount = 0;
 
-    for ($i = 0; $i < strlen($string); $i++)
-    {
-      if (!in_array($string[$i], $vowels) &&
-        $string[$i] >= 'a' && $string[$i] <= 'z')
-        {
+    for ($i = 0; $i < strlen($string); $i++) {
+        if (
+            !in_array($string[$i], $vowels) &&
+            $string[$i] >= 'a' && $string[$i] <= 'z'
+        ) {
             $consonantCount++;
         }
     }

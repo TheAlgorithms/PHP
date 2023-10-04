@@ -3,6 +3,7 @@
 use function PHPUnit\Framework\assertEquals;
 use function PHPUnit\Framework\assertFalse;
 use function PHPUnit\Framework\assertTrue;
+
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -138,7 +139,7 @@ class SearchesTest extends TestCase
         $result = upperBound($list, $target);
         assertEquals(5, $result);
     }
-    
+
     public function testJumpSearch()
     {
         $list = array( 3,5,6,7,9,10,12,20,22,24);

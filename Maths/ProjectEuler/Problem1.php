@@ -26,9 +26,9 @@ function problem1a(): int
 
     $numbers = range(1, $maxNumber);
 
-    return array_reduce($numbers, function($carry, $number) {
+    return array_reduce($numbers, function ($carry, $number) {
         $shouldCarry = $number % 3 == 0 || $number % 5 == 0;
-        return $carry += $shouldCarry ? $number : 0;
+        return $carry + ($shouldCarry ? $number : 0);
     });
 }
 

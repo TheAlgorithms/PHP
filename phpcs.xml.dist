@@ -7,6 +7,8 @@
 
     <file>.</file>
 
+    <exclude-pattern>vendor</exclude-pattern>
+
     <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
         <severity>0</severity>
     </rule>

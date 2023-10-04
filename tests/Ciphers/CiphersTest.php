@@ -1,6 +1,7 @@
 <?php
 
 use function PHPUnit\Framework\assertEquals;
+
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -22,7 +23,7 @@ class CiphersTest extends TestCase
         $input_str = "test@string";
         $key = "test-key";
         $invalid_key = "wrong-key";
-        $this->assertEquals( $input_str, xorCipher( xorCipher( $input_str , $key) , $key));
-        $this->assertNotEquals( $input_str, xorCipher( xorCipher( $input_str , $key) , $invalid_key));
+        $this->assertEquals($input_str, xorCipher(xorCipher($input_str, $key), $key));
+        $this->assertNotEquals($input_str, xorCipher(xorCipher($input_str, $key), $invalid_key));
     }
 }

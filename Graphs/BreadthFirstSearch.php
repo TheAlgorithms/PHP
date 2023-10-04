@@ -3,21 +3,22 @@
 /**
  * Breadth-first search (BFS) is an algorithm for searching a tree data structure for a node that satisfies a given property.
  * (https://en.wikipedia.org/wiki/Breadth-first_search).
- * 
- * This is a non recursive implementation.
- * 
+ *
+ * This is a non-recursive implementation.
+ *
  * References:
  * https://cp-algorithms.com/graph/breadth-first-search.html
- * 
+ *
  * https://the-algorithms.com/algorithm/depth-first-search?lang=python
- * 
+ *
  * @author Aryansh Bhargavan https://github.com/aryanshb
  * @param array $adjList An array representing the grapth as an Adjacent List
  * @param int|string $start The starting vertex
  * @return bool if path between start and end vertex exists
  */
 
-function bfs($adjList, $start, $end, $yes = false){
+function bfs($adjList, $start, $end, $yes = false)
+{
     $visited = [];
     $queue = [$start];
     while (!empty($queue)) {

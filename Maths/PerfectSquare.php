@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This function check whether
  * the provided number is a

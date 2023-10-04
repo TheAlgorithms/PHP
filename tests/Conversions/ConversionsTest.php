@@ -1,7 +1,5 @@
 <?php
 
-use function PHPUnit\Framework\assertEquals;
-
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -16,8 +14,8 @@ class ConversionsTest extends TestCase
 {
     public function testBinaryToDecimal()
     {
-        assertEquals(binaryToDecimal(111), 7);
-        assertEquals(binaryToDecimal(101), 5);
+        $this->assertEquals(7, binaryToDecimal(111));
+        $this->assertEquals(5, binaryToDecimal(101));
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage('Please pass a valid Binary Number for Converting it to a Decimal Number.');
         binaryToDecimal("this is a string");
@@ -25,8 +23,8 @@ class ConversionsTest extends TestCase
 
     public function testDecimalToBinary()
     {
-        assertEquals(decimalToBinary(7), 111);
-        assertEquals(decimalToBinary(5), 101);
+        $this->assertEquals(111, decimalToBinary(7));
+        $this->assertEquals(101, decimalToBinary(5));
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage('Please pass a valid Decimal Number for Converting it to a Binary Number.');
         decimalToBinary("this is a string");
@@ -34,9 +32,9 @@ class ConversionsTest extends TestCase
 
     public function testOctalToDecimal()
     {
-        assertEquals(octalToDecimal(10), 8);
-        assertEquals(octalToDecimal(11), 9);
-        assertEquals(octalToDecimal(1115), 589);
+        $this->assertEquals(8, octalToDecimal(10));
+        $this->assertEquals(9, octalToDecimal(11));
+        $this->assertEquals(589, octalToDecimal(1115));
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage('Please pass a valid Octal Number for Converting it to a Decimal Number.');
         octalToDecimal("this is a string");
@@ -44,9 +42,9 @@ class ConversionsTest extends TestCase
 
     public function testDecimalToOctal()
     {
-        assertEquals(decimalToOctal(8), 10);
-        assertEquals(decimalToOctal(9), 11);
-        assertEquals(decimalToOctal(589), 1115);
+        $this->assertEquals(10, decimalToOctal(8));
+        $this->assertEquals(11, decimalToOctal(9));
+        $this->assertEquals(1115, decimalToOctal(589));
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage('Please pass a valid Decimal Number for Converting it to an Octal Number.');
         decimalToOctal("this is a string");
@@ -54,9 +52,9 @@ class ConversionsTest extends TestCase
 
     public function testDecimalToHex()
     {
-        assertEquals(decimalToHex(10), 'A');
-        assertEquals(decimalToHex(489201875), '1D28A0D3');
-        assertEquals(decimalToHex(171), 'AB');
+        $this->assertEquals('A', decimalToHex(10));
+        $this->assertEquals('1D28A0D3', decimalToHex(489201875));
+        $this->assertEquals('AB', decimalToHex(171));
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage('Please pass a valid Decimal Number for Converting it to a Hexadecimal Number.');
         decimalToHex("this is a string");
@@ -64,9 +62,9 @@ class ConversionsTest extends TestCase
 
     public function testHexToDecimal()
     {
-        assertEquals(hexToDecimal('A'), 10);
-        assertEquals(hexToDecimal('1D28A0D3'), 489201875);
-        assertEquals(hexToDecimal('AB'), 171);
+        $this->assertEquals(10, hexToDecimal('A'));
+        $this->assertEquals(489201875, hexToDecimal('1D28A0D3'));
+        $this->assertEquals(171, hexToDecimal('AB'));
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage('Please pass a valid Hexadecimal Number for Converting it to a Decimal Number.');
         hexToDecimal("this is a string");
@@ -74,12 +72,12 @@ class ConversionsTest extends TestCase
 
     public function testSpeedConversion()
     {
-        assertEquals(convertSpeed(5, 'm/s', 'mph'), 11.18);
-        assertEquals(convertSpeed(5, 'ft/s', 'km/h'), 5.49);
-        assertEquals(convertSpeed(3, 'km/h', 'km/h'), 3);
-        assertEquals(convertSpeed(7, 'kn', 'km/h'), 12.96);
-        assertEquals(convertSpeed(12, 'mph', 'km/h'), 19.31);
-        assertEquals(convertSpeed(0.514, 'm/s', 'kn'), 1);
+        $this->assertEquals(11.18, convertSpeed(5, 'm/s', 'mph'));
+        $this->assertEquals(5.49, convertSpeed(5, 'ft/s', 'km/h'));
+        $this->assertEquals(3, convertSpeed(3, 'km/h', 'km/h'));
+        $this->assertEquals(12.96, convertSpeed(7, 'kn', 'km/h'));
+        $this->assertEquals(19.31, convertSpeed(12, 'mph', 'km/h'));
+        $this->assertEquals(1, convertSpeed(0.514, 'm/s', 'kn'));
 
         $this->expectException(\Exception::class);
         convertSpeed('1', 'km/h', 'mph');

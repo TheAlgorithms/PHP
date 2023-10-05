@@ -7,9 +7,11 @@ function monoAlphabeticCipher($key, $alphabet, $text)
 {
     $cipherText = ''; // the cipher text (can be decrypted and encrypted)
 
+    // check if the text length matches
     if (strlen($key) != strlen($alphabet)) {
         return false;
-    } // check if the text length matches
+    }
+
     $text = preg_replace('/[0-9]+/', '', $text); // remove all the numbers
 
     for ($i = 0; $i < strlen($text); $i++) {
@@ -20,6 +22,7 @@ function monoAlphabeticCipher($key, $alphabet, $text)
             $cipherText .= ( ctype_upper($text[$i]) ? strtoupper($key[$index]) : $key[$index] );
         }
     }
+
     return $cipherText;
 }
 

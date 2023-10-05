@@ -20,10 +20,12 @@ function binarySearch($arr, $value, $floor, $ceiling)
 {
     // Get $middle index
     $mid = floor(($floor + $ceiling) / 2);
-// Return position if $value is at the $mid position
+
+    // Return position if $value is at the $mid position
     if ($arr[$mid] === $value) {
         return (int) $mid;
     }
+
     //Return -1 is range is wrong
     if ($floor > $ceiling) {
         return -1;
@@ -58,6 +60,7 @@ function exponentialSearch($arr, $value)
     }
     $floor = $i / 2;
     $ceiling = min($i, $length);
-// Call binary search for the range found above
+
+    // Call binary search for the range found above
     return binarySearch($arr, $value, $floor, $ceiling);
 }

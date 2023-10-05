@@ -14,7 +14,8 @@ function jumpSearch($list, $key)
 {
     /*number of elements in the sorted array*/
     $num = count($list);
-/*block size to be jumped*/
+
+    /*block size to be jumped*/
     $step = (int)sqrt($num);
     $prev = 0;
 

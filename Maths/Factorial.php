@@ -12,23 +12,25 @@
  */
 function factorial(int $number)
 {
-    static $cache = [];
-//internal caching memory for speed
+    static $cache = []; //internal caching memory for speed
 
     if ($number < 0) {
         throw new \Exception("Negative numbers are not allowed for calculating Factorial");
     }
+
+    // Factorial of 0 is 1
     if ($number === 0) {
         return 1;
-// Factorial of 0 is 1
     }
 
     if (isset($cache[$number])) {
         return $cache[$number];
     }
 
+    // Recursion since x! = x * (x-1)!
     $fact = ($number * factorial($number - 1));
-// Recursion since x! = x * (x-1)!
+
     $cache[$number] = $fact;
+
     return $fact;
 }

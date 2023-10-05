@@ -18,36 +18,36 @@
  */
 function interpolationSearch($arr, $key)
 {
-
     $length = count($arr) - 1;
     $low = 0;
     $high = $length;
     $position = -1;
-//loop, between low & high
+    //loop, between low & high
     while ($low <= $high && $key >= $arr[$low] && $key <= $arr[$high]) {
-//GET INDEX
+        //GET INDEX
         $delta = ($key - $arr[$low]) / ($arr[$high] - $arr[$low]);
         $index = $low + floor(($high - $low) * $delta);
-//GET VALUE OF INDEX IN ARRAY...
+
+        //GET VALUE OF INDEX IN ARRAY...
         $indexValue = $arr[$index];
+
         if ($indexValue === $key) {
-        //index value equals key
-                //FOUND TARGET
-                //return index value
-                $position = $index;
+            //index value equals key
+            //FOUND TARGET
+            //return index value
+            $position = $index;
             return (int) $position;
-        }
-        if ($indexValue < $key) {
-  //index value lower than key
-          //increase low index
+        } elseif ($indexValue < $key) {
+            //index value lower than key
+            //increase low index
             $low = $index + 1;
-        }
-        if ($indexValue > $key) {
-  //index value higher than key
-          //decrease high index
+        } elseif ($indexValue > $key) {
+            //index value higher than key
+            //decrease high index
             $high = $index - 1;
         }
     }
-  //when key not found in array or array not sorted
+
+    //when key not found in array or array not sorted
     return null;
 }

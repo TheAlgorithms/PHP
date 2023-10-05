@@ -1,8 +1,8 @@
 <?php
+
 /**
  *  Singly Linked List
  */
-
 class SinglyLinkedList
 {
     public ?SinglyLinkedList $next = null;
@@ -16,7 +16,6 @@ class SinglyLinkedList
     public function append($data): void
     {
         $current = $this;
-
         while ($current instanceof SinglyLinkedList && isset($current->next)) {
             $current = $current->next;
         }
@@ -27,7 +26,6 @@ class SinglyLinkedList
     public function delete($data): SinglyLinkedList
     {
         $current = $this;
-
         if ($current->data == $data) {
             return $current->next;
         }
@@ -35,7 +33,6 @@ class SinglyLinkedList
         while ($current instanceof SinglyLinkedList && isset($current->next)) {
             if ($current->next->data === $data) {
                 $current->next = $current->next->next;
-
                 return $this;
             }
 

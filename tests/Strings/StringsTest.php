@@ -1,9 +1,5 @@
 <?php
 
-use function PHPUnit\Framework\assertEquals;
-use function PHPUnit\Framework\assertFalse;
-use function PHPUnit\Framework\assertNotEquals;
-use function PHPUnit\Framework\assertTrue;
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -23,73 +19,74 @@ class StringsTest extends TestCase
 {
     public function testIsPalindrome()
     {
-        assertTrue(isPalindrome('MaDam')); // true
-        assertFalse(isPalindrome('ThisIsTest')); // false
-        assertFalse(isPalindrome('')); // false
-        assertTrue(isPalindrome('Sator Arepo Tenet Opera Rotas')); // true
-        assertFalse(isPalindrome('Sator Arepo Tenet Opera Rotas', false)); // false since we are doing case-sensitive check
+        $this->assertTrue(isPalindrome('MaDam')); // true
+        $this->assertFalse(isPalindrome('ThisIsTest')); // false
+        $this->assertFalse(isPalindrome('')); // false
+        $this->assertTrue(isPalindrome('Sator Arepo Tenet Opera Rotas')); // true
+        $this->assertFalse(isPalindrome('Sator Arepo Tenet Opera Rotas', false)); // false since we are doing
+        // case-sensitive check
     }
 
     public function testCountSentences()
     {
-        assertEquals(countSentences('Hi! Hello world.'), 2);
-        assertEquals(countSentences('i am testing. test....'), 2);
-        assertEquals(countSentences('How are you?'), 1);
+        $this->assertEquals(2, countSentences('Hi! Hello world.'));
+        $this->assertEquals(2, countSentences('i am testing. test....'));
+        $this->assertEquals(1, countSentences('How are you?'));
     }
 
     public function testReverseString()
     {
-        assertEquals('txet emos si sihT', reverseString('This is some text'));
-        assertEquals('mADaM', reverseString('MaDAm'));
-        assertNotEquals('MaDAm', reverseString('MaDAm'));
+        $this->assertEquals('txet emos si sihT', reverseString('This is some text'));
+        $this->assertEquals('mADaM', reverseString('MaDAm'));
+        $this->assertNotEquals('MaDAm', reverseString('MaDAm'));
     }
 
     public function testReverseWords()
     {
-        assertEquals('Fun is Coding PHP', reverseWords('PHP Coding is Fun'));
-        assertEquals('OneWord', reverseWords('OneWord'));
-        assertEquals('Text different some is This', reverseWords('This is some different Text'));
+        $this->assertEquals('Fun is Coding PHP', reverseWords('PHP Coding is Fun'));
+        $this->assertEquals('OneWord', reverseWords('OneWord'));
+        $this->assertEquals('Text different some is This', reverseWords('This is some different Text'));
     }
 
     public function testIsAnagram()
     {
-        assertTrue(isAnagram("php", "PHP")); // By default it's case-insensitive
-        assertFalse(isAnagram("php", "PHP", false)); // Make case-sensitive check
-        assertTrue(isAnagram("php is fun", "pin hpf us"));
-        assertFalse(isAnagram("Hello", " Hello")); //Extra space character
-        assertTrue(isAnagram("ScRamble", "SRlmcaeb", false)); // Check with a mixture of upper and lower case
+        $this->assertTrue(isAnagram("php", "PHP")); // By default it's case-insensitive
+        $this->assertFalse(isAnagram("php", "PHP", false)); // Make case-sensitive check
+        $this->assertTrue(isAnagram("php is fun", "pin hpf us"));
+        $this->assertFalse(isAnagram("Hello", " Hello")); //Extra space character
+        $this->assertTrue(isAnagram("ScRamble", "SRlmcaeb", false)); // Check with a mixture of upper and lower case
     }
 
     public function testMaxCharacter()
     {
-        assertEquals(maxCharacter("this is test for max character repetition"), 't');
-        assertEquals(maxCharacter("This is Test for max characTer repetition"), 't');
-        assertEquals(maxCharacter("           "), ' ');
+        $this->assertEquals('t', maxCharacter("this is test for max character repetition"));
+        $this->assertEquals('t', maxCharacter("This is Test for max characTer repetition"));
+        $this->assertEquals(' ', maxCharacter("           "));
     }
 
     public function testCountVowels()
     {
-        assertEquals(countVowelsSimple("This is a string with 7 vowels"), 7);
-        assertEquals(countVowelsSimple("hello world"), 3);
-        assertEquals(countVowelsRegex("Just A list of somE aaaaaaaaaa"), 16);
+        $this->assertEquals(7, countVowelsSimple("This is a string with 7 vowels"));
+        $this->assertEquals(3, countVowelsSimple("hello world"));
+        $this->assertEquals(16, countVowelsRegex("Just A list of somE aaaaaaaaaa"));
 
-        assertEquals(countVowelsRegex("This is a string with 7 vowels"), 7);
-        assertEquals(countVowelsRegex("hello world"), 3);
-        assertEquals(countVowelsRegex("Just A list of somE aaaaaaaaaa"), 16);
+        $this->assertEquals(7, countVowelsRegex("This is a string with 7 vowels"));
+        $this->assertEquals(3, countVowelsRegex("hello world"));
+        $this->assertEquals(16, countVowelsRegex("Just A list of somE aaaaaaaaaa"));
     }
 
     public function testCountConsonants()
     {
-        assertEquals(countConsonants("This is a string with 19 consonants"), 19);
-        assertEquals(countConsonants("hello world"), 7);
-        assertEquals(countConsonants("Just A list of somE aaaaaaaaaa"), 9);
+        $this->assertEquals(19, countConsonants("This is a string with 19 consonants"));
+        $this->assertEquals(7, countConsonants("hello world"));
+        $this->assertEquals(9, countConsonants("Just A list of somE aaaaaaaaaa"));
     }
 
     public function testFindDistance()
     {
-        assertEquals(findDistance("hello", "hallo"), 1);
-        assertEquals(findDistance("hallo", "hello"), 1);
-        assertEquals(findDistance("sunday", "sunday"), 0);
-        assertEquals(findDistance("saturday", "sunday"), 3);
+        $this->assertEquals(1, findDistance("hello", "hallo"));
+        $this->assertEquals(1, findDistance("hallo", "hello"));
+        $this->assertEquals(0, findDistance("sunday", "sunday"));
+        $this->assertEquals(3, findDistance("saturday", "sunday"));
     }
 }

@@ -5,16 +5,17 @@
  * using php strrev() function
  * make it simple
  *
- * @param string $string
- * @param bool $caseInsensitive
+ * @param  string  $string
+ * @param  bool  $caseInsensitive
+ * @return string
+ * @throws \Exception
  */
-function checkPalindromeString(string $string, bool $caseInsensitive = true): String
+function checkPalindromeString(string $string, bool $caseInsensitive = true): string
 {
     //removing spaces
     $string = trim($string);
 
-    if (empty($string))
-    {
+    if (empty($string)) {
         throw new \Exception('You are given empty string. Please give a non-empty string value');
     }
 
@@ -22,13 +23,11 @@ function checkPalindromeString(string $string, bool $caseInsensitive = true): St
      * for case-insensitive
      * lowercase string conversion
      */
-    if ($caseInsensitive)
-    {
+    if ($caseInsensitive) {
         $string = strtolower($string);
     }
 
-    if ($string !== strrev($string))
-    {
+    if ($string !== strrev($string)) {
         return $string . " - not a palindrome string." . PHP_EOL;
     }
 

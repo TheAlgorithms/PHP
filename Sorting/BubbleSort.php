@@ -6,13 +6,14 @@
  * @param array $array
  * @return array
  */
-function bubbleSort($array) {
+function bubbleSort($array)
+{
     $length = count($array);
 
     for ($i = $length; $i > 0; $i--) {
         $swapped = true;
 
-        for ($j=0;$j<$i-1;$j++) {
+        for ($j = 0; $j < $i - 1; $j++) {
             if ($array[$j] > $array[$j + 1]) {
                 $temp = $array[$j];
                 $array[$j] = $array[$j + 1];
@@ -21,7 +22,9 @@ function bubbleSort($array) {
             }
         }
 
-        if ($swapped) break;
+        if ($swapped) {
+            break;
+        }
     }
 
     return $array;

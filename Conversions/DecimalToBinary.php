@@ -5,8 +5,9 @@
  * submitted Decimal Number to
  * Binary Number.
  *
- * @param string $decimalNumber
+ * @param  string  $decimalNumber
  * @return string
+ * @throws \Exception
  */
 function decimalToBinary($decimalNumber)
 {

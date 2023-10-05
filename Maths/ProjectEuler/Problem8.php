@@ -59,11 +59,11 @@ function problem8(): int
     $substringSize = 13;
 
     for ($i = 0; $i < strlen($theNumber) - $substringSize; $i++) {
-        $currentSubstring = substr($theNumber,$i,$substringSize);
+        $currentSubstring = substr($theNumber, $i, $substringSize);
         $currentProduct = 0;
 
-        for ($j = 0; $j < strlen ($currentSubstring); $j++) {
-           $currentProduct = ($currentProduct == 0 ? (int)$currentSubstring[$j] : $currentProduct * (int)$currentSubstring[$j]);
+        for ($j = 0; $j < strlen($currentSubstring); $j++) {
+            $currentProduct = ($currentProduct == 0 ? (int)$currentSubstring[$j] : $currentProduct * (int)$currentSubstring[$j]);
         }
 
         $greatestProduct = ($greatestProduct < $currentProduct ? $currentProduct : $greatestProduct);

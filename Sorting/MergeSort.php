@@ -9,12 +9,12 @@
 function mergeSort(array $arr)
 {
     if (count($arr) <= 1) {
-      return $arr;
+        return $arr;
     }
 
-    $mid = floor( count($arr) / 2 );
-    $leftArray = mergeSort( array_slice($arr, 0, $mid) );
-    $rightArray = mergeSort( array_slice($arr, $mid) );
+    $mid = floor(count($arr) / 2);
+    $leftArray = mergeSort(array_slice($arr, 0, $mid));
+    $rightArray = mergeSort(array_slice($arr, $mid));
 
     return merge($leftArray, $rightArray);
 }
@@ -52,6 +52,3 @@ function merge(array $leftArray, array $rightArray)
 
     return $result;
 }
-
-
-

@@ -10,8 +10,7 @@
   */
 function loop($i, Generator $set)
 {
-    while($i-- > 0 && $set->valid())
-    {
+    while ($i-- > 0 && $set->valid()) {
         yield $set->current();
         $set->next();
     }
@@ -25,8 +24,7 @@ function fib()
     yield $i = 0;
     yield $j = 1;
 
-    while(true)
-    {
+    while (true) {
         yield $k = $i + $j;
         $i = $j;
         $j = $k;
@@ -36,7 +34,6 @@ function fib()
 /*
  * Generate 100 Fibonacci numbers
  */
-foreach(loop(100, fib()) as $item)
-{
-    print($item.',');
+foreach (loop(100, fib()) as $item) {
+    print($item . ',');
 }

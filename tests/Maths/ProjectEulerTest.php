@@ -62,7 +62,7 @@ class ProjectEulerTest extends TestCase
     {
         $this->assertSame(31875000, problem9());
     }
-    
+
     public function testProblem10(): void
     {
         $this->assertSame(142913828922, problem10());

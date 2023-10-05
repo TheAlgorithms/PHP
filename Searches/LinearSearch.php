@@ -5,10 +5,6 @@
  *
  * Reference: https://www.geeksforgeeks.org/linear-search/
  *
- * @param Array $list a array of integers to search
- * @param integer $target an integer number to search for in the list
- * @return integer the index where the target is found (or -1 if not found)
- *
  * Examples:
  *  data =  5, 7, 8, 11, 12, 15, 17, 18, 20
  *  x = 15
@@ -17,16 +13,15 @@
  *  x = 1
  *  Element not found
  *
- *  @param Array $list a array of integers to search
+ *  @param Array $list an array of integers to search
  *  @param integer $target an integer number to search for in the list
  *  @return integer the index where the target is found (or -1 if not found)
  */
 function linearSearch($list, $target)
 {
     $n = sizeof($list);
-    for($i = 0; $i < $n; $i++)
-    {
-        if($list[$i] == $target) {
+    for ($i = 0; $i < $n; $i++) {
+        if ($list[$i] == $target) {
             return $i + 1;
         }
     }

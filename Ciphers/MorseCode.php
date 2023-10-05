@@ -3,8 +3,9 @@
 /**
  * Encode text to Morse Code.
  *
- * @param string text to encode
+ * @param  string  $text  text to encode
  * @return string encoded text
+ * @throws \Exception
  */
 function encode(string $text): string
 {
@@ -57,13 +58,14 @@ function encode(string $text): string
             throw new \Exception("Invalid character: $c");
         }
     }
-    substr_replace($encodedText ,"", -1); // Removes trailing space
+    substr_replace($encodedText, "", -1); // Removes trailing space
     return $encodedText;
 }
 
 /**
  * Decode Morse Code to text.
- * @param string text to decode
+ * @param  string  $text  text to decode
+ * @throws \Exception
  */
 function decode(string $text): string
 {

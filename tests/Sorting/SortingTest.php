@@ -13,7 +13,7 @@ require_once __DIR__ . '/../../Sorting/QuickSort.php';
 require_once __DIR__ . '/../../Sorting/RadixSort.php';
 require_once __DIR__ . '/../../Sorting/SelectionSort.php';
 
-class SortingTests extends TestCase
+class SortingTest extends TestCase
 {
     public function testBubbleSort()
     {

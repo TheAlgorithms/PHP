@@ -41,12 +41,5 @@ function SentinelSearch($list, $target){
     else
         return -1;
 }
-$arr=array(1,2,3,4,5,6);
-$key=6;
-$index=SentinelSearch($arr,$key);
-if($index!=-1){
-    echo "$key found at index $index";
-}
-else 
-    echo "$key not found";
+
 ?>

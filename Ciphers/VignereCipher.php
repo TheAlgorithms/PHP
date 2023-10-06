@@ -8,7 +8,7 @@
  * @param string $key The encryption key.
  * @return string The encrypted text.
  */
-function vigenere_encrypt($plaintext, $key)
+function vigenere_encrypt($plaintext, $key): string
 {
     // Convert the input to uppercase for consistency
     $plaintext = strtoupper($plaintext);
@@ -39,13 +39,13 @@ function vigenere_encrypt($plaintext, $key)
  * @param string $key The decryption key.
  * @return string The decrypted text.
  */
-function vigenere_decrypt($ciphertext, $key)
+function vigenere_decrypt($ciphertext, $key): string
 {
     $ciphertext = strtoupper($ciphertext);
     $key = strtoupper($key);
     $keyLength = strlen($key);
     $decryptedText = "";
-    for ($i = 0; $i < strlen($ciphertext); $i++){
+    for ($i = 0; $i < strlen($ciphertext); $i++) {
         $char = $ciphertext[$i];
         if (ctype_alpha($char)) {
             // Calculate the shift based on the key

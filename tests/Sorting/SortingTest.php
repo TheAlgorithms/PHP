@@ -76,9 +76,7 @@ class SortingTest extends TestCase
     public function testCountSort()
     {
         $array = [-5, -10, 0, -3, 8, 5, -1, 10];
-        $min = 0;
-        $max = 9;
-        $sorted = countSort($array, 0, 9);
+        $sorted = countSort($array);
         $this->assertEquals([-10, -5, -3, -1, 0, 5, 8, 10], $sorted);
     }
 
@@ -247,8 +245,8 @@ class SortingTest extends TestCase
         $secondArray = array(-6, 12, 14, 17, 5, 4, -9, 15, 0, -8);
         $expectedResultTwo = array(-9, -8, -6, 0, 4, 5, 12, 14, 15, 17);
 
-        $resultOne = countSort($firstArray, $minRange = -10, $maxRange = 20);
-        $resultTwo = countSort($secondArray, $minRange = -10, $maxRange = 20);
+        $resultOne = countSort($firstArray);
+        $resultTwo = countSort($secondArray);
 
         $this->assertEquals($expectedResultOne, $resultOne);
         $this->assertEquals($expectedResultTwo, $resultTwo);

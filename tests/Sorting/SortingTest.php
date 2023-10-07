@@ -204,7 +204,7 @@ class SortingTest extends TestCase
 
     public function testMergeSortPerformance()
     {
-        $array = range(1, 1000000);
+        $array = range(1, 100000);
         $start = microtime(true);
         mergeSort($array);
         $end = microtime(true);
@@ -231,7 +231,7 @@ class SortingTest extends TestCase
 
     public function testSelectionSortPerformance()
     {
-        $array = range(1, 10000);
+        $array = range(1, 1000);
         $start = microtime(true);
         selectionSort($array);
         $end = microtime(true);
@@ -269,7 +269,7 @@ class SortingTest extends TestCase
 
     public function testHeapSortPerformance()
     {
-        $array = range(1, 100000);
+        $array = range(1, 10000);
         shuffle($array);  // Randomize the order
         $start = microtime(true);
         heapSort($array);

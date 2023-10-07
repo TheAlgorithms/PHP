@@ -3,7 +3,7 @@
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../vendor/autoload.php'; // Adjust the path as needed
-require_once __DIR__ . '/../../Ciphers/RailFenceCipher.php'; // Adjust the path as needed
+require_once __DIR__ . '/../../Ciphers/RailfenceCipher.php'; // Adjust the path as needed
 
 class RailFenceCipherTest extends TestCase
 {

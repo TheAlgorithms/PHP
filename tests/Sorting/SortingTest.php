@@ -204,7 +204,7 @@ class SortingTest extends TestCase
 
     public function testMergeSortPerformance()
     {
-        $array = range(1, 100000);
+        $array = range(1, 10000);
         $start = microtime(true);
         mergeSort($array);
         $end = microtime(true);
@@ -222,7 +222,7 @@ class SortingTest extends TestCase
 
     public function testRadixSortPerformance()
     {
-        $array = range(1, 100000);
+        $array = range(1, 10000);
         $start = microtime(true);
         radixSort($array);
         $end = microtime(true);

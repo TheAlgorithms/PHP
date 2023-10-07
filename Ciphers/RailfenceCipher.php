@@ -9,7 +9,7 @@
  *
  * @return string The encoded message.
  */
-function encode($plainMessage, $rails): string
+function Railencode($plainMessage, $rails): string
 {
     $cipherMessage = [];
     $position = ($rails * 2) - 2;
@@ -40,7 +40,7 @@ function encode($plainMessage, $rails): string
  *
  * @return string The decoded plain message.
  */
-function decode($cipherMessage, $rails): string
+function Raildecode($cipherMessage, $rails): string
 {
     $position = ($rails * 2) - 2;
     $textLength = strlen($cipherMessage);

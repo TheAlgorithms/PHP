@@ -11,16 +11,16 @@ class RailFenceCipherTest extends TestCase
     {
         $plainMessage = "ABCDEF";
         $rails = 3;
-        $cipherMessage = encode($plainMessage, $rails);
-        $decodedMessage = decode($cipherMessage, $rails);
+        $cipherMessage = Railencode($plainMessage, $rails);
+        $decodedMessage = Raildecode($cipherMessage, $rails);
         $this->assertEquals($plainMessage, $decodedMessage);
     }
     public function testRailFenceCipherCase2()
     {
         $plainMessage = "THIS IS RAILFENCE";
         $rails = 3;
-        $cipherMessage = encode($plainMessage, $rails);
-        $decodedMessage = decode($cipherMessage, $rails);
+        $cipherMessage = Railencode($plainMessage, $rails);
+        $decodedMessage = Raildecode($cipherMessage, $rails);
         $this->assertEquals($plainMessage, $decodedMessage);
     }
 }

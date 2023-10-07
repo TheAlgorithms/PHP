@@ -72,6 +72,7 @@
   * [Quicksort](./Sorting/QuickSort.php)
   * [Radixsort](./Sorting/RadixSort.php)
   * [Selectionsort](./Sorting/SelectionSort.php)
+  * [TimSort](./Sorting/TimSort.php)
 
 ## Strings
   * [Checkanagram](./Strings/CheckAnagram.php)

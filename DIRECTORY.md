@@ -91,7 +91,7 @@
     * [Cipherstest](./tests/Ciphers/CiphersTest.php)
     * [Monoalphabeticciphertest](./tests/Ciphers/MonoAlphabeticCipherTest.php)
     * [Morsecodetest](./tests/Ciphers/MorseCodeTest.php)
-    * [Railfenceciphertest](./tests/Ciphers/RailFenceCipherTest.php)
+    * [Railfenceciphertest](./tests/Ciphers/RailfenceCipherTest.php)
     * [Vignereciphertest](./tests/Ciphers/VignereCipherTest.php)
   * Conversions
     * [Conversionstest](./tests/Conversions/ConversionsTest.php)

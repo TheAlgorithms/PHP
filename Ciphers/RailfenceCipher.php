@@ -13,7 +13,6 @@ function encode($plainMessage, $rails): string
 {
     $cipherMessage = [];
     $position = ($rails * 2) - 2;
-    
     // Iterate through the characters of the plain message
     for ($index = 0; $index < strlen($plainMessage); $index++) {
         for ($step = 0; $step < $rails; $step++) {

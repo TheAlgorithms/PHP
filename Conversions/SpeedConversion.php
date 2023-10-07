@@ -14,25 +14,26 @@
  * kn -> 1 knot which is equal to 1 nautical mile (1852 km/h)
  * The conversion is made using kilometers as base
  *
- * @param float $speed
- * @param string $unitFrom
- * @param string $unitTo
- * @return int
+ * @param  float  $speed
+ * @param  string  $unitFrom
+ * @param  string  $unitTo
+ * @return float
+ * @throws \Exception
  */
 function convertSpeed(float $speed, string $unitFrom, string $unitTo)
 {
     $speedUnitsFrom = [
         'mph' => 1.609344,
         'km/h' => 1,
-        'm/s'=> 3.6,
-        'ft/s'=> 1.097,
+        'm/s' => 3.6,
+        'ft/s' => 1.097,
         'kn' => 1.852,
     ];
     $speedUnitsTo = [
         'mph' => 0.6213712,
         'km/h' => 1,
-        'm/s'=> 0.277778,
-        'ft/s'=> 0.911344,
+        'm/s' => 0.277778,
+        'ft/s' => 0.911344,
         'kn' => 0.539957,
     ];
     $availableUnits = array_keys($speedUnitsFrom);

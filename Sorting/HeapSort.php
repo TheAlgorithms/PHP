@@ -1,4 +1,5 @@
 <?php
+
 /**
  * HeapSort Algorithm
  *
@@ -12,25 +13,29 @@
  */
 function heapSort(array $arr): array
 {
+    // Get the number of elements in the array.
     $n = count($arr);
+
+    // Throw an exception if the array has no elements.
     if ($n <= 0) {
         throw new \UnexpectedValueException('Input array must have at least one element.');
     }
 
-    // Build heap
-    for ($i = $n / 2 - 1; $i >= 0; $i--) {
+    // Build a max heap from the array.
+    for ($i = floor($n / 2) - 1; $i >= 0; $i--) {
         heapify($arr, $n, $i);
     }
 
-    // Extract elements from heap one by one
+    // Extract elements from the max heap and build the sorted array.
     for ($i = $n - 1; $i >= 0; $i--) {
-        // Swap
+        // Swap the root(maximum value) of the heap with the last element of the heap.
         [$arr[0], $arr[$i]] = [$arr[$i], $arr[0]];
 
-        // Heapify the reduced heap
+        // Heapify the reduced heap.
         heapify($arr, $i, 0);
     }
 
+    // Return the sorted array.
     return $arr;
 }
 
@@ -46,7 +51,6 @@ function heapify(array &$arr, int $n, int $i): void
     $largest = $i;
     $left = 2 * $i + 1;
     $right = 2 * $i + 2;
-
     if ($left < $n && $arr[$left] > $arr[$largest]) {
         $largest = $left;
     }

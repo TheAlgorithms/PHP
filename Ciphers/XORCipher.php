@@ -7,18 +7,16 @@
  * character with the key.
  * The key is repeated until it is the same length as the input.
  *
- * @param string $input The input string.
+ * @param string $input_string The input string.
  * @param string $key The key to use.
  * @return string The encrypted string.
  */
 function xorCipher(string $input_string, string $key)
 {
-
     $key_len = strlen($key);
     $result = array();
 
-    for ($idx = 0; $idx < strlen($input_string); $idx++)
-    {
+    for ($idx = 0; $idx < strlen($input_string); $idx++) {
         array_push($result, $input_string[$idx] ^ $key[$idx % $key_len]);
     }
 

@@ -20,7 +20,7 @@ function countSort( $array, $min, $max )
 
     // Count the occurrences of each element in the input array.
     foreach ( $array as $number ) {
-        $count[ $number ]++;
+        $count[$number]++;
     }
 
     // Initialize an index to track the position in the sorted array.

@@ -11,8 +11,9 @@
  * (2 + 0) base 10
  * 2 base 10
  *
- * @param string $binaryNumber
+ * @param  string  $binaryNumber
  * @return int
+ * @throws \Exception
  */
 function binaryToDecimal($binaryNumber)
 {

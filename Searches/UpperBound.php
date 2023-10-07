@@ -10,24 +10,25 @@ require_once __DIR__ . '/../Utils/ArrayHelpers.php';
  * [C++ Lower Bound](http://www.cplusplus.com/reference/algorithm/upper_bound/)
  *
  * It is assumed that an integer array is provided
- * and the second parameter is also a integer
+ * and the second parameter is also an integer
  *
- * @param array of sorted integers
- * @param integer whose upper bound is to be found
+ * @param array  $arr  of sorted integers
+ * @param integer  $elem  whose upper bound is to be found
  *
- * @return the index of upper bound of the given element
+ * @return int the index of upper bound of the given element
  */
-function upperBound(array $arr, int $elem){
+function upperBound(array $arr, int $elem)
+{
     isSortedAscendingInts($arr);
     $hi = count($arr);
     $lo = 0;
 
-    while($lo < $hi){
-        $mid = $lo + floor(($hi - $lo)/2);
+    while ($lo < $hi) {
+        $mid = $lo + floor(($hi - $lo) / 2);
 
-        if($arr[$mid] <= $elem){
+        if ($arr[$mid] <= $elem) {
             $lo = $mid + 1;
-        }else{
+        } else {
             $hi = $mid;
         }
     }

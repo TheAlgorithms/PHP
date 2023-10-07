@@ -1,8 +1,5 @@
 <?php
 
-use function PHPUnit\Framework\assertEquals;
-use function PHPUnit\Framework\assertFalse;
-use function PHPUnit\Framework\assertTrue;
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -24,16 +21,16 @@ class SearchesTest extends TestCase
         $list = [0, 5, 7, 10, 15];
         $target = 0;
         $result = binarySearchIterative($list, $target);
-        assertEquals(0, $result);
+        $this->assertEquals(0, $result);
         $target = 15;
         $result = binarySearchIterative($list, $target);
-        assertEquals(4, $result);
+        $this->assertEquals(4, $result);
         $target = 5;
         $result = binarySearchIterative($list, $target);
-        assertEquals(1, $result);
+        $this->assertEquals(1, $result);
         $target = 6;
         $result = binarySearchIterative($list, $target);
-        assertEquals(null, $result);
+        $this->assertEquals(null, $result);
     }
 
     public function testBinarySearchByRecursion()
@@ -41,16 +38,16 @@ class SearchesTest extends TestCase
         $list = [0, 5, 7, 10, 15];
         $target = 0;
         $result = binarySearchByRecursion($list, $target, 0, 4);
-        assertEquals(0, $result);
+        $this->assertEquals(0, $result);
         $target = 15;
         $result = binarySearchByRecursion($list, $target, 0, 4);
-        assertEquals(4, $result);
+        $this->assertEquals(4, $result);
         $target = 5;
         $result = binarySearchByRecursion($list, $target, 0, 4);
-        assertEquals(1, $result);
+        $this->assertEquals(1, $result);
         $target = 6;
         $result = binarySearchByRecursion($list, $target, 0, 4);
-        assertEquals(null, $result);
+        $this->assertEquals(null, $result);
     }
 
     public function testBinarySearchByRecursionWithEmptyList()
@@ -58,7 +55,7 @@ class SearchesTest extends TestCase
         $list = [];
         $target = 0;
         $result = binarySearchByRecursion($list, $target, 0, 0);
-        assertEquals(null, $result);
+        $this->assertEquals(null, $result);
     }
 
     public function testBinarySearchByRecursionWithOneElementList()
@@ -66,10 +63,10 @@ class SearchesTest extends TestCase
         $list = [0];
         $target = 0;
         $result = binarySearchByRecursion($list, $target, 0, 0);
-        assertEquals(0, $result);
+        $this->assertEquals(0, $result);
         $target = 1;
         $result = binarySearchByRecursion($list, $target, 0, 0);
-        assertEquals(null, $result);
+        $this->assertEquals(null, $result);
     }
 
     public function testBinarySearchByRecursionWithTwoElementList()
@@ -77,13 +74,13 @@ class SearchesTest extends TestCase
         $list = [0, 1];
         $target = 0;
         $result = binarySearchByRecursion($list, $target, 0, 1);
-        assertEquals(0, $result);
+        $this->assertEquals(0, $result);
         $target = 1;
         $result = binarySearchByRecursion($list, $target, 0, 1);
-        assertEquals(1, $result);
+        $this->assertEquals(1, $result);
         $target = 2;
         $result = binarySearchByRecursion($list, $target, 0, 1);
-        assertEquals(null, $result);
+        $this->assertEquals(null, $result);
     }
 
     public function testBinarySearchByRecursionWithThreeElementList()
@@ -91,28 +88,28 @@ class SearchesTest extends TestCase
         $list = [0, 1, 2];
         $target = 0;
         $result = binarySearchByRecursion($list, $target, 0, 2);
-        assertEquals(0, $result);
+        $this->assertEquals(0, $result);
         $target = 1;
         $result = binarySearchByRecursion($list, $target, 0, 2);
-        assertEquals(1, $result);
+        $this->assertEquals(1, $result);
         $target = 2;
         $result = binarySearchByRecursion($list, $target, 0, 2);
-        assertEquals(2, $result);
+        $this->assertEquals(2, $result);
         $target = 3;
         $result = binarySearchByRecursion($list, $target, 0, 2);
-        assertEquals(null, $result);
+        $this->assertEquals(null, $result);
     }
 
     public function testFibonacciSearch()
     {
         $test1 = fibonacciPosition(6);
-        assertEquals(8, $test1);
+        $this->assertEquals(8, $test1);
 
         $test2 = fibonacciPosition(9);
-        assertEquals(34, $test2);
+        $this->assertEquals(34, $test2);
 
         $test3 = fibonacciPosition(60);
-        assertEquals(1548008755920, $test3);
+        $this->assertEquals(1548008755920, $test3);
     }
 
     public function testLinearSearch()
@@ -120,7 +117,7 @@ class SearchesTest extends TestCase
         $list = [5, 7, 8, 11, 12, 15, 17, 18, 20];
         $target = 15;
         $result = linearSearch($list, $target);
-        assertEquals(6, $result);
+        $this->assertEquals(6, $result);
     }
 
     public function testLowerBound()
@@ -128,7 +125,7 @@ class SearchesTest extends TestCase
         $list = [1, 2, 3, 3, 3, 4, 5, 9];
         $target = 3;
         $result = lowerBound($list, $target);
-        assertEquals(2, $result);
+        $this->assertEquals(2, $result);
     }
 
     public function testUpperBound()
@@ -136,15 +133,15 @@ class SearchesTest extends TestCase
         $list = [1, 2, 3, 3, 3, 4, 5, 9];
         $target = 3;
         $result = upperBound($list, $target);
-        assertEquals(5, $result);
+        $this->assertEquals(5, $result);
     }
-    
+
     public function testJumpSearch()
     {
         $list = array( 3,5,6,7,9,10,12,20,22,24);
         $target = 12;
         $result = jumpSearch($list, $target);
-        assertEquals(6, $result);
+        $this->assertEquals(6, $result);
     }
 
     public function testExponentialSearch()
@@ -152,7 +149,7 @@ class SearchesTest extends TestCase
         $list = array(2,3,4,7,28,35,63,98);
         $target = 35;
         $result = exponentialSearch($list, $target);
-        assertEquals(5, $result);
+        $this->assertEquals(5, $result);
     }
 
     public function testTernarySearchIterative()
@@ -160,16 +157,16 @@ class SearchesTest extends TestCase
         $list = [0, 5, 7, 10, 15];
         $target = 0;
         $result = ternarySearchIterative($list, $target);
-        assertEquals(0, $result);
+        $this->assertEquals(0, $result);
         $target = 15;
         $result = ternarySearchIterative($list, $target);
-        assertEquals(4, $result);
+        $this->assertEquals(4, $result);
         $target = 5;
         $result = ternarySearchIterative($list, $target);
-        assertEquals(1, $result);
+        $this->assertEquals(1, $result);
         $target = 6;
         $result = ternarySearchIterative($list, $target);
-        assertEquals(null, $result);
+        $this->assertEquals(null, $result);
     }
 
     public function testTernarySearchByRecursion()
@@ -177,16 +174,16 @@ class SearchesTest extends TestCase
         $list = [0, 5, 7, 10, 15];
         $target = 0;
         $result = ternarySearchByRecursion($list, $target, 0, 4);
-        assertEquals(0, $result);
+        $this->assertEquals(0, $result);
         $target = 15;
         $result = ternarySearchByRecursion($list, $target, 0, 4);
-        assertEquals(4, $result);
+        $this->assertEquals(4, $result);
         $target = 5;
         $result = ternarySearchByRecursion($list, $target, 0, 4);
-        assertEquals(1, $result);
+        $this->assertEquals(1, $result);
         $target = 6;
         $result = ternarySearchByRecursion($list, $target, 0, 4);
-        assertEquals(null, $result);
+        $this->assertEquals(null, $result);
     }
 
     public function testInterpolationSearch()
@@ -194,15 +191,15 @@ class SearchesTest extends TestCase
         $list = [2, 6, 8, 10, 12, 14, 16, 18, 20, 22, 26, 34, 39];
         $target = 20;
         $result = interpolationSearch($list, $target);
-        assertEquals(8, $result);
+        $this->assertEquals(8, $result);
         $target = 12;
         $result = interpolationSearch($list, $target);
-        assertEquals(4, $result);
+        $this->assertEquals(4, $result);
         $target = 1000;
         $result = interpolationSearch($list, $target);
-        assertEquals(null, $result);
+        $this->assertEquals(null, $result);
         $target = 39;
         $result = interpolationSearch($list, $target);
-        assertEquals(12, $result);
+        $this->assertEquals(12, $result);
     }
 }

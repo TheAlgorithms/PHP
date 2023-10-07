@@ -1,11 +1,13 @@
 <?php
+
 /**
  * This function calculates
  * The mean value of
  * numbers provided
- * 
- * @param decimal $numbers A variable sized number input
+ *
+ * @param  decimal  $numbers  A variable sized number input
  * @return decimal $mean Mean of provided numbers
+ * @throws \Exception
  */
 function mean(...$numbers)
 {
@@ -14,7 +16,6 @@ function mean(...$numbers)
     }
 
     $total = array_sum($numbers);
-    $mean = $total / count($numbers);
-    
-    return $mean;
+
+    return $total / count($numbers);
 }

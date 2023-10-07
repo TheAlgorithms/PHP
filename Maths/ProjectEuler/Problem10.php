@@ -1,4 +1,5 @@
 <?php
+
 /*
  * This function solves the problem 10 of the Project Euler.
  *
@@ -18,14 +19,15 @@ function problem10(): int
     $n = 2000000;
     $isPrime = [];
 
-    for ($i = 2; $i <= $n; $i++){
+    for ($i = 2; $i <= $n; $i++) {
         $isPrime[$i] = $i;
     }
 
-    for ($i = 2; $i*$i <= $n; $i++){
-        if (isset ($isPrime[$i])){
-            for ( $j = $i; $i*$j <= $n; $j++)
-               unset($isPrime[$i*$j]);
+    for ($i = 2; $i * $i <= $n; $i++) {
+        if (isset($isPrime[$i])) {
+            for ($j = $i; $i * $j <= $n; $j++) {
+                unset($isPrime[$i * $j]);
+            }
         }
     }
 

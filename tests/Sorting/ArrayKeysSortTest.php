@@ -7,7 +7,8 @@ use PHPUnit\Framework\TestCase;
 
 class ArrayKeysSortTest extends TestCase
 {
-    public function testArrayKeysSort() {
+    public function testArrayKeysSort()
+    {
         //test array of arrays
         $array1 = [
             ['fruit' => 'banana', 'color' => 'yellow', 'cant' => 5],
@@ -36,22 +37,22 @@ class ArrayKeysSortTest extends TestCase
         $this->assertEquals($result2, $test2);
 
         //test array of objects
-        $object1 = new \stdClass;
+        $object1 = new \stdClass();
         $object1->fruit = 'banana';
         $object1->color = 'yellow';
         $object1->cant = 5;
 
-        $object2 = new \stdClass;
+        $object2 = new \stdClass();
         $object2->fruit = 'apple';
         $object2->color = 'red';
         $object2->cant = 2;
 
-        $object3 = new \stdClass;
+        $object3 = new \stdClass();
         $object3->fruit = 'apple';
         $object3->color = 'green';
         $object3->cant = 7;
 
-        $object4 = new \stdClass;
+        $object4 = new \stdClass();
         $object4->fruit = 'grapes';
         $object4->color = 'purple';
         $object4->cant = 4;

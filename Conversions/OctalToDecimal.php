@@ -10,8 +10,9 @@
  * (1 * (8 ^ 1) + 0 * (8 ^ 0)) base 10
  * (8 + 0) base 10
  * 9 base 10
- * @param string $octalNumber
+ * @param  string  $octalNumber
  * @return int
+ * @throws \Exception
  */
 function octalToDecimal($octalNumber)
 {
@@ -34,8 +35,9 @@ function octalToDecimal($octalNumber)
  * submitted Decimal Number to
  * Octal Number.
  *
- * @param string $decimalNumber
+ * @param  string  $decimalNumber
  * @return string
+ * @throws \Exception
  */
 function decimalToOctal($decimalNumber)
 {

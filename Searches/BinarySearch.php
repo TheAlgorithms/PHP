@@ -21,7 +21,7 @@
 function binarySearchIterative($list, $target)
 {
     $first = 0;
-    $last = count($list)-1;
+    $last = count($list) - 1;
 
 
     while ($first <= $last) {
@@ -70,8 +70,9 @@ function binarySearchByRecursion($list, $target, $start, $end)
         return $list[0] == $target ? 0 : null;
     }
 
-    if ($start > $end)
+    if ($start > $end) {
         return null;
+    }
 
 
     $mid = ($start + $end) >> 1;
@@ -80,9 +81,9 @@ function binarySearchByRecursion($list, $target, $start, $end)
     if ($list[$mid] == $target) {
         return $mid;
     } elseif ($list[$mid] > $target) {
-        return binarySearchByRecursion($list, $target, $start, $mid-1);
+        return binarySearchByRecursion($list, $target, $start, $mid - 1);
     } elseif ($list[$mid] < $target) {
-        return binarySearchByRecursion($list, $target, $mid+1, $end);
+        return binarySearchByRecursion($list, $target, $mid + 1, $end);
     }
 
     return null;

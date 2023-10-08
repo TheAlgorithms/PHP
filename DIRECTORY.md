@@ -16,6 +16,7 @@
 
 ## Datastructures
   * [Singlylinkedlist](./DataStructures/SinglyLinkedList.php)
+  * [Doublylinkedlist](./DataStructures/DoublyLinkedList.php)
 
 ## Graphs
   * [Breadthfirstsearch](./Graphs/BreadthFirstSearch.php)
@@ -95,6 +96,7 @@
     * [Conversionstest](./tests/Conversions/ConversionsTest.php)
   * Datastructures
     * [Singlylinkedlisttest](./tests/DataStructures/SinglyLinkedListTest.php)
+    * [Doublylinkedlisttest](./tests/DataStructures/DoublyLinkedListTest.php)
   * Graphs
     * [Breadthfirstsearchtest](./tests/Graphs/BreadthFirstSearchTest.php)
     * [Depthfirstsearchtest](./tests/Graphs/DepthFirstSearchTest.php)

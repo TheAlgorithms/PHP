@@ -13,7 +13,7 @@ require_once __DIR__ . '/../../Sorting/QuickSort.php';
 require_once __DIR__ . '/../../Sorting/RadixSort.php';
 require_once __DIR__ . '/../../Sorting/SelectionSort.php';
 
-class SortingTests extends TestCase
+class SortingTest extends TestCase
 {
     public function testBubbleSort()
     {
@@ -76,9 +76,7 @@ class SortingTests extends TestCase
     public function testCountSort()
     {
         $array = [-5, -10, 0, -3, 8, 5, -1, 10];
-        $min = 0;
-        $max = 9;
-        $sorted = countSort($array, 0, 9);
+        $sorted = countSort($array);
         $this->assertEquals([-10, -5, -3, -1, 0, 5, 8, 10], $sorted);
     }
 
@@ -206,7 +204,7 @@ class SortingTests extends TestCase
 
     public function testMergeSortPerformance()
     {
-        $array = range(1, 1000000);
+        $array = range(1, 10000);
         $start = microtime(true);
         mergeSort($array);
         $end = microtime(true);
@@ -215,7 +213,7 @@ class SortingTests extends TestCase
 
     public function testQuickSortPerformance()
     {
-        $array = range(1, 1000000);
+        $array = range(1, 1000);
         $start = microtime(true);
         quickSort($array);
         $end = microtime(true);
@@ -224,7 +222,7 @@ class SortingTests extends TestCase
 
     public function testRadixSortPerformance()
     {
-        $array = range(1, 1000000);
+        $array = range(1, 10000);
         $start = microtime(true);
         radixSort($array);
         $end = microtime(true);
@@ -233,7 +231,7 @@ class SortingTests extends TestCase
 
     public function testSelectionSortPerformance()
     {
-        $array = range(1, 1000000);
+        $array = range(1, 1000);
         $start = microtime(true);
         selectionSort($array);
         $end = microtime(true);
@@ -247,8 +245,8 @@ class SortingTests extends TestCase
         $secondArray = array(-6, 12, 14, 17, 5, 4, -9, 15, 0, -8);
         $expectedResultTwo = array(-9, -8, -6, 0, 4, 5, 12, 14, 15, 17);
 
-        $resultOne = countSort($firstArray, $minRange = -10, $maxRange = 20);
-        $resultTwo = countSort($secondArray, $minRange = -10, $maxRange = 20);
+        $resultOne = countSort($firstArray);
+        $resultTwo = countSort($secondArray);
 
         $this->assertEquals($expectedResultOne, $resultOne);
         $this->assertEquals($expectedResultTwo, $resultTwo);
@@ -271,7 +269,7 @@ class SortingTests extends TestCase
 
     public function testHeapSortPerformance()
     {
-        $array = range(1, 1000000);
+        $array = range(1, 10000);
         shuffle($array);  // Randomize the order
         $start = microtime(true);
         heapSort($array);

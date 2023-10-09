@@ -5,7 +5,7 @@ use PHPUnit\Framework\TestCase;
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../Ciphers/VignereCipher.php';
 
-class VignereCipher extends TestCase
+class VignereCipherTest extends TestCase
 {
     public function testVignereCipher()
     {

@@ -108,7 +108,7 @@
   * Sorting
     * [Arraykeyssorttest](./tests/Sorting/ArrayKeysSortTest.php)
     * [Gnomesorttest](./tests/Sorting/GnomeSortTest.php)
-    * [Sortingtests](./tests/Sorting/SortingTests.php)
+    * [Sortingtest](./tests/Sorting/SortingTest.php)
   * Strings
     * [Stringstest](./tests/Strings/StringsTest.php)
 

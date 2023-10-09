@@ -1,6 +1,7 @@
 # List of all files
 
 ## Ciphers
+  * [Atbashcipher](./Ciphers/AtbashCipher.php)
   * [Caesarcipher](./Ciphers/CaesarCipher.php)
   * [Monoalphabeticcipher](./Ciphers/MonoAlphabeticCipher.php)
   * [Morsecode](./Ciphers/MorseCode.php)
@@ -88,6 +89,7 @@
 
 ## Tests
   * Ciphers
+    * [Atbashciphertest](./tests/Ciphers/AtbashCipherTest.php)
     * [Cipherstest](./tests/Ciphers/CiphersTest.php)
     * [Monoalphabeticciphertest](./tests/Ciphers/MonoAlphabeticCipherTest.php)
     * [Morsecodetest](./tests/Ciphers/MorseCodeTest.php)

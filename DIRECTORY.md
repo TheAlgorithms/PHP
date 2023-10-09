@@ -4,6 +4,7 @@
   * [Caesarcipher](./Ciphers/CaesarCipher.php)
   * [Monoalphabeticcipher](./Ciphers/MonoAlphabeticCipher.php)
   * [Morsecode](./Ciphers/MorseCode.php)
+  * [Railfencecipher](./Ciphers/RailfenceCipher.php)
   * [Vignerecipher](./Ciphers/VignereCipher.php)
   * [Xorcipher](./Ciphers/XORCipher.php)
 
@@ -91,6 +92,7 @@
     * [Cipherstest](./tests/Ciphers/CiphersTest.php)
     * [Monoalphabeticciphertest](./tests/Ciphers/MonoAlphabeticCipherTest.php)
     * [Morsecodetest](./tests/Ciphers/MorseCodeTest.php)
+    * [Railfenceciphertest](./tests/Ciphers/RailfenceCipherTest.php)
     * [Vignereciphertest](./tests/Ciphers/VignereCipherTest.php)
   * Conversions
     * [Conversionstest](./tests/Conversions/ConversionsTest.php)
@@ -107,7 +109,7 @@
   * Sorting
     * [Arraykeyssorttest](./tests/Sorting/ArrayKeysSortTest.php)
     * [Gnomesorttest](./tests/Sorting/GnomeSortTest.php)
-    * [Sortingtests](./tests/Sorting/SortingTests.php)
+    * [Sortingtest](./tests/Sorting/SortingTest.php)
   * Strings
     * [Stringstest](./tests/Strings/StringsTest.php)
 

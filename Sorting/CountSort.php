@@ -2,13 +2,13 @@
 
 /**
  * @param $array
- * @param $min
- * @param $max
  * @return mixed
  */
-function countSort($array, $min, $max)
+function countSort($array)
 {
     $count = array();
+    $min = min($array);
+    $max = max($array);
 
     for ($i = $min; $i <= $max; $i++) {
         $count[$i] = 0;

@@ -5,7 +5,7 @@
  * The Atbash Cipher is a simple substitution cipher where each letter in the plaintext is
  * replaced with its corresponding letter from the end of the alphabet (reverse alphabet).
  * Non-alphabet characters are not modified.
- * 
+ *
  * @param string $plainText The plaintext to encrypt.
  * @return string The encrypted message.
  */
@@ -29,7 +29,7 @@ function atbash_encrypt($plainText)
 /**
  * Decrypt a message encrypted using the Atbash Cipher.
  * Since the Atbash Cipher is its own inverse, decryption is the same as encryption.
- * 
+ *
  * @param string $cipherText The ciphertext to decrypt.
  * @return string The decrypted message.
  */

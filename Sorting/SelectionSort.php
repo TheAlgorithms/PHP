@@ -6,7 +6,7 @@
  * @param array $array
  * @return array
  */
-function selectionSorting(array $array)
+function selectionSort(array $array)
 {
     $length = count($array);
 

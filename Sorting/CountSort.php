@@ -13,6 +13,7 @@ function countSort(array $array, int $min, int $max)
     // Create an array to store the count of each element in the input array.
     $count = [];
 
+
     // Initialize the count array with zeros for all possible values within the range.
     for ($i = $min; $i <= $max; $i++) {
         $count[$i] = 0;

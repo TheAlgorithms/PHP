@@ -1,9 +1,11 @@
 # List of all files
 
 ## Ciphers
+  * [Atbashcipher](./Ciphers/AtbashCipher.php)
   * [Caesarcipher](./Ciphers/CaesarCipher.php)
   * [Monoalphabeticcipher](./Ciphers/MonoAlphabeticCipher.php)
   * [Morsecode](./Ciphers/MorseCode.php)
+  * [Railfencecipher](./Ciphers/RailfenceCipher.php)
   * [Vignerecipher](./Ciphers/VignereCipher.php)
   * [Xorcipher](./Ciphers/XORCipher.php)
 
@@ -15,6 +17,8 @@
   * [Speedconversion](./Conversions/SpeedConversion.php)
 
 ## Datastructures
+  * [Doublylinkedlist](./DataStructures/DoublyLinkedList.php)
+  * [Node](./DataStructures/Node.php)
   * [Singlylinkedlist](./DataStructures/SinglyLinkedList.php)
 
 ## Graphs
@@ -87,13 +91,16 @@
 
 ## Tests
   * Ciphers
+    * [Atbashciphertest](./tests/Ciphers/AtbashCipherTest.php)
     * [Cipherstest](./tests/Ciphers/CiphersTest.php)
     * [Monoalphabeticciphertest](./tests/Ciphers/MonoAlphabeticCipherTest.php)
     * [Morsecodetest](./tests/Ciphers/MorseCodeTest.php)
+    * [Railfenceciphertest](./tests/Ciphers/RailfenceCipherTest.php)
     * [Vignereciphertest](./tests/Ciphers/VignereCipherTest.php)
   * Conversions
     * [Conversionstest](./tests/Conversions/ConversionsTest.php)
   * Datastructures
+    * [Doublylinkedlisttest](./tests/DataStructures/DoublyLinkedListTest.php)
     * [Singlylinkedlisttest](./tests/DataStructures/SinglyLinkedListTest.php)
   * Graphs
     * [Breadthfirstsearchtest](./tests/Graphs/BreadthFirstSearchTest.php)
@@ -106,7 +113,7 @@
   * Sorting
     * [Arraykeyssorttest](./tests/Sorting/ArrayKeysSortTest.php)
     * [Gnomesorttest](./tests/Sorting/GnomeSortTest.php)
-    * [Sortingtests](./tests/Sorting/SortingTests.php)
+    * [Sortingtest](./tests/Sorting/SortingTest.php)
   * Strings
     * [Stringstest](./tests/Strings/StringsTest.php)
 

@@ -87,7 +87,8 @@ class DoublyLinkedListTest extends TestCase
     /**
      * Test for the printListReverse method
      */
-    public function testPrintListReverse(){
+    public function testPrintListReverse()
+    {
         $list = new DoublyLinkedList();
         $list->append(1);
         $list->append(2);
@@ -99,7 +100,8 @@ class DoublyLinkedListTest extends TestCase
     /**
      * Test for the reverse method
      */
-    public function testReverse(){
+    public function testReverse()
+    {
         $list = new DoublyLinkedList();
         $list->append(1);
         $list->append(2);
@@ -112,7 +114,8 @@ class DoublyLinkedListTest extends TestCase
     /**
      * Test for the length method
      */
-    public function testLength(){
+    public function testLength()
+    {
         $list = new DoublyLinkedList();
         $list->append(1);
         $list->append(2);
@@ -122,7 +125,8 @@ class DoublyLinkedListTest extends TestCase
     /**
      * Test for the Search method
      */
-    public function testSearch(){
+    public function testSearch()
+    {
         $list = new DoublyLinkedList();
         $list->append(1);
         $list->append(2);
@@ -134,7 +138,8 @@ class DoublyLinkedListTest extends TestCase
     /**
      * Test for the isEmpty method
      */
-    public function testIsEmpty(){
+    public function testIsEmpty()
+    {
         $list = new DoublyLinkedList();
         $this->assertEquals(true, $list->isEmpty());
     }
@@ -142,7 +147,8 @@ class DoublyLinkedListTest extends TestCase
     /**
      * Test for __toString method
      */
-    public function testToString(){
+    public function testToString()
+    {
         $list = new DoublyLinkedList();
         $list->append(1);
         $list->append(2);
@@ -154,7 +160,8 @@ class DoublyLinkedListTest extends TestCase
     /**
      * Test for the toArray method
      */
-    public function testToArray(){
+    public function testToArray()
+    {
         $list = new DoublyLinkedList();
         $list->append(1);
         $list->append(2);

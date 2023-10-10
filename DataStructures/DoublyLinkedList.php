@@ -1,25 +1,12 @@
 <?php
 
-/**
- * Linked List Node Class
- */
-class Node
-{
-    public ?Node $next = null;
-    public ?Node $prev = null;
-    public $data;
-
-    // Constructor
-    public function __construct($data)
-    {
-        $this->data = $data;
-    }
-}
+require_once __DIR__ . '/Node.php';
 
 /**
  *  Doubly Linked List
  */
-class DoublyLinkedList {
+class DoublyLinkedList
+{
     public ?Node $head = null;
     public ?Node $tail = null;
 
@@ -36,7 +23,6 @@ class DoublyLinkedList {
         $this->head = null;
         $this->tail = null;
     }
-    
 
     // Append to the end of the list
     public function append($data): void

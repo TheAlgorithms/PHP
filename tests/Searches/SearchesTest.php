@@ -215,9 +215,9 @@ class SearchesTest extends TestCase
         $this->assertEquals(3, $result);
         $target = 1000;
         $result = SentinelSearch($list, $target);
-        $this->assertEquals(null, $result);
+        $this->assertEquals(-1, $result);
         $target = -2;
         $result = SentinelSearch($list, $target);
-        $this->assertEquals(null, $result);
+        $this->assertEquals(-1, $result);
     }
 }

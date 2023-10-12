@@ -17,6 +17,8 @@
   * [Speedconversion](./Conversions/SpeedConversion.php)
 
 ## Datastructures
+  * [Doublylinkedlist](./DataStructures/DoublyLinkedList.php)
+  * [Node](./DataStructures/Node.php)
   * [Singlylinkedlist](./DataStructures/SinglyLinkedList.php)
 
 ## Graphs
@@ -98,6 +100,7 @@
   * Conversions
     * [Conversionstest](./tests/Conversions/ConversionsTest.php)
   * Datastructures
+    * [Doublylinkedlisttest](./tests/DataStructures/DoublyLinkedListTest.php)
     * [Singlylinkedlisttest](./tests/DataStructures/SinglyLinkedListTest.php)
   * Graphs
     * [Breadthfirstsearchtest](./tests/Graphs/BreadthFirstSearchTest.php)

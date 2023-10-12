@@ -203,7 +203,6 @@ class SearchesTest extends TestCase
         $result = interpolationSearch($list, $target);
         $this->assertEquals(12, $result);
     }
-    
     public function testSentinelSearch()
     {
         $list = [1,3,5,2,4,13,18,23,25,30];

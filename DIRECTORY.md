@@ -29,6 +29,8 @@
   * [Absolutemax](./Maths/AbsoluteMax.php)
   * [Absolutemin](./Maths/AbsoluteMin.php)
   * [Armstrongnumber](./Maths/ArmstrongNumber.php)
+  * [CheckEven](./Maths/CheckEven.php)
+  * [CheckOdd](./Maths/CheckOdd.php)
   * [Checkpalindrome](./Maths/CheckPalindrome.php)
   * [Checkprime](./Maths/CheckPrime.php)
   * [Factorial](./Maths/Factorial.php)

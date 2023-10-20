@@ -5,6 +5,8 @@ This function will calculate base of any number that is <11
 You can calculate binary, octal quickly with this as well
 For ex. to calculate binary of number 4 you can run "echo basex(4, 2);" and for octal of 
 number let's say 10 you can run "echo basex(10, 8);" 
+
+@author Sevada797 https://github.com/sevada797
 */
 
 function basex($k, $x) {

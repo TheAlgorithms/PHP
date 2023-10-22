@@ -12,6 +12,7 @@ require_once __DIR__ . '/../../Maths/Factorial.php';
 require_once __DIR__ . '/../../Maths/FastExponentiation.php';
 require_once __DIR__ . '/../../Maths/Fibonacci.php';
 require_once __DIR__ . '/../../Maths/Fibonacci2.php';
+require_once __DIR__ . '/../../Maths/GreatestCommonDivisor.php';
 require_once __DIR__ . '/../../Maths/NeonNumber.php';
 require_once __DIR__ . '/../../Maths/PerfectSquare.php';
 require_once __DIR__ . '/../../Maths/Mean.php';
@@ -142,5 +143,15 @@ class MathsTest extends TestCase
         $this->assertEquals([5, 6], mode(5, 5, 6, 6, 7));
         $this->assertEquals([1, 2, 3, 4, 5], mode(1, 2, 3, 4, 5));
         $this->assertEquals([2, 3, 4], mode(2, 2, 3, 3, 4, 4));
+    }
+
+    public function testGreatestCommonDivisor()
+    {
+        $this->assertEquals(8, gcd(24, 16));
+        $this->assertEquals(5, gcd(10, 5));
+        $this->assertEquals(25, gcd(100, 75));
+        $this->assertEquals(6, gcd(12, 18));
+        $this->assertEquals(5, gcd(10, 15));
+        $this->assertEquals(3, gcd(9, 12));
     }
 }

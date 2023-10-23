@@ -35,6 +35,7 @@
   * [Fastexponentiation](./Maths/FastExponentiation.php)
   * [Fibonacci](./Maths/Fibonacci.php)
   * [Fibonacci2](./Maths/Fibonacci2.php)
+  * [Greatestcommondivisor](./Maths/GreatestCommonDivisor.php)
   * [Mean](./Maths/Mean.php)
   * [Median](./Maths/Median.php)
   * [Mode](./Maths/Mode.php)

@@ -9,7 +9,8 @@
  * @param float $x The input number for which to calculate the inverse square root.
  * @return float The fast inverse square root of the input number.
  */
-function fastInvSqrt($x) {
+function fastInvSqrt($x)
+{
     // Convert the input float to an integer
     $i = unpack('l', pack('f', $x))[1];
     // Apply the bit manipulation magic number
@@ -19,4 +20,3 @@ function fastInvSqrt($x) {
     // Perform the final calculation
     return $y * (1.5 - 0.5 * $x * $y * $y);
 }
-

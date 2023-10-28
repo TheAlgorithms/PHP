@@ -158,7 +158,7 @@ class MathsTest extends TestCase
 
     public function testFastInverseSquareRoot()
     {
-        $this->assertEquals(0.31568579235273, fastInvSqrt(10), '', 0.00001);
-        $this->assertEquals(0.49915357479239, fastInvSqrt(4), '', 0.00001);
+        $this->assertEqualsWithDelta(0.31568579235273, fastInvSqrt(10), 0.00001);
+        $this->assertEqualsWithDelta(0.49915357479239, fastInvSqrt(4), 0.00001);
     }
 }

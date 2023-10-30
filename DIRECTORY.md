@@ -34,6 +34,7 @@
   * [Checkprime](./Maths/CheckPrime.php)
   * [Factorial](./Maths/Factorial.php)
   * [Fastexponentiation](./Maths/FastExponentiation.php)
+  * [Fastinversesquareroot](./Maths/FastInverseSquareRoot.php)
   * [Fibonacci](./Maths/Fibonacci.php)
   * [Fibonacci2](./Maths/Fibonacci2.php)
   * [Greatestcommondivisor](./Maths/GreatestCommonDivisor.php)

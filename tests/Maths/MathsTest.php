@@ -18,6 +18,7 @@ require_once __DIR__ . '/../../Maths/PerfectSquare.php';
 require_once __DIR__ . '/../../Maths/Mean.php';
 require_once __DIR__ . '/../../Maths/Median.php';
 require_once __DIR__ . '/../../Maths/Mode.php';
+require_once __DIR__ . '/../../Maths/FastInverseSquareRoot.php';
 
 class MathsTest extends TestCase
 {
@@ -153,5 +154,11 @@ class MathsTest extends TestCase
         $this->assertEquals(6, gcd(12, 18));
         $this->assertEquals(5, gcd(10, 15));
         $this->assertEquals(3, gcd(9, 12));
+    }
+
+    public function testFastInverseSquareRoot()
+    {
+        $this->assertEqualsWithDelta(0.31568579235273, fastInvSqrt(10), 0.00001);
+        $this->assertEqualsWithDelta(0.49915357479239, fastInvSqrt(4), 0.00001);
     }
 }

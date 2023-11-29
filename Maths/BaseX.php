@@ -8,6 +8,7 @@
  *
  * @param int $k The number to convert
  * @param int $x The base to convert to
+ * @return string The base-x representation of the given number
  * @author Sevada797 https://github.com/sevada797
 
  */

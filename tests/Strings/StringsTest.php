@@ -8,6 +8,7 @@ require_once __DIR__ . '/../../Strings/CheckAnagram.php';
 require_once __DIR__ . '/../../Strings/CheckPalindrome.php';
 require_once __DIR__ . '/../../Strings/CheckPalindrome2.php';
 require_once __DIR__ . '/../../Strings/CountConsonants.php';
+require_once __DIR__ . '/../../Strings/CountHomogenous.php';
 require_once __DIR__ . '/../../Strings/CountSentences.php';
 require_once __DIR__ . '/../../Strings/CountVowels.php';
 require_once __DIR__ . '/../../Strings/Distance.php';
@@ -80,6 +81,11 @@ class StringsTest extends TestCase
         $this->assertEquals(19, countConsonants("This is a string with 19 consonants"));
         $this->assertEquals(7, countConsonants("hello world"));
         $this->assertEquals(9, countConsonants("Just A list of somE aaaaaaaaaa"));
+    }
+    public function testCountHomogenous()
+    {
+        $this->assertEquals(3, countHomogenous("abbcccaa"));
+        $this->assertEquals(2, countHomogenous("xy"));
     }
 
     public function testFindDistance()

@@ -20,6 +20,7 @@
   * [Doublylinkedlist](./DataStructures/DoublyLinkedList.php)
   * [Node](./DataStructures/Node.php)
   * [Singlylinkedlist](./DataStructures/SinglyLinkedList.php)
+  * [Stack](./DataStructures/Stack.php)
 
 ## Graphs
   * [Breadthfirstsearch](./Graphs/BreadthFirstSearch.php)
@@ -34,8 +35,10 @@
   * [Checkprime](./Maths/CheckPrime.php)
   * [Factorial](./Maths/Factorial.php)
   * [Fastexponentiation](./Maths/FastExponentiation.php)
+  * [Fastinversesquareroot](./Maths/FastInverseSquareRoot.php)
   * [Fibonacci](./Maths/Fibonacci.php)
   * [Fibonacci2](./Maths/Fibonacci2.php)
+  * [Greatestcommondivisor](./Maths/GreatestCommonDivisor.php)
   * [Mean](./Maths/Mean.php)
   * [Median](./Maths/Median.php)
   * [Mode](./Maths/Mode.php)
@@ -103,6 +106,7 @@
   * Datastructures
     * [Doublylinkedlisttest](./tests/DataStructures/DoublyLinkedListTest.php)
     * [Singlylinkedlisttest](./tests/DataStructures/SinglyLinkedListTest.php)
+    * [Stacktest](./tests/DataStructures/StackTest.php)
   * Graphs
     * [Breadthfirstsearchtest](./tests/Graphs/BreadthFirstSearchTest.php)
     * [Depthfirstsearchtest](./tests/Graphs/DepthFirstSearchTest.php)

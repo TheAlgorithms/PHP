@@ -19,9 +19,18 @@ require_once __DIR__ . '/../../Maths/Mean.php';
 require_once __DIR__ . '/../../Maths/Median.php';
 require_once __DIR__ . '/../../Maths/Mode.php';
 require_once __DIR__ . '/../../Maths/FastInverseSquareRoot.php';
+require_once __DIR__ . '/../../Maths/BaseX.php';
 
 class MathsTest extends TestCase
 {
+    public function testBaseX()
+    {
+        $this->assertEquals(11, baseX(3, 2));
+        $this->assertEquals(22, baseX(8, 3));
+        $this->assertEquals(21, baseX(15, 7));
+        $this->assertEquals(20, baseX(16, 8));
+    }
+
     public function testFactorial()
     {
         $this->assertEquals(1, factorial(1));

@@ -30,6 +30,7 @@
   * [Absolutemax](./Maths/AbsoluteMax.php)
   * [Absolutemin](./Maths/AbsoluteMin.php)
   * [Armstrongnumber](./Maths/ArmstrongNumber.php)
+  * [BaseX](./Maths/BaseX.php)
   * [Checkpalindrome](./Maths/CheckPalindrome.php)
   * [Checkprime](./Maths/CheckPrime.php)
   * [Factorial](./Maths/Factorial.php)

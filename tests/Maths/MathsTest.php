@@ -23,7 +23,7 @@ require_once __DIR__ . '/../../Maths/BaseX.php';
 
 class MathsTest extends TestCase
 {
-    public function testBaseX() 
+    public function testBaseX()
     {
         $this->assertEquals(11, baseX(3, 2));
         $this->assertEquals(22, baseX(8, 3));

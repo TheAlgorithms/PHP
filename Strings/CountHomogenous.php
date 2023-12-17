@@ -1,7 +1,7 @@
 <?php
 
     /**
-     *Count homogenous substrings 
+     * Count homogenous substrings 
      * @param String $s
      * @return Integer
      */

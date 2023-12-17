@@ -5,7 +5,8 @@
      * @param String $s
      * @return Integer
      */
-    function countHomogenous($s) {
+    function countHomogenous($s)
+    {
         $mod = 1000000007;
         $finalcnt = 0;
         $len = 1;
@@ -14,10 +15,11 @@
             if ($i < strlen($s) && $s[$i] == $s[$i - 1]) {
                 $len++;
             } else {
-                $finalcnt = ($finalcnt + ($len * ($len+ 1) / 2)) % $mod;  //calculating the sum of first n(len) natural no. and finally adding it to our final answer.
-                $len = 1;  //Now count newsubstring
+                // calculating the sum of first n(len) natural no. and finally adding it to our final answer.
+                $finalcnt = ($finalcnt + ($len * ($len+ 1) / 2)) % $mod;
+                $len = 1;  // Now count new substring
             }
         }
 
-    return $finalcnt;
+        return $finalcnt;
     }

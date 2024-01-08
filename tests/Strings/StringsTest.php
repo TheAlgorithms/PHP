@@ -82,7 +82,6 @@ class StringsTest extends TestCase
         $this->assertEquals(7, countConsonants("hello world"));
         $this->assertEquals(9, countConsonants("Just A list of somE aaaaaaaaaa"));
     }
-    
     public function testCountHomogenous()
     {
         $this->assertEquals(3, countHomogenous("abbcccaa"));

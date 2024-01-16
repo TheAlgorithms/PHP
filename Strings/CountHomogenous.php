@@ -11,7 +11,7 @@ function countHomogenous($s)
     $finalcnt = 0;
     $len = 1;
 
-    for ($i = 1; $i <= strlen($s); $i++) {
+    for ($i = 1; $i < strlen($s); $i++) {
         if ($i < strlen($s) && $s[$i] == $s[$i - 1]) {
             $len++;
         } else {

@@ -25,7 +25,7 @@ function binaryToDecimal($binaryNumber)
     $binaryDigits  = array_reverse(str_split($binaryNumber));
 
     foreach ($binaryDigits as $index => $digit) {
-        $decimalNumber += $digit * pow(2, $index);
+        $decimalNumber += $digit * 2 ** $index;
     }
 
     return $decimalNumber;

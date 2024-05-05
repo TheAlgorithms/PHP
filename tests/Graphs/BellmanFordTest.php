@@ -19,16 +19,16 @@ class BellmanFordTest extends TestCase
             ['C', -2, 'B'],
             ['B', 1, 'A'],
         ];
-        $vertices = [ 'S', 'A', 'B', 'C', 'D', 'E',];
+        $vertices = ['S', 'A', 'B', 'C', 'D', 'E',];
 
         #prepare array of edges listed by edge start to simplify Bellman-Ford updating weights of other edges
         $edges = [];
-        foreach($edgesRaw as $edgeRaw) {
+        foreach ($edgesRaw as $edgeRaw) {
             $edge = new Edge();
             $edge->start = $edgeRaw[0];
             $edge->end = $edgeRaw[2];
             $edge->weight = $edgeRaw[1];
-            if (! isset($edges[$edgeRaw[0]])) {
+            if (!isset($edges[$edgeRaw[0]])) {
                 $edges[$edgeRaw[0]] = [];
             }
             $edges[$edgeRaw[0]][] = $edge;
@@ -42,7 +42,7 @@ class BellmanFordTest extends TestCase
             'B' => 5,
             'C' => 7,
             'D' => 9,
-            'E'=> 8
+            'E' => 8
         ]);
     }
 }

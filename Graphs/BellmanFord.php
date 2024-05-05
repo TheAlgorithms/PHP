@@ -1,6 +1,7 @@
 <?php
 
-class Edge {
+class Edge
+{
     public $start;
     public $end;
     public int $weight;
@@ -36,11 +37,11 @@ function bellmanFord(array $verticesNames, array $edges, string $start, bool $ve
             }
 
             foreach ($edges[$vertice] as $edge) {
-                if ($vertices[$edge->end] > $vertices[$vertice] + $edge->weight ) {
+                if ($vertices[$edge->end] > $vertices[$vertice] + $edge->weight) {
                     if ($verbose) {
                         echo "replace $vertice " . $vertices[$edge->end] . " with " . $vertices[$vertice] + $edge->weight . "\n ";
                     }
-                    $vertices[$edge->end] =  $vertices[$vertice] + $edge->weight;
+                    $vertices[$edge->end] = $vertices[$vertice] + $edge->weight;
                     $change = true;
                 }
             }

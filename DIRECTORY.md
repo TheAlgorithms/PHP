@@ -67,6 +67,7 @@
   * [Lowerbound](./Searches/LowerBound.php)
   * [Ternarysearch](./Searches/TernarySearch.php)
   * [Upperbound](./Searches/UpperBound.php)
+  * [TwoPointers](./Searches/TwoPointers.php)
 
 ## Sorting
   * [Arraykeyssort](./Sorting/ArrayKeysSort.php)

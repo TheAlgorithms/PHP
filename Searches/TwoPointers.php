@@ -9,15 +9,15 @@
 /**
  * To understand the technique let's solve a simple problem,
  * Problem Statement:
- *     There is an array "$arr" and a target number "$target". We have to find how many pairs
- *     of elements of $arr sum up to $target.
- *     For example: $arr = [2,4,3,8,6,6,10], $target = 12
+ *     There is an array "$list" and a target number "$target". We have to find how many pairs
+ *     of elements of $list sum up to $target.
+ *     For example: $list = [2,4,3,8,6,6,10], $target = 12
  *     in this array 2+10 = 12, 4+8 = 12, 6+6 = 12, therefore, there are 3 pairs which sum up to 12.
  *
  * If we solve this problem using two nested loops, the time complexity would be O(n^2),
-        for($i=0; $i<sizeof($arr); ++$i){
-            for($j=$i+1; $j<sizeof($arr); ++$j){
-                if($arr[$i] + $arr[$j] == $target)
+        for($i=0; $i<sizeof($list); ++$i){
+            for($j=$i+1; $j<sizeof($list); ++$j){
+                if($list[$i] + $list[$j] == $target)
                     $ans++;
             }
         }
@@ -25,13 +25,13 @@
  */
 
 // Two Pointers step by step solution to that problem is given below:
-function TwoPointers($arr, $target)
+function twoPointers($list, $target)
 {
     // First we need to sort the array so that we can take advantage of the order
-    sort($arr);
+    sort($list);
     // Now we are having two pointers "$left" and "$right"
     // $left at the start and $right at the end of the array
-    $n = sizeof($arr);
+    $n = sizeof($list);
     $left = 0;
     $right = $n - 1;
 
@@ -40,15 +40,15 @@ function TwoPointers($arr, $target)
     // Now we will scan the array until $left and $right meet
     while ($left < $right) {
         # Now carefully understand how we move one of our pointers
-        if ($arr[$left] + $arr[$right] < $target) {
+        if ($list[$left] + $list[$right] < $target) {
             // it means the sum is less than $target and we need to increase our sum
             // to increase the sum we will move $left pointer to the right
             $left++;
-        } else if ($arr[$left] + $arr[$right] > $target) {
+        } else if ($list[$left] + $list[$right] > $target) {
             // the sum is greater than the target, so we need to decrease the sum
             // to decrease the sum we will move our $right pointer to the left
             $right--;
-        } else if ($arr[$left] + $arr[$right] == $target) {
+        } else if ($list[$left] + $list[$right] == $target) {
             // if it's true, we have found a pair
             $ans++;
             // now we will move one of our pointers, otherwise it'll run forever

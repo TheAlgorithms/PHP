@@ -1,18 +1,11 @@
 <?php
-
 /**
  * Two Pointers Approach
- * 
  * This method is designed to improve the efficiency of algorithms by processing two elements per
  * loop instead of just one, thereby reducing both time and space complexity
- * 
- * This technique is particularly useful for problems that can be solved by comparing elements at opposite
- * ends of the array or list and adjusting the position of the pointers based on the comparison results.
- * 
  * The technique involves using two pointers, which can start from the beginning and the end of the array
  * or list, or one pointer moving at a slower pace while the other moves at a faster pace.
  */
-
 /**
  * To understand the technique let's solve a simple problem,
  * Problem Statement:
@@ -32,14 +25,10 @@
  */
 
 // Two Pointers step by step solution to that problem is given below:
-$arr = [2, 4, 3, 8, 6, 6, 10]; # given array
-$target = 12; # given target
-
 function TwoPointers($arr, $target)
 {
     // First we need to sort the array so that we can take advantage of the order
-    sort($arr); # $arr becomes [2,3,4,6,6,8,10]
-
+    sort($arr);
     // Now we are having two pointers "$left" and "$right"
     // $left at the start and $right at the end of the array
     $n = sizeof($arr);
@@ -53,26 +42,19 @@ function TwoPointers($arr, $target)
         # Now carefully understand how we move one of our pointers
         if ($arr[$left] + $arr[$right] < $target) {
             // it means the sum is less than $target and we need to increase our sum
-            /* if we move $right pointer to the left the sum will decrease even more because
-            the array is sorted */
             // to increase the sum we will move $left pointer to the right
-            $left++; # moving to right
+            $left++;
         } else if ($arr[$left] + $arr[$right] > $target) {
             // the sum is greater than the target, so we need to decrease the sum
-            /* moving the $left pointer to right won't help because this will only increase
-            the sum even more */
             // to decrease the sum we will move our $right pointer to the left
-            $right--; # moving to left
+            $right--;
         } else if ($arr[$left] + $arr[$right] == $target) {
             // if it's true, we have found a pair
-            $ans++; # incrementing the $ans
+            $ans++;
             // now we will move one of our pointers, otherwise it'll run forever
             $left++; # doesn't matter which one we move
         }
         // The loop will go until the pointers point to the same element
-        // This will perfectly calculate the number of pairs
     }
     return $ans; # returning the number of pairs
 }
-echo TwoPointers($arr, $target); # outputs 3 as we've seen it
-

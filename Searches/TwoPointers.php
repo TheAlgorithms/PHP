@@ -6,6 +6,7 @@
  * The technique involves using two pointers, which can start from the beginning and the end of the array
  * or list, or one pointer moving at a slower pace while the other moves at a faster pace.
  */
+
 /**
  * To understand the technique let's solve a simple problem,
  * Problem Statement:

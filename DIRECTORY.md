@@ -109,6 +109,7 @@
     * [Singlylinkedlisttest](./tests/DataStructures/SinglyLinkedListTest.php)
     * [Stacktest](./tests/DataStructures/StackTest.php)
   * Graphs
+    * [Bellmanfordtest](./tests/Graphs/BellmanFordTest.php)
     * [Breadthfirstsearchtest](./tests/Graphs/BreadthFirstSearchTest.php)
     * [Depthfirstsearchtest](./tests/Graphs/DepthFirstSearchTest.php)
   * Maths

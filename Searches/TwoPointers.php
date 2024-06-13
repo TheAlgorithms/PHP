@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Two Pointers Approach
  * This method is designed to improve the efficiency of algorithms by processing two elements per

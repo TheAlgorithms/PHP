@@ -37,10 +37,11 @@ function SentinelSearch($list, $target)
     $list[$len - 1] = $lastElement;
 
     //If i in less than length, It means element is present in array
-    if ($i < ($len - 1))
+    if ($i < ($len - 1)) {
         return $i;
+    }
     // Else element is not present return -1
-    else 
+    else {
         return -1;
+    }
 }
-?>

@@ -20,7 +20,7 @@ function SentinelSearch($list, $target)
     if ($lastElement == $target) 
     {
         return ($len - 1);
-    } 
+    }
     
     //Put target at last index of array
     $list[$len - 1] = $target;

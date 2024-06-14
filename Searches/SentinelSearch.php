@@ -14,7 +14,7 @@ function SentinelSearch($list, $target)
     $len = sizeof($list);
 
     //Store last element of array
-    $lastElement = $list[$len-1];
+    $lastElement = $list[$len - 1];
 
     //Put target at the last position of array known as 'Sentinel'
     if ($lastElement == $target)

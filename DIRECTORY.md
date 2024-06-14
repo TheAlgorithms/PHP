@@ -66,11 +66,10 @@
   * [Jumpsearch](./Searches/JumpSearch.php)
   * [Linearsearch](./Searches/LinearSearch.php)
   * [Lowerbound](./Searches/LowerBound.php)
-  * [SentinelSearch](./Searches/SentinelSearch.php)
+  * [Sentinelsearch](./Searches/SentinelSearch.php)
   * [Ternarysearch](./Searches/TernarySearch.php)
   * [Twopointers](./Searches/TwoPointers.php)
   * [Upperbound](./Searches/UpperBound.php)
-  
 
 ## Sorting
   * [Arraykeyssort](./Sorting/ArrayKeysSort.php)

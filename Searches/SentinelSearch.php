@@ -17,8 +17,7 @@ function SentinelSearch($list, $target)
     $lastElement = $list[$len - 1];
 
     //Put target at the last position of array known as 'Sentinel'
-    if ($lastElement == $target) 
-    {
+    if ($lastElement == $target) {
         return ($len - 1);
     }
     //Put target at last index of array
@@ -28,8 +27,7 @@ function SentinelSearch($list, $target)
     $i = 0;
 
     //Traverse through array to search target
-    while ($list[$i] != $target) 
-    {
+    while ($list[$i] != $target) {
         $i++;
     }
     //Put last element at it's position
@@ -38,9 +36,7 @@ function SentinelSearch($list, $target)
     //If i in less than length, It means element is present in array
     if ($i < ($len - 1)) {
         return $i;
-    }
-    // Else element is not present return -1
-    else {
+    } else {
         return -1;
     }
 }

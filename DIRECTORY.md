@@ -87,6 +87,7 @@
   * [Checkpalindrome](./Strings/CheckPalindrome.php)
   * [Checkpalindrome2](./Strings/CheckPalindrome2.php)
   * [Countconsonants](./Strings/CountConsonants.php)
+  * [Counthomogenous](./Strings/CountHomogenous.php)
   * [Countsentences](./Strings/CountSentences.php)
   * [Countvowels](./Strings/CountVowels.php)
   * [Distance](./Strings/Distance.php)

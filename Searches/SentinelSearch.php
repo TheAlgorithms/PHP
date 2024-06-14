@@ -25,13 +25,13 @@ function SentinelSearch($list, $target)
     $list[$len - 1] = $target;
 
     //Initialize variable to traverse through array
-    $i=0;
+    $i = 0;
 
     //Traverse through array to search target
-    while ($list[$i] != $target)
+    while ($list[$i] != $target) 
     {
         $i++;
-    } 
+    }
     //Put last element at it's position
     $list[$len - 1] = $lastElement;
 

@@ -13,6 +13,7 @@ require_once __DIR__ . '/../../Searches/ExponentialSearch.php';
 require_once __DIR__ . '/../../Searches/TernarySearch.php';
 require_once __DIR__ . '/../../Searches/InterpolationSearch.php';
 require_once __DIR__ . '/../../Searches/SentinelSearch.php';
+require_once __DIR__ . '/../../Searches/TwoPointers.php';
 
 
 class SearchesTest extends TestCase
@@ -203,6 +204,7 @@ class SearchesTest extends TestCase
         $result = interpolationSearch($list, $target);
         $this->assertEquals(12, $result);
     }
+
     public function testSentinelSearch()
     {
         $list = [1,3,5,2,4,13,18,23,25,30];
@@ -218,5 +220,19 @@ class SearchesTest extends TestCase
         $target = -2;
         $result = SentinelSearch($list, $target);
         $this->assertEquals(-1, $result);
+    }
+
+    public function testTwoPointers()
+    {
+        $list = [1, 2, 4, 7, 8, 10, 11, 12, 15];
+        $target = 3;
+        $result = twoPointers($list, $target);
+        $this->assertEquals(1, $result);
+        $target = 12;
+        $result = twoPointers($list, $target);
+        $this->assertEquals(3, $result);
+        $target = 18;
+        $result = twoPointers($list, $target);
+        $this->assertEquals(2, $result);
     }
 }

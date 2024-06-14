@@ -1,9 +1,12 @@
 # List of all files
 
 ## Ciphers
+  * [Atbashcipher](./Ciphers/AtbashCipher.php)
   * [Caesarcipher](./Ciphers/CaesarCipher.php)
   * [Monoalphabeticcipher](./Ciphers/MonoAlphabeticCipher.php)
   * [Morsecode](./Ciphers/MorseCode.php)
+  * [Railfencecipher](./Ciphers/RailfenceCipher.php)
+  * [Vignerecipher](./Ciphers/VignereCipher.php)
   * [Xorcipher](./Ciphers/XORCipher.php)
 
 ## Conversions
@@ -14,9 +17,13 @@
   * [Speedconversion](./Conversions/SpeedConversion.php)
 
 ## Datastructures
+  * [Doublylinkedlist](./DataStructures/DoublyLinkedList.php)
+  * [Node](./DataStructures/Node.php)
   * [Singlylinkedlist](./DataStructures/SinglyLinkedList.php)
+  * [Stack](./DataStructures/Stack.php)
 
 ## Graphs
+  * [Bellmanford](./Graphs/BellmanFord.php)
   * [Breadthfirstsearch](./Graphs/BreadthFirstSearch.php)
   * [Depthfirstsearch](./Graphs/DepthFirstSearch.php)
 
@@ -24,12 +31,15 @@
   * [Absolutemax](./Maths/AbsoluteMax.php)
   * [Absolutemin](./Maths/AbsoluteMin.php)
   * [Armstrongnumber](./Maths/ArmstrongNumber.php)
+  * [Basex](./Maths/BaseX.php)
   * [Checkpalindrome](./Maths/CheckPalindrome.php)
   * [Checkprime](./Maths/CheckPrime.php)
   * [Factorial](./Maths/Factorial.php)
   * [Fastexponentiation](./Maths/FastExponentiation.php)
+  * [Fastinversesquareroot](./Maths/FastInverseSquareRoot.php)
   * [Fibonacci](./Maths/Fibonacci.php)
   * [Fibonacci2](./Maths/Fibonacci2.php)
+  * [Greatestcommondivisor](./Maths/GreatestCommonDivisor.php)
   * [Mean](./Maths/Mean.php)
   * [Median](./Maths/Median.php)
   * [Mode](./Maths/Mode.php)
@@ -58,6 +68,7 @@
   * [Lowerbound](./Searches/LowerBound.php)
   * [SentinelSearch](./Searches/SentinelSearch.php)
   * [Ternarysearch](./Searches/TernarySearch.php)
+  * [Twopointers](./Searches/TwoPointers.php)
   * [Upperbound](./Searches/UpperBound.php)
   
 
@@ -79,6 +90,7 @@
   * [Checkpalindrome](./Strings/CheckPalindrome.php)
   * [Checkpalindrome2](./Strings/CheckPalindrome2.php)
   * [Countconsonants](./Strings/CountConsonants.php)
+  * [Counthomogenous](./Strings/CountHomogenous.php)
   * [Countsentences](./Strings/CountSentences.php)
   * [Countvowels](./Strings/CountVowels.php)
   * [Distance](./Strings/Distance.php)
@@ -88,14 +100,20 @@
 
 ## Tests
   * Ciphers
+    * [Atbashciphertest](./tests/Ciphers/AtbashCipherTest.php)
     * [Cipherstest](./tests/Ciphers/CiphersTest.php)
     * [Monoalphabeticciphertest](./tests/Ciphers/MonoAlphabeticCipherTest.php)
     * [Morsecodetest](./tests/Ciphers/MorseCodeTest.php)
+    * [Railfenceciphertest](./tests/Ciphers/RailfenceCipherTest.php)
+    * [Vignereciphertest](./tests/Ciphers/VignereCipherTest.php)
   * Conversions
     * [Conversionstest](./tests/Conversions/ConversionsTest.php)
   * Datastructures
+    * [Doublylinkedlisttest](./tests/DataStructures/DoublyLinkedListTest.php)
     * [Singlylinkedlisttest](./tests/DataStructures/SinglyLinkedListTest.php)
+    * [Stacktest](./tests/DataStructures/StackTest.php)
   * Graphs
+    * [Bellmanfordtest](./tests/Graphs/BellmanFordTest.php)
     * [Breadthfirstsearchtest](./tests/Graphs/BreadthFirstSearchTest.php)
     * [Depthfirstsearchtest](./tests/Graphs/DepthFirstSearchTest.php)
   * Maths
@@ -106,7 +124,7 @@
   * Sorting
     * [Arraykeyssorttest](./tests/Sorting/ArrayKeysSortTest.php)
     * [Gnomesorttest](./tests/Sorting/GnomeSortTest.php)
-    * [Sortingtests](./tests/Sorting/SortingTests.php)
+    * [Sortingtest](./tests/Sorting/SortingTest.php)
   * Strings
     * [Stringstest](./tests/Strings/StringsTest.php)
 

@@ -7,19 +7,24 @@
  */
 function countHomogenous($s)
 {
-    $mod = 1000000007;
-    $finalcnt = 0;
-    $len = 1;
+    // Initialize the count of homogeneous substrings
+    $count = 0;
 
-    for ($i = 1; $i < strlen($s); $i++) {
-        if ($i < strlen($s) && $s[$i] == $s[$i - 1]) {
-            $len++;
-        } else {
-            // calculating the sum of first n(len) natural no. and finally adding it to our final answer.
-            $finalcnt = ($finalcnt + ($len * ($len + 1) / 2)) % $mod;
-            $len = 1;  // Now count new substring
+    // Length of the string
+    $length = strlen($s);
+
+    if ($length == 0) return 0; // If the string is empty, return 0
+
+    // Initialize the count of homogeneous substrings
+    $count = 1; // Start with 1 since the first character itself starts a substring
+
+    // Loop through each character in the string, starting from the second character
+    for ($i = 1; $i < $length; $i++) {
+        // Check if current character is not the same as the previous one
+        if ($s[$i] != $s[$i - 1]) {
+            $count++; // A new substring starts, increment the count
         }
     }
 
-    return $finalcnt;
+    return $count;
 }

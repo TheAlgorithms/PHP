@@ -84,7 +84,7 @@ class StringsTest extends TestCase
     }
     public function testCountHomogenous()
     {
-        $this->assertEquals(3, countHomogenous("abbcccaa"));
+        $this->assertEquals(4, countHomogenous("abbcccaa"));
         $this->assertEquals(2, countHomogenous("xy"));
     }
 

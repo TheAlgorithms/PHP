@@ -13,7 +13,9 @@ function countHomogenous($s)
     // Length of the string
     $length = strlen($s);
 
-    if ($length == 0) return 0; // If the string is empty, return 0
+    if ($length == 0) {
+        return 0; // If the string is empty, return 0
+    }
 
     // Initialize the count of homogeneous substrings
     $count = 1; // Start with 1 since the first character itself starts a substring

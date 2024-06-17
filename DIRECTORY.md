@@ -124,6 +124,7 @@
   * Sorting
     * [Arraykeyssorttest](./tests/Sorting/ArrayKeysSortTest.php)
     * [Gnomesorttest](./tests/Sorting/GnomeSortTest.php)
+    * [Shelltest](./tests/Sorting/ShellTest.php)
     * [Sortingtest](./tests/Sorting/SortingTest.php)
   * Strings
     * [Stringstest](./tests/Strings/StringsTest.php)

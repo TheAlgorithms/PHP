@@ -83,6 +83,7 @@
   * [Quicksort](./Sorting/QuickSort.php)
   * [Radixsort](./Sorting/RadixSort.php)
   * [Selectionsort](./Sorting/SelectionSort.php)
+  * [Shellsort](./Sorting/ShellSort.php)
 
 ## Strings
   * [Checkanagram](./Strings/CheckAnagram.php)

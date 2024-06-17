@@ -83,6 +83,7 @@
   * [Quicksort](./Sorting/QuickSort.php)
   * [Radixsort](./Sorting/RadixSort.php)
   * [Selectionsort](./Sorting/SelectionSort.php)
+  * [Shellsort](./Sorting/ShellSort.php)
 
 ## Strings
   * [Checkanagram](./Strings/CheckAnagram.php)
@@ -123,6 +124,7 @@
   * Sorting
     * [Arraykeyssorttest](./tests/Sorting/ArrayKeysSortTest.php)
     * [Gnomesorttest](./tests/Sorting/GnomeSortTest.php)
+    * [Shellsorttest](./tests/Sorting/ShellSortTest.php)
     * [Sortingtest](./tests/Sorting/SortingTest.php)
   * Strings
     * [Stringstest](./tests/Strings/StringsTest.php)

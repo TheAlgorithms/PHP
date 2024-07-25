@@ -19,6 +19,7 @@
 ## Datastructures
   * [Doublylinkedlist](./DataStructures/DoublyLinkedList.php)
   * [Node](./DataStructures/Node.php)
+  * [Queue](./DataStructures/Queue.php)
   * [Singlylinkedlist](./DataStructures/SinglyLinkedList.php)
   * [Stack](./DataStructures/Stack.php)
 
@@ -109,6 +110,7 @@
     * [Conversionstest](./tests/Conversions/ConversionsTest.php)
   * Datastructures
     * [Doublylinkedlisttest](./tests/DataStructures/DoublyLinkedListTest.php)
+    * [QueueTest](./tests/DataStructures/QueueTest.php)
     * [Singlylinkedlisttest](./tests/DataStructures/SinglyLinkedListTest.php)
     * [Stacktest](./tests/DataStructures/StackTest.php)
   * Graphs

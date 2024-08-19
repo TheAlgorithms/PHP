@@ -34,6 +34,7 @@
   * [Basex](./Maths/BaseX.php)
   * [Checkpalindrome](./Maths/CheckPalindrome.php)
   * [Checkprime](./Maths/CheckPrime.php)
+  * [Eratosthenessieve](./Maths/EratosthenesSieve.php)
   * [Factorial](./Maths/Factorial.php)
   * [Fastexponentiation](./Maths/FastExponentiation.php)
   * [Fastinversesquareroot](./Maths/FastInverseSquareRoot.php)
@@ -57,7 +58,6 @@
     * [Problem7](./Maths/ProjectEuler/Problem7.php)
     * [Problem8](./Maths/ProjectEuler/Problem8.php)
     * [Problem9](./Maths/ProjectEuler/Problem9.php)
-  * [Eratosthenessieve](./Maths/EratosthenesSieve.php)
 
 ## Searches
   * [Binarysearch](./Searches/BinarySearch.php)
@@ -118,9 +118,9 @@
     * [Breadthfirstsearchtest](./tests/Graphs/BreadthFirstSearchTest.php)
     * [Depthfirstsearchtest](./tests/Graphs/DepthFirstSearchTest.php)
   * Maths
+    * [Eratosthenessievetest](./tests/Maths/EratosthenesSieveTest.php)
     * [Mathstest](./tests/Maths/MathsTest.php)
     * [Projecteulertest](./tests/Maths/ProjectEulerTest.php)
-    * [Eratosthenessievetest](./tests/Maths/EratosthenesSieveTest.php)
   * Searches
     * [Searchestest](./tests/Searches/SearchesTest.php)
   * Sorting

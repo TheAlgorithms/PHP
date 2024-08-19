@@ -38,6 +38,21 @@ class QueueTest extends TestCase
     /**
      * @test
      */
+    public function shouldReturnCorrectValueWhenDequeue(): void
+    {
+        $queue = new Queue();
+        $queue->enqueue(1);
+        $queue->enqueue(2);
+        $queue->enqueue(3);
+
+        $this->assertEquals(1, $queue->dequeue());
+        $this->assertEquals(2, $queue->dequeue());
+        $this->assertEquals(3, $queue->dequeue());
+    }
+
+    /**
+     * @test
+     */
     public function shouldReturnNullWhenDequeueEmptyQueue(): void
     {
         $queue = new Queue();

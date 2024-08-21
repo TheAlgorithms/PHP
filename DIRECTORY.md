@@ -112,7 +112,7 @@
     * [Conversionstest](./tests/Conversions/ConversionsTest.php)
   * Datastructures
     * [Doublylinkedlisttest](./tests/DataStructures/DoublyLinkedListTest.php)
-    * [QueueTest](./tests/DataStructures/QueueTest.php)
+    * [Queuetest](./tests/DataStructures/QueueTest.php)
     * [Singlylinkedlisttest](./tests/DataStructures/SinglyLinkedListTest.php)
     * [Stacktest](./tests/DataStructures/StackTest.php)
   * Graphs

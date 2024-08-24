@@ -22,6 +22,7 @@
   * [Queue](./DataStructures/Queue.php)
   * [Singlylinkedlist](./DataStructures/SinglyLinkedList.php)
   * [Stack](./DataStructures/Stack.php)
+  * [DisjointSets](./DataStructures/DisjointSets/DisjointSet.php)
 
 ## Graphs
   * [Bellmanford](./Graphs/BellmanFord.php)

@@ -41,7 +41,6 @@ class DisjointSetTest extends TestCase
         $this->ds->unionSet($this->nodes[16], $this->nodes[17]);
 
         $this->ds->unionSet($this->nodes[18], $this->nodes[19]);
-
     }
 
     public function testFindSet(): void

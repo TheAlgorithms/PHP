@@ -80,5 +80,5 @@ class DisjointSetTest extends TestCase
 
         return false;
     }
-
 }
+

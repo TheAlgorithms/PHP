@@ -1,6 +1,6 @@
 <?php
 
-use DataStructures\DisjointSets\DisjointSetNode;
+namespace DataStructures\DisjointSets;
 
 class DisjointSet
 {
@@ -10,7 +10,8 @@ class DisjointSet
     public function findSet(DisjointSetNode $node): DisjointSetNode
     {
         if ($node !== $node->parent) {
-            $node->parent = $this->findSet($node->parent);    // Path compression: make the parent point directly to the root
+            // Path compression: make the parent point directly to the root
+            $node->parent = $this->findSet($node->parent);
         }
         return $node->parent;
     }

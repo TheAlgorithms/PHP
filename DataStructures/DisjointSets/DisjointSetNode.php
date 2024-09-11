@@ -8,7 +8,7 @@ class DisjointSetNode
     public int $rank;
     public DisjointSetNode $parent;
 
-    public function __construct(mixed $data = null) 
+    public function __construct(mixed $data = null)
     {
         $this->data = $data;
         $this->rank = 0;

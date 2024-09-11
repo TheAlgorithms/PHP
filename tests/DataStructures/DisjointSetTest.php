@@ -2,8 +2,11 @@
 
 namespace DataStructures;
 
+require_once __DIR__ . '/../../DataStructures/DisjointSets/DisjointSet.php';
+require_once __DIR__ . '/../../DataStructures/DisjointSets/DisjointSetNode.php';
+
+use DataStructures\DisjointSets\DisjointSet;
 use DataStructures\DisjointSets\DisjointSetNode;
-use DisjointSet;
 use PHPUnit\Framework\TestCase;
 
 class DisjointSetTest extends TestCase
@@ -76,10 +79,9 @@ class DisjointSetTest extends TestCase
         foreach ($sets as $set) {
             if (in_array($i, $set) && in_array($j, $set)) {
                 return true;
-            }    
+            }
         }
 
         return false;
     }
 }
-

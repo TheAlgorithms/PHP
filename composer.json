@@ -1,5 +1,5 @@
 {
-  "name" : "thealgorithms/php",
+  "name": "thealgorithms/php",
   "description": "All Algorithms implemented in PHP",
   "config": {
     "platform": {
@@ -19,3 +19,4 @@
     "test": "vendor/bin/phpunit tests"
   }
 }
+

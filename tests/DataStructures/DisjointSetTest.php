@@ -74,8 +74,9 @@ class DisjointSetTest extends TestCase
         ];
 
         foreach ($sets as $set) {
-            if (in_array($i, $set) && in_array($j, $set))
+            if (in_array($i, $set) && in_array($j, $set)) {
                 return true;
+            }    
         }
 
         return false;

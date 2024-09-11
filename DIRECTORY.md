@@ -17,12 +17,14 @@
   * [Speedconversion](./Conversions/SpeedConversion.php)
 
 ## Datastructures
+  * Disjointsets
+    * [Disjointset](./DataStructures/DisjointSets/DisjointSet.php)
+    * [Disjointsetnode](./DataStructures/DisjointSets/DisjointSetNode.php)
   * [Doublylinkedlist](./DataStructures/DoublyLinkedList.php)
   * [Node](./DataStructures/Node.php)
   * [Queue](./DataStructures/Queue.php)
   * [Singlylinkedlist](./DataStructures/SinglyLinkedList.php)
   * [Stack](./DataStructures/Stack.php)
-  * [DisjointSets](./DataStructures/DisjointSets/DisjointSet.php)
 
 ## Graphs
   * [Bellmanford](./Graphs/BellmanFord.php)
@@ -112,6 +114,7 @@
   * Conversions
     * [Conversionstest](./tests/Conversions/ConversionsTest.php)
   * Datastructures
+    * [Disjointsettest](./tests/DataStructures/DisjointSetTest.php)
     * [Doublylinkedlisttest](./tests/DataStructures/DoublyLinkedListTest.php)
     * [Queuetest](./tests/DataStructures/QueueTest.php)
     * [Singlylinkedlisttest](./tests/DataStructures/SinglyLinkedListTest.php)

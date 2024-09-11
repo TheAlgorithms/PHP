@@ -4,11 +4,15 @@ namespace DataStructures\DisjointSets;
 
 class DisjointSetNode
 {
-    public mixed $data;     # PHP 8.0^ . Otherwise, define with annotations:  @var int|string|float|null
+    /**
+     * @var int|string|float|null
+     */
+    // PHP7.4: Defined with annotations
+    public $data;       # replace with type hint "mixed" as for PHP 8.0^.
     public int $rank;
     public DisjointSetNode $parent;
 
-    public function __construct(mixed $data = null)
+    public function __construct($data = null)
     {
         $this->data = $data;
         $this->rank = 0;

@@ -243,6 +243,7 @@ class AVLTreeTest extends TestCase
         // Using Reflection to access the private getMinNode method
         $reflection = new ReflectionClass($this->tree);
         $method = $reflection->getMethod('getMinNode');
+        $method->setAccessible(true);
 
         $minNode = $method->invoke($this->tree, $this->tree->getRoot());
 

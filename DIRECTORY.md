@@ -20,6 +20,9 @@
   * Disjointsets
     * [Disjointset](./DataStructures/DisjointSets/DisjointSet.php)
     * [Disjointsetnode](./DataStructures/DisjointSets/DisjointSetNode.php)
+  * Trie
+     * [Trie](./DataStructures/Trie/Trie.php)
+     * [TrieNode](./DataStructures/Trie/TrieNode.php)    
   * [Doublylinkedlist](./DataStructures/DoublyLinkedList.php)
   * [Node](./DataStructures/Node.php)
   * [Queue](./DataStructures/Queue.php)
@@ -115,6 +118,7 @@
     * [Conversionstest](./tests/Conversions/ConversionsTest.php)
   * Datastructures
     * [Disjointsettest](./tests/DataStructures/DisjointSetTest.php)
+    * [Trie](./tests/DataStructures/TrieTest.php)
     * [Doublylinkedlisttest](./tests/DataStructures/DoublyLinkedListTest.php)
     * [Queuetest](./tests/DataStructures/QueueTest.php)
     * [Singlylinkedlisttest](./tests/DataStructures/SinglyLinkedListTest.php)

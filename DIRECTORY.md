@@ -17,9 +17,10 @@
   * [Speedconversion](./Conversions/SpeedConversion.php)
 
 ## Datastructures
-  * AVLTree
-    * [AVLTree](./DataStructures/AVLTree/AVLTree.php)
-    * [AVLTreeNode](./DataStructures/AVLTree/AVLTreeNode.php)
+  * Avltree
+    * [Avltree](./DataStructures/AVLTree/AVLTree.php)
+    * [Avltreenode](./DataStructures/AVLTree/AVLTreeNode.php)
+    * [Treetraversal](./DataStructures/AVLTree/TreeTraversal.php)
   * Disjointsets
     * [Disjointset](./DataStructures/DisjointSets/DisjointSet.php)
     * [Disjointsetnode](./DataStructures/DisjointSets/DisjointSetNode.php)
@@ -120,7 +121,7 @@
   * Conversions
     * [Conversionstest](./tests/Conversions/ConversionsTest.php)
   * Datastructures
-    * [AVLTreeTest](./tests/DataStructures/AVLTreeTest.php)
+    * [Avltreetest](./tests/DataStructures/AVLTreeTest.php)
     * [Disjointsettest](./tests/DataStructures/DisjointSetTest.php)
     * [Doublylinkedlisttest](./tests/DataStructures/DoublyLinkedListTest.php)
     * [Queuetest](./tests/DataStructures/QueueTest.php)

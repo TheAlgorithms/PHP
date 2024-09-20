@@ -41,6 +41,7 @@ class MathsTest extends TestCase
         $this->expectException(\Exception::class);
         factorial(-25);
     }
+
     public function testIsEven()
     {
         $this->assertTrue(isEven(2));
@@ -49,6 +50,7 @@ class MathsTest extends TestCase
         $this->assertFalse(isEven(17));
         $this->assertTrue(isEven(-4));
     }
+
     public function testIsNumberArmstrong()
     {
         $this->assertTrue(isNumberArmstrong(153));
@@ -64,6 +66,7 @@ class MathsTest extends TestCase
         $this->assertTrue(isNumberPalindromic(123321));
         $this->assertFalse(isNumberPalindromic(2468));
     }
+
     public function testIsOdd()
     {
         $this->assertTrue(isOdd(3));
@@ -72,6 +75,7 @@ class MathsTest extends TestCase
         $this->assertFalse(isOdd(0));
         $this->assertTrue(isOdd(-5));
     }
+
     public function testIsPrime()
     {
         $this->assertTrue(isPrime(73));

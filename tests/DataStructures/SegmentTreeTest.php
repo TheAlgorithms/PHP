@@ -156,4 +156,41 @@ class SegmentTreeTest extends TestCase
             "After range update, min between index 2 and 9 should return 0."
         );
     }
+
+    public function testGetCurrentArray(): void
+    {
+        $segmentTree = new SegmentTree($this->testArray);
+
+        // Ensure the initial array matches the input array
+        $this->assertEquals(
+            $this->testArray,
+            $segmentTree->getCurrentArray(),
+            "getCurrentArray() should return the initial array."
+        );
+
+        // Perform an update and test again
+        $segmentTree->update(2, 10);  // Update index 2 to 10
+        $updatedArray = $this->testArray;
+        $updatedArray[2] = 10;
+
+        $this->assertEquals(
+            $updatedArray,
+            $segmentTree->getCurrentArray(),
+            "getCurrentArray() should return the updated array."
+        );
+    }
+
+    public function testSegmentTreeSerialization(): void
+    {
+        // Test serialization and deserialization
+        $segmentTree = new SegmentTree($this->testArray);
+        $serialized = $segmentTree->serialize();
+
+        $deserializedTree = SegmentTree::deserialize($serialized);
+        $this->assertEquals(
+            $segmentTree->query(1, 4),
+            $deserializedTree->query(1, 4),
+            "Serialized and deserialized trees should have the same query results."
+        );
+    }
 }

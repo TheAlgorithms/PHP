@@ -193,4 +193,63 @@ class SegmentTreeTest extends TestCase
             "Serialized and deserialized trees should have the same query results."
         );
     }
+
+    public function testEdgeCases(): void
+    {
+        $segmentTree = new SegmentTree($this->testArray);
+        $firstIndex = 0;
+        $lastIndex = count($this->testArray) - 1;
+
+        // Test querying the first and last indices
+        $this->assertEquals(
+            $this->testArray[$firstIndex],
+            $segmentTree->query($firstIndex, $firstIndex),
+            "Query at the first index should return {$this->testArray[$firstIndex]}."
+        );
+        $this->assertEquals(
+            $this->testArray[$lastIndex],
+            $segmentTree->query($lastIndex, $lastIndex),
+            "Query at the last index should return {$this->testArray[$lastIndex]}."
+        );
+
+
+        // Test updating the first index
+        $segmentTree->update($firstIndex, 100);     // Update first index to 100
+        $this->assertEquals(
+            100,
+            $segmentTree->query($firstIndex, $firstIndex),
+            "After update, query at the first index should return {$this->testArray[$firstIndex]}."
+        );
+
+        // Test updating the last index
+        $segmentTree->update($lastIndex, 200);  // Update last index to 200
+        $this->assertEquals(
+            200,
+            $segmentTree->query($lastIndex, $lastIndex),
+            "After update, query at the last index should return {$this->testArray[$lastIndex]}."
+        );
+
+        // Test range update that includes the first index
+        $segmentTree->rangeUpdate($firstIndex, 2, 50);  // Set indices 0 to 2 to 50
+        $this->assertEquals(
+            50,
+            $segmentTree->query($firstIndex, $firstIndex),
+            "After range update, query at index $firstIndex should return 50."
+        );
+        $this->assertEquals(50, $segmentTree->query(1, 1), "After range update, query at index 1 should return 50.");
+        $this->assertEquals(50, $segmentTree->query(2, 2), "After range update, query at index 2 should return 50.");
+
+        // Test range update that includes the last index
+        $segmentTree->rangeUpdate($lastIndex - 3, $lastIndex, 10);  // Set indices to 10
+        $this->assertEquals(
+            10,
+            $segmentTree->query($lastIndex, $lastIndex),
+            "After range update, query at the last index should return 10."
+        );
+        $this->assertEquals(
+            10,
+            $segmentTree->query(count($this->testArray) - 2, count($this->testArray) - 2),
+            "After range update, query at the second last index should return 10."
+        );
+    }
 }

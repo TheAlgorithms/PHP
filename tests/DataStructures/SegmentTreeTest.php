@@ -252,4 +252,65 @@ class SegmentTreeTest extends TestCase
             "After range update, query at the second last index should return 10."
         );
     }
+    public function testUnsupportedOrEmptyArrayInitialization(): void
+    {
+        // Test empty array
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage("Array must not be empty, must contain numeric values 
+            and must be non-associative.");
+
+        $segmentTreeEmpty = new SegmentTree([]);        // expecting an exception
+
+        // Test unsupported array (e.g., with non-numeric values)
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage("Array must not be empty, must contain numeric values 
+            and must be non-associative.");
+
+        $segmentTreeUnsupported = new SegmentTree([1, "two", 3]);  // Mix of numeric and non-numeric
+    }
+
+    public function testInvalidUpdateIndex(): void
+    {
+        // Test exception for invalid update index
+        $segmentTree = new SegmentTree($this->testArray);
+
+        $index = count($this->testArray) + 5;
+
+        // Expect an exception for range update with invalid indices
+        $this->expectException(OutOfBoundsException::class);
+        $this->expectExceptionMessage("Index out of bounds: $index. Must be between 0 and "
+            . (count($this->testArray) - 1));
+
+        $segmentTree->update($index, 100);     // non-existing index, should trigger exception
+    }
+
+    public function testOutOfBoundsQuery(): void
+    {
+        // Test exception for out-of-bounds query
+        $segmentTree = new SegmentTree($this->testArray);
+
+        $start = 0;
+        $end = count($this->testArray);
+
+        $this->expectException(OutOfBoundsException::class);
+        $this->expectExceptionMessage("Index out of bounds: start = $start, end = $end. 
+            Must be between 0 and " . (count($this->testArray) - 1));
+
+        $segmentTree->query(0, count($this->testArray));  // expecting an exception
+    }
+
+    public function testInvalidRangeUpdate(): void
+    {
+        // Test exception for invalid range update
+        $segmentTree = new SegmentTree($this->testArray);
+
+        $start = -1;
+        $end = 5;
+
+        // Expect an exception for range update with invalid indices
+        $this->expectException(OutOfBoundsException::class);
+        $this->expectExceptionMessage("Invalid range: start = $start, end = $end.");
+
+        $segmentTree->rangeUpdate(-1, 5, 0);  // Negative index, should trigger exception
+    }
 }

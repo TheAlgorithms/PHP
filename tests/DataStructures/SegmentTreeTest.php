@@ -101,17 +101,29 @@ class SegmentTreeTest extends TestCase
         // Sum Query
         $segmentTreeSum = new SegmentTree($this->testArray);
         $segmentTreeSum->update(2, 10);  // Update index 2 to 10
-        $this->assertEquals(29, $segmentTreeSum->query(1, 4), "After update, sum between index 1 and 4 should return 29.");
+        $this->assertEquals(
+            29,
+            $segmentTreeSum->query(1, 4),
+            "After update, sum between index 1 and 4 should return 29."
+        );
 
         // Max Query: with callback
         $segmentTreeMax = new SegmentTree($this->testArray, fn($a, $b) => max($a, $b));
         $segmentTreeMax->update(12, -1);  // Update index 12 to -1
-        $this->assertEquals(19, $segmentTreeMax->query(5, 12), "After update, max between index 5 and 12 should return 19.");
+        $this->assertEquals(
+            19,
+            $segmentTreeMax->query(5, 12),
+            "After update, max between index 5 and 12 should return 19."
+        );
 
         // Min Query: with callback
         $segmentTreeMin = new SegmentTree($this->testArray, fn($a, $b) => min($a, $b));
         $segmentTreeMin->update(9, -5);  // Update index 9 to -5
-        $this->assertEquals(-5, $segmentTreeMin->query(9, 13), "After update, min between index 9 and 13 should return -5.");
+        $this->assertEquals(
+            -5,
+            $segmentTreeMin->query(9, 13),
+            "After update, min between index 9 and 13 should return -5."
+        );
     }
 
     public function testSegmentTreeRangeUpdate(): void
@@ -120,16 +132,28 @@ class SegmentTreeTest extends TestCase
         // Sum Query
         $segmentTreeSum = new SegmentTree($this->testArray);
         $segmentTreeSum->rangeUpdate(3, 7, 0);      // Set indices 3 to 7 to 0
-        $this->assertEquals(55, $segmentTreeSum->query(2, 10), "After range update, sum between index 2 and 10 should return 55.");
+        $this->assertEquals(
+            55,
+            $segmentTreeSum->query(2, 10),
+            "After range update, sum between index 2 and 10 should return 55."
+        );
 
         // Max Query: with callback
         $segmentTreeMax = new SegmentTree($this->testArray, fn($a, $b) => max($a, $b));
         $segmentTreeMax->rangeUpdate(3, 7, 0);      // Set indices 3 to 7 to 0
-        $this->assertEquals(5, $segmentTreeMax->query(2, 7), "After range update, max between index 2 and 7 should return 5.");
+        $this->assertEquals(
+            5,
+            $segmentTreeMax->query(2, 7),
+            "After range update, max between index 2 and 7 should return 5."
+        );
 
         // Min Query: with callback
         $segmentTreeMin = new SegmentTree($this->testArray, fn($a, $b) => min($a, $b));
         $segmentTreeMin->rangeUpdate(3, 9, 0);      // Set indices 3 to 9 to 0
-        $this->assertEquals(0, $segmentTreeMin->query(2, 9), "After range update, min between index 2 and 9 should return 0.");
+        $this->assertEquals(
+            0,
+            $segmentTreeMin->query(2, 9),
+            "After range update, min between index 2 and 9 should return 0."
+        );
     }
 }

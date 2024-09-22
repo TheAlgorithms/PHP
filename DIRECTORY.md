@@ -27,9 +27,9 @@
   * [Doublylinkedlist](./DataStructures/DoublyLinkedList.php)
   * [Node](./DataStructures/Node.php)
   * [Queue](./DataStructures/Queue.php)
-  * SegmentTree
-    * [SegmentTree](./DataStructures/SegmentTree/SegmentTree.php)
-    * [SegmentTreeNode](./DataStructures/SegmentTree/SegmentTreeNode.php)
+  * Segmenttree
+    * [Segmenttree](./DataStructures/SegmentTree/SegmentTree.php)
+    * [Segmenttreenode](./DataStructures/SegmentTree/SegmentTreeNode.php)
   * [Singlylinkedlist](./DataStructures/SinglyLinkedList.php)
   * [Stack](./DataStructures/Stack.php)
   * Trie
@@ -128,7 +128,7 @@
     * [Disjointsettest](./tests/DataStructures/DisjointSetTest.php)
     * [Doublylinkedlisttest](./tests/DataStructures/DoublyLinkedListTest.php)
     * [Queuetest](./tests/DataStructures/QueueTest.php)
-    * [SegmentTreeTest](./tests/DataStructures/SegmentTreeTest.php)
+    * [Segmenttreetest](./tests/DataStructures/SegmentTreeTest.php)
     * [Singlylinkedlisttest](./tests/DataStructures/SinglyLinkedListTest.php)
     * [Stacktest](./tests/DataStructures/StackTest.php)
     * [Trietest](./tests/DataStructures/TrieTest.php)

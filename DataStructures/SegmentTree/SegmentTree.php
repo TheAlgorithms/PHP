@@ -91,6 +91,7 @@ class SegmentTree
 
         $mid = $start + (int)(($end - $start) / 2);
 
+        // Recursively build left and right children
         $leftChild = $this->buildTree($arr, $start, $mid);
         $rightChild = $this->buildTree($arr, $mid + 1, $end);
 
@@ -103,6 +104,55 @@ class SegmentTree
         $node->right = $rightChild;
 
         return $node;
+    }
+
+    /**
+     * Queries the aggregated value over a specified range.
+     *
+     * @param int $start The starting index of the range
+     * @param int $end The ending index of the range
+     * @return int|float The aggregated value for the range
+     * @throws OutOfBoundsException if the range is invalid
+     */
+    public function query(int $start, int $end)
+    {
+        if ($start > $end || $start < 0 || $end > ($this->root->end)) {
+            throw new OutOfBoundsException("Index out of bounds: start = $start, end = $end. 
+            Must be between 0 and " . ($this->arraySize - 1));
+        }
+        return $this->queryTree($this->root, $start, $end);
+    }
+
+    /**
+     * Recursively queries the segment tree for a specific range.
+     *
+     * @param SegmentTreeNode $node The current node
+     * @param int $start The starting index of the query range
+     * @param int $end The ending index of the query range
+     * @return int|float The aggregated value for the range
+     */
+    private function queryTree(SegmentTreeNode $node, int $start, int $end)
+    {
+        if ($node->start == $start && $node->end == $end) {
+            return $node->value;
+        }
+
+        $mid = $node->start + (int)(($node->end - $node->start) / 2);
+
+        // Determine which segment of the tree to query
+        if ($end <= $mid) {
+            return $this->queryTree($node->left, $start, $end);     // Query left child
+        } elseif ($start > $mid) {
+            return $this->queryTree($node->right, $start, $end);    // Query right child
+        } else {
+                // Split query between left and right children
+            $leftResult = $this->queryTree($node->left, $start, $mid);
+            $rightResult = $this->queryTree($node->right, $mid + 1, $end);
+
+            return $this->callback
+                ? ($this->callback)($leftResult, $rightResult)
+                : $leftResult + $rightResult;                   // Default sum if no callback
+        }
     }
 
     /**

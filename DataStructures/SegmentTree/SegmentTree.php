@@ -152,4 +152,58 @@ class SegmentTree
             ? ($this->callback)($node->left->value, $node->right->value)
             : $node->left->value + $node->right->value;
     }
+
+    /**
+     * Performs a range update on a specified segment.
+     *
+     * @param int $start The starting index of the range
+     * @param int $end The ending index of the range
+     * @param int|float $value The value to set for the range
+     * @throws OutOfBoundsException if the range is invalid
+     */
+    public function rangeUpdate(int $start, int $end, $value): void
+    {
+        if ($start < 0 || $end >= $this->arraySize || $start > $end) {
+            throw new OutOfBoundsException("Invalid range: start = $start, end = $end.");
+        }
+        $this->rangeUpdateTree($this->root, $start, $end, $value);
+
+        // Update the original array to reflect the range update
+        $this->currentArray = array_replace($this->currentArray, array_fill_keys(range($start, $end), $value));
+    }
+
+    /**
+     * Recursively performs a range update in the segment tree.
+     *
+     * @param SegmentTreeNode $node The current node
+     * @param int $start The starting index of the range
+     * @param int $end The ending index of the range
+     * @param int|float $value The new value for the range
+     */
+    private function rangeUpdateTree(SegmentTreeNode $node, int $start, int $end, $value): void
+    {
+        // Leaf node
+        if ($node->start == $node->end) {
+            $node->value = $value;
+            return;
+        }
+
+        $mid = $node->start + (int)(($node->end - $node->start) / 2);
+
+        // Determine which segment of the tree to update (Left, Right, Split respectively)
+        if ($end <= $mid) {
+            $this->rangeUpdateTree($node->left, $start, $end, $value);  // Entire range is in the left child
+        } elseif ($start > $mid) {
+            $this->rangeUpdateTree($node->right, $start, $end, $value); // Entire range is in the right child
+        } else {
+                // Range is split between left and right children
+            $this->rangeUpdateTree($node->left, $start, $mid, $value);
+            $this->rangeUpdateTree($node->right, $mid + 1, $end, $value);
+        }
+
+        // Recompute the value of the current node after the update
+        $node->value = $this->callback
+            ? ($this->callback)($node->left->value, $node->right->value)
+            : $node->left->value + $node->right->value;
+    }
 }

@@ -14,14 +14,14 @@ class SegmentTree
 
     /**
      * Initializes the segment tree with the provided array and optional callback for aggregation.
-     * Default aggregation is Sum
+     * Default aggregation is Sum.
      *
      * Example usage:
      *  $segmentTree = new SegmentTree($array, fn($a, $b) => max($a, $b));
      *
      * @param array $arr The input array for the segment tree
-     * @param callable|null $callback Optional callback function for custom aggregation logic
-     * @throws InvalidArgumentException if the array is empty, contains non-numeric values, or is associative
+     * @param callable|null $callback Optional callback function for custom aggregation logic.
+     * @throws InvalidArgumentException if the array is empty, contains non-numeric values, or is associative.
      */
     public function __construct(array $arr, callable $callback = null)
     {
@@ -43,7 +43,7 @@ class SegmentTree
     }
 
     /**
-     * @return bool True if any element is non-numeric, false otherwise
+     * @return bool True if any element is non-numeric, false otherwise.
      */
     private function isNonNumeric(): bool
     {
@@ -51,7 +51,7 @@ class SegmentTree
     }
 
     /**
-     * @return bool True if the array is associative, false otherwise
+     * @return bool True if the array is associative, false otherwise.
      */
     private function isAssociative(): bool
     {
@@ -59,7 +59,7 @@ class SegmentTree
     }
 
     /**
-     * @return SegmentTreeNode The root node of the segment tree
+     * @return SegmentTreeNode The root node of the segment tree.
      */
     public function getRoot(): SegmentTreeNode
     {
@@ -77,21 +77,21 @@ class SegmentTree
     /**
      * Builds the segment tree recursively.
      *
-     * @param array $arr The input array
-     * @param int $start The starting index of the segment
-     * @param int $end The ending index of the segment
-     * @return SegmentTreeNode The root node of the constructed segment
+     * @param array $arr The input array.
+     * @param int $start The starting index of the segment.
+     * @param int $end The ending index of the segment.
+     * @return SegmentTreeNode The root node of the constructed segment.
      */
     private function buildTree(array $arr, int $start, int $end): SegmentTreeNode
     {
-        // Leaf node
+            // Leaf node
         if ($start == $end) {
             return new SegmentTreeNode($start, $end, $arr[$start]);
         }
 
         $mid = $start + (int)(($end - $start) / 2);
 
-        // Recursively build left and right children
+            // Recursively build left and right children
         $leftChild = $this->buildTree($arr, $start, $mid);
         $rightChild = $this->buildTree($arr, $mid + 1, $end);
 
@@ -99,7 +99,7 @@ class SegmentTree
             ? ($this->callback)($leftChild->value, $rightChild->value)
             : $leftChild->value + $rightChild->value);
 
-        // Link the children to the parent node
+            // Link the children to the parent node
         $node->left = $leftChild;
         $node->right = $rightChild;
 
@@ -109,10 +109,10 @@ class SegmentTree
     /**
      * Queries the aggregated value over a specified range.
      *
-     * @param int $start The starting index of the range
-     * @param int $end The ending index of the range
-     * @return int|float The aggregated value for the range
-     * @throws OutOfBoundsException if the range is invalid
+     * @param int $start The starting index of the range.
+     * @param int $end The ending index of the range.
+     * @return int|float The aggregated value for the range.
+     * @throws OutOfBoundsException if the range is invalid.
      */
     public function query(int $start, int $end)
     {
@@ -126,10 +126,10 @@ class SegmentTree
     /**
      * Recursively queries the segment tree for a specific range.
      *
-     * @param SegmentTreeNode $node The current node
-     * @param int $start The starting index of the query range
-     * @param int $end The ending index of the query range
-     * @return int|float The aggregated value for the range
+     * @param SegmentTreeNode $node The current node.
+     * @param int $start The starting index of the query range.
+     * @param int $end The ending index of the query range.
+     * @return int|float The aggregated value for the range.
      */
     private function queryTree(SegmentTreeNode $node, int $start, int $end)
     {
@@ -139,7 +139,7 @@ class SegmentTree
 
         $mid = $node->start + (int)(($node->end - $node->start) / 2);
 
-        // Determine which segment of the tree to query
+            // Determine which segment of the tree to query
         if ($end <= $mid) {
             return $this->queryTree($node->left, $start, $end);     // Query left child
         } elseif ($start > $mid) {
@@ -158,9 +158,9 @@ class SegmentTree
     /**
      * Updates the value at a specified index in the segment tree.
      *
-     * @param int $index The index to update
-     * @param int|float $value The new value to set
-     * @throws OutOfBoundsException if the index is out of bounds
+     * @param int $index The index to update.
+     * @param int|float $value The new value to set.
+     * @throws OutOfBoundsException if the index is out of bounds.
      */
     public function update(int $index, int $value): void
     {
@@ -176,13 +176,13 @@ class SegmentTree
     /**
      * Recursively updates the segment tree.
      *
-     * @param SegmentTreeNode $node The current node
-     * @param int $index The index to update
-     * @param int|float $value The new value
+     * @param SegmentTreeNode $node The current node.
+     * @param int $index The index to update.
+     * @param int|float $value The new value.
      */
     private function updateTree(SegmentTreeNode $node, int $index, $value): void
     {
-        // Leaf node
+            // Leaf node
         if ($node->start == $node->end) {
             $node->value = $value;
             return;
@@ -190,14 +190,14 @@ class SegmentTree
 
         $mid = $node->start + (int)(($node->end - $node->start) / 2);
 
-        // Decide whether to go to the left or right child
+            // Decide whether to go to the left or right child
         if ($index <= $mid) {
             $this->updateTree($node->left, $index, $value);
         } else {
             $this->updateTree($node->right, $index, $value);
         }
 
-        // Recompute the value of the current node after the update
+            // Recompute the value of the current node after the update
         $node->value = $this->callback
             ? ($this->callback)($node->left->value, $node->right->value)
             : $node->left->value + $node->right->value;
@@ -206,10 +206,10 @@ class SegmentTree
     /**
      * Performs a range update on a specified segment.
      *
-     * @param int $start The starting index of the range
-     * @param int $end The ending index of the range
-     * @param int|float $value The value to set for the range
-     * @throws OutOfBoundsException if the range is invalid
+     * @param int $start The starting index of the range.
+     * @param int $end The ending index of the range.
+     * @param int|float $value The value to set for the range.
+     * @throws OutOfBoundsException if the range is invalid.
      */
     public function rangeUpdate(int $start, int $end, $value): void
     {
@@ -218,21 +218,21 @@ class SegmentTree
         }
         $this->rangeUpdateTree($this->root, $start, $end, $value);
 
-        // Update the original array to reflect the range update
+            // Update the original array to reflect the range update
         $this->currentArray = array_replace($this->currentArray, array_fill_keys(range($start, $end), $value));
     }
 
     /**
      * Recursively performs a range update in the segment tree.
      *
-     * @param SegmentTreeNode $node The current node
-     * @param int $start The starting index of the range
-     * @param int $end The ending index of the range
-     * @param int|float $value The new value for the range
+     * @param SegmentTreeNode $node The current node.
+     * @param int $start The starting index of the range.
+     * @param int $end The ending index of the range.
+     * @param int|float $value The new value for the range.
      */
     private function rangeUpdateTree(SegmentTreeNode $node, int $start, int $end, $value): void
     {
-        // Leaf node
+            // Leaf node
         if ($node->start == $node->end) {
             $node->value = $value;
             return;
@@ -240,7 +240,7 @@ class SegmentTree
 
         $mid = $node->start + (int)(($node->end - $node->start) / 2);
 
-        // Determine which segment of the tree to update (Left, Right, Split respectively)
+            // Determine which segment of the tree to update (Left, Right, Split respectively)
         if ($end <= $mid) {
             $this->rangeUpdateTree($node->left, $start, $end, $value);  // Entire range is in the left child
         } elseif ($start > $mid) {
@@ -251,7 +251,7 @@ class SegmentTree
             $this->rangeUpdateTree($node->right, $mid + 1, $end, $value);
         }
 
-        // Recompute the value of the current node after the update
+            // Recompute the value of the current node after the update
         $node->value = $this->callback
             ? ($this->callback)($node->left->value, $node->right->value)
             : $node->left->value + $node->right->value;
@@ -260,7 +260,7 @@ class SegmentTree
     /**
      * Serializes the segment tree into a JSON string.
      *
-     * @return string The serialized segment tree as a JSON string
+     * @return string The serialized segment tree as a JSON string.
      */
     public function serialize(): string
     {
@@ -270,8 +270,8 @@ class SegmentTree
     /**
      * Recursively serializes the segment tree.
      *
-     * @param SegmentTreeNode|null $node The current node
-     * @return array The serialized representation of the node
+     * @param SegmentTreeNode|null $node The current node.
+     * @return array The serialized representation of the node.
      */
     private function serializeTree(?SegmentTreeNode $node): array
     {
@@ -290,8 +290,8 @@ class SegmentTree
     /**
      * Deserializes a JSON string into a SegmentTree object.
      *
-     * @param string $data The JSON string to deserialize
-     * @return SegmentTree The deserialized segment tree
+     * @param string $data The JSON string to deserialize.
+     * @return SegmentTree The deserialized segment tree.
      */
     public static function deserialize(string $data): self
     {
@@ -307,8 +307,8 @@ class SegmentTree
     /**
      * Recursively deserializes a segment tree from an array representation.
      *
-     * @param array $data The serialized data for the node
-     * @return SegmentTreeNode|null The deserialized node
+     * @param array $data The serialized data for the node.
+     * @return SegmentTreeNode|null The deserialized node.
      */
     private function deserializeTree(array $data): ?SegmentTreeNode
     {

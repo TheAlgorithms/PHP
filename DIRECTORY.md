@@ -30,7 +30,6 @@
   * SegmentTree
     * [SegmentTree](./DataStructures/SegmentTree/SegmentTree.php)
     * [SegmentTreeNode](./DataStructures/SegmentTree/SegmentTreeNode.php)
-    
   * [Singlylinkedlist](./DataStructures/SinglyLinkedList.php)
   * [Stack](./DataStructures/Stack.php)
   * Trie

@@ -14,9 +14,9 @@ class SegmentTreeNode
     public ?SegmentTreeNode $right;
 
     /**
-     * @param int $start The starting index of the range
-     * @param int $end The ending index of the range
-     * @param int|float $value The initial aggregated value for this range (e.g. sum, min, or max)
+     * @param int $start The starting index of the range.
+     * @param int $end The ending index of the range.
+     * @param int|float $value The initial aggregated value for this range (e.g. sum, min, or max).
      * calculated using a callback. Defaults to sum.
      */
     public function __construct(int $start, int $end, $value)

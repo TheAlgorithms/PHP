@@ -95,9 +95,11 @@ class SegmentTreeTest extends TestCase
         );
     }
 
+    /**
+     * Test update functionality for different query types.
+     */
     public function testSegmentTreeUpdate(): void
     {
-        // Test update functionality for different query types
         // Sum Query
         $segmentTreeSum = new SegmentTree($this->testArray);
         $segmentTreeSum->update(2, 10);  // Update index 2 to 10
@@ -126,9 +128,11 @@ class SegmentTreeTest extends TestCase
         );
     }
 
+    /**
+     * Test range update functionality for different query types.
+     */
     public function testSegmentTreeRangeUpdate(): void
     {
-        // Test range update functionality for different query types
         // Sum Query
         $segmentTreeSum = new SegmentTree($this->testArray);
         $segmentTreeSum->rangeUpdate(3, 7, 0);      // Set indices 3 to 7 to 0
@@ -157,6 +161,9 @@ class SegmentTreeTest extends TestCase
         );
     }
 
+    /**
+     * Test array updates reflections.
+     */
     public function testGetCurrentArray(): void
     {
         $segmentTree = new SegmentTree($this->testArray);
@@ -180,9 +187,11 @@ class SegmentTreeTest extends TestCase
         );
     }
 
+    /**
+     * Test serialization and deserialization of the segment tree.
+     */
     public function testSegmentTreeSerialization(): void
     {
-        // Test serialization and deserialization
         $segmentTree = new SegmentTree($this->testArray);
         $serialized = $segmentTree->serialize();
 
@@ -194,6 +203,9 @@ class SegmentTreeTest extends TestCase
         );
     }
 
+    /**
+     * Testing EdgeCases: first and last indices functionality on the Segment Tree
+     */
     public function testEdgeCases(): void
     {
         $segmentTree = new SegmentTree($this->testArray);
@@ -252,6 +264,10 @@ class SegmentTreeTest extends TestCase
             "After range update, query at the second last index should return 10."
         );
     }
+
+    /**
+     * Test empty or unsupported arrays.
+     */
     public function testUnsupportedOrEmptyArrayInitialization(): void
     {
         // Test empty array
@@ -269,9 +285,12 @@ class SegmentTreeTest extends TestCase
         $segmentTreeUnsupported = new SegmentTree([1, "two", 3]);  // Mix of numeric and non-numeric
     }
 
+
+    /**
+     * Test exception for invalid update index.
+     */
     public function testInvalidUpdateIndex(): void
     {
-        // Test exception for invalid update index
         $segmentTree = new SegmentTree($this->testArray);
 
         $index = count($this->testArray) + 5;
@@ -284,9 +303,11 @@ class SegmentTreeTest extends TestCase
         $segmentTree->update($index, 100);     // non-existing index, should trigger exception
     }
 
+    /**
+     *  Test exception for invalid update index.
+     */
     public function testOutOfBoundsQuery(): void
     {
-        // Test exception for out-of-bounds query
         $segmentTree = new SegmentTree($this->testArray);
 
         $start = 0;
@@ -299,9 +320,11 @@ class SegmentTreeTest extends TestCase
         $segmentTree->query(0, count($this->testArray));  // expecting an exception
     }
 
+    /**
+     *  Test exception for invalid range update.
+     */
     public function testInvalidRangeUpdate(): void
     {
-        // Test exception for invalid range update
         $segmentTree = new SegmentTree($this->testArray);
 
         $start = -1;

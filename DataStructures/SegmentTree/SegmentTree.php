@@ -256,4 +256,69 @@ class SegmentTree
             ? ($this->callback)($node->left->value, $node->right->value)
             : $node->left->value + $node->right->value;
     }
+
+    /**
+     * Serializes the segment tree into a JSON string.
+     *
+     * @return string The serialized segment tree as a JSON string
+     */
+    public function serialize(): string
+    {
+        return json_encode($this->serializeTree($this->root));
+    }
+
+    /**
+     * Recursively serializes the segment tree.
+     *
+     * @param SegmentTreeNode|null $node The current node
+     * @return array The serialized representation of the node
+     */
+    private function serializeTree(?SegmentTreeNode $node): array
+    {
+        if ($node === null) {
+            return [];
+        }
+        return [
+            'start' => $node->start,
+            'end' => $node->end,
+            'value' => $node->value,
+            'left' => $this->serializeTree($node->left),
+            'right' => $this->serializeTree($node->right),
+        ];
+    }
+
+    /**
+     * Deserializes a JSON string into a SegmentTree object.
+     *
+     * @param string $data The JSON string to deserialize
+     * @return SegmentTree The deserialized segment tree
+     */
+    public static function deserialize(string $data): self
+    {
+        $array = json_decode($data, true);
+
+        $initialiseArray = array_fill(0, $array['end'] + 1, 0);
+        $segmentTree = new self($initialiseArray);
+
+        $segmentTree->root = $segmentTree->deserializeTree($array);
+        return $segmentTree;
+    }
+
+    /**
+     * Recursively deserializes a segment tree from an array representation.
+     *
+     * @param array $data The serialized data for the node
+     * @return SegmentTreeNode|null The deserialized node
+     */
+    private function deserializeTree(array $data): ?SegmentTreeNode
+    {
+        if (empty($data)) {
+            return null;
+        }
+        $node = new SegmentTreeNode($data['start'], $data['end'], $data['value']);
+
+        $node->left = $this->deserializeTree($data['left']);
+        $node->right = $this->deserializeTree($data['right']);
+        return $node;
+    }
 }

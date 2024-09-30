@@ -83,7 +83,7 @@ class SegmentTree
     }
 
     /**
-     * Builds the segment tree recursively.
+     * Builds the segment tree recursively. Takes O(n log n) in total.
      *
      * @param array $arr The input array.
      * @param int $start The starting index of the segment.
@@ -115,7 +115,7 @@ class SegmentTree
     }
 
     /**
-     * Queries the aggregated value over a specified range.
+     * Queries the aggregated value over a specified range. Takes O(log n).
      *
      * @param int $start The starting index of the range.
      * @param int $end The ending index of the range.
@@ -164,7 +164,7 @@ class SegmentTree
     }
 
     /**
-     * Updates the value at a specified index in the segment tree.
+     * Updates the value at a specified index in the segment tree. Takes O(log n).
      *
      * @param int $index The index to update.
      * @param int|float $value The new value to set.

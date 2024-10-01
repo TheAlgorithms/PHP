@@ -46,6 +46,8 @@
   * [Absolutemin](./Maths/AbsoluteMin.php)
   * [Armstrongnumber](./Maths/ArmstrongNumber.php)
   * [Basex](./Maths/BaseX.php)
+  * [Checkeven](./Maths/CheckEven.php)
+  * [Checkodd](./Maths/CheckOdd.php)
   * [Checkpalindrome](./Maths/CheckPalindrome.php)
   * [Checkprime](./Maths/CheckPrime.php)
   * [Eratosthenessieve](./Maths/EratosthenesSieve.php)

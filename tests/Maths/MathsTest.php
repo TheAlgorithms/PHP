@@ -6,8 +6,10 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../Maths/AbsoluteMax.php';
 require_once __DIR__ . '/../../Maths/ArmstrongNumber.php';
 require_once __DIR__ . '/../../Maths/AbsoluteMin.php';
+require_once __DIR__ . '/../../Maths/CheckEven.php';
 require_once __DIR__ . '/../../Maths/CheckPalindrome.php';
 require_once __DIR__ . '/../../Maths/CheckPrime.php';
+require_once __DIR__ . '/../../Maths/CheckOdd.php';
 require_once __DIR__ . '/../../Maths/Factorial.php';
 require_once __DIR__ . '/../../Maths/FastExponentiation.php';
 require_once __DIR__ . '/../../Maths/Fibonacci.php';
@@ -40,6 +42,15 @@ class MathsTest extends TestCase
         factorial(-25);
     }
 
+    public function testIsEven()
+    {
+        $this->assertTrue(isEven(2));
+        $this->assertTrue(isEven(0));
+        $this->assertFalse(isEven(3));
+        $this->assertFalse(isEven(17));
+        $this->assertTrue(isEven(-4));
+    }
+
     public function testIsNumberArmstrong()
     {
         $this->assertTrue(isNumberArmstrong(153));
@@ -54,6 +65,15 @@ class MathsTest extends TestCase
         $this->assertFalse(isNumberPalindromic(123));
         $this->assertTrue(isNumberPalindromic(123321));
         $this->assertFalse(isNumberPalindromic(2468));
+    }
+
+    public function testIsOdd()
+    {
+        $this->assertTrue(isOdd(3));
+        $this->assertTrue(isOdd(17));
+        $this->assertFalse(isOdd(4));
+        $this->assertFalse(isOdd(0));
+        $this->assertTrue(isOdd(-5));
     }
 
     public function testIsPrime()

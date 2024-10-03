@@ -259,7 +259,7 @@ class SplayTreeTest extends TestCase
         $node = $this->tree->search(22);
 
         $this->assertNotNull($node, "Returned node cannot be Null.");
-        $this->assertNull($node->parent, "The searched node must have become the new root with has no parent");
+        $this->assertNull($node->parent, "The searched node must have become the new root which has no parent");
         $this->assertTrue(
             $node->isRoot(),
             "The searched node must have become the new root. Failed to splay it correctly."

@@ -31,6 +31,10 @@
     * [Segmenttree](./DataStructures/SegmentTree/SegmentTree.php)
     * [Segmenttreenode](./DataStructures/SegmentTree/SegmentTreeNode.php)
   * [Singlylinkedlist](./DataStructures/SinglyLinkedList.php)
+  * Splaytree
+    * [Splaytree](./DataStructures/SplayTree/SplayTree.php)
+    * [Splaytreenode](./DataStructures/SplayTree/SplayTreeNode.php)
+    * [Splaytreerotations](./DataStructures/SplayTree/SplayTreeRotations.php)
   * [Stack](./DataStructures/Stack.php)
   * Trie
     * [Trie](./DataStructures/Trie/Trie.php)
@@ -132,6 +136,7 @@
     * [Queuetest](./tests/DataStructures/QueueTest.php)
     * [Segmenttreetest](./tests/DataStructures/SegmentTreeTest.php)
     * [Singlylinkedlisttest](./tests/DataStructures/SinglyLinkedListTest.php)
+    * [Splaytreetest](./tests/DataStructures/SplayTreeTest.php)
     * [Stacktest](./tests/DataStructures/StackTest.php)
     * [Trietest](./tests/DataStructures/TrieTest.php)
   * Graphs

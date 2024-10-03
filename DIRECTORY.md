@@ -15,6 +15,7 @@
   * [Hexadecimaltodecimal](./Conversions/HexadecimalToDecimal.php)
   * [Octaltodecimal](./Conversions/OctalToDecimal.php)
   * [Speedconversion](./Conversions/SpeedConversion.php)
+  * [Temperatureconversions](./Conversions/TemperatureConversions.php)
 
 ## Datastructures
   * Avltree

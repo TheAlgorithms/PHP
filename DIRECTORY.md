@@ -62,6 +62,7 @@
   * [Median](./Maths/Median.php)
   * [Mode](./Maths/Mode.php)
   * [Neonnumber](./Maths/NeonNumber.php)
+  * [Perfectnumber](./Maths/PerfectNumber.php)
   * [Perfectsquare](./Maths/PerfectSquare.php)
   * Projecteuler
     * [Problem1](./Maths/ProjectEuler/Problem1.php)

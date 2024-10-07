@@ -22,6 +22,7 @@ require_once __DIR__ . '/../../Maths/Median.php';
 require_once __DIR__ . '/../../Maths/Mode.php';
 require_once __DIR__ . '/../../Maths/FastInverseSquareRoot.php';
 require_once __DIR__ . '/../../Maths/BaseX.php';
+require_once __DIR__ . '/../../Maths/PerfectNumber.php';
 
 class MathsTest extends TestCase
 {

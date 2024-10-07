@@ -62,8 +62,11 @@ We want your work to be readable by others; therefore, we encourage you to note 
 
   If you used a Wikipedia article or some other source material to create your algorithm, please add the URL in a docstring or comment to help your reader
 
-- Write tests
+- Write proper unit tests (see examples in [tests](https://github.com/TheAlgorithms/PHP/tree/master/tests) and ensure all unit tests are passing (composer run-script test)
+
 - Avoid importing external libraries for basic algorithms. Only use them for complicated algorithms
+
+- Ensure code is linted with phpcs, and passing all linting checks (vendor/bin/phpcs -n)
 
 #### Other Standard While Submitting Your Work
 

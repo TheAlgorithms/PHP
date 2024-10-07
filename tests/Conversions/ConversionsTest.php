@@ -9,6 +9,7 @@ require_once __DIR__ . '/../../Conversions/DecimalToBinary.php';
 require_once __DIR__ . '/../../Conversions/OctalToDecimal.php';
 require_once __DIR__ . '/../../Conversions/HexadecimalToDecimal.php';
 require_once __DIR__ . '/../../Conversions/SpeedConversion.php';
+require_once __DIR__ . '/../../Conversions/TemperatureConversions.php';
 
 class ConversionsTest extends TestCase
 {
@@ -84,5 +85,61 @@ class ConversionsTest extends TestCase
 
         $this->expectException(\Exception::class);
         convertSpeed(1, 'km/h', 'miles');
+    }
+
+    public function testCelsiusToFahrenheit()
+    {
+        $this->assertEquals(32.0, CelsiusToFahrenheit(0));
+        $this->assertEquals(212.0, CelsiusToFahrenheit(100));
+        $this->assertEquals(98.6, CelsiusToFahrenheit(37));
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('Temperature (Celsius) must be a number');
+        CelsiusToFahrenheit("non-numeric");
+    }
+
+    public function testFahrenheitToCelsius()
+    {
+        $this->assertEquals(0.0, FahrenheitToCelsius(32));
+        $this->assertEquals(100.0, FahrenheitToCelsius(212));
+        $this->assertEquals(37.0, FahrenheitToCelsius(98.6));
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('Temperature (Fahrenheit) must be a number');
+        FahrenheitToCelsius("non-numeric");
+    }
+
+    public function testCelsiusToKelvin()
+    {
+        $this->assertEquals(273.15, CelsiusToKelvin(0));
+        $this->assertEquals(373.15, CelsiusToKelvin(100));
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('Temperature (Celsius) must be a number');
+        CelsiusToKelvin("non-numeric");
+    }
+
+    public function testKelvinToCelsius()
+    {
+        $this->assertEquals(0.0, KelvinToCelsius(273.15));
+        $this->assertEquals(100.0, KelvinToCelsius(373.15));
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('Temperature (Kelvin) must be a number');
+        KelvinToCelsius("non-numeric");
+    }
+
+    public function testKelvinToFahrenheit()
+    {
+        $this->assertEquals(32.0, KelvinToFahrenheit(273.15));
+        $this->assertEquals(212.0, KelvinToFahrenheit(373.15));
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('Temperature (Kelvin) must be a number');
+        KelvinToFahrenheit("non-numeric");
+    }
+
+    public function testFahrenheitToKelvin()
+    {
+        $this->assertEquals(273.15, FahrenheitToKelvin(32));
+        $this->assertEquals(373.15, FahrenheitToKelvin(212));
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('Temperature (Fahrenheit) must be a number');
+        FahrenheitToKelvin("non-numeric");
     }
 }

@@ -185,6 +185,22 @@ class MathsTest extends TestCase
         $this->assertEquals(3, gcd(9, 12));
     }
 
+    public function testPerfectNumber()
+    {
+        $this->assertTrue(perfect_number(6));
+        $this->assertTrue(perfect_number(28));
+        $this->assertTrue(perfect_number(496));
+
+        $this->assertFalse(perfect_number(10));
+        $this->assertFalse(perfect_number(15));
+
+        $this->assertFalse(perfect_number(-6));
+        $this->assertFalse(perfect_number(0));
+        $this->assertFalse(perfect_number(1));
+        $this->assertFalse(perfect_number(2.5));
+        $this->assertFalse(perfect_number("string"));
+    }
+
     public function testFastInverseSquareRoot()
     {
         $this->assertEqualsWithDelta(0.31568579235273, fastInvSqrt(10), 0.00001);

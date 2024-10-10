@@ -450,6 +450,36 @@ class SplayTreeTest extends TestCase
     }
 
     /**
+     * Tests deletion of multiple nodes and checks if the tree size is updated.
+     */
+    public function testDeleteMultipleKeys()
+    {
+        $arrayData = [200 => "Value 200", 150 => "Value 150", 170 => "Value 170",
+            250 => "Value 250", 300 => "Value 300", 360 => "Value 360", 230 => "Value 230",
+            240 => "Value 240", 220 => "Value 220", 50 => "Value 50", 28 => "Value 28", 164 => "Value 164",
+        ];
+
+        $splayTree = new SplayTree($arrayData);
+        $treeSize = $splayTree->size();
+
+        $numberOfNodesToDelete = rand(1, count($arrayData));
+
+        $randomNodesToDelete = array_rand($arrayData, $numberOfNodesToDelete);
+
+        for ($i = 0; $i < count($randomNodesToDelete); $i++) {
+            $splayTree->delete($randomNodesToDelete[$i]);
+            $isFound = $splayTree->isFound($randomNodesToDelete[$i]);
+            $this->assertFalse($isFound, "Node with key $randomNodesToDelete[$i] was not deleted.");
+        }
+
+        $this->assertEquals(
+            $treeSize - $numberOfNodesToDelete,
+            $splayTree->size(),
+            "After deletion, total nodes count was not updated correctly."
+        );
+    }
+
+    /**
      * Ensures that attempting to delete a non-existing key throws an exception and keeps the tree intact.
      */
     public function testDeleteNonExistingKey()

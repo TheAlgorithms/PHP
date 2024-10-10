@@ -319,7 +319,7 @@ class SplayTreeTest extends TestCase
 
         $this->assertNull(
             $node->parent,
-            "The last visited node must have become the new root with has no parent. Failed to splay correctly."
+            "The last visited node must have become the new root which has no parent. Failed to splay correctly."
         );
     }
 
@@ -390,7 +390,7 @@ class SplayTreeTest extends TestCase
         );
         $this->assertNull(
             $node->parent,
-            "The last visited node must have become the new root with has no parent. Failed to splay correctly."
+            "The last visited node must have become the new root which has no parent. Failed to splay correctly."
         );
     }
 
@@ -401,10 +401,18 @@ class SplayTreeTest extends TestCase
     {
         $this->populateTree();
 
+        $nodesNumber = $this->tree->size();
         $node = $this->tree->delete(22);
-        $isFound = $this->tree->isFound(22);
 
+        $isFound = $this->tree->isFound(22);
         $this->assertFalse($isFound, "Node with key 22 was not deleted.");
+
+        $this->assertEquals(
+            $nodesNumber - 1,
+            $this->tree->size(),
+            "After deletion, total nodes count was not updated correctly."
+        );
+
         $this->assertEquals(
             20,
             $node->key,

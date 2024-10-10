@@ -319,7 +319,7 @@ class SplayTreeTest extends TestCase
 
         $this->assertNull(
             $node->parent,
-            "The last visited node must have become the new root with has no parent. Failed to splay correctly."
+            "The last visited node must have become the new root which has no parent. Failed to splay correctly."
         );
     }
 
@@ -390,7 +390,7 @@ class SplayTreeTest extends TestCase
         );
         $this->assertNull(
             $node->parent,
-            "The last visited node must have become the new root with has no parent. Failed to splay correctly."
+            "The last visited node must have become the new root which has no parent. Failed to splay correctly."
         );
     }
 
@@ -401,10 +401,18 @@ class SplayTreeTest extends TestCase
     {
         $this->populateTree();
 
+        $nodesNumber = $this->tree->size();
         $node = $this->tree->delete(22);
-        $isFound = $this->tree->isFound(22);
 
+        $isFound = $this->tree->isFound(22);
         $this->assertFalse($isFound, "Node with key 22 was not deleted.");
+
+        $this->assertEquals(
+            $nodesNumber - 1,
+            $this->tree->size(),
+            "After deletion, total nodes count was not updated correctly."
+        );
+
         $this->assertEquals(
             20,
             $node->key,
@@ -438,6 +446,36 @@ class SplayTreeTest extends TestCase
             $inOrderArrayKeys,
             'Tree structure after splay is not correct. 
             The in-order traversal is not correct. Failed to merge subtrees.'
+        );
+    }
+
+    /**
+     * Tests deletion of multiple nodes and checks if the tree size is updated.
+     */
+    public function testDeleteMultipleKeys()
+    {
+        $arrayData = [200 => "Value 200", 150 => "Value 150", 170 => "Value 170",
+            250 => "Value 250", 300 => "Value 300", 360 => "Value 360", 230 => "Value 230",
+            240 => "Value 240", 220 => "Value 220", 50 => "Value 50", 28 => "Value 28", 164 => "Value 164",
+        ];
+
+        $splayTree = new SplayTree($arrayData);
+        $treeSize = $splayTree->size();
+
+        $numberOfNodesToDelete = rand(1, count($arrayData));
+
+        $randomNodesToDelete = array_rand($arrayData, $numberOfNodesToDelete);
+
+        for ($i = 0; $i < count($randomNodesToDelete); $i++) {
+            $splayTree->delete($randomNodesToDelete[$i]);
+            $isFound = $splayTree->isFound($randomNodesToDelete[$i]);
+            $this->assertFalse($isFound, "Node with key $randomNodesToDelete[$i] was not deleted.");
+        }
+
+        $this->assertEquals(
+            $treeSize - $numberOfNodesToDelete,
+            $splayTree->size(),
+            "After deletion, total nodes count was not updated correctly."
         );
     }
 

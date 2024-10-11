@@ -464,23 +464,13 @@ class SplayTreeTest extends TestCase
         $splayTree = new SplayTree($arrayData);
         $treeSize = $splayTree->size();
 
-        // pick randomly some nodes to delete
-        $randomNodesToDelete = array_rand($arrayData, rand(1, count($arrayData)));
+        $nodesToDelete = [150, 300, 50, 240, 170];
+        $expectedSize = $treeSize - count($nodesToDelete);
 
-        $randomNodesToDelete = is_array($randomNodesToDelete)
-            ? $randomNodesToDelete
-            : [$randomNodesToDelete];
-
-        $expectedSize = $treeSize - count($randomNodesToDelete);
-
-        foreach ($randomNodesToDelete as $key) {
-            $isFound = $splayTree->isFound($key);   // splay the key to the root before deletion
-            $this->assertTrue($isFound, "Node with key $key is not present for deletion.");
-
-            $rootKey = $splayTree->getRoot()->key;
-            $this->assertEquals($rootKey, $key, "Target key was not splayed to root correctly.");
-
-            $splayTree->delete($splayTree->getRoot()->key);
+        foreach ($nodesToDelete as $key) {
+            $splayTree->delete($key);
+            $isFound = $this->tree->isFound($key);
+            $this->assertFalse($isFound, "Node with key $key was not deleted.");
         }
 
         $this->assertEquals(

@@ -1,8 +1,9 @@
 <?php
 
 /*
- * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request: #168
- * https://github.com/TheAlgorithms/PHP/pull/168
+ * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed)
+ * in Pull Request #168: https://github.com/TheAlgorithms/PHP/pull/168
+ * and #171: https://github.com/TheAlgorithms/PHP/pull/171
  *
  * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing bugs/corrections to this file.
  * Thank you!

@@ -517,6 +517,28 @@ class SplayTreeTest extends TestCase
         $this->assertNull($rootNode4, "Deleting a key in an empty tree should return null.");
     }
 
+    /**
+     * Test insert, search, delete on large trees
+     */
+    public function testLargeTree(): void
+    {
+        // Inserting a large number of nodes
+        for ($i = 1; $i <= 1000; $i++) {
+            $this->tree->insert($i, "Value $i");
+        }
+
+        // Verify that all inserted nodes can be searched
+        for ($i = 1; $i <= 1000; $i++) {
+            $this->assertEquals("Value $i", $this->tree->search($i)->value, "Value for key $i should be 'Value $i'");
+        }
+
+        // Verify that all inserted nodes can be deleted
+        for ($i = 1; $i <= 5; $i++) {
+            $this->tree->delete($i);
+            $this->assertFalse($this->tree->isFound($i), "Node was not deleted correctly");
+        }
+    }
+
 
     // ------------- Test 6 Rotation types of the Splay Tree  -------------
 

@@ -1,8 +1,9 @@
 <?php
 
 /*
- * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request: #163
- * https://github.com/TheAlgorithms/PHP/pull/163
+ * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed)
+ * in Pull Request #163: https://github.com/TheAlgorithms/PHP/pull/163
+ * and #173: https://github.com/TheAlgorithms/PHP/pull/173
  *
  * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing bugs/corrections to this file.
  * Thank you!
@@ -37,6 +38,9 @@ class AVLTreeTest extends TestCase
         $this->tree->insert(15, 'Value 15');
     }
 
+    /**
+     * Tests the insert and search operations in the AVLTree.
+     */
     public function testInsertAndSearch(): void
     {
         $this->populateTree();
@@ -47,6 +51,10 @@ class AVLTreeTest extends TestCase
         $this->assertNull($this->tree->search(25), 'Value for non-existent key 25 should be null');
     }
 
+    /**
+     * Tests the deletion of nodes and ensures the AVLTree maintains
+     * its integrity after deletions.
+     */
     public function testDelete(): void
     {
         $this->populateTree();
@@ -167,6 +175,9 @@ class AVLTreeTest extends TestCase
         );
     }
 
+    /**
+     * Tests the insertion and deletion of a large number of nodes.
+     */
     public function testLargeTree(): void
     {
         // Inserting a large number of nodes
@@ -186,6 +197,9 @@ class AVLTreeTest extends TestCase
         }
     }
 
+    /**
+     * Tests whether the AVLTree remains balanced after insertions.
+     */
     public function testBalance(): void
     {
         $this->populateTree();
@@ -299,5 +313,54 @@ class AVLTreeTest extends TestCase
     {
         $this->tree = new AVLTree();
         $this->assertEquals(0, $this->tree->size(), 'Size should be 0 for an empty tree');
+    }
+
+    /**
+     * Test serialization and deserialization
+     */
+    public function testAVLTreeSerialization(): void
+    {
+        $avlTree = new AVLTree();
+
+        $avlTree->insert(100, 'Value 100');
+        $avlTree->insert(200, 'Value 200');
+        $avlTree->insert(50, 'Value 50');
+        $avlTree->insert(150, 'Value 150');
+        $avlTree->insert(350, 'Value 350');
+        $avlTree->insert(40, 'Value 40');
+        $avlTree->insert(90, 'Value 90');
+
+        $avlTreeRoot = $avlTree->getRoot();
+        $serializedAVLTree = $avlTree->serialize();
+
+        $deserializedTree = new AVLTree();
+        $deserializedTree->deserialize($serializedAVLTree);
+
+        $deserializedTreeRoot = $deserializedTree->getRoot();
+
+        $this->assertEquals($deserializedTreeRoot->key, $avlTreeRoot->key, 'The two roots key should match');
+        $this->assertEquals($deserializedTreeRoot->value, $avlTreeRoot->value, 'The two roots value should match');
+        $this->assertEquals(
+            $deserializedTreeRoot->left->key,
+            $avlTreeRoot->left->key,
+            'Left child of the two roots should match'
+        );
+        $this->assertEquals(
+            $deserializedTreeRoot->right->key,
+            $avlTreeRoot->right->key,
+            'Left child of the two roots should match'
+        );
+        $this->assertEquals(
+            $deserializedTreeRoot->height,
+            $avlTreeRoot->height,
+            'The two trees should match in height'
+        );
+        $this->assertEquals($deserializedTree->size(), $avlTree->size(), 'The two trees should match in size');
+
+        $this->assertSame(
+            $deserializedTree->inOrderTraversal(),
+            $avlTree->inOrderTraversal(),
+            'Tree structure was not retained'
+        );
     }
 }

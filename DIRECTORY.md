@@ -21,7 +21,7 @@
     * [Avltree](./DataStructures/AVLTree/AVLTree.php)
     * [Avltreenode](./DataStructures/AVLTree/AVLTreeNode.php)
     * [Treetraversal](./DataStructures/AVLTree/TreeTraversal.php)
-* Binarysearchtree
+  * Binarysearchtree
     * [Binarytreetraversal](./DataStructures/BinarySearchTree/BinaryTreeTraversal.php)
     * [Bstnode](./DataStructures/BinarySearchTree/BSTNode.php)
     * [Bstree](./DataStructures/BinarySearchTree/BSTree.php)

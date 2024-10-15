@@ -1,8 +1,9 @@
 <?php
 
 /*
- * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request: #163
- * https://github.com/TheAlgorithms/PHP/pull/163
+ * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed)
+ * in Pull Request #163: https://github.com/TheAlgorithms/PHP/pull/163
+ * and #173: https://github.com/TheAlgorithms/PHP/pull/173
  *
  * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing bugs/corrections to this file.
  * Thank you!
@@ -310,5 +311,82 @@ class AVLTree
             $node = $node->left;
         }
         return $node;
+    }
+
+    /**
+     * Serializes the segment tree into a JSON string.
+     *
+     * @return string The serialized AVL Tree as a JSON string.
+     */
+    public function serialize(): string
+    {
+        return json_encode($this->serializeTree($this->root));
+    }
+
+    /**
+     * Recursively serializes the AVL Tree.
+     *
+     * @param AVLTreeNode|null $node
+     * @return array
+     */
+    private function serializeTree(?AVLTreeNode $node): array
+    {
+        if ($node === null) {
+            return [];
+        }
+        return [
+            'key' => $node->key,
+            'value' => $node->value,
+            'left' => $this->serializeTree($node->left),
+            'right' => $this->serializeTree($node->right),
+            'height' => $node->height,
+        ];
+    }
+
+    /**
+     * Deserializes a JSON string into an AVL Tree object
+     *
+     * @param string $data The JSON representation of an AVL Tree to deserialize.
+     */
+    public function deserialize(string $data): void
+    {
+        $this->root = $this->deserializeTree(json_decode($data, true));
+        $this->counter = 0;
+        $this->updateNodeCount($this->root);
+    }
+
+    /**
+     * Recursively deserializes an AVL Tree from an array representation.
+     *
+     * @param array $data The serialized data for the node.
+     * @return AVLTreeNode|null The root node of the deserialized tree.
+     */
+    private function deserializeTree(array $data): ?AVLTreeNode
+    {
+        if (empty($data)) {
+            return null;
+        }
+
+        $node = new AVLTreeNode($data['key'], $data['value']);
+        $node->height = $data['height'];
+
+        $node->left = $this->deserializeTree($data['left']);
+        $node->right = $this->deserializeTree($data['right']);
+
+        return $node;
+    }
+
+    /**
+     * Updates the deserialized tree size.
+     *
+     * @param AVLTreeNode|null $node The root node of the deserialized tree.
+     */
+    private function updateNodeCount(?AVLTreeNode $node): void
+    {
+        if ($node !== null) {
+            $this->counter++;
+            $this->updateNodeCount($node->left);
+            $this->updateNodeCount($node->right);
+        }
     }
 }

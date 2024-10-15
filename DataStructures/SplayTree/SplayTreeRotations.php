@@ -13,6 +13,7 @@ namespace DataStructures\SplayTree;
 abstract class SplayTreeRotations
 {
     abstract protected function splay(?SplayTreeNode $node, int $key): ?SplayTreeNode;
+    abstract protected function setRoot(SplayTreeNode $node): void;
 
     /**
      * Zig rotation (single right rotation).

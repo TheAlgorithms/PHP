@@ -44,7 +44,7 @@ class SplayTree extends SplayTreeRotations
      * Set the root node of the Splay Tree.
      * @param SplayTreeNode $node
      */
-    public function setRoot(SplayTreeNode $node): void
+    protected function setRoot(SplayTreeNode $node): void
     {
         $this->root = $node;
     }

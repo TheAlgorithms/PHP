@@ -1,8 +1,9 @@
 <?php
 
 /*
- * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request: #168
- * https://github.com/TheAlgorithms/PHP/pull/168
+ * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed)
+ * in Pull Request #168: https://github.com/TheAlgorithms/PHP/pull/168
+ * and #171: https://github.com/TheAlgorithms/PHP/pull/171
  *
  * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing bugs/corrections to this file.
  * Thank you!
@@ -319,7 +320,7 @@ class SplayTreeTest extends TestCase
 
         $this->assertNull(
             $node->parent,
-            "The last visited node must have become the new root with has no parent. Failed to splay correctly."
+            "The last visited node must have become the new root which has no parent. Failed to splay correctly."
         );
     }
 
@@ -390,7 +391,7 @@ class SplayTreeTest extends TestCase
         );
         $this->assertNull(
             $node->parent,
-            "The last visited node must have become the new root with has no parent. Failed to splay correctly."
+            "The last visited node must have become the new root which has no parent. Failed to splay correctly."
         );
     }
 
@@ -401,10 +402,18 @@ class SplayTreeTest extends TestCase
     {
         $this->populateTree();
 
+        $nodesNumber = $this->tree->size();
         $node = $this->tree->delete(22);
-        $isFound = $this->tree->isFound(22);
 
+        $isFound = $this->tree->isFound(22);
         $this->assertFalse($isFound, "Node with key 22 was not deleted.");
+
+        $this->assertEquals(
+            $nodesNumber - 1,
+            $this->tree->size(),
+            "After deletion, total nodes count was not updated correctly."
+        );
+
         $this->assertEquals(
             20,
             $node->key,
@@ -438,6 +447,36 @@ class SplayTreeTest extends TestCase
             $inOrderArrayKeys,
             'Tree structure after splay is not correct. 
             The in-order traversal is not correct. Failed to merge subtrees.'
+        );
+    }
+
+    /**
+     * Tests deletion of multiple nodes and checks if the tree size is updated.
+     */
+    public function testDeleteMultipleKeys()
+    {
+        $arrayData = [200 => "Value 200", 150 => "Value 150", 170 => "Value 170",
+            250 => "Value 250", 300 => "Value 300", 360 => "Value 360", 230 => "Value 230",
+            240 => "Value 240", 220 => "Value 220", 50 => "Value 50", 28 => "Value 28",
+            164 => "Value 164", 321 => "Value 321", 40 => "Value 40"
+        ];
+
+        $splayTree = new SplayTree($arrayData);
+        $treeSize = $splayTree->size();
+
+        $nodesToDelete = [150, 300, 50, 240, 170];
+        $expectedSize = $treeSize - count($nodesToDelete);
+
+        foreach ($nodesToDelete as $key) {
+            $splayTree->delete($key);
+            $isFound = $this->tree->isFound($key);
+            $this->assertFalse($isFound, "Node with key $key was not deleted.");
+        }
+
+        $this->assertEquals(
+            $expectedSize,
+            $splayTree->size(),
+            "After deletion, total nodes count was not updated correctly."
         );
     }
 
@@ -476,6 +515,28 @@ class SplayTreeTest extends TestCase
         $this->expectException(LogicException::class);
         $rootNode4 = $this->tree->delete(100);
         $this->assertNull($rootNode4, "Deleting a key in an empty tree should return null.");
+    }
+
+    /**
+     * Test insert, search, delete on large trees
+     */
+    public function testLargeTree(): void
+    {
+        // Inserting a large number of nodes
+        for ($i = 1; $i <= 1000; $i++) {
+            $this->tree->insert($i, "Value $i");
+        }
+
+        // Verify that all inserted nodes can be searched
+        for ($i = 1; $i <= 1000; $i++) {
+            $this->assertEquals("Value $i", $this->tree->search($i)->value, "Value for key $i should be 'Value $i'");
+        }
+
+        // Verify that all inserted nodes can be deleted
+        for ($i = 1; $i <= 5; $i++) {
+            $this->tree->delete($i);
+            $this->assertFalse($this->tree->isFound($i), "Node was not deleted correctly");
+        }
     }
 
 

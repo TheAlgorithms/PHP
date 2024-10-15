@@ -1,8 +1,9 @@
 <?php
 
 /*
- * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request: #162
+ * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request #162 and #172
  * https://github.com/TheAlgorithms/PHP/pull/162
+ * https://github.com/TheAlgorithms/PHP/pull/172
  *
  * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing bugs/corrections to this file.
  * Thank you!
@@ -27,6 +28,7 @@ class TrieNode
      */
     public function addChild(string $char): TrieNode
     {
+        $char = $this->normalizeChar($char);
         if (!isset($this->children[$char])) {
             $this->children[$char] = new TrieNode();
         }
@@ -38,6 +40,7 @@ class TrieNode
      */
     public function hasChild(string $char): bool
     {
+        $char = $this->normalizeChar($char);
         return isset($this->children[$char]);
     }
 
@@ -46,6 +49,15 @@ class TrieNode
      */
     public function getChild(string $char): ?TrieNode
     {
+        $char = $this->normalizeChar($char);
         return $this->children[$char] ?? null;
+    }
+
+    /**
+     * Normalize the character to lowercase.
+     */
+    private function normalizeChar(string $char): string
+    {
+        return strtolower($char);
     }
 }

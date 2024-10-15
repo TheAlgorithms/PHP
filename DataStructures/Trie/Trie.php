@@ -1,8 +1,9 @@
 <?php
 
 /*
- * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request: #162
+ * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request #162 and #172
  * https://github.com/TheAlgorithms/PHP/pull/162
+ * https://github.com/TheAlgorithms/PHP/pull/172
  *
  * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing bugs/corrections to this file.
  * Thank you!
@@ -61,6 +62,7 @@ class Trie
      */
     public function startsWith(string $prefix): array
     {
+        $prefix = strtolower($prefix);  // Normalize the prefix to lowercase
         $node = $this->root;
         for ($i = 0; $i < strlen($prefix); $i++) {
             $char = $prefix[$i];

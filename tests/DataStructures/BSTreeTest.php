@@ -320,7 +320,7 @@ class BSTreeTest extends TestCase
         $this->assertEquals(0, $this->tree->getdepth($root), "The root node should have a depth of 0.");
         $this->assertEquals(1, $this->tree->getdepth($node150), "Node 150 should have a depth of 1.");
         $this->assertEquals(4, $this->tree->getdepth($node110), "Node 110 should have a depth of 4.");
-        $this->assertEquals(6, $this->tree->getdepth($node70), "Node 300 should have a depth of 6.");
+        $this->assertEquals(6, $this->tree->getdepth($node70), "Node 70 should have a depth of 6.");
     }
 
     /**

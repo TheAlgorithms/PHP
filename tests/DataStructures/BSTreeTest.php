@@ -32,11 +32,9 @@ class BSTreeTest extends TestCase
 
     public function testTreeInitialization()
     {
-        $tree = new BSTree();
-
-        $this->assertNull($tree->getRoot(), "Tree root should be null upon initialization.");
-        $this->assertEquals(0, $tree->size(), "Tree size should be 0 upon initialization.");
-        $this->assertTrue($tree->isEmpty(), "Tree should be empty upon initialization.");
+        $this->assertNull($this->tree->getRoot(), "Tree root should be null upon initialization.");
+        $this->assertEquals(0, $this->tree->size(), "Tree size should be 0 upon initialization.");
+        $this->assertTrue($this->tree->isEmpty(), "Tree should be empty upon initialization.");
     }
 
     /**
@@ -45,13 +43,17 @@ class BSTreeTest extends TestCase
     public function testInsertSingleNode(): void
     {
         $this->tree->insert(10, 'value10');
-        $this->assertNotNull($this->tree->getRoot());
-        $this->assertEquals(10, $this->tree->getRoot()->key);
-        $this->assertEquals('value10', $this->tree->getRoot()->value);
+        $this->assertNotNull($this->tree->getRoot(), "Tree root should not be null after inserting.");
+        $this->assertEquals(10, $this->tree->getRoot()->key, "Node key does not match the key inserted in node");
+        $this->assertEquals(
+            'value10',
+            $this->tree->getRoot()->value,
+            "Node value does not match the value inserted in node"
+        );
     }
 
     /**
-     * Test: Insert multiple nodes and validate structure
+     * Test: Insert multiple nodes and validate small structure
      */
     public function testInsertMultipleNodes(): void
     {
@@ -59,10 +61,9 @@ class BSTreeTest extends TestCase
         $this->tree->insert(10, 'value10');
         $this->tree->insert(30, 'value30');
 
-        // Check root and children
-        $this->assertEquals(20, $this->tree->getRoot()->key);
-        $this->assertEquals(10, $this->tree->getRoot()->left->key);
-        $this->assertEquals(30, $this->tree->getRoot()->right->key);
+        $this->assertEquals(20, $this->tree->getRoot()->key, "Root node was not set properly.");
+        $this->assertEquals(10, $this->tree->getRoot()->left->key, "Left node was not inserted properly");
+        $this->assertEquals(30, $this->tree->getRoot()->right->key, "Right node was not inserted properly");
     }
 
     /**
@@ -107,6 +108,25 @@ class BSTreeTest extends TestCase
         $this->assertFalse($this->tree->isEmpty(), "Tree should not be empty.");
     }
 
+    /**
+     * Helper to populate the initialized tree for further tests
+     *
+     * The structure of the Binary Search Tree (BST) after insertion:
+     * *
+     * *                           200
+     * *                       /          \
+     * *                    150             250
+     * *                  /    \           /    \
+     * *               140    170         220    300
+     * *              /       /  \      /    \      \
+     * *           130     160   180   215   230     360
+     * *          /                 \       /   \
+     * *       110                  185    225   240
+     * *       /   \
+     * *     50    115
+     * *    /
+     * *  70
+     */
     private function populateTree(): void
     {
         $this->tree->insert(200, "Value 200");
@@ -156,7 +176,7 @@ class BSTreeTest extends TestCase
         $node = $this->tree->search(444);
         $isFound = $this->tree->isFound($this->tree->getRoot(), 1500);
 
-        $this->assertNull($node, "Node with key 40 does not exist");
+        $this->assertNull($node, "Node with key 444 does not exist");
         $this->assertFalse($isFound, "Node with key 1500  does not exist.");
     }
 
@@ -238,7 +258,11 @@ class BSTreeTest extends TestCase
     {
         $this->populateTree();
 
-        $this->assertEquals(2, $this->tree->search(230)->getChildrenCount(), "The node with key 230 has two children.");
+        $this->assertEquals(
+            2,
+            $this->tree->search(230)->getChildrenCount(),
+            "The node with key 230 has two children."
+        );
 
         $parentNode = $this->tree->search(230)->parent->key;    // 220
         $leftNode = $this->tree->search(230)->left->key;     // 225
@@ -280,6 +304,32 @@ class BSTreeTest extends TestCase
         $this->populateTree();
         $removedNode = $this->tree->remove(3333);
         $this->assertNull($removedNode, "Node not found, Null should be returned.");
+    }
+
+    /**
+     * Test: Verify all operations on a large tree.
+     */
+    public function testOperationsOnLargeTree(): void
+    {
+        for ($i = 1; $i <= 1000; $i++) {
+            $this->tree->insert($i, "Value $i");
+        }
+
+        for ($i = 1; $i <= 1000; $i++) {
+            $this->assertEquals("Value $i", $this->tree->search($i)->value, "Value for key $i should be 'Value $i'");
+        }
+
+        for ($i = 1; $i <= 1000; $i++) {
+            $this->assertTrue($this->tree->isFound($this->tree->getRoot(), $i), "Node with key $i should exist");
+        }
+
+        for ($i = 1; $i <= 5; $i++) {
+            $this->tree->remove($i);
+            $this->assertFalse(
+                $this->tree->isFound($this->tree->getRoot(), $i),
+                "Value for key $i should be not exist after deletion"
+            );
+        }
     }
 
     /**
@@ -471,32 +521,6 @@ class BSTreeTest extends TestCase
     }
 
     /**
-     * Test: Verify all operations on a large tree.
-     */
-    public function testLargeTree(): void
-    {
-        for ($i = 1; $i <= 1000; $i++) {
-            $this->tree->insert($i, "Value $i");
-        }
-
-        for ($i = 1; $i <= 1000; $i++) {
-            $this->assertEquals("Value $i", $this->tree->search($i)->value, "Value for key $i should be 'Value $i'");
-        }
-
-        for ($i = 1; $i <= 1000; $i++) {
-            $this->assertTrue($this->tree->isFound($this->tree->getRoot(), $i), "Node with key $i should exist");
-        }
-
-        for ($i = 1; $i <= 5; $i++) {
-            $this->tree->remove($i);
-            $this->assertFalse(
-                $this->tree->isFound($this->tree->getRoot(), $i),
-                "Value for key $i should be not exist after deletion"
-            );
-        }
-    }
-
-    /**
      * Provides traversal types and expected results for the iterator test.
      */
     public static function traversalProvider(): array
@@ -560,12 +584,12 @@ class BSTreeTest extends TestCase
             $this->assertEquals(
                 $expectedKeys[$index],
                 $node->key,
-                "Did not match the expected {$traversalType} key. Failed tree iteration."
+                "Did not match the expected $traversalType key. Failed tree iteration."
             );
             $this->assertEquals(
                 $expectedValues[$index],
                 $node->value,
-                "Did not match the expected {$traversalType} value. Failed tree iteration."
+                "Did not match the expected $traversalType value. Failed tree iteration."
             );
             $index++;
         }

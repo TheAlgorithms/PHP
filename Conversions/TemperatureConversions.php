@@ -1,14 +1,15 @@
 <?php
 
-/* This function converts the submitted
-    temperature (Celsius) and converts it into
-    Fahrenheit.
-
-    @author Marco https://github.com/MaarcooC
-    @param float $celsius
-    @throws \Exception
-    @return float */
-
+/**
+* This function converts the submitted
+* temperature (Celsius) and converts it into
+* Fahrenheit.
+*
+* @author Marco https://github.com/MaarcooC
+* @param float $celsius
+* @throws \Exception
+* @return float
+*/
 function CelsiusToFahrenheit($celsius)
 {
     if (!is_numeric($celsius)) {
@@ -18,15 +19,16 @@ function CelsiusToFahrenheit($celsius)
     return round(($celsius * 9 / 5) + 32, 1);
 }
 
-/* This function converts the submitted
-    temperature (Fahrenheit) and converts it into
-    Celsius.
-
-    @author Marco https://github.com/MaarcooC
-    @param float $fahrenheit
-    @throws \Exception
-    @return float */
-
+/**
+* This function converts the submitted
+* temperature (Fahrenheit) and converts it into
+* Celsius.
+*
+* @author Marco https://github.com/MaarcooC
+* @param float $fahrenheit
+* @throws \Exception
+* @return float
+*/
 function FahrenheitToCelsius($fahrenheit)
 {
     if (!is_numeric($fahrenheit)) {
@@ -36,15 +38,16 @@ function FahrenheitToCelsius($fahrenheit)
     return round(($fahrenheit - 32) * 5 / 9, 1);
 }
 
-/* This function converts the submitted
-    temperature (Celsius) and converts it into
-    Kelvin.
-
-    @author Marco https://github.com/MaarcooC
-    @param float $celsius
-    @throws \Exception
-    @return float */
-
+/**
+* This function converts the submitted
+* temperature (Celsius) and converts it into
+* Kelvin.
+*
+* @author Marco https://github.com/MaarcooC
+* @param float $celsius
+* @throws \Exception
+* @return float
+*/
 function CelsiusToKelvin($celsius)
 {
     if (!is_numeric($celsius)) {
@@ -54,15 +57,16 @@ function CelsiusToKelvin($celsius)
     return round(($celsius + 273.15), 2);
 }
 
-/* This function converts the submitted
-    temperature (Kelvin) and converts it into
-    Celsius.
-
-    @author Marco https://github.com/MaarcooC
-    @param float $kelvin
-    @throws \Exception
-    @return float */
-
+/**
+* This function converts the submitted
+* temperature (Kelvin) and converts it into
+* Celsius.
+*
+* @author Marco https://github.com/MaarcooC
+* @param float $kelvin
+* @throws \Exception
+* @return float
+*/
 function KelvinToCelsius($kelvin)
 {
     if (!is_numeric($kelvin)) {
@@ -72,15 +76,16 @@ function KelvinToCelsius($kelvin)
     return round(($kelvin - 273.15), 2);
 }
 
-/* This function converts the submitted
-    temperature (Kelvin) and converts it into
-    Fahrenheit.
-
-    @author Marco https://github.com/MaarcooC
-    @param float $kelvin
-    @throws \Exception
-    @return float */
-
+/**
+* This function converts the submitted
+* temperature (Kelvin) and converts it into
+* Fahrenheit.
+*
+* @author Marco https://github.com/MaarcooC
+* @param float $kelvin
+* @throws \Exception
+* @return float
+*/
 function KelvinToFahrenheit($kelvin)
 {
     if (!is_numeric($kelvin)) {
@@ -90,15 +95,16 @@ function KelvinToFahrenheit($kelvin)
     return round(($kelvin - 273.15) * 1.8 + 32, 2);
 }
 
-/* This function converts the submitted
-    temperature (Fahrenheit) and converts it into
-    kelvin.
-
-    @author Marco https://github.com/MaarcooC
-    @param float $fahrenheit
-    @throws \Exception
-    @return float */
-
+/**
+* This function converts the submitted
+* temperature (Fahrenheit) and converts it into
+* kelvin.
+*
+* @author Marco https://github.com/MaarcooC
+* @param float $fahrenheit
+* @throws \Exception
+* @return float
+*/
 function FahrenheitToKelvin($fahrenheit)
 {
     if (!is_numeric($fahrenheit)) {

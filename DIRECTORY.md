@@ -21,6 +21,11 @@
     * [Avltree](./DataStructures/AVLTree/AVLTree.php)
     * [Avltreenode](./DataStructures/AVLTree/AVLTreeNode.php)
     * [Treetraversal](./DataStructures/AVLTree/TreeTraversal.php)
+  * Binarysearchtree
+    * [Binarytreetraversal](./DataStructures/BinarySearchTree/BinaryTreeTraversal.php)
+    * [Bstnode](./DataStructures/BinarySearchTree/BSTNode.php)
+    * [Bstree](./DataStructures/BinarySearchTree/BSTree.php)
+    * [Duplicatekeyexception](./DataStructures/BinarySearchTree/DuplicateKeyException.php)    
   * Disjointsets
     * [Disjointset](./DataStructures/DisjointSets/DisjointSet.php)
     * [Disjointsetnode](./DataStructures/DisjointSets/DisjointSetNode.php)
@@ -131,6 +136,7 @@
     * [Conversionstest](./tests/Conversions/ConversionsTest.php)
   * Datastructures
     * [Avltreetest](./tests/DataStructures/AVLTreeTest.php)
+    * [Bstreetest](./tests/DataStructures/BSTreeTest.php)
     * [Disjointsettest](./tests/DataStructures/DisjointSetTest.php)
     * [Doublylinkedlisttest](./tests/DataStructures/DoublyLinkedListTest.php)
     * [Queuetest](./tests/DataStructures/QueueTest.php)

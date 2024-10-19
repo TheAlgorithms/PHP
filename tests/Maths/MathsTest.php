@@ -22,6 +22,7 @@ require_once __DIR__ . '/../../Maths/Median.php';
 require_once __DIR__ . '/../../Maths/Mode.php';
 require_once __DIR__ . '/../../Maths/FastInverseSquareRoot.php';
 require_once __DIR__ . '/../../Maths/BaseX.php';
+require_once __DIR__ . '/../../Maths/PerfectNumber.php';
 
 class MathsTest extends TestCase
 {
@@ -183,6 +184,22 @@ class MathsTest extends TestCase
         $this->assertEquals(6, gcd(12, 18));
         $this->assertEquals(5, gcd(10, 15));
         $this->assertEquals(3, gcd(9, 12));
+    }
+
+    public function testPerfectNumber()
+    {
+        $this->assertTrue(perfect_number(6));
+        $this->assertTrue(perfect_number(28));
+        $this->assertTrue(perfect_number(496));
+
+        $this->assertFalse(perfect_number(10));
+        $this->assertFalse(perfect_number(15));
+
+        $this->assertFalse(perfect_number(-6));
+        $this->assertFalse(perfect_number(0));
+        $this->assertFalse(perfect_number(1));
+        $this->assertFalse(perfect_number(2.5));
+        $this->assertFalse(perfect_number("string"));
     }
 
     public function testFastInverseSquareRoot()

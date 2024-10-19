@@ -25,7 +25,7 @@
     * [Binarytreetraversal](./DataStructures/BinarySearchTree/BinaryTreeTraversal.php)
     * [Bstnode](./DataStructures/BinarySearchTree/BSTNode.php)
     * [Bstree](./DataStructures/BinarySearchTree/BSTree.php)
-    * [Duplicatekeyexception](./DataStructures/BinarySearchTree/DuplicateKeyException.php)    
+    * [Duplicatekeyexception](./DataStructures/BinarySearchTree/DuplicateKeyException.php)
   * Disjointsets
     * [Disjointset](./DataStructures/DisjointSets/DisjointSet.php)
     * [Disjointsetnode](./DataStructures/DisjointSets/DisjointSetNode.php)

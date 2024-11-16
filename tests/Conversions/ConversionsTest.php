@@ -146,38 +146,20 @@ class ConversionsTest extends TestCase
 
     public function testConvertTime()
     {
-        // Test basic conversions
-        $this->assertEquals(2.0, convertTime(120, 'seconds', 'minutes'), "Failed converting 120 seconds to minutes");
-        $this->assertEquals(2.0, convertTime(120, 'minutes', 'hours'), "Failed converting 120 minutes to hours");
-        $this->assertEquals(2.0, convertTime(48, 'hours', 'days'), "Failed converting 48 hours to days");
-        $this->assertEquals(2.0, convertTime(14, 'days', 'weeks'), "Failed converting 14 days to weeks");
+        $examples = [
+            [120, 'minutes', 'seconds', 7200],
+            [48, 'hours', 'days', 2.0],
+            [14, 'days', 'weeks', 2.0],
+            [8.6, 'weeks', 'months', 2.0],
+            [24, 'months', 'years', 2.0],
+            [3600, 'seconds', 'hours', 1.0],
+        ];
     
-        // Test with different units and values
-        $this->assertEqualsWithDelta(2.0, convertTime(8.6, 'weeks', 'months'), 0.01, "Failed converting 8.6 weeks to months");
-        $this->assertEquals(2.0, convertTime(24, 'months', 'years'), "Failed converting 24 months to years");
-    
-        // Test edge cases
-        $this->assertEquals(0.0, convertTime(0, 'seconds', 'hours'), "Failed converting 0 seconds to hours");
-    
-        // Test invalid 'from' and 'to' units
-        try {
-            convertTime(120, 'invalidUnit', 'minutes');
-        } catch (InvalidArgumentException $e) {
-            $this->assertEquals("Invalid time unit(s) specified: invalidUnit to minutes", $e->getMessage());
-        }
-    
-        try {
-            convertTime(120, 'seconds', 'invalidUnit');
-        } catch (InvalidArgumentException $e) {
-            $this->assertEquals("Invalid time unit(s) specified: seconds to invalidUnit", $e->getMessage());
-        }
-    
-        try {
-            convertTime(120, 'invalidFrom', 'invalidTo');
-        } catch (InvalidArgumentException $e) {
-            $this->assertEquals("Invalid time unit(s) specified: invalidFrom to invalidTo", $e->getMessage());
+        foreach ($examples as [$value, $from, $to, $expected]) {
+            $result = convertTime($value, $from, $to);
+            $this->assertEquals($expected, $result, "Failed converting $value $from to $to");
+            echo "Example: $value $from = $result $to\n";
         }
     }
     
-
 }

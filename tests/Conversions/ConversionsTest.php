@@ -10,6 +10,7 @@ require_once __DIR__ . '/../../Conversions/OctalToDecimal.php';
 require_once __DIR__ . '/../../Conversions/HexadecimalToDecimal.php';
 require_once __DIR__ . '/../../Conversions/SpeedConversion.php';
 require_once __DIR__ . '/../../Conversions/TemperatureConversions.php';
+require_once __DIR__ . '/../../Conversions/ConvertTime.php';
 
 class ConversionsTest extends TestCase
 {
@@ -142,4 +143,23 @@ class ConversionsTest extends TestCase
         $this->expectExceptionMessage('Temperature (Fahrenheit) must be a number');
         FahrenheitToKelvin("non-numeric");
     }
+
+    public function testConvertTime()
+    {
+        $examples = [
+            [120, 'minutes', 'seconds', 7200],
+            [48, 'hours', 'days', 2.0],
+            [14, 'days', 'weeks', 2.0],
+            [8.6, 'weeks', 'months', 2.0],
+            [24, 'months', 'years', 2.0],
+            [3600, 'seconds', 'hours', 1.0],
+        ];
+    
+        foreach ($examples as [$value, $from, $to, $expected]) {
+            $result = convertTime($value, $from, $to);
+            $this->assertEquals($expected, $result, "Failed converting $value $from to $to");
+            echo "Example: $value $from = $result $to\n";
+        }
+    }
+    
 }

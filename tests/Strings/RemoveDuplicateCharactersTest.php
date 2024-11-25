@@ -3,22 +3,22 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/../../vendor/autoload.php';
-require_once __DIR__ . '/../../Strings/RemoveDuplicatedCharacters.php';
+require_once __DIR__ . '/../../Strings/RemoveDuplicateCharacters.php';
 
 use PHPUnit\Framework\TestCase;
 
 /**
- * Unit tests for the removeDuplicatedCharacters function.
- * To run test: ./vendor/bin/phpunit tests/strings/RemoveDuplicatedCharactersTest.php
+ * Unit tests for the removeDuplicateCharacters function.
+ * To run test: ./vendor/bin/phpunit tests/strings/removeDuplicateCharactersTest.php
  */
-final class RemoveDuplicatedCharactersTest extends TestCase
+final class removeDuplicateCharactersTest extends TestCase
 {
     /**
      * Test with a string that has multiple duplicates.
      */
     public function testStringWithDuplicates(): void
     {
-        $this->assertSame('progamin', removeDuplicatedCharacters('programming'));
+        $this->assertSame('progamin', removeDuplicateCharacters('programming'));
     }
 
     /**
@@ -26,7 +26,7 @@ final class RemoveDuplicatedCharactersTest extends TestCase
      */
     public function testStringWithoutDuplicates(): void
     {
-        $this->assertSame('abc', removeDuplicatedCharacters('abc'));
+        $this->assertSame('abc', removeDuplicateCharacters('abc'));
     }
 
     /**
@@ -34,7 +34,7 @@ final class RemoveDuplicatedCharactersTest extends TestCase
      */
     public function testEmptyString(): void
     {
-        $this->assertSame('', removeDuplicatedCharacters(''));
+        $this->assertSame('', removeDuplicateCharacters(''));
     }
 
     /**
@@ -42,7 +42,7 @@ final class RemoveDuplicatedCharactersTest extends TestCase
      */
     public function testSingleCharacterRepeated(): void
     {
-        $this->assertSame('a', removeDuplicatedCharacters('aaaaa'));
+        $this->assertSame('a', removeDuplicateCharacters('aaaaa'));
     }
 
     /**
@@ -50,7 +50,7 @@ final class RemoveDuplicatedCharactersTest extends TestCase
      */
     public function testStringWithSpecialCharacters(): void
     {
-        $this->assertSame('ab!@', removeDuplicatedCharacters('aabb!!@@'));
+        $this->assertSame('ab!@', removeDuplicateCharacters('aabb!!@@'));
     }
 
     /**
@@ -58,7 +58,7 @@ final class RemoveDuplicatedCharactersTest extends TestCase
      */
     public function testStringWithSpaces(): void
     {
-        $this->assertSame('a b', removeDuplicatedCharacters('a a a b b'));
+        $this->assertSame('a b', removeDuplicateCharacters('a a a b b'));
     }
 
     /**
@@ -66,6 +66,6 @@ final class RemoveDuplicatedCharactersTest extends TestCase
      */
     public function testStringWithMixedCase(): void
     {
-        $this->assertSame('aAbB', removeDuplicatedCharacters('aAaAaAbBbB'));
+        $this->assertSame('aAbB', removeDuplicateCharacters('aAaAaAbBbB'));
     }
 }

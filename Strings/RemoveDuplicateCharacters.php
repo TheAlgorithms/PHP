@@ -9,7 +9,7 @@ declare(strict_types=1);
  * @return string The modified string with duplicate characters removed.
  */
 
-function removeDuplicatedCharacters(string $inputString): string
+function removeDuplicateCharacters(string $inputString): string
 {
     // Initialize an empty array to keep track of seen characters
     $seen = [];
@@ -31,3 +31,4 @@ function removeDuplicatedCharacters(string $inputString): string
 
     return $result;
 }
+

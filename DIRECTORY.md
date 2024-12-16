@@ -27,6 +27,9 @@
     * [Bstnode](./DataStructures/BinarySearchTree/BSTNode.php)
     * [Bstree](./DataStructures/BinarySearchTree/BSTree.php)
     * [Duplicatekeyexception](./DataStructures/BinarySearchTree/DuplicateKeyException.php)
+  * CompareBinaryTree
+    * [CompareBinaryTree](./DataStructures/CompareBinaryTree/CompareBinaryTree.php)
+    * [Node](./DataStructures/CompareBinaryTree/Node.php)
   * Disjointsets
     * [Disjointset](./DataStructures/DisjointSets/DisjointSet.php)
     * [Disjointsetnode](./DataStructures/DisjointSets/DisjointSetNode.php)
@@ -50,6 +53,7 @@
   * [Bellmanford](./Graphs/BellmanFord.php)
   * [Breadthfirstsearch](./Graphs/BreadthFirstSearch.php)
   * [Depthfirstsearch](./Graphs/DepthFirstSearch.php)
+  * [Dijkstra's](./Graphs/Dijkstras.php)
 
 ## Maths
   * [Absolutemax](./Maths/AbsoluteMax.php)

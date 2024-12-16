@@ -6,8 +6,10 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../Maths/AbsoluteMax.php';
 require_once __DIR__ . '/../../Maths/ArmstrongNumber.php';
 require_once __DIR__ . '/../../Maths/AbsoluteMin.php';
+require_once __DIR__ . '/../../Maths/CheckEven.php';
 require_once __DIR__ . '/../../Maths/CheckPalindrome.php';
 require_once __DIR__ . '/../../Maths/CheckPrime.php';
+require_once __DIR__ . '/../../Maths/CheckOdd.php';
 require_once __DIR__ . '/../../Maths/Factorial.php';
 require_once __DIR__ . '/../../Maths/FastExponentiation.php';
 require_once __DIR__ . '/../../Maths/Fibonacci.php';
@@ -20,6 +22,7 @@ require_once __DIR__ . '/../../Maths/Median.php';
 require_once __DIR__ . '/../../Maths/Mode.php';
 require_once __DIR__ . '/../../Maths/FastInverseSquareRoot.php';
 require_once __DIR__ . '/../../Maths/BaseX.php';
+require_once __DIR__ . '/../../Maths/PerfectNumber.php';
 
 class MathsTest extends TestCase
 {
@@ -40,6 +43,15 @@ class MathsTest extends TestCase
         factorial(-25);
     }
 
+    public function testIsEven()
+    {
+        $this->assertTrue(isEven(2));
+        $this->assertTrue(isEven(0));
+        $this->assertFalse(isEven(3));
+        $this->assertFalse(isEven(17));
+        $this->assertTrue(isEven(-4));
+    }
+
     public function testIsNumberArmstrong()
     {
         $this->assertTrue(isNumberArmstrong(153));
@@ -54,6 +66,15 @@ class MathsTest extends TestCase
         $this->assertFalse(isNumberPalindromic(123));
         $this->assertTrue(isNumberPalindromic(123321));
         $this->assertFalse(isNumberPalindromic(2468));
+    }
+
+    public function testIsOdd()
+    {
+        $this->assertTrue(isOdd(3));
+        $this->assertTrue(isOdd(17));
+        $this->assertFalse(isOdd(4));
+        $this->assertFalse(isOdd(0));
+        $this->assertTrue(isOdd(-5));
     }
 
     public function testIsPrime()
@@ -163,6 +184,22 @@ class MathsTest extends TestCase
         $this->assertEquals(6, gcd(12, 18));
         $this->assertEquals(5, gcd(10, 15));
         $this->assertEquals(3, gcd(9, 12));
+    }
+
+    public function testPerfectNumber()
+    {
+        $this->assertTrue(perfect_number(6));
+        $this->assertTrue(perfect_number(28));
+        $this->assertTrue(perfect_number(496));
+
+        $this->assertFalse(perfect_number(10));
+        $this->assertFalse(perfect_number(15));
+
+        $this->assertFalse(perfect_number(-6));
+        $this->assertFalse(perfect_number(0));
+        $this->assertFalse(perfect_number(1));
+        $this->assertFalse(perfect_number(2.5));
+        $this->assertFalse(perfect_number("string"));
     }
 
     public function testFastInverseSquareRoot()

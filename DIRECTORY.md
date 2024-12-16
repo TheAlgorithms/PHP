@@ -15,12 +15,36 @@
   * [Hexadecimaltodecimal](./Conversions/HexadecimalToDecimal.php)
   * [Octaltodecimal](./Conversions/OctalToDecimal.php)
   * [Speedconversion](./Conversions/SpeedConversion.php)
+  * [Temperatureconversions](./Conversions/TemperatureConversions.php)
 
 ## Datastructures
+  * Avltree
+    * [Avltree](./DataStructures/AVLTree/AVLTree.php)
+    * [Avltreenode](./DataStructures/AVLTree/AVLTreeNode.php)
+    * [Treetraversal](./DataStructures/AVLTree/TreeTraversal.php)
+  * Binarysearchtree
+    * [Binarytreetraversal](./DataStructures/BinarySearchTree/BinaryTreeTraversal.php)
+    * [Bstnode](./DataStructures/BinarySearchTree/BSTNode.php)
+    * [Bstree](./DataStructures/BinarySearchTree/BSTree.php)
+    * [Duplicatekeyexception](./DataStructures/BinarySearchTree/DuplicateKeyException.php)
+  * Disjointsets
+    * [Disjointset](./DataStructures/DisjointSets/DisjointSet.php)
+    * [Disjointsetnode](./DataStructures/DisjointSets/DisjointSetNode.php)
   * [Doublylinkedlist](./DataStructures/DoublyLinkedList.php)
   * [Node](./DataStructures/Node.php)
+  * [Queue](./DataStructures/Queue.php)
+  * Segmenttree
+    * [Segmenttree](./DataStructures/SegmentTree/SegmentTree.php)
+    * [Segmenttreenode](./DataStructures/SegmentTree/SegmentTreeNode.php)
   * [Singlylinkedlist](./DataStructures/SinglyLinkedList.php)
+  * Splaytree
+    * [Splaytree](./DataStructures/SplayTree/SplayTree.php)
+    * [Splaytreenode](./DataStructures/SplayTree/SplayTreeNode.php)
+    * [Splaytreerotations](./DataStructures/SplayTree/SplayTreeRotations.php)
   * [Stack](./DataStructures/Stack.php)
+  * Trie
+    * [Trie](./DataStructures/Trie/Trie.php)
+    * [Trienode](./DataStructures/Trie/TrieNode.php)
 
 ## Graphs
   * [Bellmanford](./Graphs/BellmanFord.php)
@@ -32,8 +56,11 @@
   * [Absolutemin](./Maths/AbsoluteMin.php)
   * [Armstrongnumber](./Maths/ArmstrongNumber.php)
   * [Basex](./Maths/BaseX.php)
+  * [Checkeven](./Maths/CheckEven.php)
+  * [Checkodd](./Maths/CheckOdd.php)
   * [Checkpalindrome](./Maths/CheckPalindrome.php)
   * [Checkprime](./Maths/CheckPrime.php)
+  * [Eratosthenessieve](./Maths/EratosthenesSieve.php)
   * [Factorial](./Maths/Factorial.php)
   * [Fastexponentiation](./Maths/FastExponentiation.php)
   * [Fastinversesquareroot](./Maths/FastInverseSquareRoot.php)
@@ -44,6 +71,7 @@
   * [Median](./Maths/Median.php)
   * [Mode](./Maths/Mode.php)
   * [Neonnumber](./Maths/NeonNumber.php)
+  * [Perfectnumber](./Maths/PerfectNumber.php)
   * [Perfectsquare](./Maths/PerfectSquare.php)
   * Projecteuler
     * [Problem1](./Maths/ProjectEuler/Problem1.php)
@@ -110,14 +138,22 @@
   * Conversions
     * [Conversionstest](./tests/Conversions/ConversionsTest.php)
   * Datastructures
+    * [Avltreetest](./tests/DataStructures/AVLTreeTest.php)
+    * [Bstreetest](./tests/DataStructures/BSTreeTest.php)
+    * [Disjointsettest](./tests/DataStructures/DisjointSetTest.php)
     * [Doublylinkedlisttest](./tests/DataStructures/DoublyLinkedListTest.php)
+    * [Queuetest](./tests/DataStructures/QueueTest.php)
+    * [Segmenttreetest](./tests/DataStructures/SegmentTreeTest.php)
     * [Singlylinkedlisttest](./tests/DataStructures/SinglyLinkedListTest.php)
+    * [Splaytreetest](./tests/DataStructures/SplayTreeTest.php)
     * [Stacktest](./tests/DataStructures/StackTest.php)
+    * [Trietest](./tests/DataStructures/TrieTest.php)
   * Graphs
     * [Bellmanfordtest](./tests/Graphs/BellmanFordTest.php)
     * [Breadthfirstsearchtest](./tests/Graphs/BreadthFirstSearchTest.php)
     * [Depthfirstsearchtest](./tests/Graphs/DepthFirstSearchTest.php)
   * Maths
+    * [Eratosthenessievetest](./tests/Maths/EratosthenesSieveTest.php)
     * [Mathstest](./tests/Maths/MathsTest.php)
     * [Projecteulertest](./tests/Maths/ProjectEulerTest.php)
     * [Eratosthenessievetest](./tests/Maths/EratosthenesSieveTest.php)

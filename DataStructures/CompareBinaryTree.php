@@ -1,5 +1,6 @@
 <?php
-namespace DataStructures\CompareBinaryTree;
+
+namespace DataStructures;
 
 /**
  * Recurrent comparison of binary trees based on comparison of left and right branches
@@ -11,11 +12,11 @@ class CompareBinaryTree
 {
     /**
      * compare two binary trees
-     * @param Node|null $a
-     * @param Node|null $b
+     * @param BinaryTreeNode|null $a
+     * @param BinaryTreeNode|null $b
      * @return bool
      */
-    public function areTreesEqual(?Node $a, ?Node $b): bool
+    public function areTreesEqual(?BinaryTreeNode $a, ?BinaryTreeNode $b): bool
     {
         if (! $a  &&  $b || $a && ! $b) {
             return false;

@@ -3,35 +3,33 @@
 namespace DataStructures;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
-require_once __DIR__ . '/../../DataStructures/CompareBinaryTree/Node.php';
-require_once __DIR__ . '/../../DataStructures/CompareBinaryTree/CompareBinaryTree.php';
+require_once __DIR__ . '/../../DataStructures/BinaryTreeNode.php';
+require_once __DIR__ . '/../../DataStructures/CompareBinaryTree.php';
 
-use DataStructures\CompareBinaryTree\CompareBinaryTree;
-use DataStructures\CompareBinaryTree\Node;
 use PHPUnit\Framework\TestCase;
 
 class CompareBinaryTreeTest extends TestCase
 {
     public function testBinaryTreesAreEqualWhenAreEqualInReality()
     {
-        $tree1 = new Node(
+        $tree1 = new BinaryTreeNode(
             'A',
-            new Node(
+            new BinaryTreeNode(
                 'B',
-                new Node(
+                new BinaryTreeNode(
                     'D'
                 ),
-                new Node(
+                new BinaryTreeNode(
                     'E',
                     null,
-                    new Node(
+                    new BinaryTreeNode(
                         'F'
                     )
                 )
             ),
-            new Node(
+            new BinaryTreeNode(
                 'C',
-                new Node('G')
+                new BinaryTreeNode('G')
             )
         );
 
@@ -44,43 +42,43 @@ class CompareBinaryTreeTest extends TestCase
     public function testBinaryTreesAreNotEqualWhenAreNotEqualInReality()
     {
 
-        $tree1 = new Node(
+        $tree1 = new BinaryTreeNode(
             'A',
-            new Node(
+            new BinaryTreeNode(
                 'B',
-                new Node(
+                new BinaryTreeNode(
                     'F'
                 ),
-                new Node(
+                new BinaryTreeNode(
                     'E',
                     null,
-                    new Node(
+                    new BinaryTreeNode(
                         'D'
                     )
                 )
             ),
-            new Node(
+            new BinaryTreeNode(
                 'C',
-                new Node('G')
+                new BinaryTreeNode('G')
             )
         );
 
-        $tree2 = new Node(
+        $tree2 = new BinaryTreeNode(
             'A',
-            new Node(
+            new BinaryTreeNode(
                 'B',
-                new Node(
+                new BinaryTreeNode(
                     'F'
                 ),
-                new Node(
+                new BinaryTreeNode(
                     'E',
                     null,
-                    new Node(
+                    new BinaryTreeNode(
                         'D'
                     )
                 )
             ),
-            new Node(
+            new BinaryTreeNode(
                 'C'
             )
         );

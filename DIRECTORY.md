@@ -28,14 +28,20 @@
     * [Bstree](./DataStructures/BinarySearchTree/BSTree.php)
     * [Duplicatekeyexception](./DataStructures/BinarySearchTree/DuplicateKeyException.php)
   * CompareBinaryTree
-    * [CompareBinaryTree](./DataStructures/CompareBinaryTree/CompareBinaryTree.php)
-    * [Node](./DataStructures/CompareBinaryTree/Node.php)
+    * [CompareBinaryTree](./DataStructures/CompareBinaryTree.php)
+    * [BinaryTreeNode](./DataStructures/BinaryTreeNode.php)
   * Disjointsets
     * [Disjointset](./DataStructures/DisjointSets/DisjointSet.php)
     * [Disjointsetnode](./DataStructures/DisjointSets/DisjointSetNode.php)
   * [Doublylinkedlist](./DataStructures/DoublyLinkedList.php)
+  * InvertBinaryTree
+    * [InvertBinaryTree](./DataStructures/InvertBinaryTree.php)
+    * [BinaryTree](./DataStructures/BinaryTree.php)
   * [Node](./DataStructures/Node.php)
   * [Queue](./DataStructures/Queue.php)
+  * ReverseLinkedList
+    * [ReverseLinkedList.php](DataStructures/ReverseLinkedList.php)
+    * [LinkedListItem.php](DataStructures/LinkedListItem.php)
   * Segmenttree
     * [Segmenttree](./DataStructures/SegmentTree/SegmentTree.php)
     * [Segmenttreenode](./DataStructures/SegmentTree/SegmentTreeNode.php)

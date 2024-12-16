@@ -1,13 +1,15 @@
 <?php
 
+namespace Graphs;
 require_once __DIR__ . '/../../vendor/autoload.php';
-require_once __DIR__ . '/../../Graphs/BellmanFord.php';
+require_once __DIR__ . '/../../Graphs/Dijkstras.php';
 
+use Edge;
 use PHPUnit\Framework\TestCase;
 
-class BellmanFordTest extends TestCase
+class DijkstrasTest extends TestCase
 {
-    public function testBellmanFord()
+    public function testDijkstras()
     {
         $edgesRaw = [
             ['S', 8, 'E'],
@@ -21,20 +23,17 @@ class BellmanFordTest extends TestCase
         ];
         $vertices = ['S', 'A', 'B', 'C', 'D', 'E',];
 
-        #prepare array of edges listed by edge start to simplify Bellman-Ford updating weights of other edges
+        #prepare array of edges listed by edge start to simplify Dijkstra's updating weights of other edges
         $edges = [];
         foreach ($edgesRaw as $edgeRaw) {
             $edge = new Edge();
             $edge->start = $edgeRaw[0];
             $edge->end = $edgeRaw[2];
             $edge->weight = $edgeRaw[1];
-            if (!isset($edges[$edgeRaw[0]])) {
-                $edges[$edgeRaw[0]] = [];
-            }
-            $edges[$edgeRaw[0]][] = $edge;
+            $edges[] = $edge;
         }
 
-        $result = bellmanFord($vertices, $edges, 'S');
+        $result = dijkstras($vertices, $edges, 'S');
 
         $this->assertEquals(
             [

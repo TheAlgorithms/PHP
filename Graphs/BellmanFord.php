@@ -13,9 +13,10 @@ class Edge
  * (https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm).
  *
  * @author Michał Żarnecki https://github.com/rzarno
- * @param array $verticies An array of verticies names
+ * @param array $verticesNames An array of verticies names
  * @param Edge[] $edges An array of edges
- * @return string $start The starting vertex
+ * @param string $start The starting vertex
+ * @return array An array of shortest paths from $start to all other vertices
  */
 function bellmanFord(array $verticesNames, array $edges, string $start, bool $verbose = false)
 {

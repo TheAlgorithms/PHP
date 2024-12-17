@@ -27,12 +27,21 @@
     * [Bstnode](./DataStructures/BinarySearchTree/BSTNode.php)
     * [Bstree](./DataStructures/BinarySearchTree/BSTree.php)
     * [Duplicatekeyexception](./DataStructures/BinarySearchTree/DuplicateKeyException.php)
+  * CompareBinaryTree
+    * [CompareBinaryTree](./DataStructures/CompareBinaryTree/CompareBinaryTree.php)
+    * [BinaryTreeNode](./DataStructures/CompareBinaryTree/BinaryTreeNode.php)
   * Disjointsets
     * [Disjointset](./DataStructures/DisjointSets/DisjointSet.php)
     * [Disjointsetnode](./DataStructures/DisjointSets/DisjointSetNode.php)
   * [Doublylinkedlist](./DataStructures/DoublyLinkedList.php)
+  * InvertBinaryTree
+    * [InvertBinaryTree](./DataStructures/InvertBinaryTree/InvertBinaryTree.php)
+    * [BinaryTree](./DataStructures/InvertBinaryTree/BinaryTree.php)
   * [Node](./DataStructures/Node.php)
   * [Queue](./DataStructures/Queue.php)
+  * ReverseLinkedList
+    * [ReverseLinkedList.php](DataStructures/ReverseLinkedList/ReverseLinkedList.php)
+    * [LinkedListItem.php](DataStructures/ReverseLinkedList/LinkedListItem.php)
   * Segmenttree
     * [Segmenttree](./DataStructures/SegmentTree/SegmentTree.php)
     * [Segmenttreenode](./DataStructures/SegmentTree/SegmentTreeNode.php)
@@ -50,6 +59,8 @@
   * [Bellmanford](./Graphs/BellmanFord.php)
   * [Breadthfirstsearch](./Graphs/BreadthFirstSearch.php)
   * [Depthfirstsearch](./Graphs/DepthFirstSearch.php)
+  * [Dijkstra's](./Graphs/Dijkstras.php)
+  * [Edge.php](Graphs/Edge.php)
 
 ## Maths
   * [Absolutemax](./Maths/AbsoluteMax.php)
@@ -85,6 +96,16 @@
     * [Problem7](./Maths/ProjectEuler/Problem7.php)
     * [Problem8](./Maths/ProjectEuler/Problem8.php)
     * [Problem9](./Maths/ProjectEuler/Problem9.php)
+  * [Eratosthenessieve](./Maths/EratosthenesSieve.php)
+
+## NeuralNetworks
+  * PerceptronClassifier
+    * [NeuralNetworkPerceptronClassifier.php](NeuralNetworks/PerceptronClassifier/NeuralNetworkPerceptronClassifier.php)
+    * [README.md](NeuralNetworks/PerceptronClassifier/README.md)
+    * chart
+      * [dataset.png](NeuralNetworks/PerceptronClassifier/chart/dataset.png)
+      * [linear-separated.png](NeuralNetworks/PerceptronClassifier/chart/linear-separated.png)
+      * [sigmoid.png](NeuralNetworks/PerceptronClassifier/chart/sigmoid.png)
 
 ## Searches
   * [Binarysearch](./Searches/BinarySearch.php)
@@ -155,6 +176,7 @@
     * [Eratosthenessievetest](./tests/Maths/EratosthenesSieveTest.php)
     * [Mathstest](./tests/Maths/MathsTest.php)
     * [Projecteulertest](./tests/Maths/ProjectEulerTest.php)
+    * [Eratosthenessievetest](./tests/Maths/EratosthenesSieveTest.php)
   * Searches
     * [Searchestest](./tests/Searches/SearchesTest.php)
   * Sorting

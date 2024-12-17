@@ -1,6 +1,7 @@
 <?php
 
 namespace Graphs;
+
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../Graphs/GraphEdge.php';
 require_once __DIR__ . '/../../Graphs/Dijkstras.php';

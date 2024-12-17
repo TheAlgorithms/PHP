@@ -1,19 +1,12 @@
 <?php
 
-class Edge
-{
-    public $start;
-    public $end;
-    public int $weight;
-}
-
 /**
  * The Dijkstra's algorithm is an algorithm for finding the shortest paths between nodes in a weighted graph.
  * (https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm).
  *
  * @author Michał Żarnecki https://github.com/rzarno
  * @param array $verticesNames An array of vertices names
- * @param Edge[] $edges An array of edges
+ * @param GraphEdge[] $edges An array of edges
  * @param string $start The starting vertex
  * @return array An array of shortest paths from $start to all other vertices
  */

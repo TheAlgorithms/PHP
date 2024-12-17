@@ -3,9 +3,11 @@
 namespace DataStructures;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
-require_once __DIR__ . '/../../DataStructures/BinaryTreeNode.php';
-require_once __DIR__ . '/../../DataStructures/CompareBinaryTree.php';
+require_once __DIR__ . '/../../DataStructures/CompareBinaryTree/BinaryTreeNode.php';
+require_once __DIR__ . '/../../DataStructures/CompareBinaryTree/CompareBinaryTree.php';
 
+use DataStructures\CompareBinaryTree\BinaryTreeNode;
+use DataStructures\CompareBinaryTree\CompareBinaryTree;
 use PHPUnit\Framework\TestCase;
 
 class CompareBinaryTreeTest extends TestCase

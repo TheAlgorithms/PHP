@@ -28,20 +28,20 @@
     * [Bstree](./DataStructures/BinarySearchTree/BSTree.php)
     * [Duplicatekeyexception](./DataStructures/BinarySearchTree/DuplicateKeyException.php)
   * CompareBinaryTree
-    * [CompareBinaryTree](./DataStructures/CompareBinaryTree.php)
-    * [BinaryTreeNode](./DataStructures/BinaryTreeNode.php)
+    * [CompareBinaryTree](./DataStructures/CompareBinaryTree/CompareBinaryTree.php)
+    * [BinaryTreeNode](./DataStructures/CompareBinaryTree/BinaryTreeNode.php)
   * Disjointsets
     * [Disjointset](./DataStructures/DisjointSets/DisjointSet.php)
     * [Disjointsetnode](./DataStructures/DisjointSets/DisjointSetNode.php)
   * [Doublylinkedlist](./DataStructures/DoublyLinkedList.php)
   * InvertBinaryTree
-    * [InvertBinaryTree](./DataStructures/InvertBinaryTree.php)
-    * [BinaryTree](./DataStructures/BinaryTree.php)
+    * [InvertBinaryTree](./DataStructures/InvertBinaryTree/InvertBinaryTree.php)
+    * [BinaryTree](./DataStructures/InvertBinaryTree/BinaryTree.php)
   * [Node](./DataStructures/Node.php)
   * [Queue](./DataStructures/Queue.php)
   * ReverseLinkedList
-    * [ReverseLinkedList.php](DataStructures/ReverseLinkedList.php)
-    * [LinkedListItem.php](DataStructures/LinkedListItem.php)
+    * [ReverseLinkedList.php](DataStructures/ReverseLinkedList/ReverseLinkedList.php)
+    * [LinkedListItem.php](DataStructures/ReverseLinkedList/LinkedListItem.php)
   * Segmenttree
     * [Segmenttree](./DataStructures/SegmentTree/SegmentTree.php)
     * [Segmenttreenode](./DataStructures/SegmentTree/SegmentTreeNode.php)
@@ -60,6 +60,7 @@
   * [Breadthfirstsearch](./Graphs/BreadthFirstSearch.php)
   * [Depthfirstsearch](./Graphs/DepthFirstSearch.php)
   * [Dijkstra's](./Graphs/Dijkstras.php)
+  * [Edge.php](Graphs/Edge.php)
 
 ## Maths
   * [Absolutemax](./Maths/AbsoluteMax.php)

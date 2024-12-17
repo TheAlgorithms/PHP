@@ -1,6 +1,6 @@
 <?php
 
-namespace DataStructures;
+namespace DataStructures\CompareBinaryTree;
 
 /**
  * Recurrent comparison of binary trees based on comparison of left and right branches

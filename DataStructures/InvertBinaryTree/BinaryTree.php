@@ -1,6 +1,9 @@
 <?php
 
-class BinaryTree {
+namespace DataStructures\InvertBinaryTree;
+
+class BinaryTree
+{
     private ?BinaryTree $left = null;
     private ?BinaryTree $right = null;
     private $value;

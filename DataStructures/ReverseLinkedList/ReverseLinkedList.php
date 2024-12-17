@@ -1,5 +1,7 @@
 <?php
 
+namespace DataStructures\ReverseLinkedList;
+
 /**
  * Reverse linked list
  * (https://en.wikipedia.org/wiki/Linked_list).

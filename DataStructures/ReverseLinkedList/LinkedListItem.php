@@ -1,6 +1,9 @@
 <?php
 
-class LinkedListItem {
+namespace DataStructures\ReverseLinkedList;
+
+class LinkedListItem
+{
     private ?LinkedListItem $next = null;
     private ?LinkedListItem $prev = null;
     private $value;

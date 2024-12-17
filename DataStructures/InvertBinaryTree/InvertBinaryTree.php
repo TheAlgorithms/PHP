@@ -1,8 +1,6 @@
 <?php
 
-namespace DataStructures;
-
-use BinaryTree;
+namespace DataStructures\InvertBinaryTree;
 
 /**
  * Recurrent algorithm to invert binary tree (mirror)

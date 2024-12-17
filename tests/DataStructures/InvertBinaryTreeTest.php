@@ -3,10 +3,11 @@
 namespace DataStructures;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
-require_once __DIR__ . '/../../DataStructures/BinaryTree.php';
-require_once __DIR__ . '/../../DataStructures/InvertBinaryTree.php';
+require_once __DIR__ . '/../../DataStructures/InvertBinaryTree/BinaryTree.php';
+require_once __DIR__ . '/../../DataStructures/InvertBinaryTree/InvertBinaryTree.php';
 
-use BinaryTree;
+use DataStructures\InvertBinaryTree\BinaryTree;
+use DataStructures\InvertBinaryTree\InvertBinaryTree;
 use PHPUnit\Framework\TestCase;
 
 class InvertBinaryTreeTest extends TestCase

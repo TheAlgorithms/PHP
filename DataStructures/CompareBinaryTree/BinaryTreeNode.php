@@ -1,5 +1,6 @@
 <?php
-namespace DataStructures;
+
+namespace DataStructures\CompareBinaryTree;
 
 class BinaryTreeNode
 {

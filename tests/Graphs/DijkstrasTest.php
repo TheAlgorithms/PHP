@@ -2,9 +2,10 @@
 
 namespace Graphs;
 require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../Graphs/GraphEdge.php';
 require_once __DIR__ . '/../../Graphs/Dijkstras.php';
 
-use Edge;
+use GraphEdge;
 use PHPUnit\Framework\TestCase;
 
 class DijkstrasTest extends TestCase
@@ -26,7 +27,7 @@ class DijkstrasTest extends TestCase
         #prepare array of edges listed by edge start to simplify Dijkstra's updating weights of other edges
         $edges = [];
         foreach ($edgesRaw as $edgeRaw) {
-            $edge = new Edge();
+            $edge = new GraphEdge();
             $edge->start = $edgeRaw[0];
             $edge->end = $edgeRaw[2];
             $edge->weight = $edgeRaw[1];

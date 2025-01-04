@@ -136,6 +136,7 @@
   * [Maxcharacter](./Strings/MaxCharacter.php)
   * [Reversestring](./Strings/ReverseString.php)
   * [Reversewords](./Strings/ReverseWords.php)
+  * [RemoveDuplicateCharacters](./Strings/RemoveDuplicateCharacters.php)
 
 ## Tests
   * Ciphers

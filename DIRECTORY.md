@@ -27,12 +27,21 @@
     * [Bstnode](./DataStructures/BinarySearchTree/BSTNode.php)
     * [Bstree](./DataStructures/BinarySearchTree/BSTree.php)
     * [Duplicatekeyexception](./DataStructures/BinarySearchTree/DuplicateKeyException.php)
+  * Comparebinarytree
+    * [Binarytreenode](./DataStructures/CompareBinaryTree/BinaryTreeNode.php)
+    * [Comparebinarytree](./DataStructures/CompareBinaryTree/CompareBinaryTree.php)
   * Disjointsets
     * [Disjointset](./DataStructures/DisjointSets/DisjointSet.php)
     * [Disjointsetnode](./DataStructures/DisjointSets/DisjointSetNode.php)
   * [Doublylinkedlist](./DataStructures/DoublyLinkedList.php)
+  * Invertbinarytree
+    * [Binarytree](./DataStructures/InvertBinaryTree/BinaryTree.php)
+    * [Invertbinarytree](./DataStructures/InvertBinaryTree/InvertBinaryTree.php)
   * [Node](./DataStructures/Node.php)
   * [Queue](./DataStructures/Queue.php)
+  * Reverselinkedlist
+    * [Linkedlistitem](./DataStructures/ReverseLinkedList/LinkedListItem.php)
+    * [Reverselinkedlist](./DataStructures/ReverseLinkedList/ReverseLinkedList.php)
   * Segmenttree
     * [Segmenttree](./DataStructures/SegmentTree/SegmentTree.php)
     * [Segmenttreenode](./DataStructures/SegmentTree/SegmentTreeNode.php)
@@ -50,6 +59,8 @@
   * [Bellmanford](./Graphs/BellmanFord.php)
   * [Breadthfirstsearch](./Graphs/BreadthFirstSearch.php)
   * [Depthfirstsearch](./Graphs/DepthFirstSearch.php)
+  * [Dijkstras](./Graphs/Dijkstras.php)
+  * [Graphedge](./Graphs/GraphEdge.php)
 
 ## Maths
   * [Absolutemax](./Maths/AbsoluteMax.php)
@@ -139,9 +150,12 @@
   * Datastructures
     * [Avltreetest](./tests/DataStructures/AVLTreeTest.php)
     * [Bstreetest](./tests/DataStructures/BSTreeTest.php)
+    * [Comparebinarytreetest](./tests/DataStructures/CompareBinaryTreeTest.php)
     * [Disjointsettest](./tests/DataStructures/DisjointSetTest.php)
     * [Doublylinkedlisttest](./tests/DataStructures/DoublyLinkedListTest.php)
+    * [Invertbinarytreetest](./tests/DataStructures/InvertBinaryTreeTest.php)
     * [Queuetest](./tests/DataStructures/QueueTest.php)
+    * [Reverselinkedlisttest](./tests/DataStructures/ReverseLinkedListTest.php)
     * [Segmenttreetest](./tests/DataStructures/SegmentTreeTest.php)
     * [Singlylinkedlisttest](./tests/DataStructures/SinglyLinkedListTest.php)
     * [Splaytreetest](./tests/DataStructures/SplayTreeTest.php)
@@ -151,6 +165,7 @@
     * [Bellmanfordtest](./tests/Graphs/BellmanFordTest.php)
     * [Breadthfirstsearchtest](./tests/Graphs/BreadthFirstSearchTest.php)
     * [Depthfirstsearchtest](./tests/Graphs/DepthFirstSearchTest.php)
+    * [Dijkstrastest](./tests/Graphs/DijkstrasTest.php)
   * Maths
     * [Eratosthenessievetest](./tests/Maths/EratosthenesSieveTest.php)
     * [Mathstest](./tests/Maths/MathsTest.php)

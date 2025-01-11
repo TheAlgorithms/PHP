@@ -97,14 +97,9 @@
     * [Problem8](./Maths/ProjectEuler/Problem8.php)
     * [Problem9](./Maths/ProjectEuler/Problem9.php)
 
-## NeuralNetworks
-  * PerceptronClassifier
-    * [NeuralNetworkPerceptronClassifier.php](NeuralNetworks/PerceptronClassifier/NeuralNetworkPerceptronClassifier.php)
-    * [README.md](NeuralNetworks/PerceptronClassifier/README.md)
-    * chart
-      * [dataset.png](NeuralNetworks/PerceptronClassifier/chart/dataset.png)
-      * [linear-separated.png](NeuralNetworks/PerceptronClassifier/chart/linear-separated.png)
-      * [sigmoid.png](NeuralNetworks/PerceptronClassifier/chart/sigmoid.png)
+## Neuralnetworks
+  * Perceptronclassifier
+    * [Neuralnetworkperceptronclassifier](./NeuralNetworks/PerceptronClassifier/NeuralNetworkPerceptronClassifier.php)
 
 ## Searches
   * [Binarysearch](./Searches/BinarySearch.php)
@@ -179,6 +174,9 @@
     * [Eratosthenessievetest](./tests/Maths/EratosthenesSieveTest.php)
     * [Mathstest](./tests/Maths/MathsTest.php)
     * [Projecteulertest](./tests/Maths/ProjectEulerTest.php)
+  * Neuralnetworks
+    * Perceptronclassifier
+      * [Neuralnetworkperceptronclassifiertest](./tests/NeuralNetworks/PerceptronClassifier/NeuralNetworkPerceptronClassifierTest.php)
   * Searches
     * [Searchestest](./tests/Searches/SearchesTest.php)
   * Sorting

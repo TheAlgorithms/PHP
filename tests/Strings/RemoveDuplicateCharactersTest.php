@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
  * Unit tests for the removeDuplicateCharacters function.
  * To run test: ./vendor/bin/phpunit tests/strings/removeDuplicateCharactersTest.php
  */
-final class removeDuplicateCharactersTest extends TestCase
+final class RemoveDuplicateCharactersTest extends TestCase
 {
     /**
      * Test with a string that has multiple duplicates.

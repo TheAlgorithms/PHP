@@ -51,7 +51,7 @@ class StringsTest extends TestCase
 
     public function testIsAnagram()
     {
-        $this->assertTrue(isAnagram("php", "PHP")); // By default it's case-insensitive
+        $this->assertTrue(isAnagram("php", "PHP")); // By default, it's case-insensitive
         $this->assertFalse(isAnagram("php", "PHP", false)); // Make case-sensitive check
         $this->assertTrue(isAnagram("php is fun", "pin hpf us"));
         $this->assertFalse(isAnagram("Hello", " Hello")); //Extra space character

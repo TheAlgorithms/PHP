@@ -26,7 +26,7 @@
  * To reduce the time complexity to O(n), we need Two Pointers technique.
  */
 
-// Two Pointers step by step solution to that problem is given below:
+// Two Pointers step-by-step solution to that problem is given below:
 function twoPointers($list, $target)
 {
     // First we need to sort the array so that we can take advantage of the order

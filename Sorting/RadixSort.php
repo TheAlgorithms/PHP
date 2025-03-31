@@ -29,7 +29,7 @@ function radixSort($nums)
 
 
 /**
- * Get the digits value by it's place
+ * Get the digits value by its place
  *
  * @param $num
  * @param $i

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The Bellman–Ford algorithm is an algorithm that computes shortest paths from a single source vertex to all of the
+ * The Bellman–Ford algorithm is an algorithm that computes shortest paths from a single source vertex to all the
  * other vertices in a weighted digraph.
  * (https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm).
  *

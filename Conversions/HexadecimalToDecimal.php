@@ -12,10 +12,11 @@
  * (160 + 11) base 10
  * 171 base 10
  *
- * @param string $octalNumber
+ * @param $hexNumber
  * @return int
+ * @throws Exception
  */
-function hexToDecimal($hexNumber)
+function hexToDecimal($hexNumber): int
 {
     // Using ctype to check all the digits are valid hex digits or not.
     if (!ctype_xdigit($hexNumber)) {
@@ -54,8 +55,10 @@ function hexToDecimal($hexNumber)
  *
  * @param string $decimalNumber
  * @return string
+ * @throws Exception
+ * @throws Exception
  */
-function decimalToHex($decimalNumber)
+function decimalToHex($decimalNumber): string
 {
     $hexDigits = [];
 

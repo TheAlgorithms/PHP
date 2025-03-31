@@ -28,7 +28,7 @@ function dfs($adjList, $start)
         // Checks each adjacent vertex of $v and add to the stack if not visited
         foreach (array_reverse($adjList[$v]) as $adj) {
             if (!array_key_exists($adj, $visited)) {
-                array_push($stack, $adj);
+                $stack[] = $adj;
             }
         }
     }

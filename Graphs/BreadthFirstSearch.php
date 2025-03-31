@@ -27,7 +27,7 @@ function bfs($adjList, $start, $end, $yes = false)
         $visited[$v] = 1;
         foreach ($adjList[$v] as $adj) {
             if (!array_key_exists($adj, $visited)) {
-                array_push($queue, $adj);
+                $queue[] = $adj;
             }
         }
     }

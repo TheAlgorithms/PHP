@@ -15,7 +15,7 @@ function fibonacciRecursive(int $num)
 
     $fibonacciRecursive = [];
     for ($i = 0; $i < $num; $i++) {
-        array_push($fibonacciRecursive, recursive($i));
+        $fibonacciRecursive[] = recursive($i);
     }
     return $fibonacciRecursive;
 }
@@ -60,7 +60,7 @@ function fibonacciWithBinetFormula(int $num)
 
         foreach (range(0, $num - 1) as $n) {
             $seriesNumber = (pow($phi_1, $n) - pow($phi_2, $n)) / $sqrt;
-            array_push($fib_series, (int)$seriesNumber);
+            $fib_series[] = (int)$seriesNumber;
         }
     }
 

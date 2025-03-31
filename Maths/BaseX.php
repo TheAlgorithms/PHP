@@ -17,7 +17,7 @@ function baseX($k, $x)
     $arr = [];
 
     while (true) {
-        array_push($arr, $k % $x);
+        $arr[] = $k % $x;
         $k = ($k - ($k % $x)) / $x;
 
         if ($k == 0) {

@@ -17,7 +17,7 @@ function xorCipher(string $input_string, string $key)
     $result = array();
 
     for ($idx = 0; $idx < strlen($input_string); $idx++) {
-        array_push($result, $input_string[$idx] ^ $key[$idx % $key_len]);
+        $result[] = $input_string[$idx] ^ $key[$idx % $key_len];
     }
 
     return join("", $result);

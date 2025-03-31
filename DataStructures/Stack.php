@@ -20,7 +20,7 @@ class Stack
 
     public function push($data): void
     {
-        array_push($this->stack, $data);
+        $this->stack[] = $data;
     }
 
     public function pop()

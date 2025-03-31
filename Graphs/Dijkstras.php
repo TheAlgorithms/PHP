@@ -19,7 +19,7 @@ function dijkstras(array $verticesNames, array $edges, string $start): array
     $vertices[$start] = 0;
     while (count($visitedNodes) < count($verticesNames)) { //continue until all nodes are visited
         foreach ($edges as $edge) {
-            if ($edge->start == $nextVertex) { //consider only nodes connected to current one
+            if ($edge->start === $nextVertex) { //consider only nodes connected to current one
                 $vertices[$edge->end] = min($vertices[$edge->end], $vertices[$nextVertex] + $edge->weight);
             }
         }
@@ -28,7 +28,7 @@ function dijkstras(array $verticesNames, array $edges, string $start): array
         $minVertexName = null;
         $minVertexWeight = PHP_INT_MAX;
         foreach ($vertices as $name => $weight) {
-            if (in_array($name, $visitedNodes) || $name == $nextVertex) {
+            if ($name === $nextVertex || in_array($name, $visitedNodes, true)) {
                 continue;
             }
             if ($weight <= $minVertexWeight) {

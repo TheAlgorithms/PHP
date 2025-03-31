@@ -7,10 +7,10 @@
  * @param  string  $text
  * @return string
  */
-function reverseWords(string $text)
+function reverseWords(string $text): string
 {
-    $text          = trim($text);
-    $words         = explode(' ', $text);
+    $text = trim($text);
+    $words = explode(' ', $text);
     $reversedWords = [];
 
     for ($i = (count($words) - 1); $i >= 0; $i--) {

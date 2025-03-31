@@ -9,18 +9,19 @@
  *
  * @return string The encoded message.
  */
-function Railencode($plainMessage, $rails): string
+function Railencode(string $plainMessage, int $rails): string
 {
     $cipherMessage = [];
     $position = ($rails * 2) - 2;
+    $plainMessageLength = strlen($plainMessage);
     // Iterate through the characters of the plain message
-    for ($index = 0; $index < strlen($plainMessage); $index++) {
+    for ($index = 0; $index < $plainMessageLength; $index++) {
         for ($step = 0; $step < $rails; $step++) {
             if (!isset($cipherMessage[$step])) {
                 $cipherMessage[$step] = '';
             }
             // Check if the character should go in the rail
-            if ($index % $position == $step || $index % $position == $position - $step) {
+            if ($index % $position === $step || $index % $position === $position - $step) {
                 $cipherMessage[$step] .= $plainMessage[$index];
             } else {
                 // Add a placeholder for empty spaces
@@ -40,7 +41,7 @@ function Railencode($plainMessage, $rails): string
  *
  * @return string The decoded plain message.
  */
-function Raildecode($cipherMessage, $rails): string
+function Raildecode(string $cipherMessage, int $rails): string
 {
     $position = ($rails * 2) - 2;
     $textLength = strlen($cipherMessage);
@@ -52,7 +53,7 @@ function Raildecode($cipherMessage, $rails): string
     // Calculate the number of characters in each row
     for ($rowIndex = 0; $rowIndex < $rails; $rowIndex++) {
         $lengths[$rowIndex] = $minLength;
-        if ($rowIndex != 0 && $rowIndex != ($rails - 1)) {
+        if ($rowIndex !== 0 && $rowIndex !== ($rails - 1)) {
             $lengths[$rowIndex] += $minLength;
         }
         if ($balance > $rowIndex) {

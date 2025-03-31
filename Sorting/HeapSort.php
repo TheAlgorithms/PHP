@@ -9,7 +9,7 @@
  *
  * @param array $arr
  * @return array
- * @throws \UnexpectedValueException
+ * @throws UnexpectedValueException
  */
 function heapSort(array $arr): array
 {
@@ -18,7 +18,7 @@ function heapSort(array $arr): array
 
     // Throw an exception if the array has no elements.
     if ($n <= 0) {
-        throw new \UnexpectedValueException('Input array must have at least one element.');
+        throw new UnexpectedValueException('Input array must have at least one element.');
     }
 
     // Build a max heap from the array.

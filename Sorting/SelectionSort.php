@@ -6,11 +6,11 @@
  * @param array $array
  * @return array
  */
-function selectionSort(array $array)
+function selectionSort(array $array): array
 {
     $length = count($array);
 
-    for ($i = 0; $i < $length; $i++) {
+    foreach ($array as $i => $value) {
         $lowest = $i;
 
         for ($j = $i + 1; $j < $length; $j++) {
@@ -20,7 +20,7 @@ function selectionSort(array $array)
         }
 
         if ($i !== $lowest) {
-            $temp = $array[$i];
+            $temp = $value;
             $array[$i] = $array[$lowest];
             $array[$lowest] = $temp;
         }

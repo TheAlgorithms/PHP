@@ -24,7 +24,7 @@ function eratosthenesSieve(int $number): array
                 unset($primes[$multiplied]);
             }
         }
-        $current += 1;
+        ++$current;
     }
     return array_values($primes);
 }

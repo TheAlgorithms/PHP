@@ -9,7 +9,7 @@
  * @param float $x The input number for which to calculate the inverse square root.
  * @return float The fast inverse square root of the input number.
  */
-function fastInvSqrt($x)
+function fastInvSqrt(float $x): float
 {
     // Convert the input float to an integer
     $i = unpack('l', pack('f', $x))[1];

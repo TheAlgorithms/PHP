@@ -13,12 +13,12 @@
  * https://the-algorithms.com/algorithm/depth-first-search?lang=python
  *
  * @author Aryansh Bhargavan https://github.com/aryanshb
- * @param array $adjList An array representing the grapth as an Adjacent List
+ * @param array $adjList An array representing the graph as an Adjacent List
  * @param int|string $start The starting vertex
  * @return bool if path between start and end vertex exists
  */
 
-function bfs($adjList, $start, $end, $yes = false)
+function bfs(array $adjList, $start, $end, $yes = false): bool
 {
     $visited = [];
     $queue = [$start];

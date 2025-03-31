@@ -5,14 +5,14 @@
  * The mean value of
  * numbers provided
  *
- * @param  decimal  $numbers  A variable sized number input
- * @return decimal $mean Mean of provided numbers
- * @throws \Exception
+ * @param array $numbers  A variable sized number input
+ * @return float $mean Mean of provided numbers
+ * @throws Exception
  */
-function mean(...$numbers)
+function mean(...$numbers): float
 {
     if (empty($numbers)) {
-        throw new \Exception('Please pass values to find mean value');
+        throw new RuntimeException('Please pass values to find mean value');
     }
 
     $total = array_sum($numbers);

@@ -5,14 +5,14 @@
  * submitted Decimal Number to
  * Binary Number.
  *
- * @param  string  $decimalNumber
+ * @param string $decimalNumber
  * @return string
- * @throws \Exception
+ * @throws Exception
  */
-function decimalToBinary($decimalNumber)
+function decimalToBinary(string $decimalNumber): string
 {
     if (!is_numeric($decimalNumber)) {
-        throw new \Exception('Please pass a valid Decimal Number for Converting it to a Binary Number.');
+        throw new RuntimeException('Please pass a valid Decimal Number for Converting it to a Binary Number.');
     }
 
     $binaryNumber = '';

@@ -8,14 +8,14 @@
  *
  * @param  Integer  $number  Integer input
  * @return Integer Factorial of the input
- * @throws \Exception
+ * @throws Exception
  */
 function factorial(int $number)
 {
     static $cache = []; //internal caching memory for speed
 
     if ($number < 0) {
-        throw new \Exception("Negative numbers are not allowed for calculating Factorial");
+        throw new RuntimeException("Negative numbers are not allowed for calculating Factorial");
     }
 
     // Factorial of 0 is 1

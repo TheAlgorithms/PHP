@@ -20,7 +20,7 @@ function hexToDecimal($hexNumber): int
 {
     // Using ctype to check all the digits are valid hex digits or not.
     if (!ctype_xdigit($hexNumber)) {
-        throw new \Exception('Please pass a valid Hexadecimal Number for Converting it to a Decimal Number.');
+        throw new RuntimeException('Please pass a valid Hexadecimal Number for Converting it to a Decimal Number.');
     }
 
     $decimalNumber = 0;
@@ -43,7 +43,7 @@ function hexToDecimal($hexNumber): int
         if (!is_numeric($digit)) {
             $hexDigit = $decimalDigitMappings[$digit];
         }
-        $decimalNumber += (pow(16, $power) * $hexDigit);
+        $decimalNumber += ((16 ** $power) * $hexDigit);
     }
     return $decimalNumber;
 }
@@ -58,7 +58,7 @@ function hexToDecimal($hexNumber): int
  * @throws Exception
  * @throws Exception
  */
-function decimalToHex($decimalNumber): string
+function decimalToHex(string $decimalNumber): string
 {
     $hexDigits = [];
 
@@ -72,7 +72,7 @@ function decimalToHex($decimalNumber): string
         15 => 'F',
     ];
     if (!is_numeric($decimalNumber)) {
-        throw new \Exception('Please pass a valid Decimal Number for Converting it to a Hexadecimal Number.');
+        throw new RuntimeException('Please pass a valid Decimal Number for Converting it to a Hexadecimal Number.');
     }
 
     while ($decimalNumber > 0) {
@@ -92,7 +92,6 @@ function decimalToHex($decimalNumber): string
         }
     }
 
-    $hexNumber = ltrim(implode('', $hexDigits), '0'); // Connecting all the digits and removing leading zeroes.
-
-    return $hexNumber;
+    // Connecting all the digits and removing leading zeroes.
+    return ltrim(implode('', $hexDigits), '0');
 }

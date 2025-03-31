@@ -9,11 +9,12 @@
  * @param string $plainText The plaintext to encrypt.
  * @return string The encrypted message.
  */
-function atbash_encrypt($plainText)
+function atbash_encrypt(string $plainText): string
 {
     $result = '';
     $plainText = strtoupper($plainText);
-    for ($i = 0; $i < strlen($plainText); $i++) {
+    $plainTextLength = strlen($plainText);
+    for ($i = 0; $i < $plainTextLength; $i++) {
         $char = $plainText[$i];
         if (ctype_alpha($char)) {
             $offset = ord('Z') - ord($char);
@@ -33,7 +34,7 @@ function atbash_encrypt($plainText)
  * @param string $cipherText The ciphertext to decrypt.
  * @return string The decrypted message.
  */
-function atbash_decrypt($cipherText)
+function atbash_decrypt(string $cipherText): string
 {
     return atbash_encrypt($cipherText); // Decryption is the same as encryption
 }

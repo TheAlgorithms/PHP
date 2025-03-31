@@ -18,19 +18,19 @@
  * @param int $target
  * @return int
  */
-function binarySearchIterative($list, $target)
+function binarySearchIterative(array $list, int $target): ?int
 {
     $first = 0;
     $last = count($list) - 1;
 
-
     while ($first <= $last) {
         $mid = ($first + $last) >> 1;
 
-
-        if ($list[$mid] == $target) {
+        if ($list[$mid] === $target) {
             return $mid;
-        } elseif ($list[$mid] > $target) {
+        }
+
+        if ($list[$mid] > $target) {
             $last = $mid - 1;
         } elseif ($list[$mid] < $target) {
             $first = $mid + 1;
@@ -60,29 +60,31 @@ function binarySearchIterative($list, $target)
  * @param integer $end an integer number where to end searching in the list
  * @return integer the index where the target is found (or null if not found)
  */
-function binarySearchByRecursion($list, $target, $start, $end)
+function binarySearchByRecursion(array $list, int $target, int $start, int $end): ?int
 {
-    if (count($list) == 0) {
+    if (count($list) === 0) {
         return null;
     }
 
     if (count($list) < 2) {
-        return $list[0] == $target ? 0 : null;
+        return $list[0] === $target ? 0 : null;
     }
 
     if ($start > $end) {
         return null;
     }
 
-
     $mid = ($start + $end) >> 1;
 
-
-    if ($list[$mid] == $target) {
+    if ($list[$mid] === $target) {
         return $mid;
-    } elseif ($list[$mid] > $target) {
+    }
+
+    if ($list[$mid] > $target) {
         return binarySearchByRecursion($list, $target, $start, $mid - 1);
-    } elseif ($list[$mid] < $target) {
+    }
+
+    if ($list[$mid] < $target) {
         return binarySearchByRecursion($list, $target, $mid + 1, $end);
     }
 

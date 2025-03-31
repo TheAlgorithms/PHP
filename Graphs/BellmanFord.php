@@ -22,21 +22,21 @@ function bellmanFord(array $verticesNames, array $edges, string $start, bool $ve
             echo "round $round\n";
         }
         $change = false;
-        foreach ($vertices as $vertice => $minWeight) {
+        foreach ($vertices as $vertex => $minWeight) {
             if ($verbose) {
-                echo "checking vertex $vertice\n";
+                echo "checking vertex $vertex\n";
             }
-            if ($start === $vertice) {
-                $vertices[$vertice] = 0;
+            if ($start === $vertex) {
+                $vertices[$vertex] = 0;
             }
 
-            foreach ($edges[$vertice] as $edge) {
-                if ($vertices[$edge->end] > $vertices[$vertice] + $edge->weight) {
+            foreach ($edges[$vertex] as $edge) {
+                if ($vertices[$edge->end] > $vertices[$vertex] + $edge->weight) {
                     if ($verbose) {
-                        echo "replace $vertice " . $vertices[$edge->end] . " with "
-                            . ($vertices[$vertice] + $edge->weight) . "\n ";
+                        echo "replace $vertex " . $vertices[$edge->end] . " with "
+                            . ($vertices[$vertex] + $edge->weight) . "\n ";
                     }
-                    $vertices[$edge->end] = $vertices[$vertice] + $edge->weight;
+                    $vertices[$edge->end] = $vertices[$vertex] + $edge->weight;
                     $change = true;
                 }
             }

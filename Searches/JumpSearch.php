@@ -10,7 +10,7 @@
    * @return int index of $key if found, otherwise -1 is returned
  */
 
-function jumpSearch($list, $key)
+function jumpSearch(array $list, int $key): int
 {
     /*number of elements in the sorted array*/
     $num = count($list);
@@ -30,7 +30,7 @@ function jumpSearch($list, $key)
     /*Performing linear search for $key in block*/
     while ($list[$prev] < $key) {
         $prev++;
-        if ($prev == min($step, $num)) {
+        if ($prev === min($step, $num)) {
             return -1;
         }
     }

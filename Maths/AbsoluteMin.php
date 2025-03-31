@@ -6,20 +6,20 @@
  * the different numbers
  * provided.
  *
- * @param  decimal  $numbers  A variable sized number input
- * @return decimal $absoluteMin Absolute min value
- * @throws \Exception
+ * @param array $numbers  A variable sized number input
+ * @return int $absoluteMin Absolute min value
+ * @throws Exception
  */
-function absolute_min(...$numbers)
+function absolute_min(...$numbers): int
 {
     if (empty($numbers)) {
-        throw new \Exception('Please pass values to find absolute min value');
+        throw new RuntimeException('Please pass values to find absolute min value');
     }
 
     $absoluteMin = $numbers[0];
-    for ($loopIndex = 0; $loopIndex < count($numbers); $loopIndex++) {
-        if ($numbers[$loopIndex] < $absoluteMin) {
-            $absoluteMin = $numbers[$loopIndex];
+    foreach ($numbers as $number) {
+        if ($number < $absoluteMin) {
+            $absoluteMin = $number;
         }
     }
 

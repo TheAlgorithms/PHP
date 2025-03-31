@@ -5,7 +5,7 @@
  *
  * @param  string  $text  text to encode
  * @return string encoded text
- * @throws \Exception
+ * @throws Exception
  */
 function encode(string $text): string
 {
@@ -55,9 +55,10 @@ function encode(string $text): string
         if (array_key_exists($c, $MORSE_CODE)) { // Checks if it is a valid character
             $encodedText .= $MORSE_CODE[$c] . " "; // Appends the correct character
         } else {
-            throw new \Exception("Invalid character: $c");
+            throw new RuntimeException("Invalid character: $c");
         }
     }
+    // TODO: Expression result is not used anywhere, might need to return the call to substr_replace()
     substr_replace($encodedText, "", -1); // Removes trailing space
     return $encodedText;
 }
@@ -65,7 +66,7 @@ function encode(string $text): string
 /**
  * Decode Morse Code to text.
  * @param  string  $text  text to decode
- * @throws \Exception
+ * @throws Exception
  */
 function decode(string $text): string
 {
@@ -115,7 +116,7 @@ function decode(string $text): string
             $decodedText .= $MORSE_CODE[$c]; // Appends the correct character
         } else {
             if ($c) { // Makes sure that the string is not empty to prevent trailing spaces or extra spaces from breaking this
-                throw new \Exception("Invalid character: $c");
+                throw new Exception("Invalid character: $c");
             }
         }
     }

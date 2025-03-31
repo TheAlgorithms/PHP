@@ -10,15 +10,15 @@
  * @param string $str2
  * @return int the minimum number of changes to transform one string into another
  */
-function findDistance($str1, $str2)
+function findDistance(string $str1, string $str2): int
 {
     $lenStr1 = strlen($str1);
     $lenStr2 = strlen($str2);
-    if ($lenStr1 == 0) {
+    if ($lenStr1 === 0) {
         return $lenStr2;
     }
 
-    if ($lenStr2 == 0) {
+    if ($lenStr2 === 0) {
         return $lenStr1;
     }
 
@@ -40,7 +40,7 @@ function findDistance($str1, $str2)
         // use formula to fill in the rest of the row
         for ($j = 0; $j < $lenStr1; $j++) {
             $substitutionCost = 0;
-            if ($str1[$j] == $str2[$i]) {
+            if ($str1[$j] === $str2[$i]) {
                 $substitutionCost = $distanceVectorInit[$j];
             } else {
                 $substitutionCost = $distanceVectorInit[$j] + 1;

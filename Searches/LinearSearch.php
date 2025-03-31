@@ -17,11 +17,11 @@
  *  @param integer $target an integer number to search for in the list
  *  @return integer the index where the target is found (or -1 if not found)
  */
-function linearSearch($list, $target)
+function linearSearch(array $list, int $target): int
 {
     $n = sizeof($list);
     for ($i = 0; $i < $n; $i++) {
-        if ($list[$i] == $target) {
+        if ($list[$i] === $target) {
             return $i + 1;
         }
     }

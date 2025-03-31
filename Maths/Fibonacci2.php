@@ -1,14 +1,14 @@
 <?php
 
 /*
- * Print Fibocanni sequence using a generator
+ * Print Fibonacci sequence using a generator
  */
 
  /**
   * @param int $i number of Fibonacci numbers to generate
   * @param Generator $set Fibonacci calculator
   */
-function loop($i, Generator $set)
+function loop(int $i, Generator $set): Generator
 {
     while ($i-- > 0 && $set->valid()) {
         yield $set->current();
@@ -19,7 +19,7 @@ function loop($i, Generator $set)
 /*
  * Fibonacci generator
  */
-function fib()
+function fib(): Generator
 {
     yield $i = 0;
     yield $j = 1;

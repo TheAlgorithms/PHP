@@ -5,14 +5,14 @@
  * the mode value(s) of
  * numbers provided
  *
- * @param decimal $numbers A variable sized number input
+ * @param array $numbers A variable sized number input
  * @return array $modes Array of mode(s) of provided numbers
- * @throws \Exception
+ * @throws Exception
  */
-function mode(...$numbers)
+function mode(...$numbers): array
 {
     if (empty($numbers)) {
-        throw new \Exception('Please pass values to find the mode');
+        throw new RuntimeException('Please pass values to find the mode');
     }
 
     $values = array_count_values($numbers);

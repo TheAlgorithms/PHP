@@ -6,7 +6,7 @@
  * @param array $array
  * @return array
  */
-function bubbleSort($array)
+function bubbleSort(array $array): array
 {
     $length = count($array);
 

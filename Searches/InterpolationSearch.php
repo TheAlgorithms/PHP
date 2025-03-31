@@ -16,38 +16,39 @@
  * if the (value of index in array) is > key decrease the high index
  * repeat the loop
  */
-function interpolationSearch($arr, $key)
+function interpolationSearch(array $array, $key): int
 {
-    $length = count($arr) - 1;
+    $length = count($array) - 1;
     $low = 0;
     $high = $length;
-    $position = -1;
-    //loop, between low & high
-    while ($low <= $high && $key >= $arr[$low] && $key <= $arr[$high]) {
-        //GET INDEX
-        $delta = ($key - $arr[$low]) / ($arr[$high] - $arr[$low]);
+
+    // loop, between low & high
+    while ($low <= $high && $key >= $array[$low] && $key <= $array[$high]) {
+        // GET INDEX
+        $delta = ($key - $array[$low]) / ($array[$high] - $array[$low]);
         $index = $low + floor(($high - $low) * $delta);
 
-        //GET VALUE OF INDEX IN ARRAY...
-        $indexValue = $arr[$index];
+        // GET VALUE OF INDEX IN ARRAY...
+        $indexValue = $array[$index];
 
         if ($indexValue === $key) {
-            //index value equals key
-            //FOUND TARGET
-            //return index value
-            $position = $index;
-            return (int) $position;
-        } elseif ($indexValue < $key) {
-            //index value lower than key
-            //increase low index
+            // index value equals key
+            // FOUND TARGET
+            // return index value
+            return (int)$index;
+        }
+
+        if ($indexValue < $key) {
+            // index value lower than key
+            // increase low index
             $low = $index + 1;
         } elseif ($indexValue > $key) {
-            //index value higher than key
-            //decrease high index
+            // index value higher than key
+            // decrease high index
             $high = $index - 1;
         }
     }
 
-    //when key not found in array or array not sorted
-    return null;
+    // when key not found in array or array not sorted, return -1
+    return -1;
 }

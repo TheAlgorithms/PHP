@@ -3,23 +3,23 @@
 /**
  * Radix Sort
  *
- * @param $nums
+ * @param array $numbers
  * @return array
  */
-function radixSort($nums)
+function radixSort(array $numbers): array
 {
-    $maxDigitsCount = maxDigits($nums);
+    $maxDigitsCount = maxDigits($numbers);
     for ($k = 0; $k < $maxDigitsCount; $k++) {
         $digitBucket = array_fill(0, 10, []);
 
-        for ($i = 0; $i < count($nums); $i++) {
-            $digitBucket[getDigit($nums[$i], $k)][] = $nums[$i];
+        foreach ($numbers as $number) {
+            $digitBucket[getDigit($number, $k)][] = $number;
         }
 
-        $nums = concat($digitBucket);
+        $numbers = concat($digitBucket);
     }
 
-    return $nums;
+    return $numbers;
 }
 
 
@@ -31,13 +31,13 @@ function radixSort($nums)
 /**
  * Get the digits value by its place
  *
- * @param $num
+ * @param $number
  * @param $i
  * @return int
  */
-function getDigit($num, $i)
+function getDigit($number, $i): int
 {
-    return floor(abs($num) / pow(10, $i)) % 10;
+    return floor(abs($number) / (10 ** $i)) % 10;
 }
 
 /**
@@ -46,9 +46,9 @@ function getDigit($num, $i)
  * @param $num
  * @return int
  */
-function digitsCount($num)
+function digitsCount($num): int
 {
-    if ($num == 0) {
+    if ($num === 0) {
         return 1;
     }
     return floor(log10(abs($num))) + 1;
@@ -57,15 +57,15 @@ function digitsCount($num)
 /**
  * Get the max digits count
  *
- * @param $arr
+ * @param $array
  * @return int
  */
-function maxDigits($arr)
+function maxDigits($array): int
 {
     $maxDigits = 0;
 
-    for ($i = 0; $i < count($arr); $i++) {
-        $maxDigits = max($maxDigits, digitsCount($arr[$i]));
+    foreach ($array as $value) {
+        $maxDigits = max($maxDigits, digitsCount($value));
     }
 
     return $maxDigits;
@@ -77,13 +77,13 @@ function maxDigits($arr)
  * @param  array  $array
  * @return array
  */
-function concat(array $array)
+function concat(array $array): array
 {
     $newArray = [];
 
-    for ($i = 0; $i < count($array); $i++) {
-        for ($j = 0; $j < count($array[$i]); $j++) {
-            $newArray[] = $array[$i][$j];
+    foreach ($array as $iValue) {
+        foreach ($iValue as $jValue) {
+            $newArray[] = $jValue;
         }
     }
     return $newArray;

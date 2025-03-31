@@ -12,26 +12,26 @@ require_once __DIR__ . '/../Utils/ArrayHelpers.php';
  * It is assumed that an integer array is provided
  * and the second parameter is also an integer
  *
- * @param array  $arr  of sorted integers
- * @param integer  $elem  whose lower bound is to be found
+ * @param array  $array  of sorted integers
+ * @param integer  $element  whose lower bound is to be found
  *
  * @return int the index of lower bound of the given element
  */
-function lowerBound(array $arr, int $elem)
+function lowerBound(array $array, int $element): int
 {
-    isSortedAscendingInts($arr);
-    $hi = count($arr);
-    $lo = 0;
+    isSortedAscendingInts($array);
+    $high = count($array);
+    $low = 0;
 
-    while ($lo < $hi) {
-        $mid = $lo + floor(($hi - $lo) / 2);
+    while ($low < $high) {
+        $mid = $low + floor(($high - $low) / 2);
 
-        if ($arr[$mid] < $elem) {
-            $lo = $mid + 1;
+        if ($array[$mid] < $element) {
+            $low = $mid + 1;
         } else {
-            $hi = $mid;
+            $high = $mid;
         }
     }
 
-    return $lo;
+    return $low;
 }

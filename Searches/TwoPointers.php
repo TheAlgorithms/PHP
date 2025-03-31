@@ -27,7 +27,7 @@
  */
 
 // Two Pointers step-by-step solution to that problem is given below:
-function twoPointers($list, $target)
+function twoPointers($list, $target): int
 {
     // First we need to sort the array so that we can take advantage of the order
     sort($list);
@@ -43,14 +43,14 @@ function twoPointers($list, $target)
     while ($left < $right) {
         # Now carefully understand how we move one of our pointers
         if ($list[$left] + $list[$right] < $target) {
-            // it means the sum is less than $target and we need to increase our sum
+            // it means the sum is less than $target, and we need to increase our sum
             // to increase the sum we will move $left pointer to the right
             $left++;
-        } else if ($list[$left] + $list[$right] > $target) {
+        } elseif ($list[$left] + $list[$right] > $target) {
             // the sum is greater than the target, so we need to decrease the sum
             // to decrease the sum we will move our $right pointer to the left
             $right--;
-        } else if ($list[$left] + $list[$right] == $target) {
+        } elseif ($list[$left] + $list[$right] === $target) {
             // if it's true, we have found a pair
             $ans++;
             // now we will move one of our pointers, otherwise it'll run forever

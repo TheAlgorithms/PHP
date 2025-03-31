@@ -11,21 +11,21 @@
  * (2 + 0) base 10
  * 2 base 10
  *
- * @param  string  $binaryNumber
+ * @param string $binaryNumber
  * @return int
- * @throws \Exception
+ * @throws Exception
  */
-function binaryToDecimal($binaryNumber)
+function binaryToDecimal(string $binaryNumber)
 {
     if (!is_numeric($binaryNumber)) {
-        throw new \Exception('Please pass a valid Binary Number for Converting it to a Decimal Number.');
+        throw new RuntimeException('Please pass a valid Binary Number for Converting it to a Decimal Number.');
     }
 
     $decimalNumber = 0;
     $binaryDigits  = array_reverse(str_split($binaryNumber));
 
     foreach ($binaryDigits as $index => $digit) {
-        $decimalNumber += $digit * pow(2, $index);
+        $decimalNumber += $digit * (2 ** $index);
     }
 
     return $decimalNumber;

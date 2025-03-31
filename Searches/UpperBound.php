@@ -17,7 +17,7 @@ require_once __DIR__ . '/../Utils/ArrayHelpers.php';
  *
  * @return int the index of upper bound of the given element
  */
-function upperBound(array $arr, int $elem)
+function upperBound(array $arr, int $elem): int
 {
     isSortedAscendingInts($arr);
     $hi = count($arr);

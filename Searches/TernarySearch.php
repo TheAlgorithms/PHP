@@ -32,13 +32,15 @@ function ternarySearchByRecursion($arr, $key, $low, $high)
     if ($key < $arr[$mid1]) {
         // Key is in the left section, between $low and $mid1.
         return ternarySearchByRecursion($arr, $key, $low, $mid1 - 1);
-    } elseif ($key > $arr[$mid2]) {
+    }
+
+    if ($key > $arr[$mid2]) {
         // Key is in the right section, between $mid2 and $high.
         return ternarySearchByRecursion($arr, $key, $mid2 + 1, $high);
-    } else {
-        // Key is in the middle section, between $mid1 and $mid2.
-        return ternarySearchByRecursion($arr, $key, $mid1 + 1, $mid2 - 1);
     }
+
+    // Key is in the middle section, between $mid1 and $mid2.
+    return ternarySearchByRecursion($arr, $key, $mid1 + 1, $mid2 - 1);
 }
 
 function ternarySearchIterative($arr, $key)

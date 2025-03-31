@@ -7,7 +7,7 @@
  * @param array $input array of random numbers
  * @return array sorted array of numbers
  */
-function quickSort(array $input)
+function quickSort(array $input): array
 {
     // Return nothing if input is empty
     if (empty($input)) {

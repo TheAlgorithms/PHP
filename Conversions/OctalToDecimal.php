@@ -10,21 +10,21 @@
  * (1 * (8 ^ 1) + 0 * (8 ^ 0)) base 10
  * (8 + 0) base 10
  * 9 base 10
- * @param  string  $octalNumber
+ * @param string $octalNumber
  * @return int
- * @throws \Exception
+ * @throws Exception
  */
-function octalToDecimal($octalNumber)
+function octalToDecimal(string $octalNumber)
 {
     if (!is_numeric($octalNumber)) {
-        throw new \Exception('Please pass a valid Octal Number for Converting it to a Decimal Number.');
+        throw new RuntimeException('Please pass a valid Octal Number for Converting it to a Decimal Number.');
     }
 
     $decimalNumber = 0;
     $octalDigits   = array_reverse(str_split($octalNumber));
 
     foreach ($octalDigits as $index => $digit) {
-        $decimalNumber += $digit * pow(8, $index);
+        $decimalNumber += $digit * (8 ** $index);
     }
 
     return $decimalNumber;
@@ -35,14 +35,14 @@ function octalToDecimal($octalNumber)
  * submitted Decimal Number to
  * Octal Number.
  *
- * @param  string  $decimalNumber
+ * @param string $decimalNumber
  * @return string
- * @throws \Exception
+ * @throws Exception
  */
-function decimalToOctal($decimalNumber)
+function decimalToOctal(string $decimalNumber): string
 {
     if (!is_numeric($decimalNumber)) {
-        throw new \Exception('Please pass a valid Decimal Number for Converting it to an Octal Number.');
+        throw new RuntimeException('Please pass a valid Decimal Number for Converting it to an Octal Number.');
     }
 
     $octalNumber = '';

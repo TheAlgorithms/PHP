@@ -8,13 +8,13 @@
  * @param Integer $number An integer input
  * @return boolean whether the number is prime or not
  */
-function isPrime(int $number)
+function isPrime(int $number): bool
 {
     if ($number === 2) {
         return true;
     }
 
-    if ($number % 2 === 0 or $number < 2) {
+    if ($number % 2 === 0 || $number < 2) {
         return false;
     }
 

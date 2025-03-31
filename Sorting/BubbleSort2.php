@@ -8,7 +8,7 @@
  * @param array $input array of random numbers
  * @return array sorted array of numbers
  */
-function bubbleSort2(array $input)
+function bubbleSort2(array $input): array
 {
     // Return nothing if input is empty
     if (!isset($input)) {
@@ -20,7 +20,7 @@ function bubbleSort2(array $input)
 
         for ($i = 0, $count = sizeof($input) - 1; $i < $count; $i++) {
             if ($input[$i + 1] < $input[$i]) {
-                list($input[$i + 1], $input[$i]) = [$input[$i], $input[$i + 1]];
+                [$input[$i + 1], $input[$i]] = [$input[$i], $input[$i + 1]];
                 $swapped = true;
             }
         }

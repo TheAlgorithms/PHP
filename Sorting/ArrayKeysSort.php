@@ -19,26 +19,26 @@ class ArrayKeysSort
     {
         if (!empty($collection) && !empty($keys)) {
             try {
-                usort($collection, function ($a, $b) use ($keys, $order, $isCaseSensitive) {
+                usort($collection, static function ($a, $b) use ($keys, $order, $isCaseSensitive) {
 
                         $pos = 0;
                     do {
                             $key = $keys[$pos];
                         if (is_array($a)) {
-                            if (!isset($a[$key]) || !isset($b[$key])) {
+                            if (!isset($a[$key], $b[$key])) {
                                 $errorMsg = 'The key "' . $key
                                         . '" does not exist in the collection';
-                                throw new Exception($errorMsg);
+                                throw new RuntimeException($errorMsg);
                             }
                             $item1 = !$isCaseSensitive
                             ? strtolower($a[$key]) : $a[$key];
                             $item2 = !$isCaseSensitive
                             ? strtolower($b[$key]) : $b[$key];
                         } else {
-                            if (!isset($a->$key) || !isset($b->$key)) {
+                            if (!isset($a->$key, $b->$key)) {
                                 $errorMsg = 'The key "' . $key
                                         . '" does not exist in the collection';
-                                throw new Exception($errorMsg);
+                                throw new RuntimeException($errorMsg);
                             }
                             $item1 = !$isCaseSensitive
                             ? strtolower($a->$key) : $a->$key;
@@ -48,11 +48,13 @@ class ArrayKeysSort
                     } while ($item1 === $item2 && !empty($keys[++$pos]));
                     if ($item1 === $item2) {
                         return 0;
-                    } elseif ($order === self::ORDER_ASC) {
-                        return ($item1 < $item2) ? -1 : 1;
-                    } else {
-                        return ($item1 > $item2) ? -1 : 1;
                     }
+
+                    if ($order === self::ORDER_ASC) {
+                        return ($item1 < $item2) ? -1 : 1;
+                    }
+
+                    return ($item1 > $item2) ? -1 : 1;
                 });
             } catch (Exception $e) {
                 echo $e->getMessage();

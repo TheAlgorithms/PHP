@@ -10,19 +10,19 @@
  */
 
 /**
- * @param  Array  $arr
- * @param  int  $value
- * @param  int  $floor
- * @param  int  $ceiling
+ * @param Array $array
+ * @param int $value
+ * @param int $floor
+ * @param int $ceiling
  * @return int
  **/
-function binarySearch($arr, $value, $floor, $ceiling)
+function binarySearch(array $array, int $value, int $floor, int $ceiling): int
 {
     // Get $middle index
     $mid = floor(($floor + $ceiling) / 2);
 
     // Return position if $value is at the $mid position
-    if ($arr[$mid] === $value) {
+    if ($array[$mid] === $value) {
         return (int) $mid;
     }
 
@@ -33,34 +33,35 @@ function binarySearch($arr, $value, $floor, $ceiling)
 
     // search the left part of the $array
     // If the $middle element is greater than the $value
-    if ($arr[$mid] > $value) {
-        return binarySearch($arr, $value, $floor, $mid - 1);
-    } else {     // search the right part of the $array If the $middle element is lower than the $value
-        return binarySearch($arr, $value, $mid + 1, $ceiling);
+    if ($array[$mid] > $value) {
+        return binarySearch($array, $value, $floor, $mid - 1);
     }
+
+    // search the right part of the $array If the $middle element is lower than the $value
+    return binarySearch($array, $value, $mid + 1, $ceiling);
 }
 
 /**
- * @param  Array  $arr
- * @param  int  $value
+ * @param Array $array
+ * @param int $value
  * @return int
  */
-function exponentialSearch($arr, $value)
+function exponentialSearch(array $array, int $value): int
 {
     // If $value is the first element of the $array return this position
-    if ($arr[0] === $value) {
+    if ($array[0] === $value) {
         return 0;
     }
 
     // Find range for binary search
     $i = 1;
-    $length = count($arr);
-    while ($i < $length && $arr[$i] <= $value) {
-        $i = $i * 2;
+    $length = count($array);
+    while ($i < $length && $array[$i] <= $value) {
+        $i *= 2;
     }
     $floor = $i / 2;
     $ceiling = min($i, $length);
 
     // Call binary search for the range found above
-    return binarySearch($arr, $value, $floor, $ceiling);
+    return binarySearch($array, $value, $floor, $ceiling);
 }

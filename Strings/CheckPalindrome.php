@@ -7,7 +7,7 @@
  * @param bool $caseInsensitive
  * @return bool
  */
-function isPalindrome(string $string, bool $caseInsensitive = true)
+function isPalindrome(string $string, bool $caseInsensitive = true): bool
 {
     $string = trim($string); // Removing leading and trailing spaces
 
@@ -20,9 +20,10 @@ function isPalindrome(string $string, bool $caseInsensitive = true)
     }
 
     $characters = str_split($string);
+    $characterCount = count($characters);
 
-    for ($i = 0; $i < count($characters); $i++) {
-        if ($characters[$i] !== $characters[count($characters) - ($i + 1)]) {
+    foreach ($characters as $i => $character) {
+        if ($character !== $characters[$characterCount - ($i + 1)]) {
             return false;
         }
     }

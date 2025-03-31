@@ -1,6 +1,6 @@
 <?php
 
-function isNumberNeon($input)
+function isNumberNeon($input): bool
 {
     $inputSquare = $input * $input;
     $inputArr = array_map('intval', str_split($inputSquare));
@@ -8,5 +8,5 @@ function isNumberNeon($input)
     foreach ($inputArr as $digit) {
         $sumOfSquareDigits += $digit;
     }
-    return $sumOfSquareDigits == $input;
+    return $sumOfSquareDigits === $input;
 }

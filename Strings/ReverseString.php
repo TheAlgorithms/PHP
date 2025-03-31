@@ -6,7 +6,7 @@
  * @param string $string
  * @return string
  */
-function reverseString(string $string)
+function reverseString(string $string): string
 {
     $string = trim($string); // Removing leading and trailing spaces
 

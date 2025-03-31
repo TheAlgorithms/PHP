@@ -6,20 +6,20 @@
  * the different numbers
  * provided
  *
- * @param  decimal  $numbers  A variable sized number input
- * @return decimal $absoluteMax Absolute max value
- * @throws \Exception
+ * @param array $numbers  A variable sized number input
+ * @return int $absoluteMax Absolute max value
+ * @throws Exception
  */
-function absolute_max(...$numbers)
+function absolute_max(...$numbers): int
 {
     if (empty($numbers)) {
-        throw new \Exception('Please pass values to find absolute max value');
+        throw new RuntimeException('Please pass values to find absolute max value');
     }
 
     $absoluteMax = $numbers[0];
-    for ($loopIndex = 0; $loopIndex < count($numbers); $loopIndex++) {
-        if ($numbers[$loopIndex] > $absoluteMax) {
-            $absoluteMax = $numbers[$loopIndex];
+    foreach ($numbers as $number) {
+        if ($number > $absoluteMax) {
+            $absoluteMax = $number;
         }
     }
 

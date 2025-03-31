@@ -5,15 +5,12 @@
  * @param String $s
  * @return Integer
  */
-function countHomogenous($s)
+function countHomogenous(string $s): int
 {
-    // Initialize the count of homogeneous substrings
-    $count = 0;
-
     // Length of the string
     $length = strlen($s);
 
-    if ($length == 0) {
+    if ($length === 0) {
         return 0; // If the string is empty, return 0
     }
 
@@ -23,7 +20,7 @@ function countHomogenous($s)
     // Loop through each character in the string, starting from the second character
     for ($i = 1; $i < $length; $i++) {
         // Check if current character is not the same as the previous one
-        if ($s[$i] != $s[$i - 1]) {
+        if ($s[$i] !== $s[$i - 1]) {
             $count++; // A new substring starts, increment the count
         }
     }

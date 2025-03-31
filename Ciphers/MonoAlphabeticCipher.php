@@ -8,15 +8,16 @@ function monoAlphabeticCipher($key, $alphabet, $text)
     $cipherText = ''; // the cipher text (can be decrypted and encrypted)
 
     // check if the text length matches
-    if (strlen($key) != strlen($alphabet)) {
+    if (strlen($key) !== strlen($alphabet)) {
         return false;
     }
 
     $text = preg_replace('/[0-9]+/', '', $text); // remove all the numbers
+    $textLength = strlen($text);
 
-    for ($i = 0; $i < strlen($text); $i++) {
+    for ($i = 0; $i < $textLength; $i++) {
         $index = strripos($alphabet, $text[$i]);
-        if ($text[$i] == " ") {
+        if ($text[$i] === " ") {
             $cipherText .= " ";
         } else {
             $cipherText .= ( ctype_upper($text[$i]) ? strtoupper($key[$index]) : $key[$index] );

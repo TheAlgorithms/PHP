@@ -7,13 +7,13 @@
 *
 * @author Marco https://github.com/MaarcooC
 * @param float $celsius
-* @throws \Exception
+* @throws Exception
 * @return float
 */
-function CelsiusToFahrenheit($celsius)
+function CelsiusToFahrenheit($celsius): float
 {
     if (!is_numeric($celsius)) {
-        throw new \Exception("Temperature (Celsius) must be a number");
+        throw new RuntimeException("Temperature (Celsius) must be a number");
     }
 
     return round(($celsius * 9 / 5) + 32, 1);
@@ -26,13 +26,13 @@ function CelsiusToFahrenheit($celsius)
 *
 * @author Marco https://github.com/MaarcooC
 * @param float $fahrenheit
-* @throws \Exception
+* @throws Exception
 * @return float
 */
-function FahrenheitToCelsius($fahrenheit)
+function FahrenheitToCelsius(float $fahrenheit): float
 {
     if (!is_numeric($fahrenheit)) {
-        throw new \Exception("Temperature (Fahrenheit) must be a number");
+        throw new RuntimeException("Temperature (Fahrenheit) must be a number");
     }
 
     return round(($fahrenheit - 32) * 5 / 9, 1);
@@ -45,13 +45,13 @@ function FahrenheitToCelsius($fahrenheit)
 *
 * @author Marco https://github.com/MaarcooC
 * @param float $celsius
-* @throws \Exception
+* @throws Exception
 * @return float
 */
-function CelsiusToKelvin($celsius)
+function CelsiusToKelvin(float $celsius): float
 {
     if (!is_numeric($celsius)) {
-        throw new \Exception("Temperature (Celsius) must be a number");
+        throw new RuntimeException("Temperature (Celsius) must be a number");
     }
 
     return round(($celsius + 273.15), 2);
@@ -64,13 +64,13 @@ function CelsiusToKelvin($celsius)
 *
 * @author Marco https://github.com/MaarcooC
 * @param float $kelvin
-* @throws \Exception
+* @throws Exception
 * @return float
 */
-function KelvinToCelsius($kelvin)
+function KelvinToCelsius(float $kelvin): float
 {
     if (!is_numeric($kelvin)) {
-        throw new \Exception("Temperature (Kelvin) must be a number");
+        throw new RuntimeException("Temperature (Kelvin) must be a number");
     }
 
     return round(($kelvin - 273.15), 2);
@@ -83,13 +83,13 @@ function KelvinToCelsius($kelvin)
 *
 * @author Marco https://github.com/MaarcooC
 * @param float $kelvin
-* @throws \Exception
+* @throws Exception
 * @return float
 */
-function KelvinToFahrenheit($kelvin)
+function KelvinToFahrenheit(float $kelvin): float
 {
     if (!is_numeric($kelvin)) {
-        throw new \Exception("Temperature (Kelvin) must be a number");
+        throw new RuntimeException("Temperature (Kelvin) must be a number");
     }
 
     return round(($kelvin - 273.15) * 1.8 + 32, 2);
@@ -102,13 +102,13 @@ function KelvinToFahrenheit($kelvin)
 *
 * @author Marco https://github.com/MaarcooC
 * @param float $fahrenheit
-* @throws \Exception
+* @throws Exception
 * @return float
 */
-function FahrenheitToKelvin($fahrenheit)
+function FahrenheitToKelvin(float $fahrenheit): float
 {
     if (!is_numeric($fahrenheit)) {
-        throw new \Exception("Temperature (Fahrenheit) must be a number");
+        throw new RuntimeException("Temperature (Fahrenheit) must be a number");
     }
 
     return round(($fahrenheit - 32) * 5 / 9 + 273.15, 2);

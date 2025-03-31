@@ -6,7 +6,7 @@
  * @param array $arr
  * @return array
  */
-function mergeSort(array $arr)
+function mergeSort(array $arr): array
 {
     if (count($arr) <= 1) {
         return $arr;
@@ -24,7 +24,7 @@ function mergeSort(array $arr)
  * @param array $rightArray
  * @return array
  */
-function merge(array $leftArray, array $rightArray)
+function merge(array $leftArray, array $rightArray): array
 {
     $result = [];
     $i = 0;

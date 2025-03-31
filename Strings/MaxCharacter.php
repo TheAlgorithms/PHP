@@ -6,13 +6,13 @@
  *
  * @param  string  $string
  * @return string
- * @throws \Exception
+ * @throws Exception
  */
 function maxCharacter(string $string): string
 {
     // Throw an exception if the string is empty.
     if (empty($string)) {
-        throw new \Exception('Please pass a non-empty string value.');
+        throw new RuntimeException('Please pass a non-empty string value.');
     }
 
     // Initialize an associative array to hold character counts.

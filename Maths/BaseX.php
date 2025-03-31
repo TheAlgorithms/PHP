@@ -12,7 +12,7 @@
  * @author Sevada797 https://github.com/sevada797
 
  */
-function baseX($k, $x)
+function baseX($k, $x): string
 {
     $arr = [];
 
@@ -20,7 +20,7 @@ function baseX($k, $x)
         $arr[] = $k % $x;
         $k = ($k - ($k % $x)) / $x;
 
-        if ($k == 0) {
+        if ($k === 0) {
             break;
         }
     }

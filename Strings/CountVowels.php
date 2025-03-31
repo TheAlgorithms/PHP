@@ -7,13 +7,13 @@
  *
  * @param  string  $string
  * @return int   $numberOfVowels
- * @throws \Exception
+ * @throws Exception
  */
 function countVowelsSimple(string $string): int
 {
     // Check for an empty string and throw an exception if so.
     if (empty($string)) {
-        throw new \Exception('Please pass a non-empty string value.');
+        throw new RuntimeException('Please pass a non-empty string value.');
     }
 
     // Initialize variables.
@@ -28,7 +28,7 @@ function countVowelsSimple(string $string): int
 
     // Loop through each character to count the vowels.
     foreach ($characters as $character) {
-        if (in_array($character, $vowels)) {
+        if (in_array($character, $vowels, true)) {
             $numberOfVowels++;
         }
     }
@@ -43,12 +43,12 @@ function countVowelsSimple(string $string): int
  *
  * @param  string  $string
  * @return int
- * @throws \Exception
+ * @throws Exception
  */
-function countVowelsRegex(string $string)
+function countVowelsRegex(string $string): int
 {
     if (empty($string)) {
-        throw new \Exception('Please pass a non-empty string value');
+        throw new RuntimeException('Please pass a non-empty string value');
     }
 
     $string = strtolower($string); // For case-insensitive checking

@@ -12,11 +12,11 @@
  * https://the-algorithms.com/algorithm/depth-first-search?lang=python
  *
  * @author Andre Alves https://github.com/andremralves
- * @param array $adjList An array representing the grapth as an Adjacent List
+ * @param array $adjList An array representing the graph as an Adjacent List
  * @param int|string $start The starting vertex
  * @return array The visited vertices
  */
-function dfs($adjList, $start)
+function dfs(array $adjList, $start): array
 {
     $visited = [];
     $stack = [$start];

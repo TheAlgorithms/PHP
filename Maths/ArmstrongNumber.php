@@ -13,9 +13,5 @@ function isNumberArmstrong(int $input): bool
     foreach ($arr as $num) {
         $sumOfCubes += $num * $num * $num;
     }
-    if ($sumOfCubes == $input) {
-        return true;
-    } else {
-        return false;
-    }
+    return $sumOfCubes === $input;
 }

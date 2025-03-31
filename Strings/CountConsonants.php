@@ -6,23 +6,23 @@
  *
  * @param  string  $string
  * @return int
- * @throws \Exception
+ * @throws Exception
  */
 function countConsonants(string $string): int
 {
     if (empty($string)) {
-        throw new \Exception('Please pass a non-empty string value');
+        throw new RuntimeException('Please pass a non-empty string value');
     }
 
-    $vowels     = ['a', 'e', 'i', 'o', 'u']; // Vowels Set
-    $string     = strtolower($string); // For case-insensitive checking
+    $vowels = ['a', 'e', 'i', 'o', 'u']; // Vowels Set
+    $string = strtolower($string); // For case-insensitive checking
 
     $consonantCount = 0;
 
-    for ($i = 0; $i < strlen($string); $i++) {
+    $stringLength = strlen($string);
+    for ($i = 0; $i < $stringLength; $i++) {
         if (
-            !in_array($string[$i], $vowels) &&
-            $string[$i] >= 'a' && $string[$i] <= 'z'
+            $string[$i] >= 'a' && $string[$i] <= 'z' && !in_array($string[$i], $vowels, true)
         ) {
             $consonantCount++;
         }

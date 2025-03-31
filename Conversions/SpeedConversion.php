@@ -18,9 +18,9 @@
  * @param  string  $unitFrom
  * @param  string  $unitTo
  * @return float
- * @throws \Exception
+ * @throws Exception
  */
-function convertSpeed(float $speed, string $unitFrom, string $unitTo)
+function convertSpeed(float $speed, string $unitFrom, string $unitTo): float
 {
     $speedUnitsFrom = [
         'mph' => 1.609344,
@@ -39,10 +39,10 @@ function convertSpeed(float $speed, string $unitFrom, string $unitTo)
     $availableUnits = array_keys($speedUnitsFrom);
 
     if (!is_numeric($speed)) {
-        throw new \Exception("Please pass a valid speed number for converting it from one unit to another.");
+        throw new RuntimeException("Please pass a valid speed number for converting it from one unit to another.");
     }
-    if (!in_array($unitFrom, $availableUnits) || !in_array($unitTo, $availableUnits)) {
-        throw new \Exception("Please pass a valid speed unit.\n\nAvailable units: " . implode(', ', $availableUnits));
+    if (!in_array($unitFrom, $availableUnits, true) || !in_array($unitTo, $availableUnits, true)) {
+        throw new RuntimeException("Please pass a valid speed unit.\n\nAvailable units: " . implode(', ', $availableUnits));
     }
 
     return round($speed * $speedUnitsFrom[$unitFrom] * $speedUnitsTo[$unitTo], 2);

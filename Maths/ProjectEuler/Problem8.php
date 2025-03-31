@@ -35,7 +35,7 @@
  */
 function problem8(): int
 {
-    $theNumber = "73167176531330624919225119674426574742355349194934" .
+    $number = "73167176531330624919225119674426574742355349194934" .
         "96983520312774506326239578318016984801869478851843" .
         "85861560789112949495459501737958331952853208805511" .
         "12540698747158523863050715693290963295227443043557" .
@@ -58,15 +58,16 @@ function problem8(): int
     $greatestProduct = 0;
     $substringSize = 13;
 
-    for ($i = 0; $i < strlen($theNumber) - $substringSize; $i++) {
-        $currentSubstring = substr($theNumber, $i, $substringSize);
+    for ($i = 0; $i < strlen($number) - $substringSize; $i++) {
+        $currentSubstring = substr($number, $i, $substringSize);
         $currentProduct = 0;
 
-        for ($j = 0; $j < strlen($currentSubstring); $j++) {
-            $currentProduct = ($currentProduct == 0 ? (int)$currentSubstring[$j] : $currentProduct * (int)$currentSubstring[$j]);
+        for ($j = 0; $j < $substringSize; $j++) {
+            $digit = (int)$currentSubstring[$j];
+            $currentProduct = ($currentProduct === 0 ? $digit : $currentProduct * $digit);
         }
 
-        $greatestProduct = ($greatestProduct < $currentProduct ? $currentProduct : $greatestProduct);
+        $greatestProduct = max($greatestProduct, $currentProduct);
     }
 
     return $greatestProduct;

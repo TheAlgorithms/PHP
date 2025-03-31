@@ -13,19 +13,19 @@
  */
 function problem10(): int
 {
-    //Using Sieve of Erastothenes
-    //@see https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+    // Using Sieve of Eratosthenes
+    // @see https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 
-    $n = 2000000;
+    $number = 2000000;
     $isPrime = [];
 
-    for ($i = 2; $i <= $n; $i++) {
+    for ($i = 2; $i <= $number; $i++) {
         $isPrime[$i] = $i;
     }
 
-    for ($i = 2; $i * $i <= $n; $i++) {
+    for ($i = 2; $i * $i <= $number; $i++) {
         if (isset($isPrime[$i])) {
-            for ($j = $i; $i * $j <= $n; $j++) {
+            for ($j = $i; $i * $j <= $number; $j++) {
                 unset($isPrime[$i * $j]);
             }
         }

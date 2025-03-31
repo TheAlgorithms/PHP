@@ -14,7 +14,7 @@ For two-dimensional input data, if there is a line, whose equation is $$w_1x_1 +
 that separates all samples of one class from the other class, then the corresponding observation can be derived from the equation of the separating line.
 Such classification problems are called "linearly separable", i.e. separating by linear combination.
 
-<img src="chart/linear-separated.png" />
+<img alt="Linear Separated" src="chart/linear-separated.png" />
 
 The input layer contains two nodes $x_1$ and $x_2$. Weight vector $W = \begin{bmatrix} w_1 & w_2\end{bmatrix}$ and bias ($b$) are the parameters to be updated during the model training.
 
@@ -28,7 +28,7 @@ Sigmoid activation function is defined as
 
 $$a = \sigma\left(z\right) = \frac{1}{1+e^{-z}}.\tag{2}$$
 
-<img src="chart/sigmoid.png" />
+<img alt="Sigmoid" src="chart/sigmoid.png" />
 
 Threshold value of $0.5$ can be used for predictions: $1$ (red) if  $a > 0.5$ and $0$ (blue) otherwise.
 
@@ -97,4 +97,4 @@ $$\hat{y} = \begin{cases} 1 & \mbox{if } a > 0.5 \\ 0 & \mbox{otherwise } \end{c
 
 As a dataset we will generate $m=50$ data points $(x_1, x_2)$, where $x_1, x_2 \in \{0,1\}$ and save them in the `NumPy` array `X` of a shape $(2 \times m)$. The labels ($0$: blue, $1$: red) will be calculated so that $y = 1$ if $x_1 = 1$ and $x_2 = 0$, in the rest of the cases $y=0$. The labels will be saved in the array `Y` of a shape $(1 \times m)$.
 
-<img src="chart/dataset.png" />
+<img alt="Cluster dataset" src="chart/dataset.png" />

@@ -1,7 +1,7 @@
 <?php
 
 /**
-This function returns true
+* This function returns true
 * if the submitted number is perfect,
 * false if it is not.
 *
@@ -15,25 +15,23 @@ This function returns true
 * @param int $number
 * @return bool
 */
-function perfect_number($number)
+function perfect_number(int $number): bool
 {
-    /*Input validation*/
-    if (!is_int($number) || $number <= 1) {
-        /*Return false for non-integer or non-positive numbers*/
+    if ($number <= 1) {
         return false;
     }
 
-    $divisorsSum = 1; /*1 is a common divisor for every number*/
+    $divisorsSum = 1;
 
-    /*Check for divisors up to the square root of the number*/
+    // Check for divisors up to the square root of the number
     for ($i = 2; $i * $i <= $number; $i++) {
-        if ($number % $i == 0) {
-            $divisorsSum += $i; /*add i to the sum of divisors*/
-            if ($i != $number / $i) { /*add the complement divisor*/
+        if ($number % $i === 0) {
+            $divisorsSum += $i; // add i to the sum of divisors
+            if ($i !== $number / $i) { // add the complement divisor
                 $divisorsSum += $number / $i;
             }
         }
     }
 
-    return $divisorsSum == $number;
+    return $divisorsSum === $number;
 }

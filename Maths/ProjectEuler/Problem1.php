@@ -39,10 +39,10 @@ function problem1b(): int
 {
     $maxNumber = 999; // below 1000
 
-    $numbersMultByThree = range(3, $maxNumber, 3);
-    $numbersMultByFive = range(5, $maxNumber, 5);
+    $multiplesOfThree = range(3, $maxNumber, 3);
+    $multiplesOfFive = range(5, $maxNumber, 5);
 
-    $numbers = array_merge($numbersMultByThree, $numbersMultByFive);
+    $numbers = array_merge($multiplesOfThree, $multiplesOfFive);
 
     return array_sum(array_unique($numbers));
 }

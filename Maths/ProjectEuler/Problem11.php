@@ -94,52 +94,52 @@ function problem11()
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54 
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48";
 
-    //Transform the grid string to a matrix data type (nested arrays)
+    // Transform the grid string to a matrix data type (nested arrays)
     $grid = explode(' ', $grid);
-    $grid_matrix = [];
+    $gridMatrix = [];
     $row = [];
     $i = 0;
-    $matrix_size = 20;
+    $matrixSize = 20;
 
-    //Convert string $grid to a matrix
+    // Convert string $grid to a matrix
     foreach ($grid as $g) {
         $i++;
         $row[] = (int)trim($g);
 
-        if ($i == $matrix_size) {
-            $grid_matrix[] = $row;
+        if ($i === $matrixSize) {
+            $gridMatrix[] = $row;
             $row = [];
             $i = 0;
         }
     }
     $maxProduct = 0;
 
-    for ($row = 0; $row < $matrix_size; $row++) {
-        for ($column = 0; $column < $matrix_size; $column++) {
+    for ($row = 0; $row < $matrixSize; $row++) {
+        for ($column = 0; $column < $matrixSize; $column++) {
             // horizontal
-            if ($column < $matrix_size - 3) {
-                $product = horizontalProduct($grid_matrix, $row, $column);
+            if ($column < $matrixSize - 3) {
+                $product = horizontalProduct($gridMatrix, $row, $column);
                 if ($product > $maxProduct) {
                     $maxProduct = $product;
                 }
             }
             // vertical
-            if ($row < $matrix_size - 3) {
-                $product = verticalProduct($grid_matrix, $row, $column);
+            if ($row < $matrixSize - 3) {
+                $product = verticalProduct($gridMatrix, $row, $column);
                 if ($product > $maxProduct) {
                     $maxProduct = $product;
                 }
             }
             // diagonal right
-            if ($column < $matrix_size - 3 && $row < $matrix_size - 3) {
-                $product = diagonalRightProduct($grid_matrix, $row, $column);
+            if ($column < $matrixSize - 3 && $row < $matrixSize - 3) {
+                $product = diagonalRightProduct($gridMatrix, $row, $column);
                 if ($product > $maxProduct) {
                     $maxProduct = $product;
                 }
             }
             // diagonal left
-            if ($column > 2 && $row < $matrix_size - 3) {
-                $product = diagonalLeftProduct($grid_matrix, $row, $column);
+            if ($column > 2 && $row < $matrixSize - 3) {
+                $product = diagonalLeftProduct($gridMatrix, $row, $column);
                 if ($product > $maxProduct) {
                     $maxProduct = $product;
                 }

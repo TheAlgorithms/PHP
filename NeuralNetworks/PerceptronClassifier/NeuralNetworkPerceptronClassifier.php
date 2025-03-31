@@ -72,10 +72,7 @@ class NeuralNetworkPerceptronClassifier
         }
 
         // Compute Y: Logical AND condition (X[0] == 1 and X[1] == 0)
-        $Y = [];
-        for ($j = 0; $j < $m; $j++) {
-            $Y[$j] = ($X[0][$j] == 1 && $X[1][$j] == 0) ? 1 : 0;
-        }
+        $Y = array_fill(0, $m, ($X[0][$j] === 1 && $X[1][$j] === 0) ? 1 : 0);
 
         return [$X, $Y];
     }

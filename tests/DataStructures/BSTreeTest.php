@@ -30,7 +30,7 @@ class BSTreeTest extends TestCase
         $this->tree = new BSTree();
     }
 
-    public function testTreeInitialization()
+    public function testTreeInitialization(): void
     {
         $this->assertNull($this->tree->getRoot(), "Tree root should be null upon initialization.");
         $this->assertEquals(0, $this->tree->size(), "Tree size should be 0 upon initialization.");
@@ -70,7 +70,7 @@ class BSTreeTest extends TestCase
      * Test: Insert multiple nodes from array and validate structure
      *
      */
-    public function testInsertMultipleNodesFromArray()
+    public function testInsertMultipleNodesFromArray(): void
     {
         $arrayData = [200 => "Value 200", 150 => "Value 150", 170 => "Value 170",
             250 => "Value 250", 300 => "Value 300", 360 => "Value 360", 230 => "Value 230",
@@ -101,7 +101,7 @@ class BSTreeTest extends TestCase
     /**
      * Checks the empty state of the tree before and after insertions.
      */
-    public function testIsEmpty()
+    public function testIsEmpty(): void
     {
         $this->assertTrue($this->tree->isEmpty(), "Tree should be empty.");
         $this->tree->insert(120, "Value 120");

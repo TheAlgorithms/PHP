@@ -9,7 +9,7 @@ require_once __DIR__ . '/../../Sorting/ShellSort.php';
 
 class ShellSortTest extends TestCase
 {
-    public function testShellSort()
+    public function testShellSort(): void
     {
         $array = [
             51158, 1856, 8459, 67957, 59748, 58213, 90876, 39621, 66570, 64204, 79935, 27892, 47615, 94706, 34201,
@@ -60,14 +60,14 @@ class ShellSortTest extends TestCase
         ], $sorted);
     }
 
-    public function testShellSortWithEmptyInput()
+    public function testShellSortWithEmptyInput(): void
     {
         $array = [];
         $sorted = shellSort($array);
         $this->assertEmpty($sorted);
     }
 
-    public function testShellSortPerformance()
+    public function testShellSortPerformance(): void
     {
         $array = range(1, 10000);
         $n = count($array);

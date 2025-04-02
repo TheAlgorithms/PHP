@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 
 class CompareBinaryTreeTest extends TestCase
 {
-    public function testBinaryTreesAreEqualWhenAreEqualInReality()
+    public function testBinaryTreesAreEqualWhenAreEqualInReality(): void
     {
         $tree1 = new BinaryTreeNode(
             'A',
@@ -41,7 +41,7 @@ class CompareBinaryTreeTest extends TestCase
         $this->assertTrue($sut->areTreesEqual($tree1, $tree2));
     }
 
-    public function testBinaryTreesAreNotEqualWhenAreNotEqualInReality()
+    public function testBinaryTreesAreNotEqualWhenAreNotEqualInReality(): void
     {
 
         $tree1 = new BinaryTreeNode(

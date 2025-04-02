@@ -7,7 +7,7 @@ require_once __DIR__ . '/../../Ciphers/AtbashCipher.php';
 
 class AtbashCipherTest extends TestCase
 {
-    public function testEncryptionAndDecryption()
+    public function testEncryptionAndDecryption(): void
     {
         $plainText = "HELLO";
         $encryptedText = atbash_encrypt($plainText);
@@ -15,7 +15,7 @@ class AtbashCipherTest extends TestCase
         $this->assertEquals($plainText, $decryptedText);
     }
 
-    public function testWithNonAlphabetCharacters()
+    public function testWithNonAlphabetCharacters(): void
     {
         $plainText = "HELLO, WORLD!";
         $encryptedText = atbash_encrypt($plainText);

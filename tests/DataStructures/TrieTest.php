@@ -30,7 +30,7 @@ class TrieTest extends TestCase
     /**
      * Test insertion and search functionality of the Trie.
     */
-    public function testInsertAndSearch()
+    public function testInsertAndSearch(): void
     {
         $this->trie->insert('the');
         $this->trie->insert('universe');
@@ -50,7 +50,7 @@ class TrieTest extends TestCase
     /**
      * Test insertion and search functionality with mixed case words.
      */
-    public function testInsertAndSearchMixedCase()
+    public function testInsertAndSearchMixedCase(): void
     {
         $this->trie->insert('Apple');
         $this->trie->insert('aPPle');
@@ -61,7 +61,7 @@ class TrieTest extends TestCase
     /**
      * Test insertion and search functionality with special characters.
      */
-    public function testInsertAndSearchWithSpecialCharacters()
+    public function testInsertAndSearchWithSpecialCharacters(): void
     {
         $this->trie->insert('hello123');
         $this->trie->insert('user@domain.com');
@@ -79,7 +79,7 @@ class TrieTest extends TestCase
     /**
      * Test insertion and search functionality with long strings.
      */
-    public function testInsertAndSearchLongStrings()
+    public function testInsertAndSearchLongStrings(): void
     {
         $longString = str_repeat('a', 1000);
         $this->trie->insert($longString);
@@ -89,7 +89,7 @@ class TrieTest extends TestCase
     /**
      * Test the startsWith functionality of the Trie.
      */
-    public function testStartsWith()
+    public function testStartsWith(): void
     {
         $this->trie->insert('hello');
         $this->assertEquals(['hello'], $this->trie->startsWith('he'), 'Expected words starting with "he" to be found.');
@@ -108,7 +108,7 @@ class TrieTest extends TestCase
     /**
      * Test startsWith functionality with mixed case prefixes.
      */
-    public function testStartsWithMixedCase()
+    public function testStartsWithMixedCase(): void
     {
         $this->trie->insert('PrefixMatch');
         $this->trie->insert('PreFixTesting');
@@ -128,7 +128,7 @@ class TrieTest extends TestCase
     /**
      * Test deletion of existing words from the Trie.
      */
-    public function testDelete()
+    public function testDelete(): void
     {
         $this->trie->insert('the');
         $this->trie->insert('universe');
@@ -152,7 +152,7 @@ class TrieTest extends TestCase
     /**
      * Test deletion of mixed case words from the Trie.
      */
-    public function testDeleteMixedCase()
+    public function testDeleteMixedCase(): void
     {
         $this->trie->insert('MixedCase');
         $this->assertTrue($this->trie->search('mixedcase'), 'Expected "mixedcase" to be found before deletion.');
@@ -167,7 +167,7 @@ class TrieTest extends TestCase
     /**
      * Test deletion of words with special characters.
      */
-    public function testDeleteWithSpecialCharacters()
+    public function testDeleteWithSpecialCharacters(): void
     {
         $this->trie->insert('spec!@l#chars');
         $this->assertTrue(
@@ -185,7 +185,7 @@ class TrieTest extends TestCase
     /**
      * Test deletion of a non-existent word from the Trie.
      */
-    public function testDeleteNonExistentWord()
+    public function testDeleteNonExistentWord(): void
     {
         $this->trie->delete('nonexistent');
         $this->assertFalse($this->trie->search('nonexistent'), 'Expected "nonexistent" to not be found.');
@@ -194,7 +194,7 @@ class TrieTest extends TestCase
     /**
      * Test traversal of the Trie and retrieval of words.
      */
-    public function testTraverseTrieNode()
+    public function testTraverseTrieNode(): void
     {
         $this->trie->insert('hello');
         $this->trie->insert('helium');
@@ -210,7 +210,7 @@ class TrieTest extends TestCase
     /**
      * Test behavior of an empty Trie.
      */
-    public function testEmptyTrie()
+    public function testEmptyTrie(): void
     {
         $this->assertEquals([], $this->trie->getWords(), 'Expected an empty Trie to return an empty array.');
     }
@@ -218,7 +218,7 @@ class TrieTest extends TestCase
     /**
      * Test retrieval of words from the Trie.
      */
-    public function testGetWords()
+    public function testGetWords(): void
     {
         $this->trie->insert('apple');
         $this->trie->insert('app');
@@ -234,7 +234,7 @@ class TrieTest extends TestCase
     /**
      * Test insertion of an empty string into the Trie.
      */
-    public function testInsertEmptyString()
+    public function testInsertEmptyString(): void
     {
         $this->trie->insert('');
         $this->assertTrue($this->trie->search(''), 'Expected empty string to be found in the Trie.');
@@ -243,7 +243,7 @@ class TrieTest extends TestCase
     /**
      * Test deletion of an empty string from the Trie.
      */
-    public function testDeleteEmptyString()
+    public function testDeleteEmptyString(): void
     {
         $this->trie->insert('');
         $this->trie->delete('');
@@ -253,7 +253,7 @@ class TrieTest extends TestCase
     /**
      * Test the startsWith functionality with a common prefix.
      */
-    public function testStartsWithWithCommonPrefix()
+    public function testStartsWithWithCommonPrefix(): void
     {
         $this->trie->insert('trie');
         $this->trie->insert('tried');
@@ -269,7 +269,7 @@ class TrieTest extends TestCase
     /**
      * Test retrieval of the root node of the Trie.
      */
-    public function testGetRoot()
+    public function testGetRoot(): void
     {
         $root = $this->trie->getRoot();
         $this->assertInstanceOf(TrieNode::class, $root, 'Expected root to be an instance of TrieNode.');
@@ -280,7 +280,7 @@ class TrieTest extends TestCase
     /**
      * Test retrieval of the root node after populating the Trie with words.
      */
-    public function testGetRootAfterPopulation()
+    public function testGetRootAfterPopulation(): void
     {
         $this->trie->insert('TheAlgorithms');
         $this->trie->insert('PHP');

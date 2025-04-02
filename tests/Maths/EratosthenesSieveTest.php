@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class EratosthenesSieveTest extends TestCase
 {
-    public function testEratosthenesSieve()
+    public function testEratosthenesSieve(): void
     {
         $result = eratosthenesSieve(30);
 

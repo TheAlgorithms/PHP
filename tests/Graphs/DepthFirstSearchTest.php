@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class DepthFirstSearchTest extends TestCase
 {
-    public function testDepthFirstSearch()
+    public function testDepthFirstSearch(): void
     {
         $graph = array(
             "A" => ["B", "C", "D"],
@@ -21,7 +21,7 @@ class DepthFirstSearchTest extends TestCase
         $visited = dfs($graph, "A");
         $this->assertEquals(["A", "B", "D", "E", "F", "C", "G"], $visited);
     }
-    public function testDepthFirstSearch2()
+    public function testDepthFirstSearch2(): void
     {
         $graph = array(
             [1, 2],
@@ -33,7 +33,7 @@ class DepthFirstSearchTest extends TestCase
         $visited = dfs($graph, 2);
         $this->assertEquals([2, 0, 1, 3], $visited);
     }
-    public function testDepthFirstSearch3()
+    public function testDepthFirstSearch3(): void
     {
         $graph = array(
             [2, 3, 1],

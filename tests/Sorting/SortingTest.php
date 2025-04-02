@@ -15,14 +15,14 @@ require_once __DIR__ . '/../../Sorting/SelectionSort.php';
 
 class SortingTest extends TestCase
 {
-    public function testBubbleSort()
+    public function testBubbleSort(): void
     {
         $array = [1, 5, 4, 2, 3];
         $sorted = bubbleSort($array);
         $this->assertEquals([1, 2, 3, 4, 5], $sorted);
     }
 
-    public function testBubbleSort2()
+    public function testBubbleSort2(): void
     {
         $array = [
             51158, 1856, 8459, 67957, 59748, 58213, 90876, 39621, 66570, 64204, 79935, 27892, 47615, 94706, 34201,
@@ -73,28 +73,28 @@ class SortingTest extends TestCase
         ], $sorted);
     }
 
-    public function testCountSort()
+    public function testCountSort(): void
     {
         $array = [-5, -10, 0, -3, 8, 5, -1, 10];
         $sorted = countSort($array);
         $this->assertEquals([-10, -5, -3, -1, 0, 5, 8, 10], $sorted);
     }
 
-    public function testInsertionSort()
+    public function testInsertionSort(): void
     {
         $array = [1, 5, 4, 2, 3];
         $sorted = insertionSort($array);
         $this->assertEquals([1, 2, 3, 4, 5], $sorted);
     }
 
-    public function testMergeSort()
+    public function testMergeSort(): void
     {
         $array = [1, 5, 4, 2, 3];
         $sorted = mergeSort($array);
         $this->assertEquals([1, 2, 3, 4, 5], $sorted);
     }
 
-    public function testQuickSort()
+    public function testQuickSort(): void
     {
         $array = [
             51158, 1856, 8459, 67957, 59748, 58213, 90876, 39621, 66570, 64204, 79935, 27892, 47615, 94706, 34201,
@@ -145,28 +145,28 @@ class SortingTest extends TestCase
         ], $sorted);
     }
 
-    public function testQuickSortWithEmptyInput()
+    public function testQuickSortWithEmptyInput(): void
     {
         $array = [];
         $sorted = quickSort($array);
         $this->assertEmpty($sorted);
     }
 
-    public function testRadixSort()
+    public function testRadixSort(): void
     {
         $array = [1, 5, 4, 2, 3];
         $sorted = radixSort($array);
         $this->assertEquals([1, 2, 3, 4, 5], $sorted);
     }
 
-    public function testSelectionSort()
+    public function testSelectionSort(): void
     {
         $array = [1, 5, 4, 2, 3];
         $sorted = selectionSort($array);
         $this->assertEquals([1, 2, 3, 4, 5], $sorted);
     }
 
-    public function testBubbleSortPerformance()
+    public function testBubbleSortPerformance(): void
     {
         $array = range(1, 1000000);
         $start = microtime(true);
@@ -175,7 +175,7 @@ class SortingTest extends TestCase
         $this->assertLessThan(1, $end - $start);
     }
 
-    public function testBubbleSort2Performance()
+    public function testBubbleSort2Performance(): void
     {
         $array = range(1, 1000000);
         $start = microtime(true);
@@ -184,7 +184,7 @@ class SortingTest extends TestCase
         $this->assertLessThan(1, $end - $start);
     }
 
-    public function testCountSortPerformance()
+    public function testCountSortPerformance(): void
     {
         $array = range(1, 1000000);
         $start = microtime(true);
@@ -193,7 +193,7 @@ class SortingTest extends TestCase
         $this->assertLessThan(1, $end - $start);
     }
 
-    public function testInsertionSortPerformance()
+    public function testInsertionSortPerformance(): void
     {
         $array = range(1, 1000000);
         $start = microtime(true);
@@ -202,7 +202,7 @@ class SortingTest extends TestCase
         $this->assertLessThan(1, $end - $start);
     }
 
-    public function testMergeSortPerformance()
+    public function testMergeSortPerformance(): void
     {
         $array = range(1, 10000);
         $start = microtime(true);
@@ -211,7 +211,7 @@ class SortingTest extends TestCase
         $this->assertLessThan(1, $end - $start);
     }
 
-    public function testQuickSortPerformance()
+    public function testQuickSortPerformance(): void
     {
         $array = range(1, 1000);
         $start = microtime(true);
@@ -220,7 +220,7 @@ class SortingTest extends TestCase
         $this->assertLessThan(1, $end - $start);
     }
 
-    public function testRadixSortPerformance()
+    public function testRadixSortPerformance(): void
     {
         $array = range(1, 10000);
         $start = microtime(true);
@@ -229,7 +229,7 @@ class SortingTest extends TestCase
         $this->assertLessThan(1, $end - $start);
     }
 
-    public function testSelectionSortPerformance()
+    public function testSelectionSortPerformance(): void
     {
         $array = range(1, 1000);
         $start = microtime(true);
@@ -238,7 +238,7 @@ class SortingTest extends TestCase
         $this->assertLessThan(1, $end - $start);
     }
 
-    public function testCountSortCipher()
+    public function testCountSortCipher(): void
     {
         $firstArray = array(20, 16, -5, -8, 6, 12, 2, 4, -3, 9);
         $expectedResultOne = array(-8, -5, -3, 2, 4, 6, 9, 12, 16, 20);
@@ -252,7 +252,7 @@ class SortingTest extends TestCase
         $this->assertEquals($expectedResultTwo, $resultTwo);
     }
 
-    public function testQuickSortCipher()
+    public function testQuickSortCipher(): void
     {
         $array1 = [20, 16, -5, -8, 6, 12, 2, 4, -3, 9];
         $array2 = [-6, 12, 14, 17, 5, 4, -9, 15, 0, -8];
@@ -267,7 +267,7 @@ class SortingTest extends TestCase
         $this->assertEquals($result2, $test2);
     }
 
-    public function testHeapSortPerformance()
+    public function testHeapSortPerformance(): void
     {
         $array = range(1, 10000);
         shuffle($array);  // Randomize the order
@@ -277,7 +277,7 @@ class SortingTest extends TestCase
         $this->assertLessThan(1, $end - $start);
     }
 
-    public function testHeapSortCipher()
+    public function testHeapSortCipher(): void
     {
         $firstArray = [20, 16, -5, -8, 6, 12, 2, 4, -3, 9];
         $expectedResultOne = [-8, -5, -3, 2, 4, 6, 9, 12, 16, 20];

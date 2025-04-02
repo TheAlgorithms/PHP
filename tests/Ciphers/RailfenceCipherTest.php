@@ -7,7 +7,7 @@ require_once __DIR__ . '/../../Ciphers/RailfenceCipher.php'; // Adjust the path 
 
 class RailfenceCipherTest extends TestCase
 {
-    public function testRailfenceCipherCase1()
+    public function testRailfenceCipherCase1(): void
     {
         $plainMessage = "ABCDEF";
         $rails = 3;
@@ -15,7 +15,7 @@ class RailfenceCipherTest extends TestCase
         $decodedMessage = Raildecode($cipherMessage, $rails);
         $this->assertEquals($plainMessage, $decodedMessage);
     }
-    public function testRailfenceCipherCase2()
+    public function testRailfenceCipherCase2(): void
     {
         $plainMessage = "THIS IS RAILFENCE";
         $rails = 3;

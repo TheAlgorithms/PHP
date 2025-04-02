@@ -42,7 +42,7 @@ class SplayTreeTest extends TestCase
         $this->tree->insert(5, "Value 5");
     }
 
-    public function testTreeInitialization()
+    public function testTreeInitialization(): void
     {
         $tree = new SplayTree();
 
@@ -54,7 +54,7 @@ class SplayTreeTest extends TestCase
     /**
      * Checks if the root node is correctly set after one insertion.
      */
-    public function testInsertSingleElement()
+    public function testInsertSingleElement(): void
     {
         $this->tree->insert(10, "Value 10");
         $root = $this->tree->getRoot();
@@ -72,7 +72,7 @@ class SplayTreeTest extends TestCase
     /**
      * Inserts multiple nodes and checks if the last inserted node is splayed to the root.
      */
-    public function testInsertMultiple()
+    public function testInsertMultiple(): void
     {
         $this->populateTree();
 
@@ -91,7 +91,7 @@ class SplayTreeTest extends TestCase
     /**
      * Inserts multiple nodes from an associative array and checks if the last inserted node is splayed to the root.
      */
-    public function testInsertMultipleFromArray()
+    public function testInsertMultipleFromArray(): void
     {
         $arrayData = [200 => "Value 200", 150 => "Value 150", 170 => "Value 170",
             250 => "Value 250", 300 => "Value 300", 360 => "Value 360", 230 => "Value 230",
@@ -118,7 +118,7 @@ class SplayTreeTest extends TestCase
     /**
      * Checks the empty state of the tree before and after insertions.
      */
-    public function testIsEmpty()
+    public function testIsEmpty(): void
     {
         $this->assertTrue($this->tree->isEmpty(), "Tree should be empty.");
         $this->tree->insert(120, "Value 120");
@@ -253,7 +253,7 @@ class SplayTreeTest extends TestCase
      * Verifies that searching for an existing key returns the correct node
      * and ensures that it is splayed to the root.
      */
-    public function testSearchExistingKey()
+    public function testSearchExistingKey(): void
     {
         $this->populateTree();
 
@@ -278,7 +278,7 @@ class SplayTreeTest extends TestCase
      * Verifies that checking for an existing key returns true
      * and ensures that its node is splayed to the root.
      */
-    public function testIsFoundExistingKey()
+    public function testIsFoundExistingKey(): void
     {
         $this->populateTree();
 
@@ -298,7 +298,7 @@ class SplayTreeTest extends TestCase
      * Ensures that searching for a non-existing key returns the last visit node
      * and ensures that it is splayed to the root.
      */
-    public function testSearchNonExistingKey()
+    public function testSearchNonExistingKey(): void
     {
         $this->populateTree();
 
@@ -328,7 +328,7 @@ class SplayTreeTest extends TestCase
      * Verifies that checking for a non-existing key returns false
      * and ensures that the last visited node is splayed to the root.
      */
-    public function testIsFoundNonExistingKey()
+    public function testIsFoundNonExistingKey(): void
     {
         $this->populateTree();
 
@@ -351,7 +351,7 @@ class SplayTreeTest extends TestCase
     /**
      * Tests the update functionality on an existing key and ensures its node is splayed to the root.
      */
-    public function testUpdateExistingKey()
+    public function testUpdateExistingKey(): void
     {
         $this->populateTree();
 
@@ -371,7 +371,7 @@ class SplayTreeTest extends TestCase
     /**
      * Checks that updating a non-existing key splays the last visited node only.
      */
-    public function testUpdateNonExistingKey()
+    public function testUpdateNonExistingKey(): void
     {
         $this->populateTree();
 
@@ -398,7 +398,7 @@ class SplayTreeTest extends TestCase
     /**
      * Tests deletion of a node and checks if the correct new root is set after merging the two subtrees.
      */
-    public function testDeleteExistingKey()
+    public function testDeleteExistingKey(): void
     {
         $this->populateTree();
 
@@ -424,7 +424,7 @@ class SplayTreeTest extends TestCase
     /**
      * Tests correct subtree merging after deletion of a splayed node to the root.
      */
-    public function testMergeAfterDeleteExistingKey()
+    public function testMergeAfterDeleteExistingKey(): void
     {
         $this->populateTree();
 
@@ -453,7 +453,7 @@ class SplayTreeTest extends TestCase
     /**
      * Tests deletion of multiple nodes and checks if the tree size is updated.
      */
-    public function testDeleteMultipleKeys()
+    public function testDeleteMultipleKeys(): void
     {
         $arrayData = [200 => "Value 200", 150 => "Value 150", 170 => "Value 170",
             250 => "Value 250", 300 => "Value 300", 360 => "Value 360", 230 => "Value 230",
@@ -483,7 +483,7 @@ class SplayTreeTest extends TestCase
     /**
      * Ensures that attempting to delete a non-existing key throws an exception and keeps the tree intact.
      */
-    public function testDeleteNonExistingKey()
+    public function testDeleteNonExistingKey(): void
     {
         $this->populateTree();
 
@@ -499,7 +499,7 @@ class SplayTreeTest extends TestCase
     /**
      * Tests update, search, size, isFound and delete operations on an empty tree.
      */
-    public function testOperationsOnEmptyTree()
+    public function testOperationsOnEmptyTree(): void
     {
         $this->assertEquals(0, $this->tree->size(), "Tree should be empty.");
 

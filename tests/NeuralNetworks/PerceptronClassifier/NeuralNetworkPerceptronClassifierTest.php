@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class NeuralNetworkPerceptronClassifierTest extends TestCase
 {
-    public function testNeuralNetworkPerceptronClassification()
+    public function testNeuralNetworkPerceptronClassification(): void
     {
         $nnClassifier = new NeuralNetworkPerceptronClassifier();
         [$X, $Y] = $nnClassifier->generateTrainingSet();

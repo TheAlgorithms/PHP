@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class BellmanFordTest extends TestCase
 {
-    public function testBellmanFord()
+    public function testBellmanFord(): void
     {
         $edgesRaw = [
             ['S', 8, 'E'],

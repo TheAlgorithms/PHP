@@ -8,7 +8,7 @@ require_once __DIR__ . '/../../Ciphers/XORCipher.php';
 
 class CiphersTest extends TestCase
 {
-    public function testCaesarCipher()
+    public function testCaesarCipher(): void
     {
         $this->assertEquals('Aopz pz h alza.', encrypt('This is a test.', 7));
         $this->assertEquals('Aopz pz h alza.', encrypt('This is a test.', 7 + 26));
@@ -16,7 +16,7 @@ class CiphersTest extends TestCase
         $this->assertEquals('This is a test.', decrypt('Aopz pz h alza.', 7 + 26));
     }
 
-    public function testXorCipher()
+    public function testXorCipher(): void
     {
         $input_str = "test@string";
         $key = "test-key";

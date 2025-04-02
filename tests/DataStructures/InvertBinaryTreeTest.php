@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 
 class InvertBinaryTreeTest extends TestCase
 {
-    public function testInvertBinaryTree()
+    public function testInvertBinaryTree(): void
     {
         $b = (new BinaryTree())->setValue(1);
         $bl = (new BinaryTree())->setValue(3);

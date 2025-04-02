@@ -7,7 +7,7 @@ require_once __DIR__ . '/../../Ciphers/VignereCipher.php';
 
 class VignereCipherTest extends TestCase
 {
-    public function testVignereCipher()
+    public function testVignereCipher(): void
     {
         $plaintext = "HELLO";
         $key = "KEY";

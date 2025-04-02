@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 
 class ReverseLinkedListTest extends TestCase
 {
-    public function testReverseLinkedList()
+    public function testReverseLinkedList(): void
     {
         $list = [1,2,3,4,5];
 

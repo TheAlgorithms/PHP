@@ -28,7 +28,7 @@ class SinglyLinkedListTest extends TestCase
     /**
      * Provider of SinglyLinkedList nodes
      */
-    public function provideNodes()
+    public function provideNodes(): array
     {
         return [
             'IsPalindrome' => [

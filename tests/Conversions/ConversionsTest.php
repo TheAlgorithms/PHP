@@ -13,7 +13,7 @@ require_once __DIR__ . '/../../Conversions/TemperatureConversions.php';
 
 class ConversionsTest extends TestCase
 {
-    public function testBinaryToDecimal()
+    public function testBinaryToDecimal(): void
     {
         $this->assertEquals(7, binaryToDecimal(111));
         $this->assertEquals(5, binaryToDecimal(101));
@@ -22,7 +22,7 @@ class ConversionsTest extends TestCase
         binaryToDecimal("this is a string");
     }
 
-    public function testDecimalToBinary()
+    public function testDecimalToBinary(): void
     {
         $this->assertEquals(111, decimalToBinary(7));
         $this->assertEquals(101, decimalToBinary(5));
@@ -31,7 +31,7 @@ class ConversionsTest extends TestCase
         decimalToBinary("this is a string");
     }
 
-    public function testOctalToDecimal()
+    public function testOctalToDecimal(): void
     {
         $this->assertEquals(8, octalToDecimal(10));
         $this->assertEquals(9, octalToDecimal(11));
@@ -41,7 +41,7 @@ class ConversionsTest extends TestCase
         octalToDecimal("this is a string");
     }
 
-    public function testDecimalToOctal()
+    public function testDecimalToOctal(): void
     {
         $this->assertEquals(10, decimalToOctal(8));
         $this->assertEquals(11, decimalToOctal(9));
@@ -51,7 +51,7 @@ class ConversionsTest extends TestCase
         decimalToOctal("this is a string");
     }
 
-    public function testDecimalToHex()
+    public function testDecimalToHex(): void
     {
         $this->assertEquals('A', decimalToHex(10));
         $this->assertEquals('1D28A0D3', decimalToHex(489201875));
@@ -61,7 +61,7 @@ class ConversionsTest extends TestCase
         decimalToHex("this is a string");
     }
 
-    public function testHexToDecimal()
+    public function testHexToDecimal(): void
     {
         $this->assertEquals(10, hexToDecimal('A'));
         $this->assertEquals(489201875, hexToDecimal('1D28A0D3'));
@@ -71,7 +71,7 @@ class ConversionsTest extends TestCase
         hexToDecimal("this is a string");
     }
 
-    public function testSpeedConversion()
+    public function testSpeedConversion(): void
     {
         $this->assertEquals(11.18, convertSpeed(5, 'm/s', 'mph'));
         $this->assertEquals(5.49, convertSpeed(5, 'ft/s', 'km/h'));
@@ -87,7 +87,7 @@ class ConversionsTest extends TestCase
         convertSpeed(1, 'km/h', 'miles');
     }
 
-    public function testCelsiusToFahrenheit()
+    public function testCelsiusToFahrenheit(): void
     {
         $this->assertEquals(32.0, CelsiusToFahrenheit(0));
         $this->assertEquals(212.0, CelsiusToFahrenheit(100));
@@ -97,7 +97,7 @@ class ConversionsTest extends TestCase
         CelsiusToFahrenheit("non-numeric");
     }
 
-    public function testFahrenheitToCelsius()
+    public function testFahrenheitToCelsius(): void
     {
         $this->assertEquals(0.0, FahrenheitToCelsius(32));
         $this->assertEquals(100.0, FahrenheitToCelsius(212));
@@ -107,7 +107,7 @@ class ConversionsTest extends TestCase
         FahrenheitToCelsius("non-numeric");
     }
 
-    public function testCelsiusToKelvin()
+    public function testCelsiusToKelvin(): void
     {
         $this->assertEquals(273.15, CelsiusToKelvin(0));
         $this->assertEquals(373.15, CelsiusToKelvin(100));
@@ -116,7 +116,7 @@ class ConversionsTest extends TestCase
         CelsiusToKelvin("non-numeric");
     }
 
-    public function testKelvinToCelsius()
+    public function testKelvinToCelsius(): void
     {
         $this->assertEquals(0.0, KelvinToCelsius(273.15));
         $this->assertEquals(100.0, KelvinToCelsius(373.15));
@@ -125,7 +125,7 @@ class ConversionsTest extends TestCase
         KelvinToCelsius("non-numeric");
     }
 
-    public function testKelvinToFahrenheit()
+    public function testKelvinToFahrenheit(): void
     {
         $this->assertEquals(32.0, KelvinToFahrenheit(273.15));
         $this->assertEquals(212.0, KelvinToFahrenheit(373.15));
@@ -134,7 +134,7 @@ class ConversionsTest extends TestCase
         KelvinToFahrenheit("non-numeric");
     }
 
-    public function testFahrenheitToKelvin()
+    public function testFahrenheitToKelvin(): void
     {
         $this->assertEquals(273.15, FahrenheitToKelvin(32));
         $this->assertEquals(373.15, FahrenheitToKelvin(212));

@@ -26,7 +26,7 @@ require_once __DIR__ . '/../../Maths/PerfectNumber.php';
 
 class MathsTest extends TestCase
 {
-    public function testBaseX()
+    public function testBaseX(): void
     {
         $this->assertEquals(11, baseX(3, 2));
         $this->assertEquals(22, baseX(8, 3));
@@ -34,7 +34,7 @@ class MathsTest extends TestCase
         $this->assertEquals(20, baseX(16, 8));
     }
 
-    public function testFactorial()
+    public function testFactorial(): void
     {
         $this->assertEquals(1, factorial(1));
         $this->assertEquals(120, factorial(5));
@@ -43,7 +43,7 @@ class MathsTest extends TestCase
         factorial(-25);
     }
 
-    public function testIsEven()
+    public function testIsEven(): void
     {
         $this->assertTrue(isEven(2));
         $this->assertTrue(isEven(0));
@@ -52,7 +52,7 @@ class MathsTest extends TestCase
         $this->assertTrue(isEven(-4));
     }
 
-    public function testIsNumberArmstrong()
+    public function testIsNumberArmstrong(): void
     {
         $this->assertTrue(isNumberArmstrong(153));
         $this->assertFalse(isNumberArmstrong(123));
@@ -60,7 +60,7 @@ class MathsTest extends TestCase
         $this->assertFalse(isNumberArmstrong(2468));
     }
 
-    public function testIsNumberPalindromic()
+    public function testIsNumberPalindromic(): void
     {
         $this->assertTrue(isNumberPalindromic(121));
         $this->assertFalse(isNumberPalindromic(123));
@@ -68,7 +68,7 @@ class MathsTest extends TestCase
         $this->assertFalse(isNumberPalindromic(2468));
     }
 
-    public function testIsOdd()
+    public function testIsOdd(): void
     {
         $this->assertTrue(isOdd(3));
         $this->assertTrue(isOdd(17));
@@ -77,7 +77,7 @@ class MathsTest extends TestCase
         $this->assertTrue(isOdd(-5));
     }
 
-    public function testIsPrime()
+    public function testIsPrime(): void
     {
         $this->assertTrue(isPrime(73));
         $this->assertFalse(isPrime(21));
@@ -85,7 +85,7 @@ class MathsTest extends TestCase
         $this->assertTrue(isPrime(997));
     }
 
-    public function testAbsoluteMax()
+    public function testAbsoluteMax(): void
     {
         $this->assertEquals(50, absolute_max(12, 20, 35, 50, 50, 23));
         $this->assertEquals(13, absolute_max(13));
@@ -94,7 +94,7 @@ class MathsTest extends TestCase
         absolute_max();
     }
 
-    public function testAbsoluteMin()
+    public function testAbsoluteMin(): void
     {
         $this->assertEquals(12, absolute_min(12, 20, 35, 50, 50, 23));
         $this->assertEquals(13, absolute_min(13));
@@ -103,7 +103,7 @@ class MathsTest extends TestCase
         absolute_min();
     }
 
-    public function testPerfectSquare()
+    public function testPerfectSquare(): void
     {
         $this->assertTrue(isPerfectSquare(25));
         $this->assertFalse(isPerfectSquare(43));
@@ -111,7 +111,7 @@ class MathsTest extends TestCase
         $this->assertTrue(isPerfectSquare(225));
     }
 
-    public function testFastExponentiation()
+    public function testFastExponentiation(): void
     {
         $this->assertEquals(1, fastExponentiation(10, 0));
         $this->assertEquals(10, fastExponentiation(10, 1));
@@ -120,7 +120,7 @@ class MathsTest extends TestCase
         $this->assertEquals(3200000, fastExponentiation(20, 5));
     }
 
-    public function testFibonacciSeries()
+    public function testFibonacciSeries(): void
     {
         $this->assertEquals([0, 1, 1, 2, 3], fibonacciRecursive(5));
         $this->assertEquals([0, 1, 1, 2, 3, 5, 8, 13, 21, 34], fibonacciRecursive(10));
@@ -129,7 +129,7 @@ class MathsTest extends TestCase
         $this->assertEquals([0, 1, 1, 2, 3, 5, 8, 13, 21, 34], fibonacciWithBinetFormula(10));
     }
 
-    public function testNeonNumber()
+    public function testNeonNumber(): void
     {
         $this->assertTrue(isNumberNeon(1));
         $this->assertFalse(isNumberNeon(43));
@@ -137,7 +137,7 @@ class MathsTest extends TestCase
         $this->assertTrue(isNumberNeon(9));
     }
 
-    public function testFibonacciGenerator()
+    public function testFibonacciGenerator(): void
     {
         $this->assertEquals([0, 1, 1, 2, 3], iterator_to_array(loop(5, fib())));
         $this->assertEquals([0, 1, 1, 2, 3, 5, 8, 13, 21, 34], iterator_to_array(loop(10, fib())));
@@ -146,7 +146,7 @@ class MathsTest extends TestCase
         $this->assertEquals([0, 1, 1, 2, 3, 5, 8, 13, 21, 34], iterator_to_array(loop(10, fib())));
     }
 
-    public function testMean()
+    public function testMean(): void
     {
         $this->assertEquals(
             (2 + 4 + 6 + 8 + 20 + 50 + 70) / 7,
@@ -161,14 +161,14 @@ class MathsTest extends TestCase
         $this->assertEquals(-1, mean(-1));
     }
 
-    public function testMedian()
+    public function testMedian(): void
     {
         $this->assertEquals(3, median(1, 2, 3, 4, 5));
         $this->assertEquals(4.5, median(1, 2, 3, 4, 5, 6, 7, 8));
         $this->assertEquals(3, median(5, 3, 1, 2, 4));
     }
 
-    public function testMode()
+    public function testMode(): void
     {
         $this->assertEquals([3], mode(1, 2, 3, 3, 4, 5));
         $this->assertEquals([5, 6], mode(5, 5, 6, 6, 7));
@@ -176,7 +176,7 @@ class MathsTest extends TestCase
         $this->assertEquals([2, 3, 4], mode(2, 2, 3, 3, 4, 4));
     }
 
-    public function testGreatestCommonDivisor()
+    public function testGreatestCommonDivisor(): void
     {
         $this->assertEquals(8, gcd(24, 16));
         $this->assertEquals(5, gcd(10, 5));
@@ -186,7 +186,7 @@ class MathsTest extends TestCase
         $this->assertEquals(3, gcd(9, 12));
     }
 
-    public function testPerfectNumber()
+    public function testPerfectNumber(): void
     {
         $this->assertTrue(perfect_number(6));
         $this->assertTrue(perfect_number(28));
@@ -202,7 +202,7 @@ class MathsTest extends TestCase
         $this->assertFalse(perfect_number("string"));
     }
 
-    public function testFastInverseSquareRoot()
+    public function testFastInverseSquareRoot(): void
     {
         $this->assertEqualsWithDelta(0.31568579235273, fastInvSqrt(10), 0.00001);
         $this->assertEqualsWithDelta(0.49915357479239, fastInvSqrt(4), 0.00001);

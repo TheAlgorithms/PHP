@@ -14,7 +14,7 @@ class DoublyLinkedListTest extends TestCase
     /**
      * Constructor test
      */
-    public function testConstructor()
+    public function testConstructor(): void
     {
         $list = new DoublyLinkedList();
         $this->assertEquals(0, $list->length());
@@ -23,7 +23,7 @@ class DoublyLinkedListTest extends TestCase
     /**
      * Test for the append method
      */
-    public function testAppend()
+    public function testAppend(): void
     {
         $list = new DoublyLinkedList();
         $list->append(1);
@@ -35,7 +35,7 @@ class DoublyLinkedListTest extends TestCase
     /**
      * Test for the insert method
      */
-    public function testInsert()
+    public function testInsert(): void
     {
         $list = new DoublyLinkedList();
         $list->append(1);
@@ -48,7 +48,7 @@ class DoublyLinkedListTest extends TestCase
     /**
      * Test for the delete method
      */
-    public function testDelete()
+    public function testDelete(): void
     {
         $list = new DoublyLinkedList();
         $list->append(1);
@@ -61,7 +61,7 @@ class DoublyLinkedListTest extends TestCase
     /**
      * Test for the deleteAt method
      */
-    public function testDeleteAt()
+    public function testDeleteAt(): void
     {
         $list = new DoublyLinkedList();
         $list->append(1);
@@ -74,7 +74,7 @@ class DoublyLinkedListTest extends TestCase
     /**
      * Test for printList method
      */
-    public function testPrintList()
+    public function testPrintList(): void
     {
         $list = new DoublyLinkedList();
         $list->append(1);
@@ -87,7 +87,7 @@ class DoublyLinkedListTest extends TestCase
     /**
      * Test for the printListReverse method
      */
-    public function testPrintListReverse()
+    public function testPrintListReverse(): void
     {
         $list = new DoublyLinkedList();
         $list->append(1);
@@ -100,7 +100,7 @@ class DoublyLinkedListTest extends TestCase
     /**
      * Test for the reverse method
      */
-    public function testReverse()
+    public function testReverse(): void
     {
         $list = new DoublyLinkedList();
         $list->append(1);
@@ -114,7 +114,7 @@ class DoublyLinkedListTest extends TestCase
     /**
      * Test for the length method
      */
-    public function testLength()
+    public function testLength(): void
     {
         $list = new DoublyLinkedList();
         $list->append(1);
@@ -125,7 +125,7 @@ class DoublyLinkedListTest extends TestCase
     /**
      * Test for the Search method
      */
-    public function testSearch()
+    public function testSearch(): void
     {
         $list = new DoublyLinkedList();
         $list->append(1);
@@ -138,7 +138,7 @@ class DoublyLinkedListTest extends TestCase
     /**
      * Test for the isEmpty method
      */
-    public function testIsEmpty()
+    public function testIsEmpty(): void
     {
         $list = new DoublyLinkedList();
         $this->assertEquals(true, $list->isEmpty());
@@ -147,7 +147,7 @@ class DoublyLinkedListTest extends TestCase
     /**
      * Test for __toString method
      */
-    public function testToString()
+    public function testToString(): void
     {
         $list = new DoublyLinkedList();
         $list->append(1);
@@ -160,7 +160,7 @@ class DoublyLinkedListTest extends TestCase
     /**
      * Test for the toArray method
      */
-    public function testToArray()
+    public function testToArray(): void
     {
         $list = new DoublyLinkedList();
         $list->append(1);

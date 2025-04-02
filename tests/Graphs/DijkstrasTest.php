@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 class DijkstrasTest extends TestCase
 {
-    public function testDijkstras()
+    public function testDijkstras(): void
     {
         $edgesRaw = [
             ['S', 8, 'E'],

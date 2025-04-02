@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class BreadthFirstSearchTest extends TestCase
 {
-    public function testBreadthFirstSearch()
+    public function testBreadthFirstSearch(): void
     {
         $graph = array(
             "A" => ["B", "C", "D"],
@@ -21,7 +21,7 @@ class BreadthFirstSearchTest extends TestCase
         $ans = bfs($graph, "A", "F");
         $this->assertTrue($ans);
     }
-    public function testBreadthFirstSearch2()
+    public function testBreadthFirstSearch2(): void
     {
         $graph = array(
             [1, 2],
@@ -33,7 +33,7 @@ class BreadthFirstSearchTest extends TestCase
         $ans2 = bfs($graph, 3, 0);
         $this->assertFalse($ans2);
     }
-    public function testBreadthFirstSearch3()
+    public function testBreadthFirstSearch3(): void
     {
         $graph = array(
             [2, 3, 1],

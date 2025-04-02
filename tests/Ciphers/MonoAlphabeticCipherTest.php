@@ -7,7 +7,7 @@ require_once __DIR__ . '/../../Ciphers/MonoAlphabeticCipher.php';
 
 class MonoAlphabeticCipherTest extends TestCase
 {
-    public function testMonoAlphabeticCipher()
+    public function testMonoAlphabeticCipher(): void
     {
         $alphabet = "abcdefghijklmnopqrstuvwxyz";
         $key = "yhkqgvxfoluapwmtzecjdbsnri";

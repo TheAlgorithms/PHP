@@ -11,6 +11,6 @@ class EratosthenesSieveTest extends TestCase
     {
         $result = eratosthenesSieve(30);
 
-        $this->assertEquals($result, [1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29]);
+        $this->assertEquals([1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29], $result);
     }
 }

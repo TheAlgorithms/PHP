@@ -75,6 +75,6 @@ class ShellSortTest extends TestCase
         $start = microtime(true);
         shellSort($array);
         $end = microtime(true);
-        $this->assertLessThan(pow($n, 3 / 2), $end - $start);
+        $this->assertLessThan($n ** (3 / 2), $end - $start);
     }
 }

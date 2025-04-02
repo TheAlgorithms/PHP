@@ -91,7 +91,7 @@ class SinglyLinkedListTest extends TestCase
         $curr = $node;
 
         while ($curr instanceof SinglyLinkedList) {
-            if ($curr->data == $data) {
+            if ($curr->data === $data) {
                 return true;
             }
 

@@ -228,7 +228,7 @@ class SplayTreeTest extends TestCase
 
         // Assert the root key matches the expected root after the last insertion for every dataProvider case
         $this->assertTrue(
-            $tree->getRoot()->key === $inOrderArrayKeys[array_search($expectedRootKey, $expectedInOrderKeys)],
+            $tree->getRoot()->key === $inOrderArrayKeys[array_search($expectedRootKey, $expectedInOrderKeys, true)],
             "Node was not splayed to root successfully"
         );
         // Assert the new root is correctly set
@@ -437,7 +437,7 @@ class SplayTreeTest extends TestCase
 
         $this->assertEquals(
             17,
-            $node->key === $inOrderArrayKeys[array_search($node->key, $expectedInOrderKeys)],
+            $node->key === $inOrderArrayKeys[array_search($node->key, $expectedInOrderKeys, true)],
             "After deleting 20, the new root should be the node with key 17."
         );
 

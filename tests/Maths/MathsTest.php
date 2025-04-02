@@ -39,7 +39,7 @@ class MathsTest extends TestCase
         $this->assertEquals(1, factorial(1));
         $this->assertEquals(120, factorial(5));
         $this->assertEquals(1, factorial(0));
-        $this->expectException(\Exception::class);
+        $this->expectException(Exception::class);
         factorial(-25);
     }
 
@@ -90,7 +90,7 @@ class MathsTest extends TestCase
         $this->assertEquals(50, absolute_max(12, 20, 35, 50, 50, 23));
         $this->assertEquals(13, absolute_max(13));
         $this->assertEquals(54, absolute_max(12, 13, 54, 22));
-        $this->expectException(\Exception::class);
+        $this->expectException(Exception::class);
         absolute_max();
     }
 
@@ -99,7 +99,7 @@ class MathsTest extends TestCase
         $this->assertEquals(12, absolute_min(12, 20, 35, 50, 50, 23));
         $this->assertEquals(13, absolute_min(13));
         $this->assertEquals(12, absolute_min(12, 13, 54, 22));
-        $this->expectException(\Exception::class);
+        $this->expectException(Exception::class);
         absolute_min();
     }
 

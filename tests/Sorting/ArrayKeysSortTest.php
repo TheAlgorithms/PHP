@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class ArrayKeysSortTest extends TestCase
 {
-    public function testArrayKeysSort(): void: void
+    public function testArrayKeysSort(): void
     {
         //test array of arrays
         $array1 = [

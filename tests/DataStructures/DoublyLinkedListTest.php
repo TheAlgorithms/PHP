@@ -141,7 +141,7 @@ class DoublyLinkedListTest extends TestCase
     public function testIsEmpty(): void
     {
         $list = new DoublyLinkedList();
-        $this->assertEquals(true, $list->isEmpty());
+        $this->assertTrue();
     }
 
     /**

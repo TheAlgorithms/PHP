@@ -16,8 +16,9 @@ class SinglyLinkedListTest extends TestCase
     private function createNode(string $string): SinglyLinkedList
     {
         $node = new SinglyLinkedList($string[0]);
+        $stringLength = strlen($string);
 
-        for ($i = 1; $i < strlen($string); $i++) {
+        for ($i = 1; $i < $stringLength; $i++) {
             $node->append($string[$i]);
         }
 

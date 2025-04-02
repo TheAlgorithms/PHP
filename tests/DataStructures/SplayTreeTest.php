@@ -242,7 +242,7 @@ class SplayTreeTest extends TestCase
     {
         $inOrderArrayKeys = [];
         foreach ($inOrderArray as $node) {
-            $inOrderArrayKeys = array_merge($inOrderArrayKeys, array_keys($node));
+            $inOrderArrayKeys[] = array_keys($node);
         }
         return $inOrderArrayKeys;
     }

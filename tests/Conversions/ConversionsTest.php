@@ -13,6 +13,9 @@ require_once __DIR__ . '/../../Conversions/TemperatureConversions.php';
 
 class ConversionsTest extends TestCase
 {
+    /**
+     * @throws Exception
+     */
     public function testBinaryToDecimal(): void
     {
         $this->assertEquals(7, binaryToDecimal(111));
@@ -22,6 +25,9 @@ class ConversionsTest extends TestCase
         binaryToDecimal("this is a string");
     }
 
+    /**
+     * @throws Exception
+     */
     public function testDecimalToBinary(): void
     {
         $this->assertEquals(111, decimalToBinary(7));
@@ -41,6 +47,9 @@ class ConversionsTest extends TestCase
         octalToDecimal("this is a string");
     }
 
+    /**
+     * @throws Exception
+     */
     public function testDecimalToOctal(): void
     {
         $this->assertEquals(10, decimalToOctal(8));
@@ -71,6 +80,9 @@ class ConversionsTest extends TestCase
         hexToDecimal("this is a string");
     }
 
+    /**
+     * @throws Exception
+     */
     public function testSpeedConversion(): void
     {
         $this->assertEquals(11.18, convertSpeed(5, 'm/s', 'mph'));
@@ -87,6 +99,9 @@ class ConversionsTest extends TestCase
         convertSpeed(1, 'km/h', 'miles');
     }
 
+    /**
+     * @throws Exception
+     */
     public function testCelsiusToFahrenheit(): void
     {
         $this->assertEquals(32.0, CelsiusToFahrenheit(0));
@@ -97,6 +112,9 @@ class ConversionsTest extends TestCase
         CelsiusToFahrenheit("non-numeric");
     }
 
+    /**
+     * @throws Exception
+     */
     public function testFahrenheitToCelsius(): void
     {
         $this->assertEquals(0.0, FahrenheitToCelsius(32));
@@ -107,6 +125,9 @@ class ConversionsTest extends TestCase
         FahrenheitToCelsius("non-numeric");
     }
 
+    /**
+     * @throws Exception
+     */
     public function testCelsiusToKelvin(): void
     {
         $this->assertEquals(273.15, CelsiusToKelvin(0));
@@ -116,6 +137,9 @@ class ConversionsTest extends TestCase
         CelsiusToKelvin("non-numeric");
     }
 
+    /**
+     * @throws Exception
+     */
     public function testKelvinToCelsius(): void
     {
         $this->assertEquals(0.0, KelvinToCelsius(273.15));
@@ -125,6 +149,9 @@ class ConversionsTest extends TestCase
         KelvinToCelsius("non-numeric");
     }
 
+    /**
+     * @throws Exception
+     */
     public function testKelvinToFahrenheit(): void
     {
         $this->assertEquals(32.0, KelvinToFahrenheit(273.15));
@@ -134,6 +161,9 @@ class ConversionsTest extends TestCase
         KelvinToFahrenheit("non-numeric");
     }
 
+    /**
+     * @throws Exception
+     */
     public function testFahrenheitToKelvin(): void
     {
         $this->assertEquals(273.15, FahrenheitToKelvin(32));

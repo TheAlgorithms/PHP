@@ -34,6 +34,9 @@ class MathsTest extends TestCase
         $this->assertEquals(20, baseX(16, 8));
     }
 
+    /**
+     * @throws Exception
+     */
     public function testFactorial(): void
     {
         $this->assertEquals(1, factorial(1));
@@ -85,6 +88,9 @@ class MathsTest extends TestCase
         $this->assertTrue(isPrime(997));
     }
 
+    /**
+     * @throws Exception
+     */
     public function testAbsoluteMax(): void
     {
         $this->assertEquals(50, absolute_max(12, 20, 35, 50, 50, 23));
@@ -94,6 +100,9 @@ class MathsTest extends TestCase
         absolute_max();
     }
 
+    /**
+     * @throws Exception
+     */
     public function testAbsoluteMin(): void
     {
         $this->assertEquals(12, absolute_min(12, 20, 35, 50, 50, 23));
@@ -120,6 +129,9 @@ class MathsTest extends TestCase
         $this->assertEquals(3200000, fastExponentiation(20, 5));
     }
 
+    /**
+     * @throws Exception
+     */
     public function testFibonacciSeries(): void
     {
         $this->assertEquals([0, 1, 1, 2, 3], fibonacciRecursive(5));
@@ -146,6 +158,9 @@ class MathsTest extends TestCase
         $this->assertEquals([0, 1, 1, 2, 3, 5, 8, 13, 21, 34], iterator_to_array(loop(10, fib())));
     }
 
+    /**
+     * @throws Exception
+     */
     public function testMean(): void
     {
         $this->assertEquals(
@@ -161,6 +176,9 @@ class MathsTest extends TestCase
         $this->assertEquals(-1, mean(-1));
     }
 
+    /**
+     * @throws Exception
+     */
     public function testMedian(): void
     {
         $this->assertEquals(3, median(1, 2, 3, 4, 5));
@@ -168,6 +186,9 @@ class MathsTest extends TestCase
         $this->assertEquals(3, median(5, 3, 1, 2, 4));
     }
 
+    /**
+     * @throws Exception
+     */
     public function testMode(): void
     {
         $this->assertEquals([3], mode(1, 2, 3, 3, 4, 5));

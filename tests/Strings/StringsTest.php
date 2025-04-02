@@ -58,6 +58,9 @@ class StringsTest extends TestCase
         $this->assertTrue(isAnagram("ScRamble", "SRlmcaeb", false)); // Check with a mixture of upper and lower case
     }
 
+    /**
+     * @throws Exception
+     */
     public function testMaxCharacter(): void
     {
         $this->assertEquals('t', maxCharacter("this is test for max character repetition"));
@@ -65,6 +68,9 @@ class StringsTest extends TestCase
         $this->assertEquals(' ', maxCharacter("           "));
     }
 
+    /**
+     * @throws Exception
+     */
     public function testCountVowels(): void
     {
         $this->assertEquals(7, countVowelsSimple("This is a string with 7 vowels"));
@@ -76,6 +82,9 @@ class StringsTest extends TestCase
         $this->assertEquals(16, countVowelsRegex("Just A list of somE aaaaaaaaaa"));
     }
 
+    /**
+     * @throws Exception
+     */
     public function testCountConsonants(): void
     {
         $this->assertEquals(19, countConsonants("This is a string with 19 consonants"));

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This function calculates
  * Absolute min values from
@@ -12,12 +14,13 @@
  */
 function absolute_min(...$numbers)
 {
-    if (empty($numbers)) {
+    if ($numbers === []) {
         throw new \Exception('Please pass values to find absolute min value');
     }
 
     $absoluteMin = $numbers[0];
-    for ($loopIndex = 0; $loopIndex < count($numbers); $loopIndex++) {
+    $counter = count($numbers);
+    for ($loopIndex = 0; $loopIndex < $counter; $loopIndex++) {
         if ($numbers[$loopIndex] < $absoluteMin) {
             $absoluteMin = $numbers[$loopIndex];
         }

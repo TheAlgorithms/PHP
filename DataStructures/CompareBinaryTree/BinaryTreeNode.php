@@ -1,17 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DataStructures\CompareBinaryTree;
 
 class BinaryTreeNode
 {
-    public function __construct($value, ?BinaryTreeNode $left = null, BinaryTreeNode $right = null)
+    public function __construct(public $value, public ?BinaryTreeNode $left = null, public ?BinaryTreeNode $right = null)
     {
-        $this->value = $value;
-        $this->left = $left;
-        $this->right = $right;
     }
-
-    public $value;
-    public ?BinaryTreeNode $left;
-    public ?BinaryTreeNode $right;
 }

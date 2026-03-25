@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /* Ternary search is similar to binary search
  * It rather divides the sorted array into three parts rather than.two parts by using two middle points, $mid1  $mid2.
  * The value of the $key will first be compared with the two $mid points, the value will be returned if there is a match.
@@ -8,7 +10,7 @@
  * Otherwise, narrow the interval to the $middle part.
  * Repeat the steps until the value is found or the interval is empty (value not found after checking all elements).
  */
-function ternarySearchByRecursion($arr, $key, $low, $high)
+function ternarySearchByRecursion(array $arr, $key, $low, $high)
 {
     // Return null if high is less than low (base case: key not found).
     if ($high < $low) {
@@ -27,21 +29,24 @@ function ternarySearchByRecursion($arr, $key, $low, $high)
     if ($arr[$mid2] === $key) {
         return $mid2;
     }
-
     // Determine which section to continue searching in.
     if ($key < $arr[$mid1]) {
         // Key is in the left section, between $low and $mid1.
         return ternarySearchByRecursion($arr, $key, $low, $mid1 - 1);
-    } elseif ($key > $arr[$mid2]) {
+    }
+
+    // Determine which section to continue searching in.
+    if ($key > $arr[$mid2]) {
         // Key is in the right section, between $mid2 and $high.
         return ternarySearchByRecursion($arr, $key, $mid2 + 1, $high);
     } else {
         // Key is in the middle section, between $mid1 and $mid2.
         return ternarySearchByRecursion($arr, $key, $mid1 + 1, $mid2 - 1);
     }
+    return null;
 }
 
-function ternarySearchIterative($arr, $key)
+function ternarySearchIterative(array $arr, $key): ?float
 {
     // Initialize low and high pointers.
     $low = 0;

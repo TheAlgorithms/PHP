@@ -1,20 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Queue Data Structure - FIFO (First In, First Out)
  */
 class Queue
 {
-    private array $elements;
-    private int $count;
-    private int $lowestCount;
+    private array $elements = [];
 
-    public function __construct()
-    {
-        $this->elements = [];
-        $this->count = 0;
-        $this->lowestCount = 0;
-    }
+    private int $count = 0;
+
+    private int $lowestCount = 0;
 
     public function enqueue($element): void
     {
@@ -69,10 +66,10 @@ class Queue
             return '';
         }
 
-        $result = "{$this->elements[$this->lowestCount]}";
+        $result = $this->elements[$this->lowestCount];
 
         for ($i = $this->lowestCount + 1; $i < $this->count; $i++) {
-            $result .= "{$delimiter}{$this->elements[$i]}";
+            $result .= $delimiter . $this->elements[$i];
         }
 
         return $result;

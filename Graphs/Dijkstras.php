@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * The Dijkstra's algorithm is an algorithm for finding the shortest paths between nodes in a weighted graph.
  * (https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm).
@@ -28,7 +30,10 @@ function dijkstras(array $verticesNames, array $edges, string $start): array
         $minVertexName = null;
         $minVertexWeight = PHP_INT_MAX;
         foreach ($vertices as $name => $weight) {
-            if (in_array($name, $visitedNodes) || $name == $nextVertex) {
+            if (in_array($name, $visitedNodes)) {
+                continue;
+            }
+            if ($name == $nextVertex) {
                 continue;
             }
             if ($weight <= $minVertexWeight) {
@@ -36,8 +41,10 @@ function dijkstras(array $verticesNames, array $edges, string $start): array
                 $minVertexWeight = $weight;
             }
         }
+
         $visitedNodes[] = $nextVertex;
         $nextVertex = $minVertexName;
     }
+
     return $vertices;
 }

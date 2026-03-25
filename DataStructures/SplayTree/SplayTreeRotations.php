@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request: #168
  * https://github.com/TheAlgorithms/PHP/pull/168
@@ -13,6 +15,7 @@ namespace DataStructures\SplayTree;
 abstract class SplayTreeRotations
 {
     abstract protected function splay(?SplayTreeNode $node, int $key): ?SplayTreeNode;
+
     abstract protected function setRoot(SplayTreeNode $node): void;
 
     /**
@@ -110,19 +113,19 @@ abstract class SplayTreeRotations
     {
         $rightChild = $node->right;
 
-        if ($rightChild === null) {
+        if (!$rightChild instanceof \DataStructures\SplayTree\SplayTreeNode) {
             return $node; // No rotation possible
         }
 
         $node->right = $rightChild->left;
 
-        if ($rightChild->left !== null) {
+        if ($rightChild->left instanceof \DataStructures\SplayTree\SplayTreeNode) {
             $rightChild->left->parent = $node;
         }
 
         $rightChild->parent = $node->parent;
 
-        if ($node->parent === null) {
+        if (!$node->parent instanceof \DataStructures\SplayTree\SplayTreeNode) {
             static::setRoot($rightChild);
         } elseif ($node === $node->parent->left) {
             $node->parent->left = $rightChild;
@@ -147,19 +150,19 @@ abstract class SplayTreeRotations
     {
         $leftChild = $node->left;
 
-        if ($leftChild === null) {
+        if (!$leftChild instanceof \DataStructures\SplayTree\SplayTreeNode) {
             return $node;       // No rotation possible
         }
 
         $node->left = $leftChild->right;
 
-        if ($leftChild->right !== null) {
+        if ($leftChild->right instanceof \DataStructures\SplayTree\SplayTreeNode) {
             $leftChild->right->parent = $node;
         }
 
         $leftChild->parent = $node->parent;
 
-        if ($node->parent === null) {
+        if (!$node->parent instanceof \DataStructures\SplayTree\SplayTreeNode) {
             static::setRoot($leftChild);
         } elseif ($node === $node->parent->right) {
             $node->parent->right = $leftChild;

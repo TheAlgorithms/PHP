@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request: #160
  * https://github.com/TheAlgorithms/PHP/pull/160
@@ -21,6 +23,7 @@ class DisjointSet
             // Path compression: make the parent point directly to the root
             $node->parent = $this->findSet($node->parent);
         }
+
         return $node->parent;
     }
 

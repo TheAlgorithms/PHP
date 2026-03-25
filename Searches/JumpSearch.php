@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
    * Jump Search algorithm in PHP
    * References: https://www.geeksforgeeks.org/jump-search/
@@ -10,7 +12,7 @@
    * @return int index of $key if found, otherwise -1 is returned
  */
 
-function jumpSearch($list, $key)
+function jumpSearch(array $list, $key): int
 {
     /*number of elements in the sorted array*/
     $num = count($list);
@@ -35,5 +37,5 @@ function jumpSearch($list, $key)
         }
     }
 
-     return $list[$prev] === $key ? $prev : -1;
+    return $list[$prev] === $key ? $prev : -1;
 }

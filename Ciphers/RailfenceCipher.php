@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Encode a message using the Rail Fence Cipher.
  * (https://en.wikipedia.org/wiki/Rail_fence_cipher)
@@ -19,8 +21,9 @@ function Railencode($plainMessage, $rails): string
             if (!isset($cipherMessage[$step])) {
                 $cipherMessage[$step] = '';
             }
+
             // Check if the character should go in the rail
-            if ($index % $position == $step || $index % $position == $position - $step) {
+            if ($index % $position === $step || $index % $position == $position - $step) {
                 $cipherMessage[$step] .= $plainMessage[$index];
             } else {
                 // Add a placeholder for empty spaces
@@ -28,6 +31,7 @@ function Railencode($plainMessage, $rails): string
             }
         }
     }
+
     // Combine and remove placeholders to form the cipher message
     return implode('', str_replace('.', '', $cipherMessage));
 }
@@ -44,7 +48,7 @@ function Raildecode($cipherMessage, $rails): string
 {
     $position = ($rails * 2) - 2;
     $textLength = strlen($cipherMessage);
-    $minLength = floor($textLength / $position);
+    $minLength = intdiv($textLength, $position);
     $balance = $textLength % $position;
     $lengths = [];
     $strings = [];
@@ -55,27 +59,29 @@ function Raildecode($cipherMessage, $rails): string
         if ($rowIndex != 0 && $rowIndex != ($rails - 1)) {
             $lengths[$rowIndex] += $minLength;
         }
+
         if ($balance > $rowIndex) {
             $lengths[$rowIndex]++;
         }
+
         if ($balance > ($rails + ($rails - $rowIndex) - 2)) {
             $lengths[$rowIndex]++;
         }
+
         $strings[] = substr($cipherMessage, $totalLengths, $lengths[$rowIndex]);
         $totalLengths += $lengths[$rowIndex];
     }
+
     // Convert the rows of characters to plain message
     $plainText = '';
     while (strlen($plainText) < $textLength) {
         for ($charIndex = 0; $charIndex < $position; $charIndex++) {
-            if (isset($strings[$charIndex])) {
-                $index = $charIndex;
-            } else {
-                $index = $position - $charIndex;
-            }
+            $index = isset($strings[$charIndex]) ? $charIndex : $position - $charIndex;
+
             $plainText .= substr($strings[$index], 0, 1);
             $strings[$index] = substr($strings[$index], 1);
         }
     }
+
     return $plainText;
 }

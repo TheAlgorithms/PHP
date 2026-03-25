@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This function converts the submitted
  * speed from one unit to another
@@ -14,13 +16,9 @@
  * kn -> 1 knot which is equal to 1 nautical mile (1852 km/h)
  * The conversion is made using kilometers as base
  *
- * @param  float  $speed
- * @param  string  $unitFrom
- * @param  string  $unitTo
- * @return float
  * @throws \Exception
  */
-function convertSpeed(float $speed, string $unitFrom, string $unitTo)
+function convertSpeed(float $speed, string $unitFrom, string $unitTo): float
 {
     $speedUnitsFrom = [
         'mph' => 1.609344,
@@ -41,6 +39,7 @@ function convertSpeed(float $speed, string $unitFrom, string $unitTo)
     if (!is_numeric($speed)) {
         throw new \Exception("Please pass a valid speed number for converting it from one unit to another.");
     }
+
     if (!in_array($unitFrom, $availableUnits) || !in_array($unitTo, $availableUnits)) {
         throw new \Exception("Please pass a valid speed unit.\n\nAvailable units: " . implode(', ', $availableUnits));
     }

@@ -1,14 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DataStructures\ReverseLinkedList;
 
 class LinkedListItem
 {
     private ?LinkedListItem $next = null;
+
     private ?LinkedListItem $prev = null;
+
     private $value;
 
-    public function setNext(?LinkedListItem $next)
+    public function setNext(?LinkedListItem $next): static
     {
         $this->next = $next;
         return $this;
@@ -19,7 +23,7 @@ class LinkedListItem
         return $this->next;
     }
 
-    public function setPrev(?LinkedListItem $prev)
+    public function setPrev(?LinkedListItem $prev): static
     {
         $this->prev = $prev;
         return $this;
@@ -30,7 +34,7 @@ class LinkedListItem
         return $this->prev;
     }
 
-    public function setValue($value)
+    public function setValue($value): static
     {
         $this->value = $value;
         return $this;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request: #168
  * https://github.com/TheAlgorithms/PHP/pull/168
@@ -10,13 +12,14 @@
 
 namespace DataStructures\SplayTree;
 
-require_once 'SplayTreeRotations.php';
+require_once __DIR__ . '/SplayTreeRotations.php';
 
 use LogicException;
 
 class SplayTree extends SplayTreeRotations
 {
     protected ?SplayTreeNode $root = null;
+
     private int $counter = 0;
 
     /**
@@ -42,7 +45,6 @@ class SplayTree extends SplayTreeRotations
 
     /**
      * Set the root node of the Splay Tree.
-     * @param SplayTreeNode $node
      */
     protected function setRoot(SplayTreeNode $node): void
     {
@@ -62,7 +64,7 @@ class SplayTree extends SplayTreeRotations
      */
     public function isEmpty(): bool
     {
-        return $this->root === null;
+        return !$this->root instanceof \DataStructures\SplayTree\SplayTreeNode;
     }
 
     /**
@@ -77,7 +79,7 @@ class SplayTree extends SplayTreeRotations
      */
     protected function splay(?SplayTreeNode $node, int $key): ?SplayTreeNode
     {
-        if ($node === null || $node->key === $key) {
+        if (!$node instanceof \DataStructures\SplayTree\SplayTreeNode || $node->key === $key) {
             return $node;
         }
 
@@ -101,17 +103,20 @@ class SplayTree extends SplayTreeRotations
         if ($node->left === null) {
             return $node;   // Key not found in the left subtree
         }
-
-        if ($node->left->key > $key) {                  // Zig-Zig (Left-Left case)
+        if ($node->left->key > $key) {
+            // Zig-Zig (Left-Left case)
             $node->left->left = $this->splay($node->left->left, $key);
             return $this->zigZig($node);
-        } elseif ($node->left->key < $key) {            // Zig-Zag (Left-Right case)
-            $node->left->right = $this->splay($node->left->right, $key);
+        }
 
-            if ($node->left->right !== null) {
+        if ($node->left->key < $key) {
+            // Zig-Zag (Left-Right case)
+            $node->left->right = $this->splay($node->left->right, $key);
+            if ($node->left->right instanceof \DataStructures\SplayTree\SplayTreeNode) {
                 return $this->zigZag($node);
             }
         }
+
         // Zig (Left case)
         return $node->left === null
             ? $node
@@ -133,15 +138,16 @@ class SplayTree extends SplayTreeRotations
         if ($node->right === null) {
             return $node;
         }
-
-        if ($node->right->key < $key) {         // Zag-Zag (Right-Right case)
+        if ($node->right->key < $key) {
+            // Zag-Zag (Right-Right case)
             $node->right->right = $this->splay($node->right->right, $key);
-
             return $this->zagZag($node);
-        } elseif ($node->right->key > $key) {   // Zag-Zig (Right-Left case)
-            $node->right->left = $this->splay($node->right->left, $key);
+        }
 
-            if ($node->right->left !== null) {
+        if ($node->right->key > $key) {
+            // Zag-Zig (Right-Left case)
+            $node->right->left = $this->splay($node->right->left, $key);
+            if ($node->right->left instanceof \DataStructures\SplayTree\SplayTreeNode) {
                 return $this->zagZig($node);
             }
         }
@@ -163,7 +169,7 @@ class SplayTree extends SplayTreeRotations
      * @return SplayTreeNode|null Returns the new root after insertion and splaying
      * @throws LogicException If the key already exists
      */
-    public function insert(int $key, $value): ?SplayTreeNode
+    public function insert(int $key, mixed $value): ?SplayTreeNode
     {
         $this->root = $this->insertNode($this->root, $key, $value);
         $this->counter++;
@@ -183,9 +189,9 @@ class SplayTree extends SplayTreeRotations
      * @return SplayTreeNode|null Returns the new root after insertion
      * @throws LogicException If the key already exists
      */
-    private function insertNode(?SplayTreeNode $node, int $key, $value): SplayTreeNode
+    private function insertNode(?SplayTreeNode $node, int $key, mixed $value): SplayTreeNode
     {
-        if ($node === null) {
+        if (!$node instanceof \DataStructures\SplayTree\SplayTreeNode) {
             return new SplayTreeNode($key, $value);
         }
 
@@ -223,7 +229,7 @@ class SplayTree extends SplayTreeRotations
 
         $node = $this->searchNode($this->root, $key, $lastVisited);
 
-        $this->root = $node !== null
+        $this->root = $node instanceof \DataStructures\SplayTree\SplayTreeNode
             ? $this->splay($this->root, $key)
             : $this->splay($this->root, $lastVisited->key);
 
@@ -242,15 +248,16 @@ class SplayTree extends SplayTreeRotations
      */
     private function searchNode(?SplayTreeNode $node, int $key, ?SplayTreeNode &$lastVisited): ?SplayTreeNode
     {
-        if ($node === null) {
+        if (!$node instanceof \DataStructures\SplayTree\SplayTreeNode) {
             return null;
         }
 
         $lastVisited = $node;
-
         if ($key < $node->key) {
             return $this->searchNode($node->left, $key, $lastVisited);
-        } elseif ($key > $node->key) {
+        }
+
+        if ($key > $node->key) {
             return $this->searchNode($node->right, $key, $lastVisited);
         } else {
             return $node;
@@ -269,7 +276,7 @@ class SplayTree extends SplayTreeRotations
     public function isFound(int $key): bool
     {
         $foundNode = $this->search($key);
-        return $foundNode && $foundNode->key === $key;
+        return $foundNode instanceof \DataStructures\SplayTree\SplayTreeNode && $foundNode->key === $key;
     }
 
     /**
@@ -283,11 +290,12 @@ class SplayTree extends SplayTreeRotations
      * @param mixed $value The new value to set
      * @return SplayTreeNode|null Returns the root of the tree after the update or the last visited
      */
-    public function update(int $key, $value): ?SplayTreeNode
+    public function update(int $key, mixed $value): ?SplayTreeNode
     {
         if ($this->isFound($key)) {
             $this->root->value = $value;
         }
+
         return $this->root;
     }
 
@@ -324,6 +332,7 @@ class SplayTree extends SplayTreeRotations
         if ($this->root->left !== null) {
             $this->root->left->parent = null;
         }
+
         if ($this->root->right !== null) {
             $this->root->right->parent = null;
         }
@@ -339,7 +348,7 @@ class SplayTree extends SplayTreeRotations
      */
     private function restructureAfterDeletion(?SplayTreeNode $leftSubtree, ?SplayTreeNode $rightSubtree): ?SplayTreeNode
     {
-        if ($leftSubtree === null) {
+        if (!$leftSubtree instanceof \DataStructures\SplayTree\SplayTreeNode) {
             return $this->handleEmptyLeftSubtree($rightSubtree);
         }
 
@@ -355,9 +364,10 @@ class SplayTree extends SplayTreeRotations
     private function handleEmptyLeftSubtree(?SplayTreeNode $rightSubtreeRoot): ?SplayTreeNode
     {
         $this->root = $rightSubtreeRoot;
-        if ($this->root !== null) {
+        if ($this->root instanceof \DataStructures\SplayTree\SplayTreeNode) {
             $this->root->parent = null;
         }
+
         return $this->root;
     }
 
@@ -388,11 +398,12 @@ class SplayTree extends SplayTreeRotations
     private function detachMaxNodeFromLeftSubtree(SplayTreeNode $maxLeftNode, SplayTreeNode $leftSubtreeRoot): void
     {
         $maxLeftNodeParent = $maxLeftNode->parent;
-        if ($maxLeftNodeParent !== null) {
+        if ($maxLeftNodeParent instanceof \DataStructures\SplayTree\SplayTreeNode) {
             $maxLeftNodeParent->right = null;
             $this->root->left = $leftSubtreeRoot;
             $leftSubtreeRoot->parent = $this->root;
         }
+
         $maxLeftNode->parent = null;
     }
 
@@ -404,7 +415,7 @@ class SplayTree extends SplayTreeRotations
     private function attachRightSubtree(?SplayTreeNode $rightSubtreeRoot): void
     {
         $this->root->right = $rightSubtreeRoot;
-        if ($rightSubtreeRoot !== null) {
+        if ($rightSubtreeRoot instanceof \DataStructures\SplayTree\SplayTreeNode) {
             $rightSubtreeRoot->parent = $this->root;
         }
     }
@@ -419,12 +430,13 @@ class SplayTree extends SplayTreeRotations
      */
     public function maxNode(?SplayTreeNode $node): ?SplayTreeNode
     {
-        if ($node === null) {
+        if (!$node instanceof \DataStructures\SplayTree\SplayTreeNode) {
             return null;
         }
-        return $node->right === null
-            ? $node
-            : $this->maxNode($node->right);
+
+        return $node->right instanceof \DataStructures\SplayTree\SplayTreeNode
+            ? $this->maxNode($node->right)
+            : $node;
     }
 
     /**
@@ -436,11 +448,12 @@ class SplayTree extends SplayTreeRotations
     public function inOrderTraversal(?SplayTreeNode $node): array
     {
         $result = [];
-        if ($node !== null) {
+        if ($node instanceof \DataStructures\SplayTree\SplayTreeNode) {
             $result = array_merge($result, $this->inOrderTraversal($node->left));
             $result[] = [$node->key => $node->value];
             $result = array_merge($result, $this->inOrderTraversal($node->right));
         }
+
         return $result;
     }
 }

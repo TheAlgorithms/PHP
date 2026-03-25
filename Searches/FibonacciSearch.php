@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * Function to find nth number in Fibonacci sequence.
  * Uses a version of memoization and runs very fast!
@@ -14,6 +16,7 @@ function fibonacciPosition(int $n, array &$m = [])
     if (isset($m[$n])) {
         return $m[$n];
     }
+
     if ($n < 2) {
         return $n;
     }

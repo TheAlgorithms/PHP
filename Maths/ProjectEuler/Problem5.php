@@ -1,16 +1,7 @@
 <?php
 
-/**
- * This function solves the problem 5 of the Project Euler.
- *
- * Problem description:
- * 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
- * What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
- */
+declare(strict_types=1);
 
-/**
- * @return int
- */
 function problem5(): int
 {
     $number = 20;
@@ -22,9 +13,11 @@ function problem5(): int
                 break;
             }
         }
+
         if ($isSolution) {
             return $number;
         }
+
         $number += 20;
     }
 }

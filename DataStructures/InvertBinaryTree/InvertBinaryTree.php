@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DataStructures\InvertBinaryTree;
 
 /**
@@ -12,9 +14,10 @@ class InvertBinaryTree
 {
     public function invert(?BinaryTree $b): void
     {
-        if (! $b) {
+        if (!$b instanceof \DataStructures\InvertBinaryTree\BinaryTree) {
             return;
         }
+
         $tmp = $b->getLeft();
         $b->setLeft($b->getRight());
         $b->setRight($tmp);

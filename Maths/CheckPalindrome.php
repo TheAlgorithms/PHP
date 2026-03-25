@@ -1,19 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This function checks if given number is palindromic
  * e.g. 121
- * @param integer $input
- * @return boolean
  */
 function isNumberPalindromic(int $input): bool
 {
-    $arr = array_map('intval', str_split($input));
+    $arr = array_map('intval', str_split((string) $input));
     $arrRev = array_reverse($arr);
     $inputRev = (int)implode("", $arrRev);
-    if ($input == $inputRev) {
-        return true;
-    } else {
-        return false;
-    }
+    return $input === $inputRev;
 }

@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Merge Sort
  *
- * @param array $arr
  * @return array
  */
 function mergeSort(array $arr)
@@ -12,19 +13,14 @@ function mergeSort(array $arr)
         return $arr;
     }
 
-    $mid = floor(count($arr) / 2);
+    $mid = intdiv(count($arr), 2);
     $leftArray = mergeSort(array_slice($arr, 0, $mid));
     $rightArray = mergeSort(array_slice($arr, $mid));
 
     return merge($leftArray, $rightArray);
 }
 
-/**
- * @param array $leftArray
- * @param array $rightArray
- * @return array
- */
-function merge(array $leftArray, array $rightArray)
+function merge(array $leftArray, array $rightArray): array
 {
     $result = [];
     $i = 0;

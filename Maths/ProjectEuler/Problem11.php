@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This function solves the problem 11 of the Project Euler.
  *
@@ -35,43 +37,47 @@
  */
 
 
-function horizontalProduct($grid, $row, $col)
+function horizontalProduct(array $grid, $row, $col): int|float
 {
     $product = 1;
     for ($i = 0; $i < 4; $i++) {
         $product *= $grid[$row][$col + $i];
     }
+
     return $product;
 }
 
-function verticalProduct($grid, $row, $col)
+function verticalProduct(array $grid, $row, $col): int|float
 {
     $product = 1;
     for ($i = 0; $i < 4; $i++) {
         $product *= $grid[$row + $i][$col];
     }
+
     return $product;
 }
 
-function diagonalRightProduct($grid, $row, $col)
+function diagonalRightProduct(array $grid, $row, $col): int|float
 {
     $product = 1;
     for ($i = 0; $i < 4; $i++) {
         $product *= $grid[$row + $i][$col + $i];
     }
+
     return $product;
 }
 
-function diagonalLeftProduct($grid, $row, $col)
+function diagonalLeftProduct(array $grid, $row, $col): int|float
 {
     $product = 1;
     for ($i = 0; $i < 4; $i++) {
         $product *= $grid[$row + $i][$col - $i];
     }
+
     return $product;
 }
 
-function problem11()
+function problem11(): int|float
 {
     $grid = "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08 
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00 
@@ -96,6 +102,7 @@ function problem11()
 
     //Transform the grid string to a matrix data type (nested arrays)
     $grid = explode(' ', $grid);
+
     $grid_matrix = [];
     $row = [];
     $i = 0;
@@ -112,6 +119,7 @@ function problem11()
             $i = 0;
         }
     }
+
     $maxProduct = 0;
 
     for ($row = 0; $row < $matrix_size; $row++) {
@@ -123,6 +131,7 @@ function problem11()
                     $maxProduct = $product;
                 }
             }
+
             // vertical
             if ($row < $matrix_size - 3) {
                 $product = verticalProduct($grid_matrix, $row, $col);
@@ -130,6 +139,7 @@ function problem11()
                     $maxProduct = $product;
                 }
             }
+
             // diagonal right
             if ($col < $matrix_size - 3 && $row < $matrix_size - 3) {
                 $product = diagonalRightProduct($grid_matrix, $row, $col);
@@ -137,6 +147,7 @@ function problem11()
                     $maxProduct = $product;
                 }
             }
+
             // diagonal left
             if ($col > 2 && $row < $matrix_size - 3) {
                 $product = diagonalLeftProduct($grid_matrix, $row, $col);

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Linear search in PHP
  *
@@ -17,9 +19,9 @@
  *  @param integer $target an integer number to search for in the list
  *  @return integer the index where the target is found (or -1 if not found)
  */
-function linearSearch($list, $target)
+function linearSearch(array $list, $target): int
 {
-    $n = sizeof($list);
+    $n = count($list);
     for ($i = 0; $i < $n; $i++) {
         if ($list[$i] == $target) {
             return $i + 1;

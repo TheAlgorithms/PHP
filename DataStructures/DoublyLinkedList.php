@@ -1,21 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 require_once __DIR__ . '/Node.php';
 
 /**
  *  Doubly Linked List
  */
-class DoublyLinkedList
+class DoublyLinkedList implements \Stringable
 {
     public ?Node $head = null;
-    public ?Node $tail = null;
 
-    // Constructor
-    public function __construct()
-    {
-        $this->head = null;
-        $this->tail = null;
-    }
+    public ?Node $tail = null;
 
     // Destructor
     public function __destruct()
@@ -30,7 +26,7 @@ class DoublyLinkedList
         $newNode = new Node($data);
 
         // If the list is empty, set the head and tail to the new node
-        if ($this->head === null) {
+        if (!$this->head instanceof \Node) {
             $this->head = $newNode;
             $this->tail = $newNode;
             return;
@@ -52,7 +48,7 @@ class DoublyLinkedList
         $newNode = new Node($data);
 
         // If the list is empty, set the head and tail to the new node
-        if ($this->head === null) {
+        if (!$this->head instanceof \Node) {
             $this->head = $newNode;
             $this->tail = $newNode;
             return;
@@ -77,7 +73,7 @@ class DoublyLinkedList
             // Set the tail's next node to the new node
             // Set the new node's previous node to the tail
             // Set the tail to the new node
-            if ($current === null) {
+            if (!$current instanceof \Node) {
                 $this->tail->next = $newNode;
                 $newNode->prev = $this->tail;
                 $this->tail = $newNode;
@@ -102,7 +98,7 @@ class DoublyLinkedList
     public function delete($data): void
     {
         // If the list is empty, return
-        if ($this->head === null) {
+        if (!$this->head instanceof \Node) {
             return;
         }
 
@@ -119,7 +115,7 @@ class DoublyLinkedList
         $current = $this->head;
 
         // Loop through the list until we reach the end of the list
-        while ($current !== null) {
+        while ($current instanceof \Node) {
             // If the current node's data is the data we're looking for
             // Set the current node's previous node's next node to the current node's next node
             // Set the current node's next node's previous node to the current node's previous node
@@ -138,7 +134,7 @@ class DoublyLinkedList
     public function deleteAt($position): void
     {
         // If the list is empty, return
-        if ($this->head === null) {
+        if (!$this->head instanceof \Node) {
             return;
         }
 
@@ -159,7 +155,7 @@ class DoublyLinkedList
             // If the current node is null, we've reached the end of the list
             // Set the tail to the current node's previous node
             // Set the tail's next node to null
-            if ($current === null) {
+            if (!$current instanceof \Node) {
                 $this->tail = $current->prev;
                 $this->tail->next = null;
                 return;
@@ -179,7 +175,7 @@ class DoublyLinkedList
     public function printList(): void
     {
         // If the list is empty, return
-        if ($this->head === null) {
+        if (!$this->head instanceof \Node) {
             return;
         }
 
@@ -187,7 +183,7 @@ class DoublyLinkedList
         $current = $this->head;
 
         // Loop through the list until we reach the end of the list
-        while ($current !== null) {
+        while ($current instanceof \Node) {
             // Print the current node's data
             echo $current->data . "\n";
 
@@ -200,7 +196,7 @@ class DoublyLinkedList
     public function printListReverse(): void
     {
         // If the list is empty, return
-        if ($this->head === null) {
+        if (!$this->head instanceof \Node) {
             return;
         }
 
@@ -208,7 +204,7 @@ class DoublyLinkedList
         $current = $this->tail;
 
         // Loop through the list until we reach the beginning of the list
-        while ($current !== null) {
+        while ($current instanceof \Node) {
             // Print the current node's data
             echo $current->data . "\n";
 
@@ -221,7 +217,7 @@ class DoublyLinkedList
     public function reverse(): void
     {
         // If the list is empty, return
-        if ($this->head === null) {
+        if (!$this->head instanceof \Node) {
             return;
         }
 
@@ -229,7 +225,7 @@ class DoublyLinkedList
         $current = $this->head;
 
         // Loop through the list until we reach the end of the list
-        while ($current !== null) {
+        while ($current instanceof \Node) {
             // Set the temp node to the current node's next node
             $temp = $current->next;
 
@@ -257,7 +253,7 @@ class DoublyLinkedList
     public function length(): int
     {
         // If the list is empty, return 0
-        if ($this->head === null) {
+        if (!$this->head instanceof \Node) {
             return 0;
         }
 
@@ -268,7 +264,7 @@ class DoublyLinkedList
         $length = 0;
 
         // Loop through the list until we reach the end of the list
-        while ($current !== null) {
+        while ($current instanceof \Node) {
             // Increment the length
             $length++;
 
@@ -284,7 +280,7 @@ class DoublyLinkedList
     public function search($data): ?Node
     {
         // If the list is empty, return null
-        if ($this->head === null) {
+        if (!$this->head instanceof \Node) {
             return null;
         }
 
@@ -292,7 +288,7 @@ class DoublyLinkedList
         $current = $this->head;
 
         // Loop through the list until we reach the end of the list
-        while ($current !== null) {
+        while ($current instanceof \Node) {
             // If the current node's data is the data we're looking for, return the current node
             if ($current->data === $data) {
                 return $current;
@@ -310,19 +306,15 @@ class DoublyLinkedList
     public function isEmpty(): bool
     {
         // If the head is null, return true
-        if ($this->head === null) {
-            return true;
-        }
-
         // Otherwise, return false
-        return false;
+        return !$this->head instanceof \Node;
     }
 
     // To String
     public function __toString(): string
     {
         // If the list is empty, return an empty string
-        if ($this->head === null) {
+        if (!$this->head instanceof \Node) {
             return '';
         }
 
@@ -333,12 +325,12 @@ class DoublyLinkedList
         $string = '';
 
         // Loop through the list until we reach the end of the list
-        while ($current !== null) {
+        while ($current instanceof \Node) {
             // Append the current node's data to the string
             $string .= $current->data;
 
             // If the current node's next node is not null, append a comma and a space to the string
-            if ($current->next !== null) {
+            if ($current->next instanceof \Node) {
                 $string .= ', ';
             }
 
@@ -354,7 +346,7 @@ class DoublyLinkedList
     public function toArray(): array
     {
         // If the list is empty, return an empty array
-        if ($this->head === null) {
+        if (!$this->head instanceof \Node) {
             return [];
         }
 
@@ -365,7 +357,7 @@ class DoublyLinkedList
         $array = [];
 
         // Loop through the list until we reach the end of the list
-        while ($current !== null) {
+        while ($current instanceof \Node) {
             // Append the current node's data to the array
             $array[] = $current->data;
 

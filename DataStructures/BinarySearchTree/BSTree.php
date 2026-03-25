@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request: #174
  * https://github.com/TheAlgorithms/PHP/pull/174
@@ -10,11 +12,12 @@
 
 namespace DataStructures\BinarySearchTree;
 
-require_once 'BinaryTreeTraversal.php';
+require_once __DIR__ . '/BinaryTreeTraversal.php';
 
 class BSTree extends BinaryTreeTraversal
 {
     private ?BSTNode $root = null;
+
     private int $counter = 0;
 
     /**
@@ -27,8 +30,10 @@ class BSTree extends BinaryTreeTraversal
         foreach ($initialData as $key => $value) {
             $this->insert($key, $value);                // Build the tree from an array of key-value pairs
         }
+
         parent::setTraversalType($traversalType);
     }
+
     /**
      * Get the root of the Splay Tree.
      *
@@ -46,7 +51,7 @@ class BSTree extends BinaryTreeTraversal
 
     public function isEmpty(): bool
     {
-        return $this->root === null;
+        return !$this->root instanceof \DataStructures\BinarySearchTree\BSTNode;
     }
 
     /**
@@ -63,7 +68,7 @@ class BSTree extends BinaryTreeTraversal
 
     private function insertNode(?BSTNode &$rootPtr, int $key, $value): void
     {
-        if ($rootPtr === null) {
+        if (!$rootPtr instanceof \DataStructures\BinarySearchTree\BSTNode) {
             $rootPtr = new BSTNode($key, $value);
             return;
         }
@@ -87,15 +92,16 @@ class BSTree extends BinaryTreeTraversal
     public function remove(int $key): ?BSTNode
     {
         $discardedNode = $this->removeNode($this->root, $key);
-        if ($discardedNode !== null) {
+        if ($discardedNode instanceof \DataStructures\BinarySearchTree\BSTNode) {
             $this->counter--;
         }
+
         return $discardedNode;
     }
 
     private function removeNode(?BSTNode &$rootPtr, int $key): ?BSTNode
     {
-        if ($rootPtr === null) {
+        if (!$rootPtr instanceof \DataStructures\BinarySearchTree\BSTNode) {
             return null;
         }
 
@@ -109,6 +115,7 @@ class BSTree extends BinaryTreeTraversal
                 ? $this->handleNodeWithTwoChildren($rootPtr)
                 : $this->handleNodeWithSingleOrZeroChild($rootPtr);
         }
+
         return $discardedNode;
     }
 
@@ -152,7 +159,7 @@ class BSTree extends BinaryTreeTraversal
         }
 
         // Update the parent reference for the new child node
-        if ($rootPtr !== null) {
+        if ($rootPtr instanceof \DataStructures\BinarySearchTree\BSTNode) {
             $rootPtr->parent = $discard->parent;
         }
 
@@ -166,13 +173,13 @@ class BSTree extends BinaryTreeTraversal
      */
     public function minNode(?BSTNode $node): ?BSTNode
     {
-        if ($node === null) {
+        if (!$node instanceof \DataStructures\BinarySearchTree\BSTNode) {
             return null;
         }
 
-        return $node->left === null
-            ? $node
-            : $this->minNode($node->left);
+        return $node->left instanceof \DataStructures\BinarySearchTree\BSTNode
+            ? $this->minNode($node->left)
+            : $node;
     }
 
     /**
@@ -191,13 +198,14 @@ class BSTree extends BinaryTreeTraversal
 
     private function searchNode(?BSTNode $node, int $key): ?BSTNode
     {
-        if ($node === null) {
+        if (!$node instanceof \DataStructures\BinarySearchTree\BSTNode) {
             return null;
         }
-
         if ($key === $node->key) {
             return $node;
-        } elseif ($key < $node->key) {
+        }
+
+        if ($key < $node->key) {
             return $this->searchNode($node->left, $key);
         } else {
             return $this->searchNode($node->right, $key);
@@ -214,13 +222,14 @@ class BSTree extends BinaryTreeTraversal
      */
     public function isFound(?BSTNode $node, int $key): bool
     {
-        if ($node === null) {
+        if (!$node instanceof \DataStructures\BinarySearchTree\BSTNode) {
             return false;
         }
-
         if ($key === $node->key) {
             return true;
-        } elseif ($key < $node->key) {
+        }
+
+        if ($key < $node->key) {
             return $this->isFound($node->left, $key);
         } else {
             return $this->isFound($node->right, $key);
@@ -238,9 +247,9 @@ class BSTree extends BinaryTreeTraversal
      */
     public function getDepth(BSTNode $node): int
     {
-        return $node->parent === null
-            ? 0
-            : 1 + $this->getDepth($node->parent);
+        return $node->parent instanceof \DataStructures\BinarySearchTree\BSTNode
+            ? 1 + $this->getDepth($node->parent)
+            : 0;
     }
 
     /**
@@ -257,12 +266,14 @@ class BSTree extends BinaryTreeTraversal
         if ($node->isLeaf()) {
             return 0;
         }
+
         $height = 0;
         $childrenList = $node->getChildren();
 
         foreach ($childrenList as $childNode) {
             $height = max($height, $this->getHeight($childNode));
         }
+
         return 1 + $height;
     }
 
@@ -316,9 +327,10 @@ class BSTree extends BinaryTreeTraversal
      */
     private function serializeTree(?BSTNode $node): array
     {
-        if ($node === null) {
+        if (!$node instanceof \DataStructures\BinarySearchTree\BSTNode) {
             return [];
         }
+
         return [
             'key' => $node->key,
             'value' => $node->value,
@@ -352,7 +364,7 @@ class BSTree extends BinaryTreeTraversal
      */
     private function deserializeTree(array $data, ?BSTNode $parent): ?BSTNode
     {
-        if (empty($data)) {
+        if ($data === []) {
             return null;
         }
 
@@ -364,12 +376,13 @@ class BSTree extends BinaryTreeTraversal
 
         return $node;
     }
+
     /**
      * Recursively updates the BST size after deserialization.
      */
     private function updateNodeCount(?BSTNode $node): void
     {
-        if ($node !== null) {
+        if ($node instanceof \DataStructures\BinarySearchTree\BSTNode) {
             $this->counter++;
             $this->updateNodeCount($node->left);
             $this->updateNodeCount($node->right);

@@ -1,12 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Selection Sort
- *
- * @param array $array
- * @return array
  */
-function selectionSort(array $array)
+function selectionSort(array $array): array
 {
     $length = count($array);
 

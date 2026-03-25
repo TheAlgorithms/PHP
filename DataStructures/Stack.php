@@ -1,15 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Stack Implementation in PHP
  */
-class Stack
+class Stack implements \Stringable
 {
-    private array $stack = [];
-
-    public function __construct(array $array = [])
+    public function __construct(private array $stack = [])
     {
-        $this->stack = $array;
     }
 
     public function __destruct()
@@ -20,10 +19,10 @@ class Stack
 
     public function push($data): void
     {
-        array_push($this->stack, $data);
+        $this->stack[] = $data;
     }
 
-    public function pop()
+    public function pop(): mixed
     {
         return array_pop($this->stack);
     }
@@ -35,7 +34,7 @@ class Stack
 
     public function isEmpty(): bool
     {
-        return empty($this->stack);
+        return $this->stack === [];
     }
 
     public function print(): void
@@ -60,7 +59,7 @@ class Stack
 
     public function search($data): int
     {
-        return array_search($data, $this->stack);
+        return array_search($data, $this->stack, true);
     }
 
     public function toArray(): array

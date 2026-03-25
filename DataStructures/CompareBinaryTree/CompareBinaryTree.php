@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DataStructures\CompareBinaryTree;
 
 /**
@@ -12,23 +14,21 @@ class CompareBinaryTree
 {
     /**
      * compare two binary trees
-     * @param BinaryTreeNode|null $a
-     * @param BinaryTreeNode|null $b
-     * @return bool
      */
     public function areTreesEqual(?BinaryTreeNode $a, ?BinaryTreeNode $b): bool
     {
-        if (! $a  &&  $b || $a && ! $b) {
+        if (!$a instanceof \DataStructures\CompareBinaryTree\BinaryTreeNode  &&  $b instanceof \DataStructures\CompareBinaryTree\BinaryTreeNode || $a instanceof \DataStructures\CompareBinaryTree\BinaryTreeNode && !$b instanceof \DataStructures\CompareBinaryTree\BinaryTreeNode) {
             return false;
         }
 
-        if (! $a && ! $b) {
+        if (!$a instanceof \DataStructures\CompareBinaryTree\BinaryTreeNode && !$b instanceof \DataStructures\CompareBinaryTree\BinaryTreeNode) {
             return true;
         }
 
         if ($a->value !== $b->value) {
             return false;
         }
+
         return  $this->areTreesEqual($a->left, $b->left)
             &&  $this->areTreesEqual($a->right, $b->right);
     }

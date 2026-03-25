@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Interpolation Search********
  *
@@ -16,7 +18,7 @@
  * if the (value of index in array) is > key decrease the high index
  * repeat the loop
  */
-function interpolationSearch($arr, $key)
+function interpolationSearch(array $arr, $key): ?int
 {
     $length = count($arr) - 1;
     $low = 0;
@@ -30,14 +32,15 @@ function interpolationSearch($arr, $key)
 
         //GET VALUE OF INDEX IN ARRAY...
         $indexValue = $arr[$index];
-
         if ($indexValue === $key) {
             //index value equals key
             //FOUND TARGET
             //return index value
             $position = $index;
             return (int) $position;
-        } elseif ($indexValue < $key) {
+        }
+
+        if ($indexValue < $key) {
             //index value lower than key
             //increase low index
             $low = $index + 1;

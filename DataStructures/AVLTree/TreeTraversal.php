@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request: #163
  * https://github.com/TheAlgorithms/PHP/pull/163
@@ -19,11 +21,12 @@ abstract class TreeTraversal
     public static function inOrder(?AVLTreeNode $node): array
     {
         $result = [];
-        if ($node !== null) {
+        if ($node instanceof \DataStructures\AVLTree\AVLTreeNode) {
             $result = array_merge($result, self::inOrder($node->left));
             $result[] = [$node->key => $node->value];
             $result = array_merge($result, self::inOrder($node->right));
         }
+
         return $result;
     }
 
@@ -34,11 +37,12 @@ abstract class TreeTraversal
     public static function preOrder(?AVLTreeNode $node): array
     {
         $result = [];
-        if ($node !== null) {
+        if ($node instanceof \DataStructures\AVLTree\AVLTreeNode) {
             $result[] = [$node->key => $node->value];
             $result = array_merge($result, self::preOrder($node->left));
             $result = array_merge($result, self::preOrder($node->right));
         }
+
         return $result;
     }
 
@@ -49,11 +53,12 @@ abstract class TreeTraversal
     public static function postOrder(?AVLTreeNode $node): array
     {
         $result = [];
-        if ($node !== null) {
+        if ($node instanceof \DataStructures\AVLTree\AVLTreeNode) {
             $result = array_merge($result, self::postOrder($node->left));
             $result = array_merge($result, self::postOrder($node->right));
             $result[] = [$node->key => $node->value];
         }
+
         return $result;
     }
 
@@ -63,14 +68,14 @@ abstract class TreeTraversal
     public static function breadthFirst(?AVLTreeNode $root): array
     {
         $result = [];
-        if ($root === null) {
+        if (!$root instanceof \DataStructures\AVLTree\AVLTreeNode) {
             return $result;
         }
 
         $queue = [];
         $queue[] = $root;
 
-        while (!empty($queue)) {
+        while ($queue !== []) {
             $currentNode = array_shift($queue);
             $result[] = [$currentNode->key => $currentNode->value];
 

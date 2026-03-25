@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request: #163
  * https://github.com/TheAlgorithms/PHP/pull/163
@@ -12,38 +14,27 @@ namespace DataStructures\AVLTree;
 
 class AVLTreeNode
 {
-    /**
-     * @var int|string
-     */
-    public $key;
-    /**
-     * @var mixed
-     */
-    public $value;
-    public ?AVLTreeNode $left;
-    public ?AVLTreeNode $right;
-    public int $height;
+    public int $height = 1;
 
-    public function __construct($key, $value, ?AVLTreeNode $left = null, ?AVLTreeNode $right = null)
+    /**
+     * @param int|string $key
+     */
+    public function __construct(public $key, public mixed $value, public ?AVLTreeNode $left = null, public ?AVLTreeNode $right = null)
     {
-        $this->key = $key;
-        $this->value = $value;
-        $this->left = $left;
-        $this->right = $right;
-        $this->height = 1; // New node is initially at height 1
+        // New node is initially at height 1
     }
 
     public function updateHeight(): void
     {
-        $leftHeight = $this->left ? $this->left->height : 0;
-        $rightHeight = $this->right ? $this->right->height : 0;
+        $leftHeight = $this->left instanceof \DataStructures\AVLTree\AVLTreeNode ? $this->left->height : 0;
+        $rightHeight = $this->right instanceof \DataStructures\AVLTree\AVLTreeNode ? $this->right->height : 0;
         $this->height = max($leftHeight, $rightHeight) + 1;
     }
 
     public function balanceFactor(): int
     {
-        $leftHeight = $this->left ? $this->left->height : 0;
-        $rightHeight = $this->right ? $this->right->height : 0;
+        $leftHeight = $this->left instanceof \DataStructures\AVLTree\AVLTreeNode ? $this->left->height : 0;
+        $rightHeight = $this->right instanceof \DataStructures\AVLTree\AVLTreeNode ? $this->right->height : 0;
         return $leftHeight - $rightHeight;
     }
 }

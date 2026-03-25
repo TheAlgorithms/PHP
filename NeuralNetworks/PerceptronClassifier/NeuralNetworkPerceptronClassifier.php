@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace NeuralNetworks\PerceptronClassifier;
 
 /**
@@ -11,13 +13,6 @@ namespace NeuralNetworks\PerceptronClassifier;
  */
 class NeuralNetworkPerceptronClassifier
 {
-    /**
-     * @param array $X
-     * @param array $Y
-     * @param int $iterations
-     * @param float $learningRate
-     * @return array
-     */
     public function trainModel(array $X, array $Y, int $iterations, float $learningRate): array
     {
         [$W, $b] = $this->initParams(count($X));
@@ -36,23 +31,17 @@ class NeuralNetworkPerceptronClassifier
             [$W, $b] = $this->updateParams($W, $b, $dW, $db, $learningRate);
 
             if ($i % 100 == 0) {
-                echo "Iteration {$i} - Cost: {$cost}\n";
+                echo sprintf('Iteration %d - Cost: %s%s', $i, $cost, PHP_EOL);
             }
         }
 
         return [$W, $b];
     }
 
-    /**
-     * @param array $X
-     * @param array $W
-     * @param float $b
-     * @return array
-     */
     public function predict(array $X, array $W, float $b): array
     {
         $A = $this->forwardPropagation($X, $W, $b);
-        return array_map(fn($a) => $a > 0.5 ? 1 : 0, $A);
+        return array_map(fn ($a): int => $a > 0.5 ? 1 : 0, $A);
     }
 
     /**
@@ -67,7 +56,7 @@ class NeuralNetworkPerceptronClassifier
         $X = [];
         for ($i = 0; $i < 2; $i++) {
             for ($j = 0; $j < $m; $j++) {
-                $X[$i][$j] = rand(0, 1);
+                $X[$i][$j] = random_int(0, 1);
             }
         }
 
@@ -80,25 +69,24 @@ class NeuralNetworkPerceptronClassifier
         return [$X, $Y];
     }
 
-     /**
-      * Stage 2. Initialize model parameters
-      * @param int $n Number of features
-      * @return array [$W, $b] Weight and bias arrays
-      */
+    /**
+     * Stage 2. Initialize model parameters
+     * @param int $n Number of features
+     * @return array [$W, $b] Weight and bias arrays
+     */
     private function initParams(int $n): array
     {
         $W = [];
         for ($i = 0; $i < $n; $i++) {
             $W[$i] = mt_rand() / mt_getrandmax(); // Small random values
         }
+
         $b = 0.0; // Bias initialized to zero
         return [$W, $b];
     }
 
     /**
      * Sigmoid Activation Function
-     * @param float $z
-     * @return float
      */
     private function sigmoid(float $z): float
     {
@@ -107,29 +95,25 @@ class NeuralNetworkPerceptronClassifier
 
     /**
      * Stage 3. Forward Propagation
-     * @param array $X
-     * @param array $W
-     * @param float $b
-     * @return array
      */
     private function forwardPropagation(array $X, array $W, float $b): array
     {
         $Z = [];
-        for ($j = 0; $j < count($X[0]); $j++) {
+        $counter = count($X[0]);
+        for ($j = 0; $j < $counter; $j++) {
             $sum = $b;
             for ($i = 0; $i < count($W); $i++) {
                 $sum += $W[$i] * $X[$i][$j];
             }
+
             $Z[$j] = $this->sigmoid($sum);
         }
+
         return $Z;
     }
 
     /**
      * Stage 4. Compute Cost Function (Binary Cross-Entropy Loss)
-     * @param array $A
-     * @param array $Y
-     * @return float
      */
     private function computeCost(array $A, array $Y): float
     {
@@ -138,15 +122,12 @@ class NeuralNetworkPerceptronClassifier
         for ($i = 0; $i < $m; $i++) {
             $cost += -($Y[$i] * log($A[$i]) + (1 - $Y[$i]) * log(1 - $A[$i]));
         }
+
         return $cost / $m;
     }
 
     /**
      * Stage 5. Backward Propagation
-     * @param array $A
-     * @param array $X
-     * @param array $Y
-     * @return array
      */
     private function backwardPropagation(array $A, array $X, array $Y): array
     {
@@ -156,16 +137,22 @@ class NeuralNetworkPerceptronClassifier
 
         for ($j = 0; $j < $m; $j++) {
             $dZ = $A[$j] - $Y[$j];
-            for ($i = 0; $i < count($X); $i++) {
+            $counter = count($X);
+            for ($i = 0; $i < $counter; $i++) {
                 $dW[$i] += $dZ * $X[$i][$j];
             }
+
             $db += $dZ;
         }
 
         // Average gradients
-        for ($i = 0; $i < count($dW); $i++) {
+        $counter = count($dW);
+
+        // Average gradients
+        for ($i = 0; $i < $counter; $i++) {
             $dW[$i] /= $m;
         }
+
         $db /= $m;
 
         return [$dW, $db];
@@ -173,18 +160,14 @@ class NeuralNetworkPerceptronClassifier
 
     /**
      * STage 6. Update Parameters
-     * @param array $W
-     * @param float $b
-     * @param array $dW
-     * @param float $db
-     * @param float $learningRate
-     * @return array
      */
     private function updateParams(array $W, float $b, array $dW, float $db, float $learningRate): array
     {
-        for ($i = 0; $i < count($W); $i++) {
+        $counter = count($W);
+        for ($i = 0; $i < $counter; $i++) {
             $W[$i] -= $learningRate * $dW[$i];
         }
+
         $b -= $learningRate * $db;
 
         return [$W, $b];

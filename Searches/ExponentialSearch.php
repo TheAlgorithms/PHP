@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * Exponential Search Algorithm
  *
@@ -8,15 +10,13 @@
  **** if it were in the list.
  * In the second stage, a binary search is performed on this range.
  */
-
 /**
- * @param  Array  $arr
  * @param  int  $value
  * @param  int  $floor
  * @param  int  $ceiling
  * @return int
  **/
-function binarySearch($arr, $value, $floor, $ceiling)
+function binarySearch(array $arr, $value, $floor, $ceiling)
 {
     // Get $middle index
     $mid = floor(($floor + $ceiling) / 2);
@@ -35,17 +35,16 @@ function binarySearch($arr, $value, $floor, $ceiling)
     // If the $middle element is greater than the $value
     if ($arr[$mid] > $value) {
         return binarySearch($arr, $value, $floor, $mid - 1);
-    } else {     // search the right part of the $array If the $middle element is lower than the $value
-        return binarySearch($arr, $value, $mid + 1, $ceiling);
     }
+    // search the right part of the $array If the $middle element is lower than the $value
+    return binarySearch($arr, $value, $mid + 1, $ceiling);
 }
 
 /**
- * @param  Array  $arr
  * @param  int  $value
  * @return int
  */
-function exponentialSearch($arr, $value)
+function exponentialSearch(array $arr, $value)
 {
     // If $value is the first element of the $array return this position
     if ($arr[0] === $value) {
@@ -56,8 +55,9 @@ function exponentialSearch($arr, $value)
     $i = 1;
     $length = count($arr);
     while ($i < $length && $arr[$i] <= $value) {
-        $i = $i * 2;
+        $i *= 2;
     }
+
     $floor = $i / 2;
     $ceiling = min($i, $length);
 

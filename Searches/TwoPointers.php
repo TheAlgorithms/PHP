@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Two Pointers Approach
  * This method is designed to improve the efficiency of algorithms by processing two elements per
@@ -27,13 +29,13 @@
  */
 
 // Two Pointers step by step solution to that problem is given below:
-function twoPointers($list, $target)
+function twoPointers($list, $target): int
 {
     // First we need to sort the array so that we can take advantage of the order
     sort($list);
     // Now we are having two pointers "$left" and "$right"
     // $left at the start and $right at the end of the array
-    $n = sizeof($list);
+    $n = count($list);
     $left = 0;
     $right = $n - 1;
 
@@ -46,17 +48,20 @@ function twoPointers($list, $target)
             // it means the sum is less than $target and we need to increase our sum
             // to increase the sum we will move $left pointer to the right
             $left++;
-        } else if ($list[$left] + $list[$right] > $target) {
+        } elseif ($list[$left] + $list[$right] > $target) {
             // the sum is greater than the target, so we need to decrease the sum
             // to decrease the sum we will move our $right pointer to the left
             $right--;
-        } else if ($list[$left] + $list[$right] == $target) {
+        } elseif ($list[$left] + $list[$right] == $target) {
             // if it's true, we have found a pair
             $ans++;
             // now we will move one of our pointers, otherwise it'll run forever
-            $left++; # doesn't matter which one we move
+            $left++;
+            # doesn't matter which one we move
         }
+
         // The loop will go until the pointers point to the same element
     }
+
     return $ans; # returning the number of pairs
 }

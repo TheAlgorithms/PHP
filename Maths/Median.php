@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This function calculates
  * The median value of
@@ -9,9 +11,9 @@
  * @return decimal $median Median of provided numbers
  * @throws \Exception
  */
-function median(...$numbers)
+function median(...$numbers): float|int|\decimal
 {
-    if (empty($numbers)) {
+    if ($numbers === []) {
         throw new \Exception('Please pass values to find mean value');
     }
 

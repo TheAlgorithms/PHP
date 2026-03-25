@@ -1,11 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Count homogenous substrings
  * @param String $s
- * @return Integer
  */
-function countHomogenous($s)
+function countHomogenous($s): int
 {
     // Initialize the count of homogeneous substrings
     $count = 0;

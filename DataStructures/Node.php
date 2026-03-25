@@ -1,17 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Linked List Node Class
  */
 class Node
 {
     public ?Node $next = null;
+
     public ?Node $prev = null;
-    public $data;
 
     // Constructor
-    public function __construct($data)
+    public function __construct(public $data)
     {
-        $this->data = $data;
     }
 }

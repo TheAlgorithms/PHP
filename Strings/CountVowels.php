@@ -1,18 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This function returns the total number of vowels present in
  * the given string using a simple method of looping through
  * all the characters present in the string.
  *
- * @param  string  $string
  * @return int   $numberOfVowels
  * @throws \Exception
  */
 function countVowelsSimple(string $string): int
 {
     // Check for an empty string and throw an exception if so.
-    if (empty($string)) {
+    if ($string === '' || $string === '0') {
         throw new \Exception('Please pass a non-empty string value.');
     }
 
@@ -41,13 +42,12 @@ function countVowelsSimple(string $string): int
  * This function returns the Total number of vowels present in the given
  * string using a regular expression.
  *
- * @param  string  $string
  * @return int
  * @throws \Exception
  */
-function countVowelsRegex(string $string)
+function countVowelsRegex(string $string): int|false
 {
-    if (empty($string)) {
+    if ($string === '' || $string === '0') {
         throw new \Exception('Please pass a non-empty string value');
     }
 

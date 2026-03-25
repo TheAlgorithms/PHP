@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request #162 and #172
  * https://github.com/TheAlgorithms/PHP/pull/162
@@ -14,14 +16,9 @@ namespace DataStructures\Trie;
 class TrieNode
 {
     /** @var array<string, TrieNode> */
-    public array $children;
-    public bool $isEndOfWord;
+    public array $children = [];
 
-    public function __construct()
-    {
-        $this->children = [];  // Associative array where [ char => TrieNode ]
-        $this->isEndOfWord = false;
-    }
+    public bool $isEndOfWord = false;
 
     /**
      * Add a child node for a character.
@@ -32,6 +29,7 @@ class TrieNode
         if (!isset($this->children[$char])) {
             $this->children[$char] = new TrieNode();
         }
+
         return $this->children[$char];
     }
 

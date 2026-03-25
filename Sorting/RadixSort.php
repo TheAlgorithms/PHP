@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Radix Sort
  *
@@ -11,8 +13,9 @@ function radixSort($nums)
     $maxDigitsCount = maxDigits($nums);
     for ($k = 0; $k < $maxDigitsCount; $k++) {
         $digitBucket = array_fill(0, 10, []);
+        $counter = count($nums);
 
-        for ($i = 0; $i < count($nums); $i++) {
+        for ($i = 0; $i < $counter; $i++) {
             $digitBucket[getDigit($nums[$i], $k)][] = $nums[$i];
         }
 
@@ -26,18 +29,15 @@ function radixSort($nums)
 /*
  * Helper functions
  */
-
-
 /**
  * Get the digits value by it's place
  *
  * @param $num
  * @param $i
- * @return int
  */
-function getDigit($num, $i)
+function getDigit($num, $i): int
 {
-    return floor(abs($num) / pow(10, $i)) % 10;
+    return floor(abs($num) / 10 ** $i) % 10;
 }
 
 /**
@@ -46,11 +46,12 @@ function getDigit($num, $i)
  * @param $num
  * @return int
  */
-function digitsCount($num)
+function digitsCount($num): int|float
 {
     if ($num == 0) {
         return 1;
     }
+
     return floor(log10(abs($num))) + 1;
 }
 
@@ -63,8 +64,9 @@ function digitsCount($num)
 function maxDigits($arr)
 {
     $maxDigits = 0;
+    $counter = count($arr);
 
-    for ($i = 0; $i < count($arr); $i++) {
+    for ($i = 0; $i < $counter; $i++) {
         $maxDigits = max($maxDigits, digitsCount($arr[$i]));
     }
 
@@ -73,18 +75,17 @@ function maxDigits($arr)
 
 /**
  * Concat the array
- *
- * @param  array  $array
- * @return array
  */
-function concat(array $array)
+function concat(array $array): array
 {
     $newArray = [];
+    $counter = count($array);
 
-    for ($i = 0; $i < count($array); $i++) {
+    for ($i = 0; $i < $counter; $i++) {
         for ($j = 0; $j < count($array[$i]); $j++) {
             $newArray[] = $array[$i][$j];
         }
     }
+
     return $newArray;
 }

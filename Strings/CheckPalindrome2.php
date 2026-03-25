@@ -1,13 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This is a simple way to check palindrome string
  * using php strrev() function
  * make it simple
  *
- * @param  string  $string
- * @param  bool  $caseInsensitive
- * @return string
  * @throws \Exception
  */
 function checkPalindromeString(string $string, bool $caseInsensitive = true): string
@@ -15,7 +14,7 @@ function checkPalindromeString(string $string, bool $caseInsensitive = true): st
     //removing spaces
     $string = trim($string);
 
-    if (empty($string)) {
+    if ($string === '' || $string === '0') {
         throw new \Exception('You are given empty string. Please give a non-empty string value');
     }
 

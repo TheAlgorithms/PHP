@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This function solves the problem 6 of the Project Euler.
  *
@@ -41,5 +43,6 @@ function problem6(int $maxNumber = 100): int
         $sumOfSquares += $i ** 2; // add squares to the sum of squares
         $sums += $i; // add number to sum to square later
     }
+
     return ($sums ** 2) - $sumOfSquares; // difference of square of the total sum and sum of squares
 }

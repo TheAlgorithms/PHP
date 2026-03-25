@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This function converts the
  * submitted Binary Number to
@@ -15,17 +17,17 @@
  * @return int
  * @throws \Exception
  */
-function binaryToDecimal($binaryNumber)
+function binaryToDecimal($binaryNumber): int|float
 {
     if (!is_numeric($binaryNumber)) {
         throw new \Exception('Please pass a valid Binary Number for Converting it to a Decimal Number.');
     }
 
     $decimalNumber = 0;
-    $binaryDigits  = array_reverse(str_split($binaryNumber));
+    $binaryDigits  = array_reverse(str_split((string)$binaryNumber));
 
     foreach ($binaryDigits as $index => $digit) {
-        $decimalNumber += $digit * pow(2, $index);
+        $decimalNumber += $digit * 2 ** $index;
     }
 
     return $decimalNumber;

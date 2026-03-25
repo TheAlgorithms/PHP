@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../Utils/ArrayHelpers.php';
 
@@ -17,7 +19,7 @@ require_once __DIR__ . '/../Utils/ArrayHelpers.php';
  *
  * @return int the index of upper bound of the given element
  */
-function upperBound(array $arr, int $elem)
+function upperBound(array $arr, int $elem): float|int
 {
     isSortedAscendingInts($arr);
     $hi = count($arr);

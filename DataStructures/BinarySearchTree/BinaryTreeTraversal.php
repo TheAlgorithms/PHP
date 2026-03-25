@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request: #174
  * https://github.com/TheAlgorithms/PHP/pull/174
@@ -19,11 +21,17 @@ use Iterator;
  */
 class BinaryTreeTraversal implements Iterator
 {
-    private array $iterationNodes = [];         // To store nodes for iteration
+    private array $iterationNodes = [];
+
+    // To store nodes for iteration
     protected const IN_ORDER = 'inOrder';
+
     private const PRE_ORDER = 'preOrder';
+
     private const POST_ORDER = 'postOrder';
+
     protected string $traversalType;
+
     private int $currentPosition = 0;
 
     /**
@@ -42,19 +50,11 @@ class BinaryTreeTraversal implements Iterator
      */
     private function loadTraversedNodes(): void
     {
-        switch ($this->traversalType) {
-            case self::PRE_ORDER:
-                $this->preOrderIterator(static::getRoot());
-                break;
-
-            case self::POST_ORDER:
-                $this->postOrderIterator(static::getRoot());
-                break;
-
-            case self::IN_ORDER:
-            default:
-                $this->inOrderIterator(static::getRoot());
-        }
+        match ($this->traversalType) {
+            self::PRE_ORDER => $this->preOrderIterator(static::getRoot()),
+            self::POST_ORDER => $this->postOrderIterator(static::getRoot()),
+            default => $this->inOrderIterator(static::getRoot()),
+        };
     }
 
     /**
@@ -63,11 +63,12 @@ class BinaryTreeTraversal implements Iterator
     protected function inOrder(?BSTNode $node): array
     {
         $result = [];
-        if ($node !== null) {
+        if ($node instanceof \DataStructures\BinarySearchTree\BSTNode) {
             $result += $this->inOrder($node->left);
             $result[$node->key] = $node->value;
             $result += $this->inOrder($node->right);
         }
+
         return $result;
     }
 
@@ -77,11 +78,12 @@ class BinaryTreeTraversal implements Iterator
     protected function preOrder(?BSTNode $node): array
     {
         $result = [];
-        if ($node !== null) {
+        if ($node instanceof \DataStructures\BinarySearchTree\BSTNode) {
             $result[$node->key] = $node->value;
             $result += $this->preOrder($node->left);
             $result += $this->preOrder($node->right);
         }
+
         return $result;
     }
 
@@ -91,11 +93,12 @@ class BinaryTreeTraversal implements Iterator
     protected function postOrder(?BSTNode $node): array
     {
         $result = [];
-        if ($node !== null) {
+        if ($node instanceof \DataStructures\BinarySearchTree\BSTNode) {
             $result += $this->postOrder($node->left);
             $result += $this->postOrder($node->right);
             $result[$node->key] = $node->value;
         }
+
         return $result;
     }
 
@@ -112,7 +115,7 @@ class BinaryTreeTraversal implements Iterator
         $queue = [];
         $queue[] = $node;
 
-        while (!empty($queue)) {
+        while ($queue !== []) {
             $currentNode = array_shift($queue);
             $result[$currentNode->key] = $currentNode->value;
 
@@ -124,6 +127,7 @@ class BinaryTreeTraversal implements Iterator
                 $queue[] = $currentNode->right;
             }
         }
+
         return $result;
     }
 
@@ -176,29 +180,31 @@ class BinaryTreeTraversal implements Iterator
      */
     private function inOrderIterator(?BSTNode $node): void
     {
-        if ($node !== null) {
+        if ($node instanceof \DataStructures\BinarySearchTree\BSTNode) {
             $this->inOrderIterator($node->left);
             $this->iterationNodes[] = $node;
             $this->inOrderIterator($node->right);
         }
     }
+
     /**
      * Helper function to traverse the tree in-order and fill the $preOrderNodes array.
      */
     private function preOrderIterator(?BSTNode $node): void
     {
-        if ($node !== null) {
+        if ($node instanceof \DataStructures\BinarySearchTree\BSTNode) {
             $this->iterationNodes[] = $node;
             $this->preOrderIterator($node->left);
             $this->preOrderIterator($node->right);
         }
     }
+
     /**
      * Helper function to traverse the tree in-order and fill the $postOrderNodes array.
      */
     private function postOrderIterator(?BSTNode $node): void
     {
-        if ($node !== null) {
+        if ($node instanceof \DataStructures\BinarySearchTree\BSTNode) {
             $this->postOrderIterator($node->left);
             $this->postOrderIterator($node->right);
             $this->iterationNodes[] = $node;

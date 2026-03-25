@@ -1,17 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Checks if a string is a palindrome
- *
- * @param string $string
- * @param bool $caseInsensitive
- * @return bool
  */
-function isPalindrome(string $string, bool $caseInsensitive = true)
+function isPalindrome(string $string, bool $caseInsensitive = true): bool
 {
     $string = trim($string); // Removing leading and trailing spaces
 
-    if (empty($string)) {
+    if ($string === '' || $string === '0') {
         return false; // Returning false for an Empty String
     }
 
@@ -20,8 +18,9 @@ function isPalindrome(string $string, bool $caseInsensitive = true)
     }
 
     $characters = str_split($string);
+    $counter = count($characters);
 
-    for ($i = 0; $i < count($characters); $i++) {
+    for ($i = 0; $i < $counter; $i++) {
         if ($characters[$i] !== $characters[count($characters) - ($i + 1)]) {
             return false;
         }

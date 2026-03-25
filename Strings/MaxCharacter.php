@@ -1,17 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This function returns the character which is repeated maximum number of
  * times in the given string.
  *
- * @param  string  $string
- * @return string
  * @throws \Exception
  */
 function maxCharacter(string $string): string
 {
     // Throw an exception if the string is empty.
-    if (empty($string)) {
+    if ($string === '' || $string === '0') {
         throw new \Exception('Please pass a non-empty string value.');
     }
 

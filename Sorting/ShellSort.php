@@ -1,16 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Shell Sort
  * This function sorts an array in ascending order using the Shell Sort algorithm.
  * Time complexity of the Shell Sort algorithm depends on the gap sequence used.
  * With Knuth's sequence, the time complexity is O(n^(3/2)).
  *
- *
- * @param array $array
- * @return array
  */
-
 function shellSort(array $array): array
 {
     $length = count($array);
@@ -37,7 +35,6 @@ function shellSort(array $array): array
  * Calculate Knuth's series
  *
  * @param int $n Size of the array
- * @return array
  */
 function calculateKnuthSeries(int $n): array
 {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Encrypts a plaintext using the Vigenère cipher.
  * (https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher)
@@ -29,6 +31,7 @@ function vigenere_encrypt($plaintext, $key): string
             $encryptedText .= $char;
         }
     }
+
     return $encryptedText;
 }
 
@@ -59,5 +62,6 @@ function vigenere_decrypt($ciphertext, $key): string
             $decryptedText .= $char;
         }
     }
+
     return $decryptedText;
 }

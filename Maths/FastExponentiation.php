@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This functions computes an exponent by doing repeated squares
  *
@@ -19,7 +21,6 @@ function fastExponentiation(int $base, int $exponent)
 
     if ($exponent % 2 == 0) {
         return fastExponentiation($base * $base, $exponent / 2);
-    } else {
-        return $base * fastExponentiation($base * $base, ($exponent - 1) / 2);
     }
+    return $base * fastExponentiation($base * $base, ($exponent - 1) / 2);
 }

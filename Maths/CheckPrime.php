@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This function check whether
  * the provided integer is a prime
@@ -8,13 +10,13 @@
  * @param Integer $number An integer input
  * @return boolean whether the number is prime or not
  */
-function isPrime(int $number)
+function isPrime(int $number): bool
 {
     if ($number === 2) {
         return true;
     }
 
-    if ($number % 2 === 0 or $number < 2) {
+    if ($number % 2 === 0 || $number < 2) {
         return false;
     }
 
@@ -23,6 +25,7 @@ function isPrime(int $number)
         if ($number % $i === 0) {
             return false;
         }
+
         $i += 2;
     }
 

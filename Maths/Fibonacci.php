@@ -1,13 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Fibonacci recursive
  *
- * @param  int  $num
- * @return array
  * @throws \Exception
  */
-function fibonacciRecursive(int $num)
+function fibonacciRecursive(int $num): array
 {
     /*
      * Fibonacci series using recursive approach
@@ -15,33 +15,33 @@ function fibonacciRecursive(int $num)
 
     $fibonacciRecursive = [];
     for ($i = 0; $i < $num; $i++) {
-        array_push($fibonacciRecursive, recursive($i));
+        $fibonacciRecursive[] = recursive($i);
     }
+
     return $fibonacciRecursive;
 }
 
 /**
- * @param  int  $num
  * @return int
  * @throws \Exception
  */
-function recursive(int $num)
+function recursive(int $num): float|int|array
 {
     if ($num < 0) {
         throw new \Exception("Number must be greater than 0.");
+    }
+    if ($num == 0 || $num == 1) {
+        return $num;
     } else {
-        if ($num == 0 || $num == 1) {
-            return $num;
-        } else {
-            return recursive($num - 1) + recursive($num - 2);
-        }
+        return recursive($num - 1) + recursive($num - 2);
     }
 }
 
 /**
  * @throws \Exception
+ * @return int[]
  */
-function fibonacciWithBinetFormula(int $num)
+function fibonacciWithBinetFormula(int $num): array
 {
     /*
      * Fibonacci series using Binet's formula given below
@@ -53,15 +53,13 @@ function fibonacciWithBinetFormula(int $num)
 
     if ($num < 0) {
         throw new \Exception("Number must be greater than 0.");
-    } else {
-        $sqrt = sqrt(5);
-        $phi_1 = (1 + $sqrt) / 2;
-        $phi_2 = (1 - $sqrt) / 2;
-
-        foreach (range(0, $num - 1) as $n) {
-            $seriesNumber = (pow($phi_1, $n) - pow($phi_2, $n)) / $sqrt;
-            array_push($fib_series, (int)$seriesNumber);
-        }
+    }
+    $sqrt = sqrt(5);
+    $phi_1 = (1 + $sqrt) / 2;
+    $phi_2 = (1 - $sqrt) / 2;
+    foreach (range(0, $num - 1) as $n) {
+        $seriesNumber = ($phi_1 ** $n - $phi_2 ** $n) / $sqrt;
+        $fib_series[] = (int)$seriesNumber;
     }
 
     return $fib_series;

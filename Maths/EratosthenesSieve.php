@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * The Sieve of Eratosthenes is an algorithm is an ancient algorithm for finding all prime numbers up to any given limit
  * https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
@@ -12,6 +14,7 @@ function eratosthenesSieve(int $number): array
 {
     $primes = range(1, $number);
     $primes = array_combine($primes, $primes);
+
     $limit = sqrt($number);
     $current = 2;
     while ($current < $limit) {
@@ -24,7 +27,9 @@ function eratosthenesSieve(int $number): array
                 unset($primes[$multiplied]);
             }
         }
+
         $current += 1;
     }
+
     return array_values($primes);
 }

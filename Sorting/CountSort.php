@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * @param $array
  * @return mixed
  */
 function countSort($array)
 {
-    $count = array();
+    $count = [];
     $min = min($array);
     $max = max($array);
 

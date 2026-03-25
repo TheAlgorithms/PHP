@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request #162 and #172
  * https://github.com/TheAlgorithms/PHP/pull/162
@@ -13,7 +15,7 @@ namespace DataStructures\Trie;
 
 class Trie
 {
-    private TrieNode $root;
+    private readonly TrieNode $root;
 
     public function __construct()
     {
@@ -38,6 +40,7 @@ class Trie
             $char = $word[$i];
             $node = $node->addChild($char);
         }
+
         $node->isEndOfWord = true;
     }
 
@@ -52,8 +55,10 @@ class Trie
             if (!$node->hasChild($char)) {
                 return false;
             }
+
             $node = $node->getChild($char);
         }
+
         return $node->isEndOfWord;
     }
 
@@ -69,8 +74,10 @@ class Trie
             if (!$node->hasChild($char)) {
                 return [];
             }
+
             $node = $node->getChild($char);
         }
+
         return $this->findWordsFromNode($node, $prefix);
     }
 
@@ -118,13 +125,14 @@ class Trie
             if (!$node->isEndOfWord) {
                 return false;
             }
+
             $node->isEndOfWord = false;
-            return empty($node->children);
+            return $node->children === [];
         }
 
         $char = $word[$index];
         $childNode = $node->getChild($char);
-        if ($childNode === null) {
+        if (!$childNode instanceof \DataStructures\Trie\TrieNode) {
             return false;
         }
 

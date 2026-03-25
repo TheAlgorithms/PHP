@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
 This function returns true
 * if the submitted number is perfect,

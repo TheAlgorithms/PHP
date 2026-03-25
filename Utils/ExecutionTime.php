@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * Run script and test execution time with following script
         $executionTime = New ExecutionTime();
@@ -7,8 +9,10 @@
  */
 class ExecutionTime
 {
-    private $start_time = 0;
+    private readonly string|float $start_time;
+
     private $end_time = 0;
+
     private $execution_time = 0;
 
     public function __construct()

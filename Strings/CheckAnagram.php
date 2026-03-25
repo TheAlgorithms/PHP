@@ -1,14 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Checks if two strings are anagrams of each other.
- *
- * @param string $originalString
- * @param string $testString
- * @param bool $caseInsensitive
- * @return bool
  */
-function isAnagram(string $originalString, string $testString, bool $caseInsensitive = true)
+function isAnagram(string $originalString, string $testString, bool $caseInsensitive = true): bool
 {
     if ($caseInsensitive) {
         $originalString = strtolower($originalString); // Converting string to lowercase for case-insensitive check

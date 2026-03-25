@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DataStructures\ReverseLinkedList;
 
 /**
@@ -16,9 +18,10 @@ class ReverseLinkedList
         $item->setNext(null);
         while (true) {
             $item->setPrev($next);
-            if (! $next) {
+            if (!$next instanceof \DataStructures\ReverseLinkedList\LinkedListItem) {
                 return $item;
             }
+
             $nextNext = $next->getNext();
             $next->setNext($item);
             $item = $next;

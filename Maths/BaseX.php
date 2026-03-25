@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This function will calculate the base of any number that is <11.
  * You can calculate binary, octal quickly with this as well.
@@ -12,12 +14,12 @@
  * @author Sevada797 https://github.com/sevada797
 
  */
-function baseX($k, $x)
+function baseX($k, $x): string
 {
     $arr = [];
 
     while (true) {
-        array_push($arr, $k % $x);
+        $arr[] = $k % $x;
         $k = ($k - ($k % $x)) / $x;
 
         if ($k == 0) {

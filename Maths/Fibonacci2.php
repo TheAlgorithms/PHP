@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * Print Fibocanni sequence using a generator
  */
 
- /**
-  * @param int $i number of Fibonacci numbers to generate
-  * @param Generator $set Fibonacci calculator
-  */
+/**
+ * @param int $i number of Fibonacci numbers to generate
+ * @param Generator $set Fibonacci calculator
+ */
 function loop($i, Generator $set)
 {
     while ($i-- > 0 && $set->valid()) {

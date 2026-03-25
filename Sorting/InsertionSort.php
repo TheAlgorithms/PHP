@@ -1,14 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Insertion Sort
- *
- * @param array $array
- * @return array
  */
-function insertionSort(array $array)
+function insertionSort(array $array): array
 {
-    for ($i = 1; $i < count($array); $i++) {
+    $counter = count($array);
+    for ($i = 1; $i < $counter; $i++) {
         $currentVal = $array[$i];
 
         for ($j = $i - 1; $j >= 0 && $array[$j] > $currentVal; $j--) {

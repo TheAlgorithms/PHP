@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This function converts the
  * submitted Octal Number to
@@ -15,10 +17,10 @@
  * @param string $octalNumber
  * @return int
  */
-function hexToDecimal($hexNumber)
+function hexToDecimal($hexNumber): int|float
 {
     // Using ctype to check all the digits are valid hex digits or not.
-    if (!ctype_xdigit($hexNumber)) {
+    if (!ctype_xdigit((string) $hexNumber)) {
         throw new \Exception('Please pass a valid Hexadecimal Number for Converting it to a Decimal Number.');
     }
 
@@ -34,7 +36,7 @@ function hexToDecimal($hexNumber)
         'F' => 15,
     ];
 
-    $hexDigits = str_split($hexNumber);
+    $hexDigits = str_split((string) $hexNumber);
     $hexDigits = array_reverse($hexDigits);
 
     foreach ($hexDigits as $power => $digit) {
@@ -42,8 +44,10 @@ function hexToDecimal($hexNumber)
         if (!is_numeric($digit)) {
             $hexDigit = $decimalDigitMappings[$digit];
         }
-        $decimalNumber += (pow(16, $power) * $hexDigit);
+
+        $decimalNumber += (16 ** $power * $hexDigit);
     }
+
     return $decimalNumber;
 }
 
@@ -53,9 +57,8 @@ function hexToDecimal($hexNumber)
  * Hexadecimal Number.
  *
  * @param string $decimalNumber
- * @return string
  */
-function decimalToHex($decimalNumber)
+function decimalToHex($decimalNumber): string
 {
     $hexDigits = [];
 
@@ -72,12 +75,14 @@ function decimalToHex($decimalNumber)
         throw new \Exception('Please pass a valid Decimal Number for Converting it to a Hexadecimal Number.');
     }
 
+    $decimalNumber = (int) $decimalNumber;
     while ($decimalNumber > 0) {
         $remainder = ($decimalNumber % 16);
-        $decimalNumber /= 16;
-        if (empty($hexDigits) && 0 === $remainder) {
+        $decimalNumber = intdiv($decimalNumber, 16);
+        if ($hexDigits === [] && 0 === $remainder) {
             continue;
         }
+
         $hexDigits[] = $remainder;
     }
 
@@ -87,9 +92,7 @@ function decimalToHex($decimalNumber)
         if ($digit > 9) {
             $hexDigits[$index] = $hexDigitMappings[$digit];
         }
-    }
+    } // Connecting all the digits and removing leading zeroes.
 
-    $hexNumber = ltrim(implode('', $hexDigits), '0'); // Connecting all the digits and removing leading zeroes.
-
-    return $hexNumber;
+    return ltrim(implode('', $hexDigits), '0');
 }

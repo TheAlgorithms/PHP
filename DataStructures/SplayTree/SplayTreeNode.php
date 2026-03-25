@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request: #168
  * https://github.com/TheAlgorithms/PHP/pull/168
@@ -12,40 +14,27 @@ namespace DataStructures\SplayTree;
 
 class SplayTreeNode
 {
-    /**
-     * @var int|string
-     */
-    public int $key;
-    /**
-     * @var mixed
-     */
-    public $value;
-    public ?SplayTreeNode $left;
-    public ?SplayTreeNode $right;
-    public ?SplayTreeNode $parent;
+    public ?SplayTreeNode $left = null;
+
+    public ?SplayTreeNode $right = null;
+
+    public ?SplayTreeNode $parent = null;
 
     /**
      * @param int $key The key of the node.
      * @param mixed $value The associated value.
      */
-    public function __construct(int $key, $value)
+    public function __construct(public int $key, public mixed $value)
     {
-        $this->key = $key;
-        $this->value = $value;
-
-        // Set all node pointers to null initially
-        $this->left = null;
-        $this->right = null;
-        $this->parent = null;
     }
 
     public function isLeaf(): bool
     {
-        return $this->left === null && $this->right === null;
+        return !$this->left instanceof \DataStructures\SplayTree\SplayTreeNode && !$this->right instanceof \DataStructures\SplayTree\SplayTreeNode;
     }
 
     public function isRoot(): bool
     {
-        return $this->parent === null;
+        return !$this->parent instanceof \DataStructures\SplayTree\SplayTreeNode;
     }
 }

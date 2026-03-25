@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
 * This function converts the submitted
 * temperature (Celsius) and converts it into
@@ -8,9 +10,8 @@
 * @author Marco https://github.com/MaarcooC
 * @param float $celsius
 * @throws \Exception
-* @return float
 */
-function CelsiusToFahrenheit($celsius)
+function CelsiusToFahrenheit($celsius): float
 {
     if (!is_numeric($celsius)) {
         throw new \Exception("Temperature (Celsius) must be a number");
@@ -27,9 +28,8 @@ function CelsiusToFahrenheit($celsius)
 * @author Marco https://github.com/MaarcooC
 * @param float $fahrenheit
 * @throws \Exception
-* @return float
 */
-function FahrenheitToCelsius($fahrenheit)
+function FahrenheitToCelsius($fahrenheit): float
 {
     if (!is_numeric($fahrenheit)) {
         throw new \Exception("Temperature (Fahrenheit) must be a number");
@@ -46,9 +46,8 @@ function FahrenheitToCelsius($fahrenheit)
 * @author Marco https://github.com/MaarcooC
 * @param float $celsius
 * @throws \Exception
-* @return float
 */
-function CelsiusToKelvin($celsius)
+function CelsiusToKelvin($celsius): float
 {
     if (!is_numeric($celsius)) {
         throw new \Exception("Temperature (Celsius) must be a number");
@@ -65,9 +64,8 @@ function CelsiusToKelvin($celsius)
 * @author Marco https://github.com/MaarcooC
 * @param float $kelvin
 * @throws \Exception
-* @return float
 */
-function KelvinToCelsius($kelvin)
+function KelvinToCelsius($kelvin): float
 {
     if (!is_numeric($kelvin)) {
         throw new \Exception("Temperature (Kelvin) must be a number");
@@ -84,9 +82,8 @@ function KelvinToCelsius($kelvin)
 * @author Marco https://github.com/MaarcooC
 * @param float $kelvin
 * @throws \Exception
-* @return float
 */
-function KelvinToFahrenheit($kelvin)
+function KelvinToFahrenheit($kelvin): float
 {
     if (!is_numeric($kelvin)) {
         throw new \Exception("Temperature (Kelvin) must be a number");
@@ -103,9 +100,8 @@ function KelvinToFahrenheit($kelvin)
 * @author Marco https://github.com/MaarcooC
 * @param float $fahrenheit
 * @throws \Exception
-* @return float
 */
-function FahrenheitToKelvin($fahrenheit)
+function FahrenheitToKelvin($fahrenheit): float
 {
     if (!is_numeric($fahrenheit)) {
         throw new \Exception("Temperature (Fahrenheit) must be a number");

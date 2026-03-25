@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Breadth-first search (BFS) is an algorithm for searching a tree data structure for a node that satisfies
  * a given property.
@@ -18,22 +20,24 @@
  * @return bool if path between start and end vertex exists
  */
 
-function bfs($adjList, $start, $end, $yes = false)
+function bfs(array $adjList, $start, $end, $yes = false)
 {
     $visited = [];
     $queue = [$start];
-    while (!empty($queue)) {
+    while ($queue !== []) {
         $v = array_shift($queue);
         $visited[$v] = 1;
         foreach ($adjList[$v] as $adj) {
             if (!array_key_exists($adj, $visited)) {
-                array_push($queue, $adj);
+                $queue[] = $adj;
             }
         }
     }
+
     // return array_key_exists($end, $visited);
     if (array_key_exists($end, $visited)) {
-        $yes = true;
+        return true;
     }
+
     return $yes;
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Gnome Sort
  * References:
@@ -8,9 +10,8 @@
  * The Gnome algorithm works by locating the first instance in which two adjoining elements are arranged incorrectly and swaps with each other.
  *
  * @param array $array refers to the array to be sorted
- * @return array
  */
-function gnomeSort($array)
+function gnomeSort(array $array): array
 {
     $a = 1;
     $b = 2;
@@ -20,7 +21,7 @@ function gnomeSort($array)
             $a = $b;
             $b++;
         } else {
-            list($array[$a],$array[$a - 1]) = array($array[$a - 1],$array[$a]);
+            [$array[$a], $array[$a - 1]] = [$array[$a - 1], $array[$a]];
             $a--;
             if ($a == 0) {
                 $a = $b;

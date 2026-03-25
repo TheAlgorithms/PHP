@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * The Depth-first Search is an algorithm used for traversing or searching trees or graphs
  * (https://en.wikipedia.org/wiki/Depth-first_search).
@@ -16,11 +18,11 @@
  * @param int|string $start The starting vertex
  * @return array The visited vertices
  */
-function dfs($adjList, $start)
+function dfs(array $adjList, $start): array
 {
     $visited = [];
     $stack = [$start];
-    while (!empty($stack)) {
+    while ($stack !== []) {
         // Removes the ending element from the stack and mark as visited
         $v = array_pop($stack);
         $visited[$v] = 1;
@@ -28,9 +30,10 @@ function dfs($adjList, $start)
         // Checks each adjacent vertex of $v and add to the stack if not visited
         foreach (array_reverse($adjList[$v]) as $adj) {
             if (!array_key_exists($adj, $visited)) {
-                array_push($stack, $adj);
+                $stack[] = $adj;
             }
         }
     }
+
     return array_keys($visited);
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This function converts the
  * submitted Octal Number to
@@ -14,17 +16,17 @@
  * @return int
  * @throws \Exception
  */
-function octalToDecimal($octalNumber)
+function octalToDecimal($octalNumber): int|float
 {
     if (!is_numeric($octalNumber)) {
         throw new \Exception('Please pass a valid Octal Number for Converting it to a Decimal Number.');
     }
 
     $decimalNumber = 0;
-    $octalDigits   = array_reverse(str_split($octalNumber));
+    $octalDigits   = array_reverse(str_split((string)$octalNumber));
 
     foreach ($octalDigits as $index => $digit) {
-        $decimalNumber += $digit * pow(8, $index);
+        $decimalNumber += $digit * 8 ** $index;
     }
 
     return $decimalNumber;
@@ -36,10 +38,9 @@ function octalToDecimal($octalNumber)
  * Octal Number.
  *
  * @param  string  $decimalNumber
- * @return string
  * @throws \Exception
  */
-function decimalToOctal($decimalNumber)
+function decimalToOctal($decimalNumber): string
 {
     if (!is_numeric($decimalNumber)) {
         throw new \Exception('Please pass a valid Decimal Number for Converting it to an Octal Number.');
@@ -47,9 +48,10 @@ function decimalToOctal($decimalNumber)
 
     $octalNumber = '';
 
+    $decimalNumber = (int) $decimalNumber;
     while ($decimalNumber > 0) {
         $octalNumber = ($decimalNumber % 8) . $octalNumber;
-        $decimalNumber /= 8;
+        $decimalNumber = intdiv($decimalNumber, 8);
     }
 
     return $octalNumber;

@@ -28,22 +28,24 @@ Please help us keep our issue list small by adding fixes: #{$ISSUE_NO} to the co
 #### What is an Algorithm?
 
 An Algorithm is one or more functions (or classes) that:
-* take one or more inputs,
-* perform some internal calculations or data manipulations,
-* return one or more outputs,
-* have minimal side effects (Ex. print(), plot(), read(), write()).
+
+- take one or more inputs,
+- perform some internal calculations or data manipulations,
+- return one or more outputs,
+- have minimal side effects (Ex. print(), plot(), read(), write()).
 
 Algorithms should be packaged in a way that would make it easy for readers to put them into larger programs.
 
 Algorithms should:
-* have intuitive class and function names that make their purpose clear to readers
-* use PHP naming conventions and intuitive variable names to ease comprehension
-* be flexible to take different input values
-* have PHP type hints for their input parameters and return values
-* raise PHP exceptions (UnexpectedValueException, etc.) on erroneous input values
-* have docstrings with clear explanations and/or URLs to source materials
-* contain doctests that test both valid and erroneous input values
-* return all calculation results instead of printing or plotting them
+
+- have intuitive class and function names that make their purpose clear to readers
+- use PHP naming conventions and intuitive variable names to ease comprehension
+- be flexible to take different input values
+- have PHP type hints for their input parameters and return values
+- raise PHP exceptions (UnexpectedValueException, etc.) on erroneous input values
+- have docstrings with clear explanations and/or URLs to source materials
+- contain doctests that test both valid and erroneous input values
+- return all calculation results instead of printing or plotting them
 
 Algorithms in this repo should not be how-to examples for existing PHP packages.  Instead, they should perform internal calculations or manipulations to convert input values into different output values.  Those calculations or manipulations can use data types, classes, or functions of existing PHP packages but each algorithm in this repo should add unique value.
 
@@ -51,8 +53,8 @@ Algorithms in this repo should not be how-to examples for existing PHP packages.
 
 We want your work to be readable by others; therefore, we encourage you to note the following:
 
-- Please write in PHP 7.1+
-- Please put thought into naming of functions, classes, and variables.  Help your reader by using __descriptive names__ that can help you to remove redundant comments
+- Please write in PHP 8.2+
+- Please put thought into naming of functions, classes, and variables.  Help your reader by using **descriptive names** that can help you to remove redundant comments
   - Single letter variable names are _old school_ so please avoid them unless their life only spans a few lines
   - Please follow the [PHP Basic Coding Standard](https://www.php-fig.org/psr/psr-12/) style guide.  So functionNames should be camelCase, CONSTANTS in UPPER_CASE, Name\Spaces and ClassNames should follow an "autoloading" PSR, etc.
 
@@ -66,13 +68,14 @@ We want your work to be readable by others; therefore, we encourage you to note 
 
 - Avoid importing external libraries for basic algorithms. Only use them for complicated algorithms
 
-- Ensure code is linted with phpcs, and passing all linting checks (vendor/bin/phpcs -n)
+- Ensure code is strictly typed and passes static analysis (`composer phpstan`)
+- Ensure code is properly linted and formatted (`vendor/bin/php-cs-fixer fix` and `vendor/bin/phpcs -n`)
 
 #### Other Standard While Submitting Your Work
 
-- File extension for code should be `.php` 
+- File extension for code should be `.php`
 - After adding a new File/Directory, please make sure to update the [DIRECTORY.md](DIRECTORY.md) file with the details.
-- If possible, follow the standard *within* the folder you are submitting to
+- If possible, follow the standard _within_ the folder you are submitting to
 - If you have modified/added code work, make sure the code compiles before submitting
 - If you have modified/added documentation work, ensure your language is concise and contains no grammar errors
 - Add a corresponding explanation to [Algorithms-Explanation](https://github.com/TheAlgorithms/Algorithms-Explanation) (Optional but recommended).

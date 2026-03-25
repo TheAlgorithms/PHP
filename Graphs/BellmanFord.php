@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * The Bellman–Ford algorithm is an algorithm that computes shortest paths from a single source vertex to all of the
  * other vertices in a weighted digraph.
@@ -19,13 +21,15 @@ function bellmanFord(array $verticesNames, array $edges, string $start, bool $ve
     $round = 1;
     while ($change) {
         if ($verbose) {
-            echo "round $round\n";
+            echo sprintf('round %d%s', $round, PHP_EOL);
         }
+
         $change = false;
-        foreach ($vertices as $vertice => $minWeight) {
+        foreach (array_keys($vertices) as $vertice) {
             if ($verbose) {
-                echo "checking vertex $vertice\n";
+                echo sprintf('checking vertex %s%s', $vertice, PHP_EOL);
             }
+
             if ($start === $vertice) {
                 $vertices[$vertice] = 0;
             }
@@ -33,15 +37,18 @@ function bellmanFord(array $verticesNames, array $edges, string $start, bool $ve
             foreach ($edges[$vertice] as $edge) {
                 if ($vertices[$edge->end] > $vertices[$vertice] + $edge->weight) {
                     if ($verbose) {
-                        echo "replace $vertice " . $vertices[$edge->end] . " with "
+                        echo sprintf('replace %s ', $vertice) . $vertices[$edge->end] . " with "
                             . ($vertices[$vertice] + $edge->weight) . "\n ";
                     }
+
                     $vertices[$edge->end] = $vertices[$vertice] + $edge->weight;
                     $change = true;
                 }
             }
         }
+
         $round++;
     }
+
     return $vertices;
 }

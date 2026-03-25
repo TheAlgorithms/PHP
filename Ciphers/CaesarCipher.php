@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Encrypt given text using caesar cipher.
  *
@@ -41,6 +43,7 @@ function decrypt(string $text, int $shift): string
             if ($placeValue < 0) { // Handling case where remainder is negative
                 $placeValue += 26;
             }
+
             $placeValue += ord(ctype_upper($c) ? 'A' : 'a');
             $newChar = chr($placeValue); // Getting new character from new value (i.e. A-Z)
             $decryptedText .= $newChar; // Appending decrypted character

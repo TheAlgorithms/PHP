@@ -27,23 +27,23 @@ class SinglyLinkedListTest extends TestCase
     /**
      * Provider of SinglyLinkedList nodes
      */
-    public function provideNodes()
+    public static function provideNodes()
     {
         return [
             'IsPalindrome' => [
-                'node' => $this->createNode('hannah'),
+                'string' => 'hannah',
                 'expected' => true
             ],
             'IsPalindrome2' => [
-                'node' => $this->createNode('hanah'),
+                'string' => 'hanah',
                 'expected' => true
             ],
             'IsNotPalindrome' => [
-                'node' => $this->createNode('hanbah'),
+                'string' => 'hanbah',
                 'expected' => false
             ],
             'IsNotPalindrome2' => [
-                'node' => $this->createNode('han1h'),
+                'string' => 'han1h',
                 'expected' => false
             ],
         ];
@@ -54,8 +54,9 @@ class SinglyLinkedListTest extends TestCase
      *
      * @dataProvider provideNodes
      */
-    public function testIsPalindrome($node, $expected): void
+    public function testIsPalindrome($string, $expected): void
     {
+        $node = $this->createNode($string);
         $this->assertEquals($expected, $this->isPalindrome($node));
     }
 

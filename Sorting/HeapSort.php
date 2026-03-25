@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * HeapSort Algorithm
  *
@@ -7,8 +9,6 @@
  * iteratively swapping the maximum element from the heap with the last unsorted element
  * and "heapifying" the heap again.
  *
- * @param array $arr
- * @return array
  * @throws \UnexpectedValueException
  */
 function heapSort(array $arr): array
@@ -22,7 +22,7 @@ function heapSort(array $arr): array
     }
 
     // Build a max heap from the array.
-    for ($i = floor($n / 2) - 1; $i >= 0; $i--) {
+    for ($i = (int) ($n / 2) - 1; $i >= 0; $i--) {
         heapify($arr, $n, $i);
     }
 
@@ -41,10 +41,6 @@ function heapSort(array $arr): array
 
 /**
  * Ensures that the array satisfies the heap property
- *
- * @param array $arr
- * @param int $n
- * @param int $i
  */
 function heapify(array &$arr, int $n, int $i): void
 {

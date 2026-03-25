@@ -1,16 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Function returns the total number of consonants present in the given
  * string using a linear search through the string
  *
- * @param  string  $string
- * @return int
  * @throws \Exception
  */
 function countConsonants(string $string): int
 {
-    if (empty($string)) {
+    if ($string === '' || $string === '0') {
         throw new \Exception('Please pass a non-empty string value');
     }
 

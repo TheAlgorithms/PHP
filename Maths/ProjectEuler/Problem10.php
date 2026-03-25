@@ -1,15 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This function solves the problem 10 of the Project Euler.
  *
  * Problem description:
  * The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
  * Find the sum of all the primes below two million.
- */
-
-/**
- * @return int
  */
 function problem10(): int
 {

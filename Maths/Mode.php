@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This function calculates
  * the mode value(s) of
@@ -9,9 +11,9 @@
  * @return array $modes Array of mode(s) of provided numbers
  * @throws \Exception
  */
-function mode(...$numbers)
+function mode(...$numbers): array
 {
-    if (empty($numbers)) {
+    if ($numbers === []) {
         throw new \Exception('Please pass values to find the mode');
     }
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This function calculates
  * The mean value of
@@ -9,9 +11,9 @@
  * @return decimal $mean Mean of provided numbers
  * @throws \Exception
  */
-function mean(...$numbers)
+function mean(...$numbers): int|float
 {
-    if (empty($numbers)) {
+    if ($numbers === []) {
         throw new \Exception('Please pass values to find mean value');
     }
 

@@ -8,7 +8,7 @@
  * @param bool $caseInsensitive
  * @return bool
  */
-function isAnagram(string $originalString, string $testString, bool $caseInsensitive = true)
+function isAnagram(string $originalString, string $testString, bool $caseInsensitive = true): bool
 {
     if ($caseInsensitive) {
         $originalString = strtolower($originalString); // Converting string to lowercase for case-insensitive check

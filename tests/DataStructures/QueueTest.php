@@ -150,4 +150,15 @@ class QueueTest extends TestCase
         $this->assertIsString($queue->toString());
         $this->assertEquals("1, 2, 3", $queue->toString(', '));
     }
+
+    /**
+     * @test
+     */
+    public function shouldReturnStringRepresentationForSingleElement(): void
+    {
+        $queue = new Queue();
+        $queue->enqueue(42);
+
+        $this->assertSame('42', $queue->toString(', '));
+    }
 }

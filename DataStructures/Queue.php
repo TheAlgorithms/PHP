@@ -66,7 +66,7 @@ class Queue
             return '';
         }
 
-        $result = $this->elements[$this->lowestCount];
+        $result = (string) $this->elements[$this->lowestCount];
 
         for ($i = $this->lowestCount + 1; $i < $this->count; $i++) {
             $result .= $delimiter . $this->elements[$i];

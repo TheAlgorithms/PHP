@@ -37,5 +37,5 @@ function maxCharacter(string $string): string
     arsort($characterCountTable);
 
     // Return the character that appears most frequently.
-    return array_keys($characterCountTable)[0];
+    return (string) array_keys($characterCountTable)[0];
 }

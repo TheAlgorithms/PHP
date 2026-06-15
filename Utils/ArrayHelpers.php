@@ -15,13 +15,13 @@ function isSortedAscendingInts(array $arr): void
     }
 
     if (!is_int($arr[0])) {
-        throw \UNEXPECTEDVALUEEXCEPTION;
+        throw new \UnexpectedValueException();
     }
 
     for ($i = 1; $i < $len; $i++) {
         // a sorted array is expected
-        if (!is_int($arr[$i]) && $arr[$i] < $arr[$i - 1]) {
-            throw \UNEXPECTEDVALUEEXCEPTION;
+        if (!is_int($arr[$i]) || $arr[$i] < $arr[$i - 1]) {
+            throw new \UnexpectedValueException();
         }
     }
 }

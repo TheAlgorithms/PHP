@@ -168,6 +168,13 @@ class MathsTest extends TestCase
         $this->assertEquals(3, median(5, 3, 1, 2, 4));
     }
 
+    public function testMedianRejectsNonNumericValues()
+    {
+        $this->expectException(\Exception::class);
+
+        median('a', 'b', 'c');
+    }
+
     public function testMode()
     {
         $this->assertEquals([3], mode(1, 2, 3, 3, 4, 5));

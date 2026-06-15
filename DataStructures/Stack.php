@@ -57,7 +57,7 @@ class Stack implements \Stringable
         $this->stack = [];
     }
 
-    public function search($data): int
+    public function search($data): int|false
     {
         return array_search($data, $this->stack, true);
     }

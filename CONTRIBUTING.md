@@ -68,8 +68,8 @@ We want your work to be readable by others; therefore, we encourage you to note 
 
 - Avoid importing external libraries for basic algorithms. Only use them for complicated algorithms
 
-- Ensure code is strictly typed and passes static analysis (`composer phpstan`)
-- Ensure code is properly linted and formatted (`vendor/bin/php-cs-fixer fix` and `vendor/bin/phpcs -n`)
+- Ensure code is strictly typed and passes the repository test suite (`composer run-script test`)
+- Ensure code is properly linted and formatted (`vendor/bin/phpcs -n`)
 
 #### Other Standard While Submitting Your Work
 

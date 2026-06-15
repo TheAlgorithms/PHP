@@ -81,6 +81,12 @@ class StackTest extends TestCase
         $this->assertEquals(2, $stack->search(3));
     }
 
+    public function testSearchReturnsFalseWhenMissing()
+    {
+        $stack = new Stack([1, 2, 3]);
+        $this->assertFalse($stack->search(99));
+    }
+
     public function testToArray()
     {
         $stack = new Stack([1, 2, 3]);

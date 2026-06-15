@@ -34,7 +34,7 @@ class SegmentTree
      * @param callable|null $callback Optional callback function for custom aggregation logic.
      * @throws InvalidArgumentException if the array is empty, contains non-numeric values, or is associative.
      */
-    public function __construct(private array $currentArray, callable $callback = null)
+    public function __construct(private array $currentArray, ?callable $callback = null)
     {
         $this->arraySize = count($this->currentArray);
         $this->callback = $callback;

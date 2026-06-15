@@ -22,10 +22,10 @@ function fibonacciRecursive(int $num): array
 }
 
 /**
- * @return int
+ * @return int|float
  * @throws \Exception
  */
-function recursive(int $num): float|int|array
+function recursive(int $num): float|int
 {
     if ($num < 0) {
         throw new \Exception("Number must be greater than 0.");

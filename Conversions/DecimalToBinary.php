@@ -18,9 +18,11 @@ function decimalToBinary($decimalNumber): string
 
     $binaryNumber = '';
 
+    $decimalNumber = (int) $decimalNumber;
+
     while ($decimalNumber > 0) {
         $binaryNumber = ($decimalNumber % 2) . $binaryNumber;
-        $decimalNumber /= 2;
+        $decimalNumber = intdiv($decimalNumber, 2);
     }
 
     return $binaryNumber;

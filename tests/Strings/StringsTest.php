@@ -63,6 +63,7 @@ class StringsTest extends TestCase
         $this->assertEquals('t', maxCharacter("this is test for max character repetition"));
         $this->assertEquals('t', maxCharacter("This is Test for max characTer repetition"));
         $this->assertEquals(' ', maxCharacter("           "));
+        $this->assertEquals('0', maxCharacter("c00l"));
     }
 
     public function testCountVowels()

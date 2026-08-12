@@ -10,6 +10,8 @@ require_once __DIR__ . '/../../Conversions/OctalToDecimal.php';
 require_once __DIR__ . '/../../Conversions/HexadecimalToDecimal.php';
 require_once __DIR__ . '/../../Conversions/SpeedConversion.php';
 require_once __DIR__ . '/../../Conversions/TemperatureConversions.php';
+require_once __DIR__ . '/../../Conversions/Weightconversions.php';
+require_once __DIR__ . '/../../Conversions/Lengthconversions.php';
 
 class ConversionsTest extends TestCase
 {
@@ -141,5 +143,110 @@ class ConversionsTest extends TestCase
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage('Temperature (Fahrenheit) must be a number');
         FahrenheitToKelvin("non-numeric");
+    }
+    /**
+     * Helper method to test invalid input handling in conversion methods
+     *
+     * @param string $method The conversion method to test (e.g. 'WeightConversions::kgToLbs')
+     * @param mixed $value The invalid input value
+     * @param string $expectedMessage The expected exception message
+     */
+    protected function assertInvalidInputConversion($method, $value, $expectedMessage)
+    {
+        try {
+            // Call the method with the invalid input
+            $parts = explode('::', $method);
+            $className = $parts[0];
+            $methodName = $parts[1];
+            $className::$methodName($value);
+
+            // If we get here, no exception was thrown
+            $this->fail("Expected exception was not thrown for $method with invalid input");
+        } catch (InvalidArgumentException $e) {
+            // Check if the exception message matches the expected message
+            $this->assertEquals($expectedMessage, $e->getMessage());
+        }
+    }
+    public function testKgToLbs()
+    {
+        $this->assertEquals(220.462, WeightConversions::kgToLbs(100), 0.001);
+        $this->assertInvalidInputConversion('WeightConversions::kgToLbs', "invalid string", 'Invalid input for kgToLbs');
+    }
+
+    public function testLbsToKg()
+    {
+        $this->assertEquals(45.3593, WeightConversions::lbsToKg(100), 0.001);
+        $this->assertInvalidInputConversion('WeightConversions::lbsToKg', "invalid string", 'Invalid input for lbsToKg');
+    }
+
+    public function testGToKg()
+    {
+        $this->assertEquals(0.5, WeightConversions::gToKg(500), 0.001);
+        $this->assertInvalidInputConversion('WeightConversions::gToKg', "invalid string", 'Invalid input for gToKg');
+    }
+
+    public function testKgToG()
+    {
+        $this->assertEquals(1000, WeightConversions::kgToG(1), 0.001);
+        $this->assertInvalidInputConversion('WeightConversions::kgToG', "invalid string", 'Invalid input for kgToG');
+    }
+
+    public function testOzToLbs()
+    {
+        $this->assertEquals(3.5, WeightConversions::ozToLbs(56), 0.001);
+        $this->assertInvalidInputConversion('WeightConversions::ozToLbs', "invalid string", 'Invalid input for ozToLbs');
+    }
+
+    public function testLbsToOz()
+    {
+        $this->assertEquals(64, WeightConversions::lbsToOz(4), 0.001);
+        $this->assertInvalidInputConversion('WeightConversions::lbsToOz', "invalid string", 'Invalid input for lbsToOz');
+    }
+    public function testMToKm()
+    {
+        $this->assertEquals(1, LengthConversions::mToKm(1000), 0.001);
+        $this->assertInvalidInputConversion('LengthConversions::mToKm', "invalid string", 'Invalid input for mToKm');
+    }
+
+    public function testKmToM()
+    {
+        $this->assertEquals(5000, LengthConversions::kmToM(5), 0.001);
+        $this->assertInvalidInputConversion('LengthConversions::kmToM', "invalid string", 'Invalid input for kmToM');
+    }
+
+    public function testMToMiles()
+    {
+        $this->assertEquals(0.621373, LengthConversions::mToMiles(1000), 0.001);
+        $this->assertInvalidInputConversion('LengthConversions::mToMiles', "invalid string", 'Invalid input for mToMiles');
+    }
+
+    public function testMilesToM()
+    {
+        $this->assertEquals(1609.34, LengthConversions::milesToM(1), 0.001);
+        $this->assertInvalidInputConversion('LengthConversions::milesToM', "invalid string", 'Invalid input for milesToM');
+    }
+
+    public function testInToCm()
+    {
+        $this->assertEquals(25.4, LengthConversions::inToCm(10), 0.001);
+        $this->assertInvalidInputConversion('LengthConversions::inToCm', "invalid string", 'Invalid input for inToCm');
+    }
+
+    public function testCmToIn()
+    {
+        $this->assertEquals(39.37, LengthConversions::cmToIn(100), 0.001);
+        $this->assertInvalidInputConversion('LengthConversions::cmToIn', "invalid string", 'Invalid input for cmToIn');
+    }
+
+    public function testKmToMiles()
+    {
+        $this->assertEquals(6.21504, LengthConversions::kmToMiles(10), 0.001);
+        $this->assertInvalidInputConversion('LengthConversions::kmToMiles', "invalid string", 'Invalid input for kmToMiles');
+    }
+
+    public function testMilesToKm()
+    {
+        $this->assertEquals(16.09, LengthConversions::milesToKm(10), 0.001);
+        $this->assertInvalidInputConversion('LengthConversions::milesToKm', "invalid string", 'Invalid input for milesToKm');
     }
 }

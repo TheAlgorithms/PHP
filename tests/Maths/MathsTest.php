@@ -161,6 +161,44 @@ class MathsTest extends TestCase
         $this->assertEquals(-1, mean(-1));
     }
 
+    public function testMeanDiscrete()
+    {
+        $this->assertEquals(
+            ((10 * 2) + (20 * 3) + (30 * 5)) / (2 + 3 + 5),
+            mean_discrete([10, 20, 30], [2, 3, 5])
+        );
+
+        $this->assertEquals(
+            ((5 * 10) + (15 * 20)) / (10 + 20),
+            mean_discrete([5, 15], [10, 20])
+        );
+    }
+
+    public function testMeanDiscreteExceptionMismatchedArrays()
+    {
+        $this->expectException(\Exception::class);
+        mean_discrete([1, 2], [1]);
+    }
+
+    public function testMeanContinuous()
+    {
+        $this->assertEquals(
+            ((5 * 2) + (15 * 3) + (25 * 5)) / (2 + 3 + 5),
+            mean_continuous([0, 10, 20], [10, 20, 30], [2, 3, 5])
+        );
+
+        $this->assertEquals(
+            ((2.5 * 10) + (7.5 * 20)) / (10 + 20),
+            mean_continuous([0, 5], [5, 10], [10, 20])
+        );
+    }
+
+    public function testMeanContinuousExceptionMismatchedArrays()
+    {
+        $this->expectException(\Exception::class);
+        mean_continuous([0, 10], [10, 20], [1]);
+    }
+
     public function testMedian()
     {
         $this->assertEquals(3, median(1, 2, 3, 4, 5));
@@ -173,6 +211,35 @@ class MathsTest extends TestCase
         $this->expectException(\Exception::class);
 
         median('a', 'b', 'c');
+    }
+
+    public function testMedianDiscrete()
+    {
+        // Odd total frequency (N=5)
+        // Values: 10(2), 20(3). CF: 2, 5. N/2 = 2.5
+        // Median is the value where CF >= 2.5, which is 20.
+        $this->assertEquals(20, median_discrete([10, 20], [2, 3]));
+
+        // Even total frequency (N=4)
+        // Values: 10(2), 20(2). CF: 2, 4. Target = 2.
+        // First value CF = 2 (exactly matches target). So average of 10 and 20 = 15.
+        $this->assertEquals(15, median_discrete([10, 20], [2, 2]));
+
+        // Even total frequency (N=6)
+        // Values: 10(1), 20(4), 30(1). CF: 1, 5, 6. Target = 3.
+        // First value > 3 is 20 (CF=5), previous CF=1 (not 3). Median = 20.
+        $this->assertEquals(20, median_discrete([10, 20, 30], [1, 4, 1]));
+    }
+
+    public function testMedianContinuous()
+    {
+        // N = 10, Target = 5
+        // Intervals: 0-10 (f=2, CF=2)
+        //            10-20 (f=5, CF=7) -> Median Class
+        //            20-30 (f=3, CF=10)
+        // Formula: L = 10, f = 5, h = 10, prevCF = 2
+        // Median = 10 + ((5 - 2) / 5) * 10 = 10 + (3/5)*10 = 10 + 6 = 16
+        $this->assertEquals(16, median_continuous([0, 10, 20], [10, 20, 30], [2, 5, 3]));
     }
 
     public function testMode()

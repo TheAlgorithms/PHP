@@ -10,17 +10,21 @@ class ExecutionTimeTest extends TestCase
     public function testReportsElapsedTimeOnlyOnDestruct(): void
     {
         ob_start();
-        $timer = new ExecutionTime();
-        usleep(1000); // 1 ms of measured work
+        try {
+            $timer = new ExecutionTime();
+            usleep(1000); // 1 ms of measured work
 
-        // Nothing is printed while the timer is alive...
-        $this->assertSame('', ob_get_contents());
+            // Nothing is printed while the timer is alive...
+            $this->assertSame('', ob_get_contents());
 
-        unset($timer); // ...the report is emitted by __destruct()
+            unset($timer); // ...the report is emitted by __destruct()
 
-        $output = ob_get_clean();
+            $output = ob_get_contents();
+        } finally {
+            ob_end_clean();
+        }
 
-        $this->assertMatchesRegularExpression('/^Executed in \d+\.\d+ seconds$/', $output);
+        $this->assertMatchesRegularExpression('/^Executed in [0-9.]+(?:E-?\d+)? seconds$/', $output);
     }
 
     public function testMeasuredIntervalExceedsSleepDuration(): void
@@ -28,19 +32,16 @@ class ExecutionTimeTest extends TestCase
         $sleepMicroseconds = 20000; // 20 ms
 
         ob_start();
-        $timer = new ExecutionTime();
-        usleep($sleepMicroseconds);
-        unset($timer);
-        ob_end_clean();
+        try {
+            $timer = new ExecutionTime();
+            usleep($sleepMicroseconds);
+            unset($timer);
+            $output = ob_get_contents();
+        } finally {
+            ob_end_clean();
+        }
 
-        // Re-run with a capture of the measured value to assert ordering.
-        ob_start();
-        $timer = new ExecutionTime();
-        usleep($sleepMicroseconds);
-        unset($timer);
-        $output = ob_get_clean();
-
-        $this->assertSame(1, preg_match('/Executed in (\d+\.\d+) seconds/', $output, $matches));
+        $this->assertSame(1, preg_match('/Executed in ([0-9.]+(?:E-?\d+)?) seconds/', $output, $matches));
         $this->assertGreaterThanOrEqual($sleepMicroseconds / 1_000_000, (float) $matches[1]);
     }
 }

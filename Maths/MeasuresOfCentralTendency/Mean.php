@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-/**
+/** invidual mean
  * This function calculates
  * The mean value of
  * numbers provided
@@ -24,7 +24,7 @@ function mean(...$numbers): int|float
 
 /**
  * Calculates the mean of a discrete series.
- * 
+ *
  * Formula: Mean = Σ(x * f) / Σf
  * Where 'x' is the value and 'f' is its corresponding frequency.
  *
@@ -43,8 +43,23 @@ function mean_discrete(array $values, array $frequencies): int|float
         throw new \Exception('Please pass values to find mean value');
     }
 
+    $values = array_values($values);
+    $frequencies = array_values($frequencies);
+
+    foreach ($values as $v) {
+        if (!is_numeric($v)) {
+            throw new \Exception('All values must be numeric');
+        }
+    }
+
+    foreach ($frequencies as $f) {
+        if (!is_numeric($f) || $f < 0) {
+            throw new \Exception('All frequencies must be non-negative numeric values');
+        }
+    }
+
     $totalFrequency = array_sum($frequencies);
-    
+
     if ($totalFrequency == 0) {
         throw new \Exception('Total frequency cannot be zero');
     }
@@ -77,6 +92,28 @@ function mean_continuous(array $lower_bounds, array $upper_bounds, array $freque
 
     if (empty($lower_bounds)) {
         throw new \Exception('Please pass values to find mean value');
+    }
+
+    $lower_bounds = array_values($lower_bounds);
+    $upper_bounds = array_values($upper_bounds);
+    $frequencies = array_values($frequencies);
+
+    foreach ($lower_bounds as $lb) {
+        if (!is_numeric($lb)) {
+            throw new \Exception('All lower bounds must be numeric');
+        }
+    }
+
+    foreach ($upper_bounds as $ub) {
+        if (!is_numeric($ub)) {
+            throw new \Exception('All upper bounds must be numeric');
+        }
+    }
+
+    foreach ($frequencies as $f) {
+        if (!is_numeric($f) || $f < 0) {
+            throw new \Exception('All frequencies must be non-negative numeric values');
+        }
     }
 
     $midpoints = [];

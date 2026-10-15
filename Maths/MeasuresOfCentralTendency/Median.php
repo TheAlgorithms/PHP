@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-/**
+/** indivitaul median
  * This function calculates
  * The median value of
  * numbers provided
@@ -14,7 +14,7 @@ declare(strict_types=1);
 function median(...$numbers): float|int
 {
     if ($numbers === []) {
-        throw new \Exception('Please pass values to find mean value');
+        throw new \Exception('Please pass values to find median value');
     }
 
     foreach ($numbers as $number) {
@@ -25,12 +25,8 @@ function median(...$numbers): float|int
 
     sort($numbers);
     $length = count($numbers);
-    
-    // Using intdiv to find the middle index corresponds to the mathematical formula m = (n+1)/2.
-    // Since arrays are 0-indexed, intdiv($length, 2) effectively gives the middle element for odd counts,
-    // and the upper middle element for even counts.
     $middle = intdiv($length, 2);
-    
+
     if ($length % 2 == 0) {
         return ($numbers[$middle] + $numbers[$middle - 1]) / 2;
     }
@@ -54,8 +50,30 @@ function median_discrete(array $values, array $frequencies): int|float
     if (count($values) !== count($frequencies)) {
         throw new \Exception('Values and frequencies arrays must have the same length');
     }
+
     if (empty($values)) {
         throw new \Exception('Please pass values to find median value');
+    }
+
+    $values = array_values($values);
+    $frequencies = array_values($frequencies);
+
+    foreach ($values as $v) {
+        if (!is_numeric($v)) {
+            throw new \Exception('All values must be numeric');
+        }
+    }
+
+    foreach ($frequencies as $f) {
+        if (!is_numeric($f) || $f < 0) {
+            throw new \Exception('All frequencies must be non-negative numeric values');
+        }
+    }
+
+    $totalFrequency = array_sum($frequencies);
+
+    if ($totalFrequency == 0) {
+        throw new \Exception('Total frequency cannot be zero');
     }
 
     $data = [];
@@ -64,11 +82,6 @@ function median_discrete(array $values, array $frequencies): int|float
     }
     usort($data, fn($a, $b) => $a['value'] <=> $b['value']);
 
-    $totalFrequency = array_sum($frequencies);
-    if ($totalFrequency == 0) {
-        throw new \Exception('Total frequency cannot be zero');
-    }
-
     $cumulativeFrequency = 0;
     $targetCF = $totalFrequency / 2;
     $isEven = $totalFrequency % 2 === 0;
@@ -76,7 +89,7 @@ function median_discrete(array $values, array $frequencies): int|float
 
     foreach ($data as $item) {
         $cumulativeFrequency += $item['freq'];
-        
+
         if ($isEven) {
             if ($cumulativeFrequency > $targetCF) {
                 if ($cumulativeFrequency - $item['freq'] == $targetCF) {
@@ -84,7 +97,7 @@ function median_discrete(array $values, array $frequencies): int|float
                 }
                 return $item['value'];
             }
-            if ($cumulativeFrequency == $targetCF) {
+            if ($cumulativeFrequency == $targetCF && $item['freq'] > 0) {
                 $prevValue = $item['value'];
             }
         } else {
@@ -94,7 +107,7 @@ function median_discrete(array $values, array $frequencies): int|float
         }
     }
 
-    return $data[count($data) - 1]['value'];
+    throw new \Exception('Could not determine median value');
 }
 
 /**
@@ -119,8 +132,37 @@ function median_continuous(array $lower_bounds, array $upper_bounds, array $freq
     if (count($lower_bounds) !== count($upper_bounds) || count($lower_bounds) !== count($frequencies)) {
         throw new \Exception('Lower bounds, upper bounds, and frequencies arrays must have the same length');
     }
+
     if (empty($lower_bounds)) {
         throw new \Exception('Please pass values to find median value');
+    }
+
+    $lower_bounds = array_values($lower_bounds);
+    $upper_bounds = array_values($upper_bounds);
+    $frequencies = array_values($frequencies);
+
+    foreach ($lower_bounds as $lb) {
+        if (!is_numeric($lb)) {
+            throw new \Exception('All lower bounds must be numeric');
+        }
+    }
+
+    foreach ($upper_bounds as $ub) {
+        if (!is_numeric($ub)) {
+            throw new \Exception('All upper bounds must be numeric');
+        }
+    }
+
+    foreach ($frequencies as $f) {
+        if (!is_numeric($f) || $f < 0) {
+            throw new \Exception('All frequencies must be non negative numeric values');
+        }
+    }
+
+    $totalFrequency = array_sum($frequencies);
+
+    if ($totalFrequency == 0) {
+        throw new \Exception('Total frequency cannot be zero');
     }
 
     $data = [];
@@ -133,11 +175,6 @@ function median_continuous(array $lower_bounds, array $upper_bounds, array $freq
     }
     usort($data, fn($a, $b) => $a['L'] <=> $b['L']);
 
-    $totalFrequency = array_sum($frequencies);
-    if ($totalFrequency == 0) {
-        throw new \Exception('Total frequency cannot be zero');
-    }
-
     $targetCF = $totalFrequency / 2;
     $cumulativeFrequency = 0;
     $prevCF = 0;
@@ -148,12 +185,11 @@ function median_continuous(array $lower_bounds, array $upper_bounds, array $freq
             $L = $item['L'];
             $f = $item['f'];
             $h = $item['U'] - $item['L'];
-            
-            if ($f == 0) continue;
+
             return $L + (($targetCF - $prevCF) / $f) * $h;
         }
         $prevCF = $cumulativeFrequency;
     }
 
-    return 0;
+    throw new \Exception('Could not determine median value');
 }

@@ -188,6 +188,7 @@
     * [Stringstest](./tests/Strings/StringsTest.php)
   * Utils
     * [Arrayhelperstest](./tests/Utils/ArrayHelpersTest.php)
+    * [Executiontimetest](./tests/Utils/ExecutionTimeTest.php)
 
 ## Utils
   * [Arrayhelpers](./Utils/ArrayHelpers.php)

@@ -16,6 +16,8 @@
   * [Octaltodecimal](./Conversions/OctalToDecimal.php)
   * [Speedconversion](./Conversions/SpeedConversion.php)
   * [Temperatureconversions](./Conversions/TemperatureConversions.php)
+  * [Weightconversions](./Conversions/Weightconversions.php)
+  * [Lengthconversions](./Conversions/Lengthconversions.php)
 
 ## Datastructures
   * Avltree
